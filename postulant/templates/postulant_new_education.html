@@ -1,0 +1,65 @@
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load utils_forms %}
+
+<div class="large-12 columns container_form">
+
+  <form ng-submit="save(educationForm)" name="educationForm" class="education-form">
+
+    {% render_field form.institution_id  %}
+
+    <div class="row">
+      <h5>{% trans "Educacción" %}</h5>
+    </div>
+
+    <div class="row">
+      {% standar_field form.level %}
+      {% standar_field form.institution %}
+    </div>
+
+    <div class="row">
+      {% standar_field form.start_date %}
+      {% standar_field form.end_date %}
+      {% checkbox_field form.is_current %}
+    </div>
+
+    <div class="row">
+      {% checkbox_field form.finished column_size="12" field_extra_class="alone" %}
+    </div>
+
+    <div class="row">
+      <div 
+         ng-if="educationData.certifications.length"
+         rj-table-collection
+         collection-schema="catificationsTableSchema"
+         collection-data="educationData.certifications"
+         on-click="addCertification($item)"
+         selectable="true"
+         ng-model="selecteds.certifications"
+      ></div>
+
+      <alert ng-if="!educationData.certifications.length" type="'success round'">
+      {% trans "No hay datos de referencia cargados" %}
+      </alert>
+
+      <a ng-click="addCertification()" class="rj-button">{% trans "Agregar título/certificación" %}</a>
+      <a ng-click="deleteCertifications()" class="rj-button lined">{% trans "Borrar seleccionadas" %}</a>
+
+    </div>
+
+    <div class="row">
+      <ul class="djng-field-errors" ng-show="apiErrors.educationForm.$nonfield">
+        <li ng-show="apiErrors.educationForm.$nonfield" class="invalid" ng-bind="apiErrors.educationForm.$nonfield.msg"></li>
+      </ul>
+    </div>
+
+    <div class="row form-buttons text-center">
+      <a ng-click="save(educationForm)" class="rj-button">{% trans "Guardar" %}</a>
+      <a ng-click="cancel(educationForm)" class="rj-button alternative">{% trans "Cancelar" %}</a>
+    </div>
+
+  </form>
+
+</div>

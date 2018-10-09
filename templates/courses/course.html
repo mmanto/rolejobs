@@ -1,0 +1,53 @@
+<div class="course-item" ng-class="{ featured: course.featured }">
+
+  <div class="course-thumb">
+    <div class="content">
+      <img class="logo" ng-src="{{course.owner.avatars.default}}">
+      <img ng-if="course.featured" class="corner-shadow" src="/static/img/result-item-new-corner-shadow.svg">
+      <img ng-if="course.featured" class="corner" src="/static/img/result-item-new-corner-start.svg">
+      <img ng-if="course.featured" class="shadow" src="/static/img/result-item-new-img-shadow.svg">
+    </div>
+  </div>
+
+  <div class="course-body">
+
+    <div class="content">
+
+      <div class="info">
+        <p class="title">          
+         <a ui-sref="courses.detail({id: {{course.pk}}})">
+            {{ course.title }}
+          </a>
+        </p>
+        <p class="description">
+          <span class="field">{{ "Descripcion" | translate }}:</span>
+          <span>{{ course.description_text }}</span>
+          <br />
+        </p>
+      </div>
+
+      <div class="data">
+        <div class="row ">
+          <p class="text-center" style="">
+            {{ "Publicado" | translate }}
+            {{ course.published | relativeDate }}
+          </p>
+        </div>
+      </div>
+
+      <div class="controlls">
+
+        <div class="container">
+          <div class="cell">
+            <a href="#"><img src="/static/img/result-item-fav.svg"></a>
+            <a href="#"><img src="/static/img/result-item-share.svg"></a>
+          </div>
+        </div>
+      </div>
+    <!-- /content -->
+    </div>
+
+  <!-- /body -->
+  </div>
+
+</div>

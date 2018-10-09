@@ -1,0 +1,54 @@
+<div class="panel-screen employer-course-detail">
+  <div class="panel-header">
+
+    <div class="title-container">
+      <h1 class="title">{{ course.title }}</h1>
+    </div>
+  </div><!-- /header -->
+
+  <div class="panel-side">
+    <ul class="rj-list">
+      <li class="header">
+        Información 
+      </li>
+    
+      <li>
+        <a ng-click="edit()">{{ "Editar publicación" | translate }}</a>
+      </li>
+      <li>
+        <a ui-sref="courses.detail({id: course.id})">{{ "Ver curso" | translate }}</a>
+      </li>
+    </ul>
+  </div><!-- /panel -->
+
+  <div class="content">
+    <div class="courses-container">
+      <h2>{{ "Postulantes" | translate }}</h2>
+
+      <alert
+        ng-show="!postulations || !postulations.items.length"
+        type="'info'"
+      >{{ "No hay postulaciones" | translate }}
+      </alert>
+
+      <course-postulant-item
+        ng-if="postulations && postulations.items.length"
+        ng-repeat="postulation in postulations.items track by postulation.id"
+        postulation="postulation"
+        view-postulation="view"
+      >
+      </course-postulant-item>
+
+      <div>
+        <pagination
+          ng-if="postulations.length"
+          total-items="postulations.totalLength"
+          page="actualPage"
+          items-per-page="5"
+          on-select-page="changePage(page)"
+        ></pagination>
+      </div>
+
+    <div><!-- /course -->
+  </div><!-- /content -->
+</div>

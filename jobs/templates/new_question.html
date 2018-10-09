@@ -1,0 +1,66 @@
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load utils_forms %}
+
+<div class="large-12 columns container_form">
+
+  <form ng-submit="save(questionForm)" name="questionForm" class="question-form">
+
+    <div class="row">
+      <h5>{% trans "Pregunta" %}</h5>
+    </div>
+
+    <div class="row">
+      {% standar_field form.question %}
+      {% standar_field form.question_type %}
+      {% checkbox_field form.is_required %}
+    </div>
+
+    <!-- Options -->
+    <div ng-show="questionData.question_type === '48'" class="row">
+      <h5>{% trans "Opciones" %}</h5>
+
+      <div 
+         ng-if="questionData.options.length"
+         rj-table-collection
+         collection-schema="optionsSchema"
+         collection-data="questionData.options"
+      ></div>
+
+      <alert ng-if="!questionData.options.length" type="'info round'">
+        {% trans "No hay opciones" %}
+      </alert>
+
+      <div class="row">
+        <div class="large-8 columns left field-container">
+          <label for="option-text">{% trans "Respuesta" %}</label>
+          <input type="text" name="option-text" ng-model="optionData.text">
+        </div>
+        <div class="large-2 columns text-center left field-container field-checkbox-container">
+          <input type="checkbox" name="option-correct" ng-model="optionData.is_correct">
+          <label for="option-correct">{% trans "Es la correcta" %}</label>
+        </div>
+        <div class="large-2 columns text-center left field-container field-checkbox-container">
+          <a ng-click="addOption()" class="rj-button">{% trans "Agregar opción" %}</a>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="row">
+      <ul class="djng-field-errors" ng-show="apiErrors.questionForm.$nonfield">
+        <li ng-show="apiErrors.questionForm.$nonfield" class="invalid" ng-bind="apiErrors.questionForm.$nonfield.msg"></li>
+      </ul>
+    </div>
+
+    <div class="row form-buttons text-center">
+      <a ng-click="save(questionForm)" class="rj-button">{% trans "Guardar" %}</a>
+      <a ng-click="cancel(questionForm)" class="rj-button alternative">{% trans "Cancelar" %}</a>
+    </div>
+
+  </form>
+
+</div>

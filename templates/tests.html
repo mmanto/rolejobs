@@ -1,0 +1,215 @@
+<h1>rj-list</h1>
+<ul class="rj-list">
+  <li>
+    <h4>Titulo 1</h4>
+  </li>
+  <li>
+    <h4 class="secondary">Titulo 2</h4>
+  </li>
+  <li>
+    <h4 class="secondary-bg">Titulo 3</h4>
+  </li>
+  <li>
+    <h4 class="light">Titulo 4</h4>
+  </li>
+  <li>
+    <h4 class="light-bg">Titulo 5</h4>
+  </li>
+
+  <li class="header">
+    Titulo
+  </li>
+  <li>Texto</li>
+  <li class="secondary">Texto</li>
+  <li class="light">Texto</li>
+  <li class="big">Texto</li>
+  <li class="secondary-bg">Texto</li>
+  <li class="light-bg">Texto</li>
+  <li><a href="#">Link</a></li>
+  <li><a href="#">Link</a></li>
+  <li class="header secondary">
+    Titulo 2
+  </li>
+  <li>
+    Element
+    <input type="checkbox">
+  </li>
+  <li class="header">
+    Title element
+    <input type="checkbox">
+  </li>
+</ul>
+
+<h1>rj-button</h1>
+<a class="rj-button">Button</a>
+<a class="rj-button alternative">Alternative</a>
+<a class="rj-button black">Black</a>
+
+<a class="rj-button small">Button small</a>
+<a class="rj-button alternative small">Alternative small</a>
+<a class="rj-button black small">Black small</a>
+
+<a class="rj-button tiny">Button tiny</a>
+<a class="rj-button alternative tiny">Alternative tiny</a>
+<a class="rj-button black tiny">Black tiny</a>
+
+<a class="rj-button lined">Button lined</a>
+<a class="rj-button alternative lined">Alternative lined</a>
+<a class="rj-button black lined">Black lined</a>
+
+<h1>Table</h1>
+
+<!--
+<rj-table-collection collection="table" selected-items="selectedItems" selectable></rj-table-collection>
+{{selectedItems}}
+-->
+
+<div class="rj-card">
+  <div class="card-header bg-alternative">
+    Mi C.V
+  </div>
+  <div class="card-body bg-gris">
+    <h5>Esto es un h5</h5>
+    <p class="text-large">Y esto un parrafo</p>
+
+    <div class="card-block">
+      <ul class="info">
+        <li>
+          <span class="field">Agregar código postal</span>
+          <span class="value">+9%</span>
+        </li>
+        <li>
+          <span class="field">Agregar código postal</span>
+          <span class="value">+9%</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="rj-card">
+  <div class="card-header bg-active">
+    Vista previa de mi CV
+    <i class="fa fa-eye"></i>
+  </div>
+  <div class="card-header">
+    Consejos para mi CV
+    <i class="fa fa-eye"></i>
+  </div>
+
+  <div class="card-body">
+
+  </div>
+</div>
+
+<h3>Profile completed</h3>
+
+<postulant-completed-profile completed="completed"></postulant-completed-profile>
+
+<input type="number" ng-model="completed.percent">
+
+
+<h3>Filters</h3>
+
+<div class="filter-list" style="width: 230px;">
+ 
+  <h1>Filtros</h1>
+
+  <div class="filter-box">
+    <h2 class="clear">Palabra clave</h2>
+    <div class="search-box">
+      <input type="text" placeholder="Ej: Cajero">
+    </div>
+  </div>
+
+  <div class="filter-box">
+    <h2>Por fecha de publicación</h2>
+    <ul class="filter-list">
+      <li><a href="#"><span>List option 01</span><span class="cant">1</span></a></li>
+      <li><a href="#"><span>List option 02</span><span class="cant">2</span></a></li>
+      <li><a href="#"><span>List option 03</span><span class="cant">3</span></a></li>
+      <li><a href="#"><span>List option 04</span><span class="cant">4</span></a></li>
+      <li><a href="#"><span>List option 05</span><span class="cant">5</span></a></li>
+      <li><a href="#"><span>List option 06</span><span class="cant">6</span></a></li>
+      <li><a href="#"><span>List option 07</span><span class="cant">7</span></a></li>
+      <li><a href="#"><span>List option 08</span><span class="cant">8</span></a></li>
+      <li><a href="#"><span>List option 09</span><span class="cant">9</span></a></li>
+      <li><a href="#"><span>List option 10</span><span class="cant">10</span></a></li>
+      <li><a href="#"><span>List option 11</span><span class="cant">11</span></a></li>
+      <li><a href="#"><span>List option 12</span><span class="cant">12</span></a></li>
+      <li><a href="#"><span>List option 13</span><span class="cant">13</span></a></li>
+      <li><a href="#"><span>List option 14</span><span class="cant">14</span></a></li>
+      <li><a href="#"><span>List option 15</span><span class="cant">15</span></a></li>  
+    </ul>
+  </div> 
+
+  <div class="filter-box">
+    <h1 class="alternative">Filtros selecionados</h1>
+    <ul class="selected-filters">
+      <li><a href=""><span>Filtro 1</span><i class="close"></i></a></li>
+      <li><a href=""><span>Filtro 2</span><i class="close"></i></a></li>
+      <li><a href=""><span>Filtro 3</span><i class="close"></i></a></li>
+      <li><a href=""><span>Filtro 4</span><i class="close"></i></a></li>
+      <li><a href=""><span>Filtro 5</span><i class="close"></i></a></li>
+    </ul>
+  </div>
+
+  <p class="results-text">
+    Se encontraron <span>543</span> ofertas de empleo
+  </p>  
+
+
+  <div class="rj-icon-button alternative lined">
+    <rj-icon icon="download"></rj-icon>
+    <div class="btn-container">
+      <a class="button" href="#">Guardar esta búsqueda</a>
+    </div>
+  </div>
+
+  <a class="rj-button black" href="#">
+    Quitar todos los filtros
+    <i class="fa fa-times"></i>
+  </a>
+
+  <rj-filter
+    title="'Search'"
+    title-class="clear"
+    type="searchbox"
+    ng-model="filters.text.value"></rj-filter>
+  <div>val: <input type="text" ng-model="filters.text.value"></div>
+
+  <rj-filter
+    title="'List'"
+    type="list"
+    choices="filters.list.choices"
+    ng-model="filters.list.selecteds"
+  ></rj-filter>
+  <div>val: {{ filters.list.selecteds }}</div>
+
+  <rj-filter
+    title="'List multi'"
+    type="list"
+    multi-select="true"
+    choices="filters.list.choices"
+    ng-model="filters.list.selecteds"
+  ></rj-filter>
+  <div>val: {{ filters.list.selecteds }}</div>
+
+  <h1>GeoPicker</h1>
+
+  <a class="rj-button" ng-click="openGeoPicker()">Open</a>
+  <a class="rj-button" ng-click="openGeoPicker({ country: 10, region: 117, city: 328, address: 'roca 123'})">Open</a>
+
+  <h2>GeoFields</h2>
+
+  <div>
+    <geo-field></geo-field>
+  </div>
+
+  <div>
+    <geo-field ng-model="myGeo"></geo-field>
+    <div>{{myGeo}}</div>
+  </div>
+
+</div>

@@ -1,0 +1,50 @@
+<div class="panel-screen employer-postulation-detail">
+  <div class="panel-header">
+
+    <div class="title-container">
+      <h1 class="title">{{ course.title }}</h1>
+    </div>
+
+    <div class="title-extra">
+      <span class="status" ng-class="{rejected: postulation.status == 32}">
+        {{ postulation.status_text }}
+      </span>
+    </div>
+
+  </div><!-- /header -->
+
+  
+
+  <div class="content">
+    <div class="course-container">
+      <div class="row">
+        <div class="large-4 columns">
+          <div class="profile-avatar">
+            <img ng-src="{{ postulation.user.avatar }}">
+          </div>
+        </div>
+        <div class="large-8 columns">
+          <h2>{{ postulation.user.first_name }} {{ postulation.user.last_name }}</h2>
+          <ul class="user-info">
+            <li>
+              <span class="field">{{ "Género" | translate }}:</span>
+              <span>{{ postulation.user.gender_text }}</span>
+            </li>
+            <li>
+              <span class="field">{{ "Teléfono" }}:</span>
+              <span>{{ postulation.user.phone_number }}</span>
+            </li>
+            <li>
+              <span class="field">{{ "Celular" }}:</span>
+              <span>{{ postulation.user.mobile_number }}</span>
+            </li>
+            <li>
+              <span class="field">{{ "Fecha de nacimiento" }}:</span>
+              <span>{{ postulation.user.date_of_birth | date:"dd-MM-yyyy" }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <div>
+  </div><!-- /content -->
+</div>

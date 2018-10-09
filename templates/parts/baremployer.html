@@ -1,0 +1,73 @@
+{% load i18n %}
+{% load static %}
+<ul class="right"  >
+  <li style="has-form">
+    <div>
+      <input type="text" placeholder="{% trans "¿Qué empleo buscás?" %}" 
+                         style="text-indent: 1.2em;border-radius: 2px;padding-right:25px; border:solid 1px #fff; 
+                         padding:0 !important; margin:0 !important;font-family: DosisBold; 
+                         width:300px;display:inline-block !important;vertical-align: middle !important;"/>
+      <img style="position:relative; left:-35px; top:10px; cursor:pointer; 
+      display:inline-block;vertical-align: middle;" 
+           src="{% static "img/lupa.svg" %}"/>
+    </div>
+  </li>
+
+  <li class="divider" style="border: 0;"></li>
+
+  <li>
+    <a style="padding:0; line-height: 0;" href="#">
+      <profile-avatar style="width:45px; height: 45px;"></profile-avatar>
+    </a>
+  </li>
+
+  <li class="divider" style="border: 0;"></li>
+
+  <li class="">
+    <a href="#" dropdown-toggle="#menu-list" style="font-family: DosisBold; font-size: 110%; font-weight: bold; color: white;">
+      {{ request.user.name|default:request.user.email }}
+    </a>
+    <ul class="f-dropdown" id="menu-list">
+      <li>
+        <a style="font-family: DosisSemiBold; font-weight: bold;" 
+           ui-sref="employer.main.panel"
+           >
+           {% trans "Mis Datos" %}
+        </a>
+      </li>
+      <li>
+        <a style="font-family: DosisSemiBold; font-weight: bold;" 
+           ui-sref="employer.main.jobs"
+           >
+           {% trans "Mis Avisos" %}
+        </a>
+      </li>
+      <li>
+        <a style="font-family: DosisSemiBold; font-weight: bold;" 
+           ui-sref="employer.main.courses"
+           >
+           {% trans "Mis Cursos" %}
+        </a>
+      </li>
+      <li>
+        <a style="font-family: DosisSemiBold; font-weight: bold;" 
+          ng-click="changePassword()"
+        >
+          {% trans "Modificar contraseña" %}
+        </a>
+      </li>
+      <li>
+        <a style="font-family: DosisSemiBold; font-weight: bold;" 
+           ui-sref="accounts.logout"
+           >
+           {% trans "Cerrar sesión" %}
+        </a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="divider" style="border: 0;"></li>
+  <li style="padding-right:100px;">
+  </li>
+
+</ul>

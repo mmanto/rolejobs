@@ -1,0 +1,29 @@
+
+.postulation-modal {
+    @extend .rj-modal;
+
+    .owner-info img.brand-image  {
+        float: right;
+    } 
+    
+    .postulation-info {
+        clear: both;
+    }
+
+    .questions-list ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        h5 {
+            font-size: 17px;
+            color: $naranja2;
+        }
+    }
+
+    .buttons-container {
+        padding: 10px;
+        text-align: center;
+    }
+
+}

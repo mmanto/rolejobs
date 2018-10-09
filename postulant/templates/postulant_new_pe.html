@@ -1,0 +1,89 @@
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load utils_forms %}
+
+<div class="large-12 columns container_form">
+
+  <form ng-submit="save(peForm)" name="peForm" class="pe-form">
+
+    <div class="row">
+      <h5>{% trans "Puesto anterior" %}</h5>
+    </div>
+    
+    <div class="row">
+      {% standar_field form.title %}
+      {% standar_field form.position %}
+      {% standar_field form.company_name %}
+    </div>
+
+    <div class="row">
+      {% standar_field form.area %}
+      {% standar_field form.subarea %}
+    </div>
+
+    <div class="row">
+      {% standar_field form.hierarchy %}
+      {% standar_field form.branch_activity %}
+    </div>
+
+    <div class="row">
+      {% standar_field form.start_date %}
+      {% standar_field form.end_date %}
+      {% checkbox_field form.is_current %}
+    </div>
+
+    <div class="row">
+      {% standar_field form.description column_size="12" %}
+    </div>
+
+    <div class="row">
+      {% standar_field form.staff_charge %}
+      {% standar_field form.budget %}
+      {% standar_field form.currency %}
+    </div>
+
+    <div class="row">
+      {% standar_field form.salary %}
+      {% checkbox_field form.show_salary %}
+    </div>
+
+    <div class="row">
+      <h5>{% trans "Referencias" %}</h5>
+    </div>
+ 
+    <div class="row">
+        <div 
+          ng-if="peData.references.length"
+          rj-table-collection
+          collection-schema="referencesTableSchema"
+          collection-data="peData.references"
+          on-click="addReference($item)"
+          selectable="true"
+          ng-model="selectedReferences.items"
+        ></div>
+
+        <alert ng-if="!peData.references.length" type="'success round'">
+          {% trans "No hay datos de referencia cargados" %}
+        </alert>
+
+        <a ng-click="addReference()" class="rj-button">{% trans "Agregar referencia" %}</a>
+        <a ng-click="deleteReferences()" class="rj-button lined">{% trans "Borrar seleccionadas" %}</a>
+
+    </div>
+
+    <div class="row">
+      <ul class="djng-field-errors" ng-show="apiErrors.peForm.$nonfield">
+        <li ng-show="apiErrors.peForm.$nonfield" class="invalid" ng-bind="apiErrors.peForm.$nonfield.msg"></li>
+      </ul>
+    </div>
+
+    <div class="row form-buttons text-center">
+      <a ng-click="save(peForm)" class="rj-button">{% trans "Guardar" %}</a>
+      <a ng-click="cancel(peForm)" class="rj-button alternative">{% trans "Cancelar" %}</a>
+    </div>
+
+  </form>
+
+</div>

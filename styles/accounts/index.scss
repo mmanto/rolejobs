@@ -1,0 +1,29 @@
+
+.signup-page {
+
+    input[type="text"], input[type="email"], input[type="password"] {
+        border: 2px solid #b8dfdf;
+    }
+
+    /* powered by google */
+    .pac-container:after {  
+        background-image: none !important;
+        height: 0px;
+    }    
+
+}
+
+.container-section {
+
+    .row {
+        padding: 0 15px;
+
+        h5 {
+            color: #58c1c9;
+            font-family: DosisBold;
+        }
+
+    }
+}
+
+@import "./change-password-modal";

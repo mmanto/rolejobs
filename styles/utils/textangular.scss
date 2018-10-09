@@ -1,0 +1,26 @@
+
+.ta-field-complete {
+    border: 2px solid #b8dfdf;
+    border-radius: 3px;
+
+    .ta-toolbar {
+        background: $verde;
+
+        .btn-group {
+            display: inline-block;
+            display: inline-flex;
+
+            .btn {
+                font-family: DosisBold;
+                margin: 0;
+                padding: 5px; 
+                background: $verde;
+            }
+        }
+    }
+
+    .ta-text {
+        max-height: 200px;
+    }
+
+}

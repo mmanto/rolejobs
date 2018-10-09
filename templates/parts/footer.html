@@ -1,0 +1,63 @@
+{% load i18n %}
+{% load staticfiles %}
+<footer class="row fullWidth" style="background: #f04d40;">
+
+  <div class="large-8 large-centered columns " style="margin-top: 60px; margin-bottom: 60px;">
+    
+    <div class="row">
+      
+      <div class="small-4 large-4 columns " style="">
+        <div style="display: table; height:150px; margin: 0 auto;">
+          <div style="display: table-cell; vertical-align: middle;">
+            <img style=" " src="{% static "./img/rolejobs-footer.svg" %}"/>
+          </div>
+        </div>
+      </div>
+      
+      <div class="small-4 large-4 columns"
+          style="border-left: 1px solid white; border-right: 1px solid white;">
+        <div style="display: table; height:150px; margin: 0 auto;">
+          <div style="display: table-cell; vertical-align: middle;">
+        
+            <ul style="list-style-type: none; font-family: DosisLight; color: white; text-decoration: none;">  
+              <li>
+                <a ui-sref="about" style="font-family: DosisLight; color: white; text-decoration: none;" href="#">
+                  {% trans "Quiénes somos" %}
+                </a>
+              </li>
+              <li>
+                <a ui-sref="contact" style="font-family: DosisLight; color: white; text-decoration: none;">
+                  {% trans "Contacto" %}
+                </a>
+              </li>
+              <li>
+                <a ui-sref="terms_conditions" style="font-family: DosisLight; color: white; text-decoration: none;" href="#">{% trans "Términos y condiciones" %}</a></li>
+              <li>
+                <a ui-sref="privacy" style="font-family: DosisLight; color: white; text-decoration: none;" href="#">{% trans "Políticas de privacidad" %}</a></li>
+              <li>
+                <a ui-sref="faqs" style="font-family: DosisLight; color: white; text-decoration: none;" href="#">{% trans "FAQS" %}</a></li>
+            </ul>    
+
+          </div>
+        </div>
+      
+      </div>
+      
+      <div class="small-4 large-4 columns " >
+          <div style="display: table; height:150px; margin: 0 auto;">
+          <div style="display: table-cell; vertical-align: middle;">
+
+            <ul class="inline-list" style="padding-top: 30px; padding-bottom:30px; padding-left: 30px; ">  
+              <li><a href="#"><img style="width:90%; height:50px;" src="{% static "img/facebook.svg" %}"/></a></li>
+              <li><a href="#"><img style="width:90%; height:50px;" src="{% static "img/twitter.svg" %}"/></a></li>
+              <li><a href="#"><img style="width:90%; height:50px;" src="{% static "img/linkedin.svg" %}"/></a></li>
+            </ul>    
+          </div>
+          </div>
+      </div>             
+        
+    </div>
+    
+  </div>
+
+</footer>

@@ -1,0 +1,43 @@
+
+.employer-job-detail {
+    margin: 0;
+    font-family: DosisRegular;
+
+    h1, h2, h3 {
+        font-family: DosisBold;
+    }
+
+    .panel-header {
+        @include flexbox();
+        padding: 0 30px;
+
+        .title-container {
+            @include flexitem(); 
+
+            h1 {
+                color: $naranja2;
+            }
+
+            h2 {
+                color: $verde;
+                font-size: 20px;
+            }
+        }
+
+        .title-extra {
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+        }
+
+    }
+
+    .panel-side .rj-list {
+        margin: 0 10px;
+    }
+
+    .content .job-container h2 {
+        color: $gris3;
+    }
+
+}

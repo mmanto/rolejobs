@@ -1,0 +1,40 @@
+<div class="job-question-item">
+  <i class="fa fa-question-circle" aria-hidden="true"></i>
+  <span class="question">{{ question.question }}</span>
+  <ul class="options" ng-if="question.options.length">
+    <li
+      ng-repeat="option in question.options track by option.id"
+      ng-class="{ correct: option.is_correct }"
+    >
+      <span class="fa-stack">
+       <i
+         class="fa fa-square-o fa-stack-1x"
+         aria-hidden="true"
+       ></i>
+       <i
+        ng-show="option.is_correct && answer && answer.response === option.text"
+        class="fa fa-check fa-stack-1x"
+       ></i>
+       <i
+        ng-show="!option.is_correct && answer && answer.response == option.text"
+        class="fa fa-times fa-stack-1x"
+       ></i>
+      </span>
+      <span>{{ option.text }}</span>
+    </li>
+  </ul>
+  <div class="response" ng-if="!answer">
+    <span class="no-response">
+      {{ "No respondió" | translate }}
+    </span>
+  </div>
+  <div class="response" ng-if="answer && question.question_type !== 48">
+    <span class="reponse-label">{{ "Respuesta" | translate }}:</span>
+    <span ng-if="question.question_type === 0 || question.question_type === 16">
+      {{ answer.response }}
+    </span>
+    <span ng-if="question.question_type === 32">
+      {{ answer.response ? "Si" : "No" | translate }}
+    </span>
+  </div>
+</div>

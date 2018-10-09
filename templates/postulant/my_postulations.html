@@ -1,0 +1,52 @@
+<div class="row">
+
+  <div class="large-2 columns">
+    <ul class="rj-list" style="margin: 0">
+      <li class="header">Estado</li>
+      <li
+        class="secondary big"
+        ng-class="{'light-bg': filterStatus === null}"
+        >
+          <a href="#" ng-click="setFilterStatus(null)">{{ "Todos" | translate }}</a>
+      </li>
+      <li
+        ng-repeat="status in availableStatus track by status.value"
+        ng-class="{'light-bg': filterStatus === status.value}"
+      >
+        <a href="#" ng-click="setFilterStatus(status.value)">{{ status.name }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="large-10 columns">
+
+    <div class="header-panel">
+    </div>
+
+    <div class="postulations-list">
+
+      <alert ng-if="!postulations.length" type="'info'">
+        {{ "No hay postulaciones" | translate }}
+      </alert>
+      
+      <postulant-postulation-item
+        ng-repeat="postulation in postulations.items track by postulation.id"
+        view-cb="view"
+        postulation="postulation"
+      ></postulant-postulation-item>
+
+      <div>
+        <pagination
+          ng-if="postulations.length"
+          total-items="postulations.totalLength"
+          page="actualPage"
+          items-per-page="5"
+          on-select-page="changePage(page)"
+        ></pagination>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

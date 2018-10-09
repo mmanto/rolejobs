@@ -1,0 +1,52 @@
+<div class="row">
+
+  <div class="large-2 columns">
+    <ul class="rj-list" style="margin: 0">
+      <li class="header">Estado</li>
+      <li
+        class="secondary big"
+        ng-class="{'light-bg': filterStatus === null}"
+        >
+          <a href="#" ng-click="setFilterStatus(null)">{{ "Todos"}}</a>
+      </li>
+      <li
+        ng-repeat="status in availableStatus track by status.value"
+        ng-class="{'light-bg': filterStatus === status.value}"
+      >
+        <a href="#" ng-click="setFilterStatus(status.value)">{{ status.name }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="large-10 columns">
+
+    <div class="header-panel">
+    </div>
+
+    <div class="messages-list">
+
+      <alert ng-if="!messsages || !messages.length" type="'info'">
+        {{ "No hay mensajes" }}
+      </alert>
+      
+      <postulant-message-item
+        ng-repeat="message in messages.items track by message.id"
+        view-cb="view"
+        message="message"
+      ></postulant-message-item>
+
+      <div>
+        <pagination
+          ng-if="messages.length"
+          total-items="messages.totalLength"
+          page="actualPage"
+          items-per-page="5"
+          on-select-page="changePage(page)"
+        ></pagination>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

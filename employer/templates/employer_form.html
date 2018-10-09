@@ -1,0 +1,187 @@
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+<div class="large-12 columns container_form">
+
+  <form ng-submit="save()" name="employerForm" class="employer-form">
+
+    <div class="row">
+      <h5>{% trans "Datos de la empresa" %}</h5>
+    </div>
+
+    <div class="row">
+      <div class="large-4 columns left">
+        {{ form.name_company.label_tag }}
+        {% render_field form.name_company class="radius shadow-input"  %}
+        <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+        {{ form.name_company.errors }}
+      </div>
+      <div class="large-4 columns left">
+        {{ form.razon_social.label_tag }}
+        {% render_field form.razon_social class="radius shadow-input"  %}
+        <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+        {{ form.razon_social.errors }}
+      </div>
+      <div class="large-4 columns left">
+        {{ form.responsability_iva.label_tag }}
+        {% render_field form.responsability_iva class="radius shadow-input"  %}
+        <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+        {{ form.responsability_iva.errors }}
+      </div>
+    </div>
+
+    <div lass="row">
+      <div class="large-4 columns" style="margin-top:10px; margin-bottom:10px;">
+        <label for="geo-data">{% trans "Dirección de la empresa" %}</label>
+        <geo-field
+           ng-required="true"
+           name="geo-data"
+           placeholder="{% trans "Seleecione su lugar de recidencia" %}"
+           ng-model="employerGeoData"></geo-field>
+         <ul class="djng-field-errors" ng-show="employerForm['geo-data'].$dirty">
+           <li
+             ng-show="employerForm['geo-data'].$error.required"
+             class="invalid">{% trans "Este campo es requerido." %}
+           </li> 
+         </ul>
+
+      </div>
+      <div class="large-4 columns left" style="margin-top:10px; margin-bottom:10px;">
+        {{ form.sector_empresarial.label_tag }}
+        {% render_field form.sector_empresarial class="radius shadow-input"  %}
+        <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+        {{ form.sector_empresarial.errors }}
+      </div>
+      <div class="large-4 columns left" style="margin-top:10px; margin-bottom:10px;">
+        {{ form.workforce.label_tag }}
+        {% render_field form.workforce class="radius shadow-input"  %}
+        <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+        {{ form.workforce.errors }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-6 columns left" style="margin-top:10px; margin-bottom:10px;">
+        {{ form.tipology.label_tag }}
+        {% render_field form.tipology class="radius shadow-input"  %}
+        <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+        {{ form.tipology.errors }}
+      </div>
+      <div class="large-6 columns left" style="margin-top:10px; margin-bottom:10px;">
+        {{ form.website.label_tag }}
+        {% render_field form.website class="radius shadow-input"  %}
+        <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+        {{ form.website.errors }}
+      </div>
+    </div>
+
+    <div class="row">
+      {{ form.description.label_tag }}
+      {% render_field form.description class="radius shadow-input"  %}
+      <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+      {{ form.description.errors }}
+    </div>
+
+    <div class="row">
+      <div class="large-6 columns left">
+        <h5>{% trans "Avatar" %}</h5>
+        <profile-avatar style="width: 75px; height: 75px"></profile-avatar>
+        <a class="rj-button alternative" ng-click="changeProfileAvatar()">{% trans "Cambiar" %}</a>
+      </div>
+      <div class="large-6 columns left">
+        <h5>{% trans "Logo grande" %}</h5>
+        <profile-avatar style="width: 200px; height: 75px" label="brand"></profile-avatar>
+        <a class="rj-button alternative" ng-click="changeBrandAvatar()">{% trans "Cambiar" %}</a>
+      </div>
+    </div>
+
+    {% comment %}
+    <div class="row">
+      <div class="large-2 columns" style="margin-top:25px; margin-bottom:25px;">
+      <p style="color:#655D5D;  padding:0 0rem;" align="center">{% trans " Logo de la <br> empresa" %}</p>
+      </div>   
+      <div class="large-4 columns left" style="margin-top:10px; margin-bottom:10px;">
+      {% render_field form.logo class="radius shadow-input"  %}
+      {{ form.logo.errors }}
+      <p style="color:#655D5D;">{% trans "Formato JPG/GIF - Peso máximo 1MB" %}</p>
+      </div>
+    </div>
+    {% endcomment %}
+    
+    <div class="row">
+      <h5>{% trans "Datos de la persona de contacto" %}</h5>
+    </div>
+
+    <div class="row">
+      <div class="large-4 columns left" style="margin-top:10px; margin-bottom:10px;">
+        {{ form.first_name.label_tag }}
+        {% render_field form.first_name class="radius shadow-input"  %}
+        <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+        {{ form.first_name.errors }}
+      </div>
+      <div class="large-4 columns left" style="margin-top:10px; margin-bottom:10px;">
+        {{ form.last_name.label_tag }}
+        {% render_field form.last_name class="radius shadow-input"  %}
+        <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+        {{ form.last_name.errors }}
+      </div>
+      <div class="large-4 columns left" style="margin-top:10px; margin-bottom:10px;">
+        {{ form.position.label_tag }}
+        {% render_field form.position class="radius shadow-input"  %}
+        <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+        {{ form.position.errors }}
+      </div>
+
+    </div>
+
+{% comment %}
+<div class="row">
+  <!--             <div class="large-4 columns left" style="margin-top:10px; margin-bottom:10px;">
+    {% render_field form.birthday class="radius shadow-input"  %}
+    <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+    {{ form.birthday.errors }}
+    </div>
+    <div class="large-4 columns left" style="margin-top:10px; margin-bottom:10px;">
+    {% render_field form.country_contact class="radius shadow-input"  %}
+    <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+    {{ form.country_contact.errors }}
+    </div> -->
+</div>
+{% endcomment %}
+    <div class="row">
+      <div class="large-4 columns left" style="margin-top:10px; margin-bottom:10px;">
+        {{ form.gender.label_tag }}
+        {% render_field form.gender %}
+        {{ form.gender.errors }}
+      </div>
+      <div class="large-4 columns left" style="margin-top:10px; margin-bottom:10px;">
+        {{ form.phone_number.label_tag }}
+        {% render_field form.phone_number class="radius shadow-input"  %}
+        {{ form.phone_number.errors }}
+      </div>
+      <div class="large-4 columns left" style="margin-top:10px; margin-bottom:10px;">
+        {{ form.mobile_number.label_tag }}
+        {% render_field form.mobile_number class="radius shadow-input"  %}
+        <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+        {{ form.mobile_number.errors }}
+      </div>
+    </div>
+
+    <div class="row">
+      <h5>{% trans "Opciones" %}</h5>
+    </div>
+    <div class="row">
+      {% render_field form.newsletter class="radius shadow-input"  %}
+      {% trans "Deseo suscribirme al newsletter de RoleJobs." %}
+      {{ form.newsletter.errors }}
+    </div>
+
+    <div class="row form-buttons text-center">
+      <a ng-click="save(employerForm)" class="rj-button">{% trans "Guardar" %}</a>
+    </div>
+
+  </form>
+
+</div>

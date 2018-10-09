@@ -1,0 +1,47 @@
+# encoding=utf-8
+
+from __future__ import unicode_literals
+
+from django.utils.translation import gettext as _
+
+EDUCATION_PRIMARY = int('00000010', 2)
+EDUCATION_SECONDARY = int('00000100', 2)
+EDUCATION_POST_SECONDARY = int('00001000', 2)
+EDUCATION_TERTIARY = int('00010000', 2)
+EDUCATION_CURSE = int('00000001', 2)
+
+EDUCATION_GRADES = (
+    (EDUCATION_PRIMARY, _("Primario")),
+    (EDUCATION_SECONDARY, _("Secundario")),
+    (EDUCATION_POST_SECONDARY, _("Preparatoria")),
+    (EDUCATION_TERTIARY, _("Terciario")),
+    (EDUCATION_CURSE, _(u"Curso / Capacitación")),
+)
+
+CERTIFICATION_BACHELOR = 1
+CERTIFICATION_TECHNIC = 2
+
+CERTIFICATION_PREGRADE = 10
+CERTIFICATION_LIC = 11
+CERTIFICATION_MASTER = 12
+CERTIFICATION_DOCTOR = 13
+CERTIFICATION_PROFESSIONAL = 14
+
+CERTIFICATION_CERT = 20
+
+CERTIFICATION_HONOR = 50
+
+CERTIFICATION_OTHER = 99
+
+CERTIFICATIONS = (
+    (CERTIFICATION_BACHELOR, _("Bachiller")),
+    (CERTIFICATION_TECHNIC, _("Técnico")),
+    (CERTIFICATION_PREGRADE, _("Pre-grado")),
+    (CERTIFICATION_LIC, _("Licenciatura")),
+    (CERTIFICATION_MASTER, _("Master")),
+    (CERTIFICATION_DOCTOR, _("Doctorado")),
+    (CERTIFICATION_PROFESSIONAL, _("Profesional")),
+    (CERTIFICATION_HONOR, _("Honor")),
+    (CERTIFICATION_CERT, _("Certificación")),
+    (CERTIFICATION_OTHER, _("Otro")),
+)

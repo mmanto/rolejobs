@@ -1,0 +1,57 @@
+
+.lista-avisos {
+    background: $gris2;
+   
+    .header-panel {
+        text-align: right;
+        padding-top: 10px;
+
+        ul.icons {
+            display: inline-block;
+            list-style: none;
+            font-family: DosisBold;
+            margin: 0;
+
+            li {
+                display: inline-block;
+
+                span {
+                    font-family: DosisBold;
+                    color: $naranja2;
+                    margin-right: 4px;
+                }
+
+                i {
+                    color: $verde;
+                    background: white;
+                    border-radius: 50%;
+                    padding: 4px;
+                    margin-right: 10px;
+                }
+            }
+
+        } 
+    }
+
+    .jobs-list {
+        background: white;
+        border-radius: 5px;
+        padding: 0px 0px;
+
+        table {
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+
+    .courses-list {
+        background: white;
+        border-radius: 5px;
+        padding: 0px 0px;
+
+        table {
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+}

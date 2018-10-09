@@ -1,0 +1,36 @@
+<div class="large-12 columns container_form">
+
+  <form ng-submit="save(form)" name="form">
+
+    <div
+      image-cropper
+      class="row"
+      width="{{width}}"
+      height="{{height}}"
+      ng-model="image.src"
+    >
+      <div class="large-6 columns preview-container">
+        <div
+          class="cropit-preview"
+          ng-style="sizes">
+        </div>
+        <a class="rj-button lined" data-role="rotateright">
+          <i class="fa fa-undo" aria-hidden="true"></i>
+        </a>
+        <input type="range" class="cropit-image-zoom-input" />
+        <a class="rj-button lined" data-role="rotateleft">
+          <i class="fa fa-repeat" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="large-6 columns field-container">
+        <label for="image-src">{{ "Selecciones una archivo" | translate }}</label>
+        <input name="image-src" type="file" class="cropit-image-input" />
+      </div>
+    </div> 
+
+    <div class="row form-buttons text-center">
+      <a ng-click="save(form)" class="rj-button">{{ "Guardar" | translate }}</a>
+      <a ng-click="cancel(form)" class="rj-button alternative">{{ "Cancelar" | translate }}</a>
+    </div>
+
+</div>

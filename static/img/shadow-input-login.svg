@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="338.23624"
+   height="4.8049998"
+   id="svg5761"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="shadow-input-login.png">
+  <defs
+     id="defs5763">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath980">
+      <path
+         inkscape:connector-curvature="0"
+         d="m 4419.174,4176.304 270.589,0 0,15.99 -270.589,0 0,-15.99 z"
+         id="path982" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath988">
+      <path
+         inkscape:connector-curvature="0"
+         d="m 4395.19,4204.58 317.04,0 0,-16.13 -317.04,0 0,16.13 z"
+         id="path990" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath992">
+      <path
+         inkscape:connector-curvature="0"
+         d="m 4712.234,4196.518 c 0,4.452 -89.886,8.064 -155.941,8.064 -66.06,0 -161.105,-3.612 -161.105,-8.064 0,-4.455 87.872,-8.068 153.933,-8.068 66.055,0 163.113,3.613 163.113,8.068"
+         id="path994" />
+    </clipPath>
+    <radialGradient
+       fx="0"
+       fy="0"
+       cx="0"
+       cy="0"
+       r="1"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(140.4146,0,0,-9.4698029,4553.7124,4196.5156)"
+       spreadMethod="pad"
+       id="radialGradient996">
+      <stop
+         style="stop-opacity:1;stop-color:#646567"
+         offset="0"
+         id="stop998" />
+      <stop
+         style="stop-opacity:1;stop-color:#ffffff"
+         offset="1"
+         id="stop1000" />
+    </radialGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="161.261"
+     inkscape:cy="99.545317"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     showborder="false"
+     inkscape:showpageshadow="false"
+     inkscape:window-width="513"
+     inkscape:window-height="422"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5766">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-213.739,-627.1025)">
+    <g
+       transform="matrix(1.25,0,0,-1.25,-5310.2285,5867.47)"
+       id="g976">
+      <g
+         id="g978"
+         clip-path="url(#clipPath980)">
+        <g
+           id="g984">
+          <g
+             id="g986" />
+          <g
+             id="g1002">
+            <g
+               clip-path="url(#clipPath988)"
+               id="g1004">
+              <g
+                 id="g1006">
+                <g
+                   clip-path="url(#clipPath992)"
+                   id="g1008">
+                  <g
+                     id="g1010">
+                    <g
+                       id="g1012">
+                      <path
+                         inkscape:connector-curvature="0"
+                         d="m 4712.234,4196.518 c 0,4.452 -89.886,8.064 -155.941,8.064 -66.06,0 -161.105,-3.612 -161.105,-8.064 0,-4.455 87.872,-8.068 153.933,-8.068 66.055,0 163.113,3.613 163.113,8.068"
+                         style="fill:url(#radialGradient996);stroke:none"
+                         id="path1014" />
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

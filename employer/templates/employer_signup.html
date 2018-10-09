@@ -1,0 +1,165 @@
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load utils_forms %}
+
+<div>
+  <div class="row">
+    <div class="large-12  columns"> 
+
+      <div class="row text-color-blue text-bold" style="border-radius: 15px; border: 1px solid #58c1c9; margin-top:20px; padding:1rem 1rem; margin-bottom:20px;">
+        <div class="row">
+          <div class="columns large-4">
+            <span class="left" style="color: #f04d40;">{% trans "Datos del usuario" %}</span>
+          </div>
+          <div class="columns large-4 ">
+            <span class="text-middle" style="color: #58c1c9;">{% trans "Datos de la empresa" %}</span>
+          </div>
+          <div class="columns large-4">
+            <span class="right" style="color: #d2d4d5;">{% trans "Datos del contacto" %}</span>
+          </div>
+        </div>
+      </div>
+
+      <form style="margin-bottom:60px;" ng-submit="signup(employerSignupForm)" name="employerSignupForm" class="employer-signup-form">
+
+        {% csrf_token %}
+        <div class="row text-color-blue" 
+             style="border-radius: 15px; border: 1px solid #58c1c9; margin-top:20px; padding:1rem 1rem; margin-bottom:20px;">   
+          <div class="row">
+            <div class="large-12 columns">
+              {{ form.non_field_errors }}
+            </div>
+          </div>
+          <div class="row text-color-blue" style="border-radius: 15px; background-color: #58c1c9; margin-top:10px; padding:0.5rem 0.5rem; margin-bottom:10px; width: 100%; margin-left: auto; margin-right: auto;">
+            <div class="large-12 columns">
+              <h5 style="color: white;">{% trans "Registrar empresa" %}</h5>
+            </div>
+            {% placeholder_based_field form.email %}
+            {% placeholder_based_field form.password1 %}
+            {% placeholder_based_field form.password2 %}
+          </div>
+
+          <div class="large-12 columns" style="margin-top:20px; margin-bottom:20px;">
+            <h5 class="text-color-blue">{% trans "Datos de la empresa" %}</h5>
+          </div>
+
+          <div lass="row">
+            {% placeholder_based_field form.name_company %}
+            {% placeholder_based_field form.razon_social %}
+            {% placeholder_based_field form.responsability_iva %}
+          </div>
+
+          <div lass="row">
+            <div class="large-4 columns" style="margin-top:10px; margin-bottom:10px;">
+              <geo-field
+                required="true"
+                name="geo-data"
+                placeholder="{% trans "Dirección de la empresa" %}"
+                ng-model="employerGeoData"></geo-field>
+              <ul class="djng-field-errors" ng-show="employerSignupForm['geo-data'].$dirty">
+               <li
+                 ng-show="employerSignupForm['geo-data'].$error.required"
+                 class="invalid">{% trans "Este campo es requerido." %}
+               </li> 
+              </ul>
+            </div>
+            {% placeholder_based_field form.sector_empresarial %}
+            {% placeholder_based_field form.workforce %}
+          </div>
+
+          <div class="large-12 columns" style="margin-top:25px; margin-bottom:10px;">
+            <h5 class="text-color-blue">{% trans "Tipo de empresa" %}</h5>
+          </div>
+
+          <div class="row">
+            <div class="large-2 columns" style="margin-top:10px; margin-bottom:10px;">
+              <p style="color:#655D5D; padding:0 0rem;" align="center">{% trans "Tipología" %}</p>
+            </div>                
+            <div class="large-6 columns left" style="margin-top:10px; margin-bottom:10px;">
+              {% render_field form.tipology %}
+              {{ form.tipology.errors }}
+            </div>                            
+          </div>
+          <div class="row">
+            <div class="large-2 columns" style="margin-top:25px; margin-bottom:25px;">
+              <p style="color:#655D5D;  padding:0 0rem;" align="center">{% trans " Descripción <br> de la empresa" %}</p>
+            </div>   
+            <div class="large-7 columns left" style="margin-top:10px; margin-bottom:10px;">
+              {% render_field form.description class="radius shadow-input"  %}
+              <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+              {{ form.description.errors }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-2 columns" style="margin-top:25px; margin-bottom:25px;">
+              <p style="color:#655D5D;  padding:0 0rem;" align="center">{% trans " Sitio web" %}</p>
+            </div>   
+            <div class="large-4 columns left" style="margin-top:10px; margin-bottom:10px;">
+              {% render_field form.website class="radius shadow-input"  %}
+              <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+              {{ form.website.errors }}
+            </div>
+          </div>
+<!--          <div class="row">
+            <div class="large-2 columns" style="margin-top:25px; margin-bottom:25px;">
+              <p style="color:#655D5D;  padding:0 0rem;" align="center">{% trans " Logo de la <br> empresa" %}</p>
+            </div>   
+            <div class="large-4 columns left" style="margin-top:10px; margin-bottom:10px;">
+              {% render_field form.logo class="radius shadow-input"  %}
+              {{ form.logo.errors }}
+              <p style="color:#655D5D;">{% trans "Formato JPG/GIF - Peso máximo 1MB" %}</p>
+            </div>
+          </div>
+-->
+          <div class="large-12 columns" style="margin-top:20px; margin-bottom:20px;">
+            <h5 class="text-color-blue">{% trans "Datos de la persona de contacto" %}</h5>
+          </div>
+
+          <div class="row">
+            {% placeholder_based_field form.first_name %}
+            {% placeholder_based_field form.last_name %}
+            {% placeholder_based_field form.position %}
+          </div>
+
+          <div class="row">
+            {% standar_field form.gender %}
+            {% placeholder_based_field form.phone_number %}
+            {% placeholder_based_field form.mobile_number %}
+          </div>
+
+          <div class="row">
+            <div class="large-4 columns" align="center" style="margin-top:10px; margin-bottom:10px; margin-right:10px">
+              <h5 class="text-color-blue">{% trans "¿A través de que medio nos conocio?" %}</h5>
+            </div>
+            {% placeholder_based_field form.reference %}
+          </div>
+          <div class="row">
+            <div class="large-1 columns" align="center" style="margin-top:10px; margin-bottom:10px;">
+              {% render_field form.newsletter class="radius shadow-input"  %}
+              {{ form.newsletter.errors }}
+            </div>
+            <div class="large-5 columns left" style="margin-top:10px; margin-bottom:10px;">
+              <h5 class="text-color-blue">{% trans "Deseo suscribirme al newsletter de RoleJobs." %}</h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-1 columns" align="center" style="margin-top:10px; margin-bottom:10px;">
+              {% render_field form.terms_conditions class="radius shadow-input"  %}
+              {{ form.terms_conditions.errors }}
+            </div>
+            <div class="large-5 columns left" style="margin-top:10px; margin-bottom:10px;">
+              <h5><span class="text-color-blue">{% trans " Acepto "  %}</span> <span class="text-color-red">{% trans " términos y condiciones"  %}</span></h5>
+            </div>
+          </div>
+
+          <div class="row text-middle"  style="margin-bottom:-30px;" align="center">
+            <input style="font-family: DosisSemiBold; color: white; font-size: 100%; margin-bottom:-30px; border-radius: 5px;" class="button radius tiny alert small" type="submit" value="{% trans " REGISTRARSE" %}">
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

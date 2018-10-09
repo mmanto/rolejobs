@@ -1,0 +1,280 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls %}
+{% load sanitizer %}
+{% load widget_tweaks %}
+
+{% block bodyclass %}{{ block.super }} app-{{ opts.app_label }} model-{{ opts.model_name }} job-moderation{% endblock %}
+
+{% block extrahead %}
+  <style type="text/css">
+
+    #content {
+      display: flex;
+      display: -moz-flex;
+      display: -webkit-flex;
+    }
+
+    #content-main {
+      flex: 1;
+      padding: 20px;
+    }
+
+    #content-related {
+      width: 400px;
+      margin-right: 0px;
+      padding: 10px;
+    }
+
+    ul.data, ul.inline-list {
+      padding: 0;
+      margin: 0;
+    }
+
+    ul.data li, ul.inline-list li {
+      list-style-type:none; 
+    }
+
+    ul.data label {
+      font-weight: bold;
+    }
+
+    ul.inline-list li {
+      display: inline-block;
+      width: 30%;
+      text-align: center;
+    }
+
+    .moderation-form-container label {
+      font-weight: bold;
+      display: block;
+    }
+
+    .moderation-form-container select,
+    .moderation-form-container input,
+    .moderation-form-container textarea {
+      width: 100%;
+    }
+
+
+
+  </style>
+{% endblock %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block breadcrumbs %}
+  <div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+    &rsaquo; <a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a>
+    &rsaquo; <a href="{% url opts|admin_urlname:'changelist' %}">{{ opts.verbose_name_plural|capfirst|escape }}</a>
+    &rsaquo; {% trans 'Moderate' %}
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div id="content-main">
+    <h1>Moderar: {{ job.title }}</h1>
+    <div class="meta">
+      <h1>Información</h1>
+      <ul class="data">
+        <li>
+          <label>Owner:</label>
+          <span>{{ job.owner }}</span>
+        </li>
+        <li>
+          <label>Rol:</label>
+          <span>{{ job.role }}</span>
+        </li>
+        <li>
+          <label>Posición:</label>
+          <span>{{ job.position }}</span>
+        </li>
+        <li>
+          <label>Jerarquía:</label>
+          <span>{{ job.hierarchy }}</span>
+        </li>
+       <li>
+          <label>Rama:</label>
+          <span>{{ job.branch_activity }}</span>
+        </li>
+       <li>
+          <label>Area:</label>
+          <span>{{ job.area }}</span>
+        </li>
+       <li>
+          <label>Subarea:</label>
+          <span>{{ job.subarea }}</span>
+       </li>
+       <li>
+          <label>Tipo:</label>
+          <span>{{ job.job_type_text }}</span>
+       </li>
+       <li>
+          <label>Duración:</label>
+          <span>{{ job.duration_of_publishing }}</span>
+       </li>
+       <li>
+          <label>Creado:</label>
+          <span>{{ job.created }}</span>
+       </li>
+       <li>
+          <label>Última vez actualizado:</label>
+          <span>{{ job.updated }}</span>
+       </li>
+      </ul>
+    </div>
+    <div class="options">
+      <h1>Opciones</h1>
+      <ul class="data">
+        <li>
+            <label>Destacado:</label>
+            <span>{{ job.featured | yesno }}</span>
+        </li>
+        <li>
+          <label>Postulantes discapacitados?</label>
+          <span>{{ job.handicapped_postulant | yesno }}
+        </li>
+        <li>
+          <label>Mostrar la dirección?</label>
+          <span>{{ job.show_address | yesno }}
+        </li>
+      </ul> 
+    </div>
+
+    <div class="roles">
+      <h1>Roles</h1>
+      <ul class="inline-list">
+        {% for role in job.roles.all %}
+          <li>{{ role }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="description">
+      <h1>Descripción</h1>
+      {% autoescape off %}
+      {% escape_html job.description "h1, h2, h3, h4, h5 p, s, b, div, br, ul, li" %}
+      {% endautoescape %}
+    </div>
+
+    <div class="Requisitos">
+      <h1>Educación requerida</h1>
+      <div class="education-requirement">
+        {{ job.education_requirement }}  
+      </div>
+
+      <h1>Requisitos varios</h1>
+      <ul class="requirements">
+        {% for requirement in job.requirements.all %}
+        <li>
+          <span>{{ requirement }}</span>
+        </li>
+        {% endfor %}
+      </ul> 
+      
+      <h1>Idiomas requeridos</h1>
+      <ul class="language-requirements">
+        {% for requirement in job.language_requirements.all %}
+        <li>
+          <span>{{ requirement }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <h1>Conocimientos requeridos</h1>
+      <ul class="knowledge-requirements">
+        {% for requirement in job.knowledge_requirements.all %}
+        <li>
+          <span>{{ requirement }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+
+    </div>
+
+    <div class="questions">
+      <h1>Preguntas</h1>
+      <ul>
+        {% for question in job.questions.all %}
+          <li>
+            <span>{{ question }}</span>
+            <ul class="data">
+              <li>
+                <label>Requerida:</label>
+                <span>{{ question.is_required | yesno }}
+              </li>
+              <li>
+                <label>Tipo:</label>
+                <span>{{ question.type_text }}
+              </li>
+              {% if question.options.all %}
+              <li>
+                <label>Opciones:</label>
+                <span>
+                  <ul>
+                  {% for option in question.options.all %}
+                    <li> 
+                      {{ option }}
+                      {% if option.is_correct %}(Correcta){% endif %}
+                    </li>
+                  {% endfor %}
+                  </ul>
+                </span>
+              </li>
+              {% endif %}
+            </ul>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block sidebar %}
+  <div id="content-related">  
+    <h2>Acerca del employer</h2>
+    <div class="employer-info">
+      <h2>{{ job.owner }}</h2>
+      <ul class="data">
+        <li>
+          <label>Razón social:</label>
+          <span>{{ job.owner.razon_social }}</span>
+        </li>
+        <li>
+          <label>Sector empresarial:</label>
+          <span>{{ job.owner.sector_empresarial }}</span>
+        </li>
+
+      </ul>
+    </div>
+
+    <h2>Historial de moderación</h2>
+    <ul>
+      {% for hist in job.moderation_history.all %}
+      <li>
+        <strong>{{ hist.action_date }}</strong>
+        <span>{{ hist }}</span>
+        {% if hist.reason %}
+        <div class="reason">
+          {{ hist.reason }}
+        </div>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+
+    <h2>Moderar</h2>
+    <div class="moderation-form-container">
+     <form action="?" method="post">
+        {% csrf_token %}
+        {{ moderation_form.as_p }}
+        {{ moderation_form.non_field_errors }}
+        <p>
+          <input type="submit" value="Cambiar estado">
+        </p>
+      </form>
+    </div>
+
+  </div>
+{% endblock %}

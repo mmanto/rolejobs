@@ -1,0 +1,57 @@
+
+.rj-table {
+    display: block;
+    margin: 20px;
+
+    .row {
+        display: -moz-flex;
+        display: -webkit-flex;
+        display: flex;
+        width: 100%;
+        padding: 10px 0px;
+        border-bottom: 2px solid $gris1;
+        margin: 0px;
+
+        &.header .rj-table-field {
+            font-family: DosisBold;
+            font-size: 1.3em;
+            color: $verde;
+
+            &.sortable .content {
+                background-image: url(/static/img/sortable.png);
+                background-repeat: no-repeat;
+                background-position: 0px 5px;
+                padding-left: 15px; 
+            }
+
+        }
+
+    }
+
+    .rj-table-field {
+        font-family: DosisRegular;
+        font-size: 1em;
+        color: $gris3;
+        padding: 0px 5px;
+
+        /*flex: 1;
+        -moz-flex: 1;
+        -webkit-flex: 1;*/
+
+        &.actions-button-box a {
+            color: $verde;
+        }
+
+    }
+
+    &.compact {
+
+        margin: 0px 5px;
+   
+        .row {
+            padding: 0px 0px;
+        }
+    
+    }
+
+}

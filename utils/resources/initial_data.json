@@ -1,0 +1,2775 @@
+[
+    {
+        "fields": {
+            "name": "Inicial"
+        }, 
+        "model": "postulant.languagelevel", 
+        "pk": 1
+    }, 
+    {
+        "fields": {
+            "name": "Intermedio"
+        }, 
+        "model": "postulant.languagelevel", 
+        "pk": 2
+    },
+    {
+        "fields": {
+            "name": "Avanzado"
+        }, 
+        "model": "postulant.languagelevel", 
+        "pk": 3
+    },    
+    {
+        "fields": {
+            "description": "", 
+            "name": "Salud, Medicina y Farmacia"
+        }, 
+        "model": "postulant.area", 
+        "pk": 1
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name": "Gastronomía y Turismo"
+        }, 
+        "model": "postulant.area", 
+        "pk": 2
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name": "Oficios y Otros"
+        }, 
+        "model": "postulant.area", 
+        "pk": 3
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name": "Administración, Contabilidad y Finanzas"
+        }, 
+        "model": "postulant.area", 
+        "pk": 4
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name": "Comercial, Ventas y Negocios"
+        }, 
+        "model": "postulant.area", 
+        "pk": 5
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name": "Aduana y Comercio Exterior"
+        }, 
+        "model": "postulant.area", 
+        "pk": 6
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name": "Ingeniería Civil y Construcción"
+        }, 
+        "model": "postulant.area", 
+        "pk": 7
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name": "Abastecimiento y Logística"
+        }, 
+        "model": "postulant.area", 
+        "pk": 8
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name": "Tecnología, Sistemas y Telecomunicaciones"
+        }, 
+        "model": "postulant.area", 
+        "pk": 9
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name": "Diseño"
+        }, 
+        "model": "postulant.area", 
+        "pk": 10
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name": "Seguros"
+        }, 
+        "model": "postulant.area", 
+        "pk": 11
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name": "Minería, Petróleo y Gas"
+        }, 
+        "model": "postulant.area", 
+        "pk": 12
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name": "Ingenierías"
+        }, 
+        "model": "postulant.area", 
+        "pk": 13
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name": "Producción y Manufactura"
+        }, 
+        "model": "postulant.area", 
+        "pk": 14
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name": "Gerencia y Dirección General"
+        }, 
+        "model": "postulant.area", 
+        "pk": 15
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name": "Marketing y Publicidad"
+        }, 
+        "model": "postulant.area", 
+        "pk": 16
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name": "Comunicación, Relaciones Institucionales y Públicas"
+        }, 
+        "model": "postulant.area", 
+        "pk": 17
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name": "Recursos Humanos y Capacitación"
+        }, 
+        "model": "postulant.area", 
+        "pk": 18
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name": "Atención al Cliente, Call Center y Telemarketing"
+        }, 
+        "model": "postulant.area", 
+        "pk": 19
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name": "Secretarias y Recepción"
+        }, 
+        "model": "postulant.area", 
+        "pk": 20
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name": "Educación, Docencia e Investigación"
+        }, 
+        "model": "postulant.area", 
+        "pk": 21
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name": "Legales"
+        }, 
+        "model": "postulant.area", 
+        "pk": 22
+    },
+
+    {
+        "fields": {
+            "area": 1, 
+            "description": "", 
+            "name": "Farmacéutica"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 2
+    }, 
+    {
+        "fields": {
+            "area": 1, 
+            "description": "", 
+            "name": "Bioquímica"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 3
+    }, 
+    {
+        "fields": {
+            "area": 1, 
+            "description": "", 
+            "name": "Química"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 4
+    }, 
+    {
+        "fields": {
+            "area": 1, 
+            "description": "", 
+            "name": "Laboratorio"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 5
+    }, 
+    {
+        "fields": {
+            "area": 1, 
+            "description": "", 
+            "name": "Salud"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 6
+    }, 
+    {
+        "fields": {
+            "area": 1, 
+            "description": "", 
+            "name": "Medicina"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 7
+    }, 
+    {
+        "fields": {
+            "area": 1, 
+            "description": "", 
+            "name": "Veterinaria"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 8
+    }, 
+    {
+        "fields": {
+            "area": 2, 
+            "description": "", 
+            "name": "Hotelería"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 10
+    }, 
+    {
+        "fields": {
+            "area": 2, 
+            "description": "", 
+            "name": "Gastronomia"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 11
+    }, 
+    {
+        "fields": {
+            "area": 2, 
+            "description": "", 
+            "name": "Turismo"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 12
+    }, 
+    {
+        "fields": {
+            "area": 2, 
+            "description": "", 
+            "name": "Casinos"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 13
+    }, 
+    {
+        "fields": {
+            "area": 2, 
+            "description": "", 
+            "name": "Camareros"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 14
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name": "Transporte"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 16
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name": "Prácticas Profesionales"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 17
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name": "Pasantía / Trainee"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 18
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name": "Jóvenes Profesionales"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 19
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name": "Promotoras/es"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 20
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name": "Servicios"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 21
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name": "Traduccion"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 22
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name": "Trabajo Social"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 23
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name": "Oficios y Profesiones"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 24
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name": "Otros"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 25
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name": "Independientes"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 26
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name": "Planeamiento"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 27
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name": "Back Office"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 28
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name": "Arte y Cultura"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 29
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name": "Caja"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 30
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name": "Estética y Cuidado Personal"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 31
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name": "Seguridad"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 32
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name": "Cadetería"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 33
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name": "Mantenimiento y Limpieza"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 34
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name": "Planeamiento económico-financiero"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 36
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name": "Administración"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 37
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name": "Facturación"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 38
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name": "Auditoría"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 39
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name": "Tesorería"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 40
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name": "Finanzas"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 41
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name": "Evaluación Económica"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 42
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name": "Control de Gestión"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 43
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name": "Finanzas Internacionales"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 44
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name": "Impuestos"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 45
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name": "Organización y Métodos"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 46
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name": "Créditos y Cobranzas"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 47
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name": "Inversiones / Proyectos de Inversión"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 48
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name": "Contabilidad"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 49
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name": "Consultoria"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 50
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name": "Cuentas Corrientes"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 51
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name": "Análisis de Riesgos"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 52
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name": "Corporate Finance / Banca Inversión"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 53
+    }, 
+    {
+        "fields": {
+            "area": 5, 
+            "description": "", 
+            "name": "Planeamiento comercial"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 55
+    }, 
+    {
+        "fields": {
+            "area": 5, 
+            "description": "", 
+            "name": "Desarrollo de Negocios"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 56
+    }, 
+    {
+        "fields": {
+            "area": 5, 
+            "description": "", 
+            "name": "Ventas"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 57
+    }, 
+    {
+        "fields": {
+            "area": 5, 
+            "description": "", 
+            "name": "Comercial"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 58
+    }, 
+    {
+        "fields": {
+            "area": 5, 
+            "description": "", 
+            "name": "Comercio Exterior"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 59
+    }, 
+    {
+        "fields": {
+            "area": 5, 
+            "description": "", 
+            "name": "Negocios Internacionales"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 60
+    }, 
+    {
+        "fields": {
+            "area": 6, 
+            "description": "", 
+            "name": "Ventas Internacionales/Exportación"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 62
+    }, 
+    {
+        "fields": {
+            "area": 6, 
+            "description": "", 
+            "name": "Apoderado Aduanal"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 63
+    }, 
+    {
+        "fields": {
+            "area": 6, 
+            "description": "", 
+            "name": "Consultorías Comercio Exterior"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 64
+    }, 
+    {
+        "fields": {
+            "area": 6, 
+            "description": "", 
+            "name": "Compras Internacionales/Importación"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 65
+    }, 
+    {
+        "fields": {
+            "area": 7, 
+            "description": "", 
+            "name": "Topografía"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 67
+    }, 
+    {
+        "fields": {
+            "area": 7, 
+            "description": "", 
+            "name": "Arquitectura"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 68
+    }, 
+    {
+        "fields": {
+            "area": 7, 
+            "description": "", 
+            "name": "Ingeniería Civil"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 69
+    }, 
+    {
+        "fields": {
+            "area": 7, 
+            "description": "", 
+            "name": "Construcción"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 70
+    }, 
+    {
+        "fields": {
+            "area": 7, 
+            "description": "", 
+            "name": "Urbanismo"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 71
+    }, 
+    {
+        "fields": {
+            "area": 7, 
+            "description": "", 
+            "name": "Instrumentación"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 72
+    }, 
+    {
+        "fields": {
+            "area": 7, 
+            "description": "", 
+            "name": "Operaciones"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 73
+    }, 
+    {
+        "fields": {
+            "area": 7, 
+            "description": "", 
+            "name": "Dirección de Obra"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 74
+    }, 
+    {
+        "fields": {
+            "area": 7, 
+            "description": "", 
+            "name": "Seguridad e Higiene"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 75
+    }, 
+    {
+        "fields": {
+            "area": 8, 
+            "description": "", 
+            "name": "Compras"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 77
+    }, 
+    {
+        "fields": {
+            "area": 8, 
+            "description": "", 
+            "name": "Asistente de Tráfico"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 78
+    }, 
+    {
+        "fields": {
+            "area": 8, 
+            "description": "", 
+            "name": "Transporte"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 79
+    }, 
+    {
+        "fields": {
+            "area": 8, 
+            "description": "", 
+            "name": "Distribución"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 80
+    }, 
+    {
+        "fields": {
+            "area": 8, 
+            "description": "", 
+            "name": "Abastecimiento"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 81
+    }, 
+    {
+        "fields": {
+            "area": 8, 
+            "description": "", 
+            "name": "Almacén / Depósito / Expedición"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 82
+    }, 
+    {
+        "fields": {
+            "area": 8, 
+            "description": "", 
+            "name": "Logística"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 83
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name": "Liderazgo de Proyecto"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 85
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name": "Infraestructura"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 86
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name": "Tecnologia / Sistemas"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 87
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name": "Redes"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 88
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name": "Data Entry"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 89
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name": "Administración de Base de Datos"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 90
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name": "Soporte Técnico"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 91
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name": "Internet"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 92
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name": "Data Warehousing"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 93
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name": "Seguridad Informática"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 94
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name": "Análisis Funcional"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 95
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name": "Testing / QA / QC"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 96
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name": "Telecomunicaciones"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 97
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name": "Programación"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 98
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name": "Tecnologías de la Información"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 99
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name": "Sistemas"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 100
+    }, 
+    {
+        "fields": {
+            "area": 10, 
+            "description": "", 
+            "name": "Diseño de Interiores / Decoración"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 102
+    }, 
+    {
+        "fields": {
+            "area": 10, 
+            "description": "", 
+            "name": "Diseño Web"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 103
+    }, 
+    {
+        "fields": {
+            "area": 10, 
+            "description": "", 
+            "name": "Diseño Multimedia"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 104
+    }, 
+    {
+        "fields": {
+            "area": 10, 
+            "description": "", 
+            "name": "Diseño Gráfico"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 105
+    }, 
+    {
+        "fields": {
+            "area": 10, 
+            "description": "", 
+            "name": "Diseño Textil e Indumentaria"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 106
+    }, 
+    {
+        "fields": {
+            "area": 10, 
+            "description": "", 
+            "name": "Diseño"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 107
+    }, 
+    {
+        "fields": {
+            "area": 10, 
+            "description": "", 
+            "name": "Diseño Industrial"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 108
+    }, 
+    {
+        "fields": {
+            "area": 11, 
+            "description": "", 
+            "name": "Venta de Seguros"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 110
+    }, 
+    {
+        "fields": {
+            "area": 11, 
+            "description": "", 
+            "name": "Auditoría de Seguros"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 111
+    }, 
+    {
+        "fields": {
+            "area": 11, 
+            "description": "", 
+            "name": "Administración de Seguros"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 112
+    }, 
+    {
+        "fields": {
+            "area": 11, 
+            "description": "", 
+            "name": "Tecnico de Seguros"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 113
+    }, 
+    {
+        "fields": {
+            "area": 11, 
+            "description": "", 
+            "name": "Seguros"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 114
+    }, 
+    {
+        "fields": {
+            "area": 12, 
+            "description": "", 
+            "name": "Ingeniería en Petróleo y Petroquímica"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 116
+    }, 
+    {
+        "fields": {
+            "area": 12, 
+            "description": "", 
+            "name": "Ingeniería en Minas"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 117
+    }, 
+    {
+        "fields": {
+            "area": 12, 
+            "description": "", 
+            "name": "Seguridad Industrial"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 118
+    }, 
+    {
+        "fields": {
+            "area": 12, 
+            "description": "", 
+            "name": "Medio Ambiente"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 119
+    }, 
+    {
+        "fields": {
+            "area": 12, 
+            "description": "", 
+            "name": "Exploración Minera y Petroquimica"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 120
+    }, 
+    {
+        "fields": {
+            "area": 12, 
+            "description": "", 
+            "name": "Ingeniería Geológica"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 121
+    }, 
+    {
+        "fields": {
+            "area": 12, 
+            "description": "", 
+            "name": "Instrumentación Minera"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 122
+    }, 
+    {
+        "fields": {
+            "area": 12, 
+            "description": "", 
+            "name": "Mineria/Petroleo/Gas"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 123
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name": "Ingeniería en Alimentos"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 125
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name": "Ingeniería Agrónoma"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 126
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name": "Ingeniería de Procesos"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 127
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name": "Ingeniería Metalurgica"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 128
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name": "Ingeniería Textil"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 129
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name": "Ingeniería de Producto"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 130
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name": "Ingeniería Industrial"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 131
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name": "Ingeniería Electromecánica"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 132
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name": "Ingeniería Eléctrica y Electrónica"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 133
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name": "Ingeniería de Ventas"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 134
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name": "Ingeniería Química"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 135
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name": "Ingeniería Mecánica"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 136
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name": "Ingeniería Automotriz"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 137
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name": "Otras Ingenierias"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 138
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name": "Ingeniería Oficina Técnica / Proyecto"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 139
+    }, 
+    {
+        "fields": {
+            "area": 14, 
+            "description": "", 
+            "name": "Calidad"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 141
+    }, 
+    {
+        "fields": {
+            "area": 14, 
+            "description": "", 
+            "name": "Mantenimiento"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 142
+    }, 
+    {
+        "fields": {
+            "area": 14, 
+            "description": "", 
+            "name": "Programación de producción"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 143
+    }, 
+    {
+        "fields": {
+            "area": 14, 
+            "description": "", 
+            "name": "Producción"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 144
+    }, 
+    {
+        "fields": {
+            "area": 15, 
+            "description": "", 
+            "name": "Dirección"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 146
+    }, 
+    {
+        "fields": {
+            "area": 15, 
+            "description": "", 
+            "name": "Gerencia / Dirección General"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 147
+    }, 
+    {
+        "fields": {
+            "area": 16, 
+            "description": "", 
+            "name": "Producto"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 149
+    }, 
+    {
+        "fields": {
+            "area": 16, 
+            "description": "", 
+            "name": "E-commerce"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 150
+    }, 
+    {
+        "fields": {
+            "area": 16, 
+            "description": "", 
+            "name": "Media Planning"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 151
+    }, 
+    {
+        "fields": {
+            "area": 16, 
+            "description": "", 
+            "name": "Business Intelligence"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 152
+    }, 
+    {
+        "fields": {
+            "area": 16, 
+            "description": "", 
+            "name": "Multimedia"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 153
+    }, 
+    {
+        "fields": {
+            "area": 16, 
+            "description": "", 
+            "name": "Community Management"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 154
+    }, 
+    {
+        "fields": {
+            "area": 16, 
+            "description": "", 
+            "name": "Creatividad"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 155
+    }, 
+    {
+        "fields": {
+            "area": 16, 
+            "description": "", 
+            "name": "Marketing"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 156
+    }, 
+    {
+        "fields": {
+            "area": 16, 
+            "description": "", 
+            "name": "Mercadotecnia Internacional"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 157
+    }, 
+    {
+        "fields": {
+            "area": 17, 
+            "description": "", 
+            "name": "Periodismo"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 159
+    }, 
+    {
+        "fields": {
+            "area": 17, 
+            "description": "", 
+            "name": "Comunicaciones Internas"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 160
+    }, 
+    {
+        "fields": {
+            "area": 17, 
+            "description": "", 
+            "name": "Comunicacion"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 161
+    }, 
+    {
+        "fields": {
+            "area": 17, 
+            "description": "", 
+            "name": "Relaciones Institucionales/Publicas"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 162
+    }, 
+    {
+        "fields": {
+            "area": 17, 
+            "description": "", 
+            "name": "Responsabilidad Social"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 163
+    }, 
+    {
+        "fields": {
+            "area": 17, 
+            "description": "", 
+            "name": "Comunicaciones Externas"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 164
+    }, 
+    {
+        "fields": {
+            "area": 18, 
+            "description": "", 
+            "name": "Capacitación"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 166
+    }, 
+    {
+        "fields": {
+            "area": 18, 
+            "description": "", 
+            "name": "Recursos Humanos"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 167
+    }, 
+    {
+        "fields": {
+            "area": 18, 
+            "description": "", 
+            "name": "Administración de Personal"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 168
+    }, 
+    {
+        "fields": {
+            "area": 18, 
+            "description": "", 
+            "name": "Capacitación Comercio Exterior"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 169
+    }, 
+    {
+        "fields": {
+            "area": 18, 
+            "description": "", 
+            "name": "Compensación y Planilla"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 170
+    }, 
+    {
+        "fields": {
+            "area": 18, 
+            "description": "", 
+            "name": "Selección"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 171
+    }, 
+    {
+        "fields": {
+            "area": 19, 
+            "description": "", 
+            "name": "Telemarketing"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 173
+    }, 
+    {
+        "fields": {
+            "area": 19, 
+            "description": "", 
+            "name": "Atención al Cliente"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 174
+    }, 
+    {
+        "fields": {
+            "area": 20, 
+            "description": "", 
+            "name": "Asistente"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 176
+    }, 
+    {
+        "fields": {
+            "area": 20, 
+            "description": "", 
+            "name": "Secretaria"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 177
+    }, 
+    {
+        "fields": {
+            "area": 20, 
+            "description": "", 
+            "name": "Recepcionista"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 178
+    }, 
+    {
+        "fields": {
+            "area": 20, 
+            "description": "", 
+            "name": "Telefonista"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 179
+    }, 
+    {
+        "fields": {
+            "area": 21, 
+            "description": "", 
+            "name": "Investigación y Desarrollo"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 181
+    }, 
+    {
+        "fields": {
+            "area": 21, 
+            "description": "", 
+            "name": "Educación especial"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 182
+    }, 
+    {
+        "fields": {
+            "area": 21, 
+            "description": "", 
+            "name": "Bienestar Estudiantil"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 183
+    }, 
+    {
+        "fields": {
+            "area": 21, 
+            "description": "", 
+            "name": "Educación"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 184
+    }, 
+    {
+        "fields": {
+            "area": 21, 
+            "description": "", 
+            "name": "Idiomas"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 185
+    }, 
+    {
+        "fields": {
+            "area": 21, 
+            "description": "", 
+            "name": "Educación/ Docentes"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 186
+    }, 
+    {
+        "fields": {
+            "area": 22, 
+            "description": "", 
+            "name": "Legal"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 188
+    }, 
+    {
+        "fields": {
+            "area": 22, 
+            "description": "", 
+            "name": "Asesoria Legal Internacional"
+        }, 
+        "model": "postulant.subarea", 
+        "pk": 189
+    },
+
+
+
+    {
+        "fields": {
+            "name": "Gerencia"
+        }, 
+        "model": "postulant.position", 
+        "pk": 1
+    }, 
+    {
+        "fields": {
+            "name": "Alta Gerencia"
+        }, 
+        "model": "postulant.position", 
+        "pk": 2
+    }, 
+    {
+        "fields": {
+            "name": "Dirección"
+        }, 
+        "model": "postulant.position", 
+        "pk": 3
+    }, 
+    {
+        "fields": {
+            "name": "Jefe"
+        }, 
+        "model": "postulant.position", 
+        "pk": 4
+    }, 
+    {
+        "fields": {
+            "name": "Supervisor"
+        }, 
+        "model": "postulant.position", 
+        "pk": 5
+    }, 
+    {
+        "fields": {
+            "name": "Responsable"
+        }, 
+        "model": "postulant.position", 
+        "pk": 6
+    }, 
+    {
+        "fields": {
+            "name": "Senior"
+        }, 
+        "model": "postulant.jerarquia", 
+        "pk": 1
+    }, 
+    {
+        "fields": {
+            "name": "Semi Senior"
+        }, 
+        "model": "postulant.jerarquia", 
+        "pk": 2
+    }, 
+    {
+        "fields": {
+            "name": "Junior"
+        }, 
+        "model": "postulant.jerarquia", 
+        "pk": 3
+    }, 
+    {
+        "fields": {
+            "name": "Training"
+        }, 
+        "model": "postulant.jerarquia", 
+        "pk": 4
+    }, 
+    {
+        "fields": {
+            "name": "Otro"
+        }, 
+        "model": "postulant.jerarquia", 
+        "pk": 5
+    },
+    {
+        "fields": {
+            "name": "Abogado"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 1
+    }, 
+    {
+        "fields": {
+            "name": "Abogado Independiente"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 2
+    }, 
+    {
+        "fields": {
+            "name": "Administrador"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 3
+    }, 
+    {
+        "fields": {
+            "name": "Administrativo"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 4
+    }, 
+    {
+        "fields": {
+            "name": "Agente"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 5
+    }, 
+    {
+        "fields": {
+            "name": "Ama de casa"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 6
+    }, 
+    {
+        "fields": {
+            "name": "Analista"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 7
+    }, 
+    {
+        "fields": {
+            "name": "Asesor"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 8
+    }, 
+    {
+        "fields": {
+            "name": "Asistente"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 9
+    }, 
+    {
+        "fields": {
+            "name": "Asociado"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 10
+    }, 
+    {
+        "fields": {
+            "name": "Auditor"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 11
+    }, 
+    {
+        "fields": {
+            "name": "Auxiliar"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 12
+    }, 
+    {
+        "fields": {
+            "name": "Ayudante"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 13
+    }, 
+    {
+        "fields": {
+            "name": "Becario"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 14
+    }, 
+    {
+        "fields": {
+            "name": "Cajero"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 15
+    }, 
+    {
+        "fields": {
+            "name": "Cobrador"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 16
+    }, 
+    {
+        "fields": {
+            "name": "Comercial"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 17
+    }, 
+    {
+        "fields": {
+            "name": "Consultor/Asesor"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 18
+    }, 
+    {
+        "fields": {
+            "name": "Contador"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 19
+    }, 
+    {
+        "fields": {
+            "name": "Contralor"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 20
+    }, 
+    {
+        "fields": {
+            "name": "Coordinador"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 21
+    }, 
+    {
+        "fields": {
+            "name": "Desarrollador"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 22
+    }, 
+    {
+        "fields": {
+            "name": "Director"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 23
+    }, 
+    {
+        "fields": {
+            "name": "Diseñador"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 24
+    }, 
+    {
+        "fields": {
+            "name": "Docente"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 25
+    }, 
+    {
+        "fields": {
+            "name": "Dueño"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 26
+    }, 
+    {
+        "fields": {
+            "name": "Ejecutivo Cuenta"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 27
+    }, 
+    {
+        "fields": {
+            "name": "Ejecutivo Junior"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 28
+    }, 
+    {
+        "fields": {
+            "name": "Ejecutivo Senior"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 29
+    }, 
+    {
+        "fields": {
+            "name": "Encargado"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 30
+    }, 
+    {
+        "fields": {
+            "name": "Enfermero(a)"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 31
+    }, 
+    {
+        "fields": {
+            "name": "Especialista"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 32
+    }, 
+    {
+        "fields": {
+            "name": "Estudiante"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 33
+    }, 
+    {
+        "fields": {
+            "name": "Estudiante de Posgrado"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 34
+    }, 
+    {
+        "fields": {
+            "name": "Estudiante para tesis"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 35
+    }, 
+    {
+        "fields": {
+            "name": "Gerente"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 36
+    }, 
+    {
+        "fields": {
+            "name": "Gerente/Director de Área"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 37
+    }, 
+    {
+        "fields": {
+            "name": "Gerente/Director de División"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 38
+    }, 
+    {
+        "fields": {
+            "name": "Gerente/Director General"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 39
+    }, 
+    {
+        "fields": {
+            "name": "Indiferente"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 40
+    }, 
+    {
+        "fields": {
+            "name": "Ingeniero"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 41
+    }, 
+    {
+        "fields": {
+            "name": "Inspector"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 42
+    }, 
+    {
+        "fields": {
+            "name": "Jefe Área/Sección/Depto./Local"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 43
+    }, 
+    {
+        "fields": {
+            "name": "Líder de Proyecto"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 44
+    }, 
+    {
+        "fields": {
+            "name": "Maestro de cocina"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 45
+    }, 
+    {
+        "fields": {
+            "name": "Médico"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 46
+    }, 
+    {
+        "fields": {
+            "name": "Miembro de Directorio"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 47
+    }, 
+    {
+        "fields": {
+            "name": "Notario"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 48
+    }, 
+    {
+        "fields": {
+            "name": "Operario"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 49
+    }, 
+    {
+        "fields": {
+            "name": "Operativo"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 50
+    }, 
+    {
+        "fields": {
+            "name": "Otro Profesional"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 51
+    }, 
+    {
+        "fields": {
+            "name": "Planeador"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 52
+    }, 
+    {
+        "fields": {
+            "name": "Practica profesional"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 53
+    }, 
+    {
+        "fields": {
+            "name": "Presidente/Director Ejecutivo"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 54
+    }, 
+    {
+        "fields": {
+            "name": "Profesional Independiente"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 55
+    }, 
+    {
+        "fields": {
+            "name": "Profesor / Investigador"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 56
+    }, 
+    {
+        "fields": {
+            "name": "Promotor"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 57
+    }, 
+    {
+        "fields": {
+            "name": "Reponedor / Repositor"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 58
+    }, 
+    {
+        "fields": {
+            "name": "Representante"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 59
+    }, 
+    {
+        "fields": {
+            "name": "Secretaria"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 60
+    }, 
+    {
+        "fields": {
+            "name": "Seguridad / Vigilancia"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 61
+    }, 
+    {
+        "fields": {
+            "name": "Socio"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 62
+    }, 
+    {
+        "fields": {
+            "name": "Subgerente de Área"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 63
+    }, 
+    {
+        "fields": {
+            "name": "Subgerente/Subdirector General"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 64
+    }, 
+    {
+        "fields": {
+            "name": "Supervisor"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 65
+    }, 
+    {
+        "fields": {
+            "name": "Técnico"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 66
+    }, 
+    {
+        "fields": {
+            "name": "Técnico Superior Universitario"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 67
+    }, 
+    {
+        "fields": {
+            "name": "Tesorero"
+        }, 
+        "model": "postulant.titlerole", 
+        "pk": 68
+    },
+    {
+        "fields": {
+
+            "name": "AFJP"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 1
+    }, 
+    {
+        "fields": {
+
+            "name": "Agro-Industrial"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 2
+    }, 
+    {
+        "fields": {
+
+            "name": "Agropecuaria"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 3
+    }, 
+    {
+        "fields": {
+
+            "name": "Alimenticia"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 4
+    }, 
+    {
+        "fields": {
+
+            "name": "Arquitectura"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 5
+    }, 
+    {
+        "fields": {
+
+            "name": "Artesanal"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 6
+    }, 
+    {
+        "fields": {
+
+            "name": "Automotriz"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 7
+    }, 
+    {
+        "fields": {
+
+            "name": "Aérea"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 8
+    }, 
+    {
+        "fields": {
+
+            "name": "Banca / Financiera"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 9
+    }, 
+    {
+        "fields": {
+
+            "name": "Biotecnología"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 10
+    }, 
+    {
+        "fields": {
+
+            "name": "Comercio"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 11
+    }, 
+    {
+        "fields": {
+
+            "name": "Comercio Exterior"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 12
+    }, 
+    {
+        "fields": {
+
+            "name": "Construcción"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 13
+    }, 
+    {
+        "fields": {
+
+            "name": "Consultoría"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 14
+    }, 
+    {
+        "fields": {
+
+            "name": "Consumo masivo"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 15
+    }, 
+    {
+        "fields": {
+
+            "name": "Correo"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 16
+    }, 
+    {
+        "fields": {
+
+            "name": "Defensa"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 17
+    }, 
+    {
+        "fields": {
+
+            "name": "Diseño"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 18
+    }, 
+    {
+        "fields": {
+
+            "name": "Editorial"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 19
+    }, 
+    {
+        "fields": {
+
+            "name": "Educación"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 20
+    }, 
+    {
+        "fields": {
+
+            "name": "Energía"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 21
+    }, 
+    {
+        "fields": {
+
+            "name": "Entretenimiento"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 22
+    }, 
+    {
+        "fields": {
+
+            "name": "Farmacéutica"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 23
+    }, 
+    {
+        "fields": {
+
+            "name": "Financiera"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 24
+    }, 
+    {
+        "fields": {
+
+            "name": "Forestal"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 25
+    }, 
+    {
+        "fields": {
+
+            "name": "Ganadería"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 26
+    }, 
+    {
+        "fields": {
+
+            "name": "Gastronomía"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 27
+    }, 
+    {
+        "fields": {
+
+            "name": "Gobierno"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 28
+    }, 
+    {
+        "fields": {
+
+            "name": "Higiene y Perfumería"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 29
+    }, 
+    {
+        "fields": {
+
+            "name": "Holding"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 30
+    }, 
+    {
+        "fields": {
+
+            "name": "Hotelería"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 31
+    }, 
+    {
+        "fields": {
+
+            "name": "Imprenta"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 32
+    }, 
+    {
+        "fields": {
+
+            "name": "Información e Investigación"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 33
+    }, 
+    {
+        "fields": {
+
+            "name": "Informática / Tecnología"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 34
+    }, 
+    {
+        "fields": {
+
+            "name": "Inmobiliaria"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 35
+    }, 
+    {
+        "fields": {
+
+            "name": "Internet"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 36
+    }, 
+    {
+        "fields": {
+
+            "name": "Jurídica"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 37
+    }, 
+    {
+        "fields": {
+
+            "name": "Laboratorio"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 38
+    }, 
+    {
+        "fields": {
+
+            "name": "Manufactura"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 39
+    }, 
+    {
+        "fields": {
+
+            "name": "Medios"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 40
+    }, 
+    {
+        "fields": {
+
+            "name": "Minería / Petróleo / Gas"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 41
+    }, 
+    {
+        "fields": {
+
+            "name": "ONGs"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 42
+    }, 
+    {
+        "fields": {
+
+            "name": "Otra"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 43
+    }, 
+    {
+        "fields": {
+
+            "name": "Papelera"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 44
+    }, 
+    {
+        "fields": {
+
+            "name": "Pesca"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 45
+    }, 
+    {
+        "fields": {
+
+            "name": "Petroquímica"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 46
+    }, 
+    {
+        "fields": {
+
+            "name": "Plásticos"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 47
+    }, 
+    {
+        "fields": {
+
+            "name": "Publicidad / Marketing / RRPP"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 48
+    }, 
+    {
+        "fields": {
+
+            "name": "Química"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 49
+    }, 
+    {
+        "fields": {
+
+            "name": "Retail"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 50
+    }, 
+    {
+        "fields": {
+
+            "name": "Salud"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 51
+    }, 
+    {
+        "fields": {
+
+            "name": "Seguros"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 52
+    }, 
+    {
+        "fields": {
+
+            "name": "Servicios"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 53
+    }, 
+    {
+        "fields": {
+
+            "name": "Siderurgia"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 54
+    }, 
+    {
+        "fields": {
+
+            "name": "Supermercado / Hipermercado"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 55
+    }, 
+    {
+        "fields": {
+
+            "name": "Tabacalera"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 56
+    }, 
+    {
+        "fields": {
+
+            "name": "Telecomunicaciones"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 57
+    }, 
+    {
+        "fields": {
+
+            "name": "Textil"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 58
+    }, 
+    {
+        "fields": {
+
+            "name": "Transportadora"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 59
+    }, 
+    {
+        "fields": {
+
+            "name": "Transporte"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 60
+    }, 
+    {
+        "fields": {
+
+            "name": "Turismo"
+        }, 
+        "model": "postulant.branchactivity", 
+        "pk": 61
+    },
+    {
+        "fields": {
+            "name": "Español"
+        }, 
+        "model": "postulant.LanguageCountry", 
+        "pk": 1
+    },
+    {
+        "fields": {
+            "name": "Ingles"
+        }, 
+        "model": "postulant.LanguageCountry", 
+        "pk": 2
+    },
+    {
+        "fields": {
+            "name": "Frances"
+        }, 
+        "model": "postulant.LanguageCountry", 
+        "pk": 3
+    },
+    {
+        "fields": {
+            "name": "Aleman"
+        }, 
+        "model": "postulant.LanguageCountry", 
+        "pk": 4
+    }
+]

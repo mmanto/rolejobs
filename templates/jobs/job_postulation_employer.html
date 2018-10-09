@@ -1,0 +1,171 @@
+<div class="panel-screen employer-postulation-detail">
+  <div class="panel-header">
+
+    <div class="title-container">
+      <h1 class="title">{{ job.title }}</h1>
+      <h2 class="subtitle">
+        {{ job.position_text }} de  
+        {{ job.role_text }} 
+        {{ job.hierarchy_text }}
+      </h2>
+    </div>
+
+    <div class="title-extra">
+      <span class="status" ng-class="{rejected: postulation.status == 32}">
+        {{ postulation.status_text }}
+      </span>
+    </div>
+
+  </div><!-- /header -->
+
+  <div class="panel-side">
+    <ul class="rj-list">
+      <li class="header">
+        Información 
+      </li>
+      <li class="secondary text-bold">
+        {{ "Nº de referencia:" }}
+      </li>
+      <li nf-show="job.reference_number">
+        {{ job.reference_number }}
+      </li>
+      <li nf-show="!job.reference_number">
+        -----
+      </li>
+      <li class="secondary text-bold">
+        {{ "Tipo" | translate }}
+      </li>
+      <li>
+        {{ job.job_type_text }}
+      </li>
+      <li class="secondary text-bold">
+        {{ "Rama" | translate }}
+      </li>
+      <li>
+        {{ job.branch_activity_text }}
+      </li>
+      <li class="header">
+        {{ "Acciones" | translate }}
+      </li>
+      <li ng-show="postulation.status !== 16">
+        <a class="rj-button" ng-click="setStatus(16)">{{ "Aprobar" | translate }}</a>
+      </li>
+      <li ng-show="postulation.status == 16">
+        <a class="rj-button" ng-click="setStatus(32)">{{ "Rechazar" | translate }}</a>
+      </li>
+    </ul>
+  </div><!-- /panel -->
+
+  <div class="content">
+    <div class="job-container">
+      <div class="row">
+        <div class="large-4 columns">
+          <div class="profile-avatar">
+            <img ng-src="{{ postulation.user.avatar }}">
+          </div>
+        </div>
+        <div class="large-8 columns">
+          <h2>{{ postulation.user.first_name }} {{ postulation.user.last_name }}</h2>
+          <ul class="user-info">
+            <li>
+              <span class="field">{{ "Género" | translate }}:</span>
+              <span>{{ postulation.user.gender_text }}</span>
+            </li>
+            <li>
+              <span class="field">{{ "Teléfono" }}:</span>
+              <span>{{ postulation.user.phone_number }}</span>
+            </li>
+            <li>
+              <span class="field">{{ "Celular" }}:</span>
+              <span>{{ postulation.user.mobile_number }}</span>
+            </li>
+            <li>
+              <span class="field">{{ "Fecha de nacimiento" }}:</span>
+              <span>{{ postulation.user.date_of_birth | date:"dd-MM-yyyy" }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-4 columns">
+          <span class="field">{{ "Salario pretendido" | translate }}:</span>:
+          <span>$ {{ postulation.request_salary | number:0 }}</span>
+        </div>
+        <div class="large-8 columns">
+          <span class="field">{{ "Razón de postulación" | translate }}:</span>
+          <span>{{ postulation.message }}</span>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <h2>{{ "Biografía" | translate }}</h2>
+          <div class="biography">{{ postulation.user.biographic }}</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <h2>{{ "Educación" | translate }}</h2>
+
+          <alert
+            ng-show="requirements.education"
+            type="requirements.education.level"
+          >{{ requirements.education.msg }}</alert>
+
+          <education-item
+            ng-repeat="education in postulation.user.education track by education.id"
+            education="education"
+          ></education-item>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <h2>{{ "Idiomas" | translate }}</h2>
+          <alert
+             ng-repeat="lang in requirements.languages track by lang.language.id"
+             type="lang.type"
+          ><strong>{{ lang.language.name }}</strong>: {{ lang.msg }}</alert>
+
+          <ul class="languages-list">
+            <li
+              ng-repeat="language in postulation.user.languages track by language.language_text"
+            >
+              <span>{{ language.language_text }}</span>
+              <rating
+                class="rating right"
+                value="language.level"
+                max="10"
+                readonly="true">
+              </rating>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <h2>{{ "Experiencia laboral" | translate }}</h2>
+          <experience-item
+           ng-repeat="exp in postulation.user.experience track by exp.id"
+           experience="exp"
+          ></experience-item>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <h2>{{ "Preguntas" | translate }}</h2>
+          <question-item
+           ng-if="job.pk && postulation.id"
+           ng-repeat="question in job.questions track by question.id"
+           question="question"
+           answer="getAnswer(question.id)"
+          ></question-item>
+        </div>
+      </div>
+
+    <div>
+  </div><!-- /content -->
+</div>

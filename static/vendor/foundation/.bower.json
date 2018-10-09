@@ -1,0 +1,32 @@
+{
+  "name": "foundation",
+  "main": [
+    "scss/foundation.scss",
+    "js/foundation.js"
+  ],
+  "ignore": [],
+  "dependencies": {
+    "jquery": ">= 2.1.0",
+    "modernizr": "2.8.3",
+    "fastclick": ">=0.6.11",
+    "jquery.cookie": "~1.4.0",
+    "jquery-placeholder": "~2.0.7"
+  },
+  "devDependencies": {
+    "jquery.autocomplete": "devbridge/jQuery-Autocomplete#1.2.9",
+    "lodash": "~2.4.1"
+  },
+  "private": true,
+  "homepage": "https://github.com/zurb/foundation-sites",
+  "version": "5.5.3",
+  "_release": "5.5.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v5.5.3",
+    "commit": "563a7342a4d28a7ab54cfbd0ac4bfad05fb4475e"
+  },
+  "_source": "https://github.com/zurb/foundation-sites.git",
+  "_target": "v5.5.3",
+  "_originalSource": "foundation-sites",
+  "_direct": true
+}

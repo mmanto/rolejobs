@@ -1,0 +1,43 @@
+<a class="close-reveal-modal" ng-click="$dismiss()">&#215;</a>
+<div class="large-12 columns container_form">
+
+  <div class="owner-info">
+    <img class="brand-image" ng-src="{{ postulation.job.owner.avatars.brand }}">
+    <h1>{{ postulation.job.title }}</h1>
+    <h2>{{ postulation.job.owner.name_company }}</h1>
+  </div>
+
+  <div class="postulation-info">
+    <h4>{{ "Salario pretendido" | translate }}</h4>
+    <div class="salary">$ {{ postulation.request_salary | number:2 }}</div>
+    <h4>{{ "Razón de postulación" | translate }}</h4>
+    <div class="">{{ postulation.message }}</div>
+  </div>
+
+  <div class="questions-list" ng-show="postulation.questionsanswers.length">
+    <h4>{{ "Respuestas" | translate }}</h4>
+    <ul>
+      <li
+        ng-repeat="question in postulation.questionsanswers track by question.id"
+      >
+        <h5>{{ question.question }}</h5>
+        <p class="response">
+          <span
+            ng-if="question.type === 0 || question.type === 48"
+          >{{ question.response }}</span>
+          <span
+            ng-if="question.type === 16"
+          >{{ question.response | number }}</span>
+          <span
+            ng-if="question.type === 32"
+          >{{ question.response ? "Si" : "No" | translate }}</span>
+        </p>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="buttons-container">
+    <a class="rj-button" ng-click="$dismiss()">{{ "Aceptar" || translate }}</a>
+  </div>
+
+</div>

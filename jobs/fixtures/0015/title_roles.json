@@ -1,0 +1,478 @@
+[
+    {
+        "fields": {
+            "name": "Abogado"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 1
+    }, 
+    {
+        "fields": {
+            "name": "Abogado Independiente"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 2
+    }, 
+    {
+        "fields": {
+            "name": "Administrador"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 3
+    }, 
+    {
+        "fields": {
+            "name": "Administrativo"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 4
+    }, 
+    {
+        "fields": {
+            "name": "Agente"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 5
+    }, 
+    {
+        "fields": {
+            "name": "Ama de casa"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 6
+    }, 
+    {
+        "fields": {
+            "name": "Analista"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 7
+    }, 
+    {
+        "fields": {
+            "name": "Asesor"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 8
+    }, 
+    {
+        "fields": {
+            "name": "Asistente"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 9
+    }, 
+    {
+        "fields": {
+            "name": "Asociado"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 10
+    }, 
+    {
+        "fields": {
+            "name": "Auditor"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 11
+    }, 
+    {
+        "fields": {
+            "name": "Auxiliar"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 12
+    }, 
+    {
+        "fields": {
+            "name": "Ayudante"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 13
+    }, 
+    {
+        "fields": {
+            "name": "Becario"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 14
+    }, 
+    {
+        "fields": {
+            "name": "Cajero"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 15
+    }, 
+    {
+        "fields": {
+            "name": "Cobrador"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 16
+    }, 
+    {
+        "fields": {
+            "name": "Comercial"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 17
+    }, 
+    {
+        "fields": {
+            "name": "Consultor/Asesor"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 18
+    }, 
+    {
+        "fields": {
+            "name": "Contador"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 19
+    }, 
+    {
+        "fields": {
+            "name": "Contralor"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 20
+    }, 
+    {
+        "fields": {
+            "name": "Coordinador"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 21
+    }, 
+    {
+        "fields": {
+            "name": "Desarrollador"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 22
+    }, 
+    {
+        "fields": {
+            "name": "Director"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 23
+    }, 
+    {
+        "fields": {
+            "name": "Diseñador"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 24
+    }, 
+    {
+        "fields": {
+            "name": "Docente"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 25
+    }, 
+    {
+        "fields": {
+            "name": "Dueño"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 26
+    }, 
+    {
+        "fields": {
+            "name": "Ejecutivo Cuenta"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 27
+    }, 
+    {
+        "fields": {
+            "name": "Ejecutivo Junior"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 28
+    }, 
+    {
+        "fields": {
+            "name": "Ejecutivo Senior"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 29
+    }, 
+    {
+        "fields": {
+            "name": "Encargado"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 30
+    }, 
+    {
+        "fields": {
+            "name": "Enfermero(a)"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 31
+    }, 
+    {
+        "fields": {
+            "name": "Especialista"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 32
+    }, 
+    {
+        "fields": {
+            "name": "Estudiante"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 33
+    }, 
+    {
+        "fields": {
+            "name": "Estudiante de Posgrado"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 34
+    }, 
+    {
+        "fields": {
+            "name": "Estudiante para tesis"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 35
+    }, 
+    {
+        "fields": {
+            "name": "Gerente"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 36
+    }, 
+    {
+        "fields": {
+            "name": "Gerente/Director de Área"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 37
+    }, 
+    {
+        "fields": {
+            "name": "Gerente/Director de División"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 38
+    }, 
+    {
+        "fields": {
+            "name": "Gerente/Director General"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 39
+    }, 
+    {
+        "fields": {
+            "name": "Indiferente"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 40
+    }, 
+    {
+        "fields": {
+            "name": "Ingeniero"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 41
+    }, 
+    {
+        "fields": {
+            "name": "Inspector"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 42
+    }, 
+    {
+        "fields": {
+            "name": "Jefe Área/Sección/Depto./Local"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 43
+    }, 
+    {
+        "fields": {
+            "name": "Líder de Proyecto"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 44
+    }, 
+    {
+        "fields": {
+            "name": "Maestro de cocina"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 45
+    }, 
+    {
+        "fields": {
+            "name": "Médico"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 46
+    }, 
+    {
+        "fields": {
+            "name": "Miembro de Directorio"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 47
+    }, 
+    {
+        "fields": {
+            "name": "Notario"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 48
+    }, 
+    {
+        "fields": {
+            "name": "Operario"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 49
+    }, 
+    {
+        "fields": {
+            "name": "Operativo"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 50
+    }, 
+    {
+        "fields": {
+            "name": "Otro Profesional"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 51
+    }, 
+    {
+        "fields": {
+            "name": "Planeador"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 52
+    }, 
+    {
+        "fields": {
+            "name": "Practica profesional"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 53
+    }, 
+    {
+        "fields": {
+            "name": "Presidente/Director Ejecutivo"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 54
+    }, 
+    {
+        "fields": {
+            "name": "Profesional Independiente"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 55
+    }, 
+    {
+        "fields": {
+            "name": "Profesor / Investigador"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 56
+    }, 
+    {
+        "fields": {
+            "name": "Promotor"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 57
+    }, 
+    {
+        "fields": {
+            "name": "Reponedor / Repositor"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 58
+    }, 
+    {
+        "fields": {
+            "name": "Representante"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 59
+    }, 
+    {
+        "fields": {
+            "name": "Secretaria"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 60
+    }, 
+    {
+        "fields": {
+            "name": "Seguridad / Vigilancia"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 61
+    }, 
+    {
+        "fields": {
+            "name": "Socio"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 62
+    }, 
+    {
+        "fields": {
+            "name": "Subgerente de Área"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 63
+    }, 
+    {
+        "fields": {
+            "name": "Subgerente/Subdirector General"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 64
+    }, 
+    {
+        "fields": {
+            "name": "Supervisor"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 65
+    }, 
+    {
+        "fields": {
+            "name": "Técnico"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 66
+    }, 
+    {
+        "fields": {
+            "name": "Técnico Superior Universitario"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 67
+    }, 
+    {
+        "fields": {
+            "name": "Tesorero"
+        }, 
+        "model": "jobs.titlerole", 
+        "pk": 68
+    }
+]

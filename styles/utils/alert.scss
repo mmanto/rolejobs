@@ -1,0 +1,25 @@
+
+.alert-modal {
+    border: 2px solid $verde;
+    border-radius: 15px;
+    width: 600px;
+
+    h3 {
+        font-family: DosisBold;
+        color: $naranja1;
+    }
+
+    p {
+        font-family: DosisRegular;
+        color: $gris3;
+    }
+
+    .buttons {
+        text-align: center;
+
+        .rj-button {
+            margin-bottom: 0;
+        }
+    }
+
+}

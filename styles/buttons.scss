@@ -1,0 +1,146 @@
+/**
+RoleJob style buttons
+**/
+
+.rj-button {
+    @extend .button;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: DosisBold;
+    background-color: $naranja2;
+    color: white;
+
+    img {
+        width: 16px;
+        padding: 0px;
+        margin-right: 6px; 
+    }
+
+    i.fa {
+        float: right;
+        font-size: 12px;
+        margin-top: 5px;
+        margin-right: 3px;
+    }
+
+    &.small, &.tiny {
+        padding: 3px 10px;
+    }
+
+    &.small img {
+        width: 15px;
+    }
+
+    &.tiny img {
+        width: 13px;
+    }
+
+    &:hover {
+        background-color: $naranja1;
+    }
+
+    &.alternative {
+        background-color: $verde;
+
+        &:hover {
+            background-color: $verde;
+        }
+    }    
+
+    &.black {
+        background-color: black;
+        color: white;
+
+        &:hover {
+            background-color: black;
+        }
+    }
+
+    &.lined {
+        background-color: white;
+        padding: 4px 9px;
+        border: 1px solid $naranja2;
+        font-family: DosisRegular;
+        color: $gris3;
+
+        &.small, &.tiny {
+            padding: 2px 9px;
+        }
+
+        &.alternative {
+            border-color: $verde;
+        }
+
+        &.black {
+            border-color: black;
+        }
+
+    }
+
+
+}
+
+a.rj-button:hover {
+    background-color: $naranja1;
+}
+
+.rj-icon-button {
+    @include flexbox();
+    margin: 10px 0;
+    height: 30px;
+
+    .rj-icon {
+        width: 28px;
+        height: 28px;
+        padding: 2px;
+
+        img {
+            vertical-align: inherit;
+        }
+    }
+
+    .btn-container {
+        @include flexitem();
+        height: 30px;
+        padding: 1px 0;
+        padding-left: 1px;
+    
+        a.button {
+            @extend .rj-button;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            height: 24px;
+            border-radius: 0;
+            font-family: DosisBold;
+        }
+
+    }
+
+    &.lined .btn-container .button {
+        @extend .rj-button.lined;
+        padding: 0 10px;
+    }
+
+    &.lined.alternative .btn-container .button {
+        @extend .rj-button.lined.alternative;
+        padding: 0 10px;
+        font-family: DosisBold;
+
+        &:hover {
+            background-color: $verde;
+        }
+
+    }
+
+    &.alternative .btn-container .button {
+        @extend .rj-button.alternative;
+        color: $verde;
+        font-family: DosisBold;
+
+        &:hover {
+            background-color: $verde;
+        }
+    }
+
+}

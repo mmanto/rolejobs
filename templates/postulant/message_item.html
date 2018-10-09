@@ -1,0 +1,45 @@
+<div class="message-item" ng-class="{ featured: postulation.message.featured }">
+
+  <div class="message-thumb">
+    <div class="content">
+      <!--<img class="logo" ng-src="{{postulation.message.owner.avatars.default}}">-->
+      <img ng-if="postulation.message.featured" class="corner-shadow" src="/static/img/result-item-new-corner-shadow.svg">
+      <img ng-if="postulation.message.featured" class="corner" src="/static/img/result-item-new-corner-start.svg">
+      <img ng-if="postulation.message.featured" class="shadow" src="/static/img/result-item-new-img-shadow.svg"> 
+    </div>
+  </div>
+
+  <div class="message-body">
+
+    <div class="content">
+
+      <div class="info">
+        <p class="title">
+          <a ng-click="viewCb(postulation.id)">
+            {{ postulation.message.title }}
+          </a>
+        </p>
+        <p class="description">
+          <span>{{ postulation.message.owner.name_company }}</span>
+          <br />
+          <span>{{ postulation.message.area_text }}</span>
+        </p>
+      </div>
+
+      <div class="data">
+        <div class="row ">
+          <p class="text-center" style="">
+            {{ postulation.status_text }}
+          </p>
+        </div>
+      </div>                     
+
+      <img ng-if="postulation.message.featured" class="shadow" src="/static/img/result-item-new-text-shadow.svg">
+
+    <!-- /content -->
+    </div>
+
+  <!-- /body -->
+  </div>
+
+</div>

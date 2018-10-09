@@ -1,0 +1,23 @@
+// Fix problem with cropper
+
+.cropit-preview-image-container img {
+    max-width: initial;
+}
+
+.cropper-modal {
+    @extend .form-modal;
+    width: 700px;
+   
+    .preview-container { 
+        background: $gris2;
+        border-radius: 15px;
+        text-align: center;
+        width: 240px;
+        padding: 10px; 
+
+        .cropit-preview {
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+    }
+}

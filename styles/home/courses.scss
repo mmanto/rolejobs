@@ -1,0 +1,101 @@
+
+.jobs-section {
+    @extend .row;
+    padding-bottom:50px;
+
+    .sidebar {
+        @extend .large-3;
+        @extend .columns;
+        border-right: 2px solid rgb(210, 212, 213);
+        padding-left: 0px;
+        padding-right: 0px;
+        height: 1503px;
+    }
+
+    .jobs-container {
+        @extend .large-9;
+        @extend .columns;
+        height: 1503px;
+
+        h4 {
+            font-family: DosisMedium;
+            color: $naranja2; 
+        }
+
+        .tab-title a {
+            padding: 1rem 1rem .3rem 0rem;
+        }
+
+        /* result tabs */
+
+        .tabs dd a , .tabs .tab-title a {
+            display: inline-block; 
+            padding: 5px 10px 5px 10px; 
+            color:#bcbec0;
+            border-radius: 4px;
+            background-color: #edeeee;
+            font-family: DosisSemiBold;
+        }
+
+        .tabs dd a , .tabs .tab-title a:hover {
+            background-color: white;
+        }
+
+        .tabs dd a span, .tabs .tab-title a span{
+            display: inline-block; 
+            padding: 5px 10px 5px 10px; 
+            color:#bcbec0;
+            border-radius: 4px;
+            background-color: #edeeee;
+            font-family: DosisSemiBold;
+        }
+
+        .tabs dd.active a span, .tabs .tab-title.active a span {
+            display: inline-block; 
+            padding: 5px 10px 5px 10px; 
+            color:white;
+            border-radius: 4px;
+            background-color: #00bae1;
+            font-family: DosisSemiBold; 
+        }
+
+        .tabs dd img.active-arrow {
+            display: none;
+        }
+
+        .tabs dd.active img.active-arrow {
+            display: block;
+        }
+
+        .tabs dd a, .tabs .tab-title a {
+            background-color: white;
+        }
+
+        /** Galera arrow **/
+
+        .galera-arrow {
+            @extend .row;
+            padding-top: 0px;
+            padding-bottom: 20px;
+
+            .galera-body {
+                @extend .text-right;
+                color: #aaacae;
+                font-family: YellowtailRegular;
+                padding-right:30px;
+
+                span {
+                    padding-right:10px;
+                }
+
+                img.arrow {
+                    margin-top:15px;
+                    width: 35px;
+                }
+            } 
+
+        }
+
+    }
+
+}

@@ -1,0 +1,38 @@
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load utils_forms %}
+
+<div class="large-12 columns container_form">
+
+  <form ng-submit="save(requirementForm)" name="requirementForm" class="requirement-form">
+
+    <div class="row">
+      <h5>{% trans "Conocimiento" %}</h5>
+    </div>
+
+    <div class="row">
+      {% standar_field form.technology %}
+      {% standar_field form.subtechnology %}
+      {% standar_field form.hierarchy %}
+    </div>
+
+    <div class="row" ng-show="showExclusive">
+      {% checkbox_field form.exclusive column_size="12" %}
+    </div>
+
+    <div class="row">
+      <ul class="djng-field-errors" ng-show="apiErrors.requirementForm.$nonfield">
+        <li ng-show="apiErrors.requirementForm.$nonfield" class="invalid" ng-bind="apiErrors.requirementForm.$nonfield.msg"></li>
+      </ul>
+    </div>
+
+    <div class="row form-buttons text-center">
+      <a ng-click="save(requirementForm)" class="rj-button">{% trans "Guardar" %}</a>
+      <a ng-click="cancel(requirementForm)" class="rj-button alternative">{% trans "Cancelar" %}</a>
+    </div>
+
+  </form>
+
+</div>

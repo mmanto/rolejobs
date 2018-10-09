@@ -1,0 +1,25 @@
+
+.page-contact {
+    background-color: #dddedf;
+    margin-top:30px; 
+}
+
+.contact-form {
+
+    background-repeat: no-repeat;
+    background-size: 700px 500px;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-image: url("/static/img/galera-gray.svg");
+
+    h3 {
+        font-size: 200%;
+        font-family: DosisBold;
+        color: white;
+        text-align: center;
+    }
+
+    .form-buttons a.rj-button {
+        width: 150px ;
+    }
+}

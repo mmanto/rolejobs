@@ -1,0 +1,57 @@
+
+.postulant-historical-item {
+    @include flexbox();
+    border-bottom: 1px dotted #ccc;
+    margin-bottom: 15px;
+
+    div.left-side {
+        width: 150px;
+        font-family: DosisSemiBold;
+        text-align: center;
+        color: $naranja1;
+        padding: 10px;
+    }
+
+    div.right-side {
+        @include flexitem();
+        padding: 0 10px;
+
+        h4, h5 {
+            font-family: DosisBold;
+            margin: 0;
+            padding: 0;
+        }
+
+        h4 {
+            color: $naranja2;
+        }
+
+        h5 {
+            color: $verde;
+        }
+
+        .description {
+            font-family: DosisLight;
+            color: $gris3;
+        }
+
+        ul.info {
+            @include flexbox();
+            list-style: none;
+            margin: 0;
+
+            li {
+                width: 33%;
+                margin: 0;
+                padding: 3px;
+                span.field {
+                    font-family: DosisBold;
+                    font-weight: bold;
+                }
+            }
+
+        }
+
+    }
+
+}

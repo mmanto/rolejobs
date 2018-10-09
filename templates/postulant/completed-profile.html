@@ -1,0 +1,39 @@
+<div class="profile-completed-card">
+  <div class="card-header bg-alternative">
+    {{ "Mi C.V" | translate }}
+  </div>
+  <div class="card-body bg-gris">
+    <div class="info-container">
+      <div class="galera-container">
+        <div class="card-thumb-container">
+          <div class="overlay" ng-style="{ 'background-position-y': overlayPos }">
+            <div class="mask"></div>
+          </div>
+        </div>
+        <h4 class="percent">{{ percent }}%</h4>
+      </div>
+      <div class="text-container">
+        <h5>
+          <span class="text-gris">Tu</span>
+          CV está incompleto
+        </h5>
+        <p class="text-large">
+          {{ "Aún no podrás aplicar a ninguna oferta ni ser encontrado por ninguna empresa." | translate }}
+        </p>
+      </div>
+    </div>
+
+    <div class="card-block">
+      <ul class="info">
+        <li ng-repeat="item in restItems track by item.value">
+          <span class="field">
+            <span class="text-gris">{{ "Agregar" | translate }}</span>
+            <span>{{ item.name }}</span>
+          </span>
+          <span class="value">+{{ itemPercent }}%</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>

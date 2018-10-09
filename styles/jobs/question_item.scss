@@ -1,0 +1,40 @@
+
+.job-question-item {
+    padding: 3px;
+    margin-bottom: 10px;
+    border-bottom: 1px dotted #ccc;
+    font-family: DosisRegular;
+    color: $gris3;
+
+    span.question {
+        font-family: DosisBold;
+        font-size: 20px;
+    }
+
+    ul.options {
+        list-style: none;
+        display: block;
+
+        li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        li.correct span {
+            font-family: DosisBold;
+        }
+
+    }
+
+    .response {
+        .reponse-label {
+            font-family: DosisBold;
+            margin-right: 5px;
+        }
+
+        .no-response {
+            color: $naranja1;
+        } 
+    }
+
+}

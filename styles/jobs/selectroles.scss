@@ -1,0 +1,22 @@
+ul.select-roles {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: grid;
+    display: inline-grid;
+    display: -moz-inline-grid;
+    display: -webkit-inline-grid;
+
+    li {
+        display: inline-block;
+        width: 33%;
+
+        input {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+}
+

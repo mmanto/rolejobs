@@ -1,0 +1,19 @@
+
+.api-errors-modal {
+    @extend .alert-modal;
+
+    h5 {
+        font-family: DosisBold;
+        font-size: 20px;    
+    }
+
+    ul.errors {
+        list-style-type: decimal-leading-zero; 
+
+        li {
+            font-family: DosisRegular;
+        }
+
+    }
+
+}

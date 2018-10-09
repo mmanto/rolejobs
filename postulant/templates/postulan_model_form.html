@@ -1,0 +1,890 @@
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+<accordion close-others="oneAtATime">
+  <accordion-group heading="{% trans "Datos personales" %}" is-open="true">
+    <form id="postulant" style="margin-top:40px;" action="javascript:updatePostulant()" method="post">
+      <div class="large-9 columns" style="margin-top:10px; margin-bottom:20px;">
+        <h5 class="text-color-blue">{% trans "Datos personales" %}</h5>
+      </div>
+      <div class="large-3 columns" align="right" style="margin-top:10px; margin-bottom:20px;">
+        <a id="edit_postulant" class="text-color-black" onClick="onClickAddShow(this)" >{% trans "Editar" %}</a>
+      </div>
+      <div id="card_info_postulant"></div>
+      {{ postulant_model_form.non_field_errors }}
+      <div id="edit_postulant_form">
+        <hr>
+        <div class="large-4 columns left" style="margin-top:10px; margin-bottom:10px;">
+          {% render_field postulant_model_form.name class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ postulant_model_form.name.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:10px; margin-bottom:10px;">
+          {% render_field postulant_model_form.last_name class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ postulant_model_form.last_name.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:10px; margin-bottom:10px;">
+
+        </div>
+        <div class="large-4 columns left" style="margin-top:10px; margin-bottom:10px;">
+          {% render_field postulant_model_form.marital_status class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ postulant_model_form.marital_status.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:10px; margin-bottom:10px;">
+          {% render_field postulant_model_form.dni class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ postulant_model_form.dni.errors }}
+        </div>
+        <div class="large-2 columns left" style="margin-top:10px; margin-bottom:10px;">
+          {% trans "Sexo" %}
+          {% render_field postulant_model_form.sex class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ postulant_model_form.sex.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:10px; margin-bottom:10px;">
+          {% render_field postulant_model_form.phone_number class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ postulant_model_form.phone_number.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:10px; margin-bottom:10px;">
+          {% render_field postulant_model_form.mobile_number class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ postulant_model_form.mobile_number.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:10px;">
+          {% render_field postulant_model_form.date_of_birth class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ postulant_model_form.date_of_birth.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:10px; margin-bottom:30px; margin-right:480px;">
+          {% render_field postulant_model_form.place_of_birth class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ postulant_model_form.place_of_birth.errors }}
+        </div>
+        <!--
+          <div class="large-4 columns left" style="margin-top:20px; margin-bottom:10;">
+          {% render_field postulant_model_form.region class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ postulant_model_form.region.errors }}
+          </div> -->
+          <!--
+            <div class="large-12 columns left" align="center" style="margin-top:10px; margin-bottom:10px;">
+            <a href="">{% trans "Detectar ubicacion actual" %}</a>
+            </div> -->
+            <div class="large-4 columns" style="margin-top:20px; margin-right:623px;">
+              {% render_field postulant_model_form.city class="radius shadow-input"  %}
+              <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+              {{ postulant_model_form.city.errors }}
+            </div>
+            <div class="large-4 columns" style="margin-top:20px; margin-right:623px;">
+              {% render_field postulant_model_form.province class="radius shadow-input"  %}
+              <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+              {{ postulant_model_form.province.errors }}
+            </div>
+            <div class="large-4 columns" style="margin-top:20px; margin-right:623px;">
+              {% render_field postulant_model_form.country class="radius shadow-input"  %}
+              <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+              {{ postulant_model_form.country.errors }}
+            </div>
+            <div class="large-4 columns" style="margin-top:20px; margin-right:623px;">
+              {% render_field postulant_model_form.postal_code class="radius shadow-input"  %}
+              <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+              {{ postulant_model_form.postal_code.errors }}
+            </div>
+            <div class="large-4 columns left" style="margin-top:20px; margin-right:10px;">
+              {% render_field postulant_model_form.driver_license class="radius shadow-input"  %}
+              <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+              {{ postulant_model_form.driver_license.errors }}
+            </div>
+            <div class="large-3 columns left" style="margin-right:10px;">
+              {% trans "̈́¿Posée vehiculo propio?" %}
+              {% render_field postulant_model_form.own_vehicle class="radius shadow-input"  %}
+              {{ postulant_model_form.own_vehicle.errors }}
+            </div>
+            <div class="large-4 columns left" style="margin-top:20px; margin-right:10px;">
+              {% render_field postulant_model_form.has_disability class="radius shadow-input"  %}
+              <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+              {{ postulant_model_form.has_disability.errors }}
+            </div>
+            <div class="large-12 columns" style="margin-top:40px; margin-bottom:30px;">
+              <h5 class="text-color-blue">{% trans "¿Cuál es tu lugar de residencia?" %}</h5>
+            </div>
+            <div class="large-4 columns left" style="margin-bottom:40px;">
+              {% render_field postulant_model_form.country_current class="radius shadow-input"  %}
+              <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+              {{ postulant_model_form.country_current.errors }}
+            </div>
+            <div class="large-4 columns left" style="margin-bottom:40px;">
+              {% render_field postulant_model_form.province_current class="radius shadow-input"  %}
+              <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+              {{ postulant_model_form.province_current.errors }}
+            </div>
+            <div class="large-4 columns left" style="margin-bottom:40px;">
+              {% render_field postulant_model_form.city_current class="radius shadow-input"  %}
+              <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+              {{ postulant_model_form.city_current.errors }}
+            </div>
+            <div class="row">
+              <div class="large-4 columns">
+                <hr>
+              </div>
+              <div class="large-3 columns" align="right">
+                <input type="submit" value="EDITAR"></input>
+                <input type="reset" value="CANCELAR" onClick="onClickAddShow('edit_postulant')"></input>
+                <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+              </div>
+              <div class="large-4 columns">
+                <hr>
+              </div>
+            </div>
+      </div>
+    </form>
+  </accordion-group>
+  <accordion-group heading="{% trans "Biografia" %}">
+    <form id="biographic" style="margin-top:40px;" action="javascript:updateBiographic()" method="post">
+      <div class="large-9 columns" style="margin-top:10px; margin-bottom:10px;">
+        <h5 class="text-color-blue">{% trans "Biografia" %}</h5>
+      </div>                       
+      <div class="large-3 columns" align="right" style="margin-top:10px; margin-bottom:10px;">
+        {% if bio_model_edit %}
+        <a id="edit_bio" class="text-color-black" onClick="onClickAddShow(this)">{% trans "Editar" %}</a>
+        {% else %}
+        <a id="edit_bio" class="text-color-black" onClick="onClickAddShow(this)">{% trans "Agregar" %}</a>
+        {% endif %}
+      </div>
+      <div class="large-12 columns left" style="margin-bottom:20px" id="card_bio">
+        <span style="font-size:12px">{% trans "No hay biografia cargada" %}</span>
+        <!-- <a style="font-size:12px" onClick="deleteElement(this)">{% trans "Eliminar" %}</a> -->
+      </div>
+      <div id="edit_bio_form">
+        <hr>
+        <div class="large-6 columns left" align="left">
+          <span class="text-color-black" style="font-size:11px;">{% trans " Ver ejemplo" %}</span>
+        </div>
+        <div class="large-6 columns" align="right">
+          <span="text-color-black" style="font-size:11px; font-weight:bold;">{% trans "Máximo 500 caracteres" %}</span>
+        </div>
+        <div class="large-12 columns left">
+          {% render_field bio_model_form.description class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ bio_model_form.description.errors }}
+        </div>
+        <div class="row">
+          <div class="large-4 columns">
+            <hr>
+          </div>
+          <div id="bio_model_edit" class="large-3 columns" align="center">
+            {% if bio_model_edit %}
+            <input type="submit" value="EDITAR"></input>
+            {% else %}
+            <input type="submit" value="AGREGAR"></input>
+            {% endif %}
+            <input type="reset" value="CANCELAR" onClick="onClickAddShow('edit_bio')"></input>
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          </div>
+          <div class="large-4 columns">
+            <hr>
+          </div>
+        </div>
+      </div>
+    </form>
+  </accordion-group>
+  <accordion-group heading="{% trans "Experiencias Laborales" %}">
+    <form id="experience" style="margin-top:40px;" action="javascript:createProfessionalExperience()" method="post">
+      <div class="large-9 columns"  style="margin-top:10px; margin-bottom:10px;">  
+        <h5 class="text-color-blue">{% trans "Experiencias Laborales" %}</h5>
+      </div>
+      <div class="large-3 columns" align="right"  style="margin-top:10px; margin-bottom:10px;">  
+        <a id="add_professional_experience" class="text-color-black" onClick="onClickAddShow(this)">{% trans "Agregar" %}</a>
+      </div>
+      <div class="large-12 columns left" style="margin-bottom:5px" id="card_profesional_experience">
+        <span style="font-size:12px">{% trans "No hay experiencias laborales cargadas" %}</span>
+      </div>
+      <div id="add_professional_experience_form">
+        <hr>
+        <div class="large-4 columns left">
+          {% render_field professional_experience_form.title class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ professional_experience_form.title.errors }}
+        </div>
+        <div class="large-4 columns left">
+          {% render_field professional_experience_form.position class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ professional_experience_form.position.errors }}
+        </div>
+        <div class="large-4 columns left">
+          {% render_field professional_experience_form.jerarquia class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ professional_experience_form.jerarquia.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field professional_experience_form.area class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ professional_experience_form.area.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field professional_experience_form.subarea class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ professional_experience_form.subarea.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field professional_experience_form.sector class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ professional_experience_form.sector.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field professional_experience_form.role class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ professional_experience_form.role.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field professional_experience_form.branch_activity class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ professional_experience_form.branch_activity.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field professional_experience_form.start_date_end class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ professional_experience_form.start_date_end.errors }}
+        </div>
+        <div class="large-8 columns" style="margin-top:30px;">
+          <p class="text-color-black">{% trans "Descripción de responsabilidades y logros" %}</p>
+        </div>
+        <div class="large-4 columns" align="right" style="margin-top:30px;">
+          <p class="text-color-red" style="font-size:12px; font-weight:bold;">{% trans "Ver ejemplo" %}</p>
+        </div>
+        <div class="large-12 columns left">
+          {% render_field professional_experience_form.description class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ professional_experience_form.description.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field professional_experience_form.staff_charge class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ professional_experience_form.staff_charge.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field professional_experience_form.budget class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ professional_experience_form.budget.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field professional_experience_form.currency class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ professional_experience_form.currency.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field professional_experience_form.salary class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ professional_experience_form.salary.errors }}
+        </div>
+        <div class="large-5 columns left" style="margin-top:20px; margin-right:60px">
+          {% trans " Mostrar dato " %}
+          {% render_field professional_experience_form.show_salary class="radius shadow-input"  %}
+          {{ professional_experience_form.show_salary.errors }}
+        </div> 
+        <div class="large-12 columns" style="margin-top:30px; margin-buttom:20px">
+          {% trans " No tengo ninguna experiencia " %}
+          {% render_field professional_experience_form.with_experience class="radius shadow-input"  %}
+          {{ professional_experience_form.with_experience.errors }}
+        </div>
+        <div class="row">
+          <div class="large-4 columns">
+            <hr>
+          </div>
+          <div class="large-3 columns" align="center">
+            <input type="submit" value="AGREGAR"></input>
+            <input type="reset" value="CANCELAR" onClick="onClickAddShow('add_professional_experience')"></input>
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          </div>
+          <div class="large-4 columns">
+            <hr>
+          </div>
+        </div>
+      </div>
+    </form>
+  </accordion-group>
+  <accordion-group heading="{% trans "Estudios" %}">
+    <form id="study" style="margin-top:40px;" action="javascript:createStudy()" method="post">
+      <div class="large-9 columns" style="margin-top:10px; margin-bottom:10px;">
+        <h5 class="text-color-blue">{% trans "Estudios" %}</h5>
+      </div>
+      <div class="large-3 columns" align="right"  style="margin-top:10px; margin-bottom:10px;">
+        <a id="add_education" class="text-color-black" onClick="onClickAddShow(this)">{% trans "Agregar" %}</a>
+      </div>
+      <div id="card_education_primary" class="large-12 columns left">
+        <span style="font-size:12px">{% trans "No hay estudios Primarios cargados" %}</span>
+      </div>
+      <div id="card_education_universitary" class="large-12 columns left" style="margin-bottom:10px">
+        <span style="font-size:12px">{% trans "No hay estudios Universitarios cargados" %}</span>
+      </div>
+      <div id="add_education_form">
+        <hr>
+        <div class="large-12 columns left" style="margin-top:10px;">
+          <div class="large-4 columns" style="margin-left:300px;">
+            <select id="options_study">
+              <option id="null">{% trans "Seleccione" %}</option>
+              <option id="university">{% trans "Universitario" %}</option>
+              <option id="primary">{% trans "Primario" %}</option>
+            </select>
+          </div>
+        </div>
+        <div class="large-12 columns">
+          <hr>
+        </div> 
+        <div id="form_primary">
+          <div class="large-4 columns left" style="margin-top:20px;">
+            {% render_field education_primary_form.country_primary class="radius shadow-input"  %}
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+            {{ education_primary_form.country_primary.errors }}
+          </div>
+          <div class="large-4 columns left" style="margin-top:20px;">
+            {% render_field education_primary_form.date_entry_primary class="radius shadow-input"  %}
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+            {{ education_primary_form.date_entry_primary.errors }}
+          </div>
+          <div class="large-4 columns left" style="margin-top:20px;">
+            {% render_field education_primary_form.institution_primary class="radius shadow-input"  %}
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+            {{ education_primary_form.institution_primary.errors }}
+          </div>
+          <div class="large-4 columns left" style="margin-top:20px;">
+            {% trans " Estudiando " %}
+            {% render_field education_primary_form.on_study_primary class="radius shadow-input"  %}
+            {{ education_primary_form.on_study_primary.errors }}
+          </div>
+          <div class="large-4 columns left" style="margin-top:20px; margin-right:10px;">
+            {% render_field education_primary_form.status_current_primary class="radius shadow-input"  %}
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+            {{ education_primary_form.status_current_primary.errors }}
+          </div>
+        </div>                
+        <div id="form_universitary">
+          <div class="large-4 columns left" style="margin-top:20px;">
+            {% render_field education_universitary_form.type_study class="radius shadow-input"  %}
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+            {{ education_universitary_form.type_study.errors }}
+          </div>
+          <div class="large-4 columns left" style="margin-top:20px;">
+            {% render_field education_universitary_form.title_university class="radius shadow-input"  %}
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+            {{ education_universitary_form.title_university.errors }}
+          </div>
+          <div class="large-4 columns left" style="margin-top:20px;">
+            {% render_field education_universitary_form.country_university class="radius shadow-input"  %}
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+            {{ education_universitary_form.country_university.errors }}
+          </div>
+          <div class="large-4 columns left" style="margin-top:20px;">
+            {% render_field education_universitary_form.institution_university class="radius shadow-input"  %}
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+            {{ education_universitary_form.institution_university.errors }}
+          </div>                    
+          <div class="large-4 columns left" style="margin-top:20px;">
+            {% render_field education_universitary_form.carrer_university class="radius shadow-input"  %}
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+            {{ education_universitary_form.carrer_university.errors }}
+          </div>
+          <div class="large-4 columns left" style="margin-top:20px;">
+            {% render_field education_universitary_form.date_entry_university class="radius shadow-input"  %}
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+            {{ education_universitary_form.date_entry_university.errors }}
+          </div>
+          <div class="large-4 columns left" style="margin-top:20px;">
+            {% render_field education_universitary_form.status_current_university class="radius shadow-input"  %}
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+            {{ education_universitary_form.status_current_university.errors }}
+          </div>
+          <div class="large-4 columns left" style="margin-top:20px; margin-right:10px;">
+            {% render_field education_universitary_form.middle_calification_university class="radius shadow-input"  %}
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+            {{ education_universitary_form.middle_calification_university.errors }}
+          </div>
+        </div>
+        <div id="study_submit" class="row">
+          <div class="large-4 columns">
+            <hr>
+          </div>
+          <div class="large-3 columns" align="center">
+            <input type="submit" value="AGREGAR"></input>
+            <input type="reset" value="CANCELAR" onClick="javascript:onClickAddShow('add_education')"></input>
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          </div>
+          <div class="large-4 columns">
+            <hr>
+          </div>
+        </div>
+      </div>
+    </form>
+  </accordion-group>
+  <accordion-group heading="{% trans "Idiomas" %}">
+    <form id="idiomas_form" style="margin-top:40px;" action="javascript:createLanguage()" method="post">
+      <div class="large-9 columns" style="margin-top:10px; margin-bottom:10px;">
+        <h5 class="text-color-blue">{% trans "Idiomas " %}</h5>
+      </div>
+      <div class="large-3 columns" align="right"  style="margin-top:10px; margin-bottom:10px;">
+        <a id="add_idiomas" class="text-color-black" onClick="onClickAddShow(this)">{% trans "Agregar" %}</a>
+      </div>
+      <div id="card_idiomas" class="large-12 columns left" style="margin-bottom:20px">
+        <span style="font-size:12px">{% trans "No hay idiomas cargados" %}</span>
+      </div>
+      <div id="add_idiomas_form">
+        <hr>
+        <div class="large-12 columns left" style="margin-top:10px;">
+          <div class="large-4 columns" style="margin-left:300px;">                
+            {% render_field language_form.name class="radius shadow-input"  %}
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+            {{ language_form.name.errors }}
+          </div>
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field language_form.writing_level class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ language_form.writing_level.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field language_form.reading_level class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ language_form.reading_level.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field language_form.speaking_level class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ language_form.speaking_level.errors }}
+        </div>
+        <div class="large-8 columns left" style="margin-top:20px; margin-right:20px;">
+          {% trans "Nativo" %}
+          {% render_field language_form.native class="radius shadow-input"  %}
+          {{ language_form.native.errors }}
+        </div>
+        <div class="row">
+          <div class="large-4 columns">
+            <hr>
+          </div>
+          <div class="large-3 columns" align="center">
+            <input type="submit" value="AGREGAR"></input>
+            <input type="reset" value="CANCELAR" onClick="onClickAddShow('add_idiomas')"></input>
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          </div>
+          <div class="large-4 columns">
+            <hr>
+          </div>
+        </div>
+      </div> 
+    </form>
+  </accordion-group>
+  <accordion-group heading="{% trans "Informatica" %}">
+    <form id="technology" style="margin-top:40px;" action="javascript:createTechnology()" method="post">
+      <div class="large-9 columns" style="margin-top:10px; margin-bottom:10px;">
+        <h5 class="text-color-blue">{% trans "Informatica " %}</h5>
+      </div>
+      <div class="large-3 columns" align="right"  style="margin-top:10px; margin-bottom:10px;">
+        <a id="add_informatica" class="text-color-black" onClick="onClickAddShow(this)">{% trans "Agregar" %}</a>
+      </div>
+      <div id="card_informatica" class="large-12 columns left" style="margin-bottom:20px">
+        <span style="font-size:12px">{% trans "No hay conocimientos informaticos cargados" %}</span>
+      </div>
+      <div id="add_informatica_form">
+        <hr>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field knowledge_technology_form.technology class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ knowledge_technology_form.technology.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field knowledge_technology_form.technology_area class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ knowledge_technology_form.technology_area.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field knowledge_technology_form.level class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ knowledge_technology_form.level.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field knowledge_technology_form.description class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ knowledge_technology_form.description.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px; margin-right:10px">
+          {% render_field knowledge_technology_form.experience class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ knowledge_technology_form.experience.errors }}
+        </div>
+        <div class="row">
+          <div class="large-4 columns">
+            <hr>
+          </div>
+          <div class="large-3 columns" align="center">
+            <input type="submit" value="AGREGAR"></input>
+            <input type="reset" value="CANCELAR" onClick="onClickAddShow('add_informatica')"></input>
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          </div>
+          <div class="large-4 columns">
+            <hr>
+          </div>
+        </div>
+      </div>                 
+    </form>
+  </accordion-group>
+  <accordion-group heading="{% trans "Certificado" %}">
+    <form id="certification" style="margin-top:40px;" action="javascript:createCertification()" method="post">
+      <div class="large-9 columns" style="margin-top:10px; margin-bottom:10px;">
+        <h5 class="text-color-blue">{% trans "Certificado " %}</h5>
+      </div>
+      <div class="large-3 columns" align="right"  style="margin-top:10px; margin-bottom:10px;">
+        <a id="add_certificados" class="text-color-black" onClick="onClickAddShow(this)">{% trans "Agregar" %}</a>
+      </div>
+      <div id="card_certification" class="large-12 columns left" style="margin-bottom:20px">
+        <span style="font-size:12px">{% trans "No hay certificados informaticos cargados" %}</span>
+      </div>
+      <div id="add_certificados_form"> 
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field certification_technology_form.name class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ certification_technology_form.name.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field certification_technology_form.number_certification class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ certification_technology_form.number_certification.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field certification_technology_form.number_examen class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ certification_technology_form.number_examen.errors }}
+        </div>
+        <div class="row">
+          <div class="large-4 columns">
+            <hr>
+          </div>
+          <div class="large-3 columns" align="center">
+            <input type="submit" value="AGREGAR"></input>
+            <input type="reset" value="CANCELAR" onClick="onClickAddShow('add_certificados')"></input>
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          </div>
+          <div class="large-4 columns">
+            <hr>
+          </div>
+        </div>
+      </div>
+    </form>
+  </accordion-group>
+  <accordion-group heading="{% trans "Seminairios y Capacitaciones" %}">
+    <form id="seminaries" style="margin-top:40px;" action="javascript:createAdditionalKnowledge()" method="post">
+      <div class="large-9 columns" style="margin-top:10px; margin-bottom:10px;">
+        <h5 class="text-color-blue">{% trans "Seminarios y Capacitaciones " %}</h5>
+      </div>
+      <div class="large-3 columns" align="right"  style="margin-top:10px; margin-bottom:10px;">
+        <a id="add_seminarios" class="text-color-black" onClick="onClickAddShow(this)">{% trans "Agregar" %}</a>
+      </div>
+      <div id="card_seminaries" class="large-12 columns left" style="margin-bottom:20px">
+        <span style="font-size:12px">{% trans "No hay otros conocimientos cargados" %}</span>
+      </div>
+      <div id="add_seminarios_form">
+        <hr>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field additional_knowledge_form.type_knowledge class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ additional_knowledge_form.type_knowledge.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field additional_knowledge_form.title_complementary class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ additional_knowledge_form.title_complementary.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field additional_knowledge_form.institution_complementary class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ additional_knowledge_form.institution_complementary.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field additional_knowledge_form.hours class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ additional_knowledge_form.hours.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field additional_knowledge_form.date_start class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ additional_knowledge_form.date_start.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field additional_knowledge_form.date_end class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ additional_knowledge_form.date_end.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px; margin-right:450px;">
+          {% render_field additional_knowledge_form.description class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ additional_knowledge_form.description.errors }}
+        </div>
+        <div class="row">
+          <div class="large-4 columns">
+            <hr>
+          </div>
+          <div class="large-3 columns" align="center">
+            <input type="submit" value="AGREGAR"></input>
+            <input type="reset" value="CANCELAR" onClick="onClickAddShow('add_seminarios')"></input>
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          </div>
+          <div class="large-4 columns">
+            <hr>
+          </div>
+        </div>
+      </div>
+    </form>
+  </accordion-group>
+  <accordion-group heading="{% trans "Referencias" %}">
+    <form id="reference_experience" style="margin-top:40px;" action="javascript:createReferenceExperience()" method="post">
+      <div class="large-9 columns" style="margin-top:10px; margin-bottom:10px;">
+        <h5 class="text-color-blue">{% trans "Referencias " %}</h5>
+      </div>
+      <div class="large-3 columns" align="right"  style="margin-top:10px; margin-bottom:10px;">
+        <a id="add_reference" class="text-color-black" onClick="onClickAddShow(this)">{% trans "Agregar" %}</a>
+      </div>
+      <div id="card_reference_experience" class="large-12 columns left" style="margin-bottom:20px">
+        <span style="font-size:12px">{% trans "No hay referencias laborales cargadas" %}</span>
+      </div>
+      <div id="add_reference_form">
+        <hr>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field reference_experience_form.name class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ reference_experience_form.name.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field reference_experience_form.last_name class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ reference_experience_form.last_name.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field reference_experience_form.email class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ reference_experience_form.email.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field reference_experience_form.telephone_number class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ reference_experience_form.telephone_number.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field reference_experience_form.type_reference class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ reference_experience_form.type_reference.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field reference_experience_form.relation class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ reference_experience_form.relation.errors }}
+        </div>     
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field reference_experience_form.position_reference class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ reference_experience_form.position_reference.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px; margin-right:10px">
+          {% render_field reference_experience_form.experence_relational class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ reference_experience_form.experence_relational.errors }}
+        </div>
+        <div class="row">
+          <div class="large-4 columns">
+            <hr>
+          </div>
+          <div class="large-3 columns" align="center">
+            <input type="submit" value="AGREGAR"></input>
+            <input type="reset" value="CANCELAR" onClick="onClickAddShow('add_reference')"></input>
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          </div>
+          <div class="large-4 columns">
+            <hr>
+          </div>
+        </div>
+      </div>
+    </form>
+  </accordion-group>
+  <accordion-group heading="{% trans "Objetivo laboral" %}">
+    <form id="objective_job" style="margin-top:40px;" action="javascript:createObjectiveJob()" method="post">
+      <div class="large-9 columns" style="margin-top:10px; margin-bottom:10px;">
+        <h5 class="text-color-blue">{% trans "Objetivo laboral " %}</h5>
+      </div>
+      <div class="large-3 columns" align="right"  style="margin-top:10px; margin-bottom:10px;">
+        <a id="add_objetivo" class="text-color-black" onClick="onClickAddShow(this)">{% trans "Agregar" %}</a>
+      </div>
+      <div id="card_objective_job" class="large-12 columns left" style="margin-bottom:20px">
+        <span style="font-size:12px">{% trans "No hay objetivos laborales cargados" %}</span>
+      </div>
+      <div id="add_objetivo_form">
+        <hr>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field objective_job_form.area_objective class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ objective_job_form.area_objective.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field objective_job_form.sector_objective class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ objective_job_form.sector_objective.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field objective_job_form.branch_activity_objective class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ objective_job_form.branch_activity_objective.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field objective_job_form.objective class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ objective_job_form.objective.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field objective_job_form.level_jerarquico class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ objective_job_form.level_jerarquico.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% trans "Dispuesto a reubicarme de ciudad" %}
+          {% render_field objective_job_form.relocation_city class="radius shadow-input"  %}
+          {{ objective_job_form.relocation_city.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% trans "Dispuesto a reubicarme de Pais" %}
+          {% render_field objective_job_form.relocation_country class="radius shadow-input"  %}
+          {{ objective_job_form.relocation_country.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field objective_job_form.disponibility class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ objective_job_form.disponibility.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field objective_job_form.detail_disponibility class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ objective_job_form.detail_disponibility.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field objective_job_form.status_current_job class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ objective_job_form.status_current_job.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field objective_job_form.country_objective class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ objective_job_form.country_objective.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px; margin-right:60px;">
+          {% render_field objective_job_form.province_objective class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ objective_job_form.province_objective.errors }}
+        </div>
+        <div class="row">
+          <div class="large-4 columns">
+            <hr>
+          </div>
+          <div class="large-3 columns" align="center">
+            <input type="submit" value="AGREGAR"></input>
+            <input type="reset" value="CANCELAR" onClick="onClickAddShow('add_objetivo')"></input>
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          </div>
+          <div class="large-4 columns">
+            <hr>
+          </div>
+        </div>
+      </div>
+    </form>
+  </accordion-group>
+  <accordion-group heading="{% trans "CV - Anexos" %}">
+    <form id="cvfile" style="margin-top:40px;" action="javascript:createCVFile()" method="post">
+      <div class="large-9 columns" style="margin-top:10px; margin-bottom:10px;">
+        <h5 class="text-color-blue">{% trans "CV - Anexos " %}</h5>
+      </div>
+      <div class="large-3 columns" align="right"  style="margin-top:10px; margin-bottom:10px;">
+        <a id="edit_cvfile" class="text-color-black" onClick="onClickAddShow(this)">{% trans "Editar" %}</a>
+      </div>
+      <div id="card_cvfile" class="large-12 columns left" style="margin-bottom:20px">
+        <span style="font-size:12px">{% trans "No hay anexos y/o cv subido en formato .pdf o .word" %}</span>
+      </div>                       
+      <div id="edit_cvfile_form">
+        <hr>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field upload_cv_anexo_form.cvfile class="radius shadow-input"  %}
+          {{ upload_cv_anexo_form.cvfile.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field upload_cv_anexo_form.certificados class="radius shadow-input"  %}
+          {{ upload_cv_anexo_form.certificados.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field upload_cv_anexo_form.other class="radius shadow-input"  %}
+          {{ upload_cv_anexo_form.other.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px; margin-right:450px;">
+          {% render_field upload_cv_anexo_form.videocv class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ upload_cv_anexo_form.videocv.errors }}
+        </div>
+        <div class="row">
+          <div class="large-4 columns">
+            <hr>
+          </div>
+          <div class="large-3 columns" align="center">
+            <input type="submit" value="AGREGAR"></input>
+            <input type="reset" value="CANCELAR" onClick="onClickAddShow('edit_cvfile')"></input>
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          </div>
+          <div class="large-4 columns">
+            <hr>
+          </div>
+        </div>
+      </div>
+    </form>
+  </accordion-group>
+  <accordion-group heading="{% trans "Redes sociales" %}">
+    <form id="reference_social_network" style="margin-top:40px;" action="javascript:createReferenceSocialNetwork()" method="post">
+      <div class="large-9 columns" style="margin-top:10px; margin-bottom:10px;">
+        <h5 class="text-color-blue">{% trans "Redes Sociales " %}</h5>
+      </div>
+      <div class="large-3 columns" align="right"  style="margin-top:10px; margin-bottom:10px;">
+        <a id="edit_redes" class="text-color-black" onClick="onClickAddShow(this)">{% trans "Editar" %}</a>
+      </div>
+      <div id="card_reference_social_network">
+        <div class="large-12 columns left" style="margin-bottom:20px">
+          <span style="font-size:12px">{% trans "No hay enlace a linkedin/twitter/facebook" %}</span>
+        </div>
+      </div>
+      <div id="edit_redes_form">
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field reference_social_network_form.url_linkedin class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ reference_social_network_form.url_linkedin.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field reference_social_network_form.url_facebook class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ reference_social_network_form.url_facebook.errors }}
+        </div>
+        <div class="large-4 columns left" style="margin-top:20px;">
+          {% render_field reference_social_network_form.url_twitter class="radius shadow-input"  %}
+          <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          {{ reference_social_network_form.url_twitter.errors }}
+        </div>
+        <div class="row">
+          <div class="large-4 columns">
+            <hr>
+          </div>
+          <div class="large-3 columns" align="center">
+            <input type="submit" value="AGREGAR"></input>
+            <input type="reset" value="CANCELAR" onClick="onClickAddShow('edit_redes')"></input>
+            <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+          </div>
+          <div class="large-4 columns">
+            <hr>
+          </div>
+        </div>
+      </div>
+    </form>
+  </accordion-group>
+</accordion>

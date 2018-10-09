@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="338.23624"
+   height="4.8049998"
+   id="svg6528">
+  <defs
+     id="defs6530">
+    <clipPath
+       id="clipPath1040">
+      <path
+         d="m 4723.173,4176.304 270.589,0 0,15.99 -270.589,0 0,-15.99 z"
+         id="path1042" />
+    </clipPath>
+    <clipPath
+       id="clipPath1048">
+      <path
+         d="m 4699.19,4204.58 317.04,0 0,-16.13 -317.04,0 0,16.13 z"
+         id="path1050" />
+    </clipPath>
+    <clipPath
+       id="clipPath1052">
+      <path
+         d="m 5016.234,4196.518 c 0,4.452 -89.886,8.064 -155.941,8.064 -66.06,0 -161.105,-3.612 -161.105,-8.064 0,-4.455 87.872,-8.068 153.933,-8.068 66.055,0 163.113,3.613 163.113,8.068"
+         id="path1054" />
+    </clipPath>
+    <radialGradient
+       cx="0"
+       cy="0"
+       r="1"
+       fx="0"
+       fy="0"
+       id="radialGradient1056"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(140.41585,0,0,-9.4698944,4857.7104,4196.5156)"
+       spreadMethod="pad">
+      <stop
+         id="stop1058"
+         style="stop-color:#646567;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop1060"
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="1" />
+    </radialGradient>
+  </defs>
+  <metadata
+     id="metadata6533">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-365.16755,-709.9597)"
+     id="layer1">
+    <g
+       transform="matrix(1.25,0,0,-1.25,-5538.7987,5950.3272)"
+       clip-path="url(#clipPath1040)"
+       id="g1038">
+      <g
+         id="g1044">
+        <g
+           id="g1046" />
+        <g
+           id="g1062">
+          <g
+             clip-path="url(#clipPath1048)"
+             id="g1064">
+            <g
+               id="g1066">
+              <g
+                 clip-path="url(#clipPath1052)"
+                 id="g1068">
+                <g
+                   id="g1070">
+                  <g
+                     id="g1072">
+                    <path
+                       d="m 5016.234,4196.518 c 0,4.452 -89.886,8.064 -155.941,8.064 -66.06,0 -161.105,-3.612 -161.105,-8.064 0,-4.455 87.872,-8.068 153.933,-8.068 66.055,0 163.113,3.613 163.113,8.068"
+                       id="path1074"
+                       style="fill:url(#radialGradient1056);stroke:none" />
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

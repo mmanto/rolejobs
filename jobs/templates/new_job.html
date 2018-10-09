@@ -1,0 +1,251 @@
+{% load i18n %}
+{% load staticfiles %}
+{% load utils_forms %}
+<div class="large-12 columns container_form">
+  <form name="jobForm" class="job-form" ng-submit="save(jobForm)">
+    <div class="row">
+
+      <!-- FORM -->
+      <div class="large-9 columns left">
+
+        <div class="row">
+          {% standar_field form.title column_size="6" %}
+          {% standar_field form.reference_number column_size="6" %}
+        </div>
+
+        <div class="row">
+          {% standar_field form.description column_size="12" %}
+        </div>
+
+        <div class="row">
+          {% standar_field form.video column_size="12" %}
+        </div>
+
+        <div class="row">
+          <div class="large-6 columns">
+            <label for="geo-data">{% trans "Ubicación" %}</label>
+            <geo-field
+              ng-required="True"
+              name="geo-data"
+              placeholder="{% trans "Seleecione su la ubicación" %}"
+              ng-model="jobGeoData"></geo-field>
+            <ul class="djng-field-errors" ng-show="jobForm['geo-data'].$dirty">
+            <li
+              ng-show="jobForm['geo-data'].$error.required"
+              class="invalid">{% trans "Este campo es requerido." %}
+            </li>
+            </ul>
+          </div>
+          {% checkbox_field form.show_address column_size="6"  %}
+        </div>
+
+        <div class="row">
+          {% standar_field form.residence_range column_size="6" %}
+          {% checkbox_field form.residence_range_exclusive column_size="6" %}
+        </div>
+
+        <div class="row">
+          {% standar_field form.contract_date column_size="6" %}
+          {% standar_field form.vacancies column_size="6" %}
+        </div>
+
+        <div class="row">
+          {% standar_field form.role column_size="6" %}
+          {% standar_field form.position column_size="6" %}
+        </div>
+
+        <div class="row">
+          {% standar_field form.branch_activity column_size="6" %}
+          {% standar_field form.hierarchy column_size="6" %}
+        </div>
+
+        <div class="row">
+          {% standar_field form.job_type column_size="6"  %}
+          {% checkbox_field form.handicapped_postulant column_size="6"  %}
+        </div>
+
+        <div class="row">
+          {% checkbox_field form.send_cvs_by_mail column_size="6"  %}
+          {% checkbox_field form.send_gratitude_by_mail column_size="6"  %}
+        </div>
+
+        <div class="row">
+          {% checkbox_field form.get_cvs_ctrl_panel column_size="6"  %}
+          {% checkbox_field form.confidential column_size="6"  %}
+        </div>
+
+        <div class="row">
+          {% standar_field form.area column_size="6"  %}
+          {% standar_field form.subarea column_size="6"  %}
+        </div>
+
+        <div class="row">
+          <h4>Requisitos</h4>
+        </div>
+
+        <div class="row">
+          {% checkbox_field form.requirement_driver_license column_size="6"  %}
+        </div>
+
+        <div class="row">
+          {% standar_field form.requirement_age_min column_size="6"  %}
+          {% standar_field form.requirement_age_max column_size="6"  %}
+        </div>
+
+        <div class="row">
+          {% standar_field form.requirement_gender column_size="6"  %}
+        </div>
+
+        <div class="row">
+          <h5>Educación requerida</h5>
+        </div>
+
+        <div class="row">
+          <div class="large-12 columns text-left left field-container field-checkbox-container">
+            <input type="checkbox" name="requirement-ed" ng-model="educationIsRequired">
+            <label for="requirement-ed">{% trans "Requerir nivél de educación" %}</label>
+          </div>
+        </div>
+
+        <div ng-show="educationIsRequired" class="row">
+          {% standar_field form.education_requirement_grade column_size="4"  %}
+          {% checkbox_field form.education_requirement_finished column_size="4"  %}
+          {% checkbox_field form.education_requirement_exclusive column_size="4"  %}
+        </div>
+
+        <div class="row">
+
+          <h5>Idiomas requeridos</h5>
+          <div
+            ng-if="jobData.language_requirements.length"
+            rj-table-collection
+            collection-schema="languageRequirementsSchema"
+            collection-data="jobData.language_requirements"
+            ng-model="selected.languageRequirements"
+          ></div>
+
+          <alert ng-if="!jobData.language_requirements.length" type="'info round'">
+            {% trans "No hay requisitos de idioma cargados" %}
+          </alert>
+
+          <div class="text-center">
+            <a ng-click="addLanguageRequirement()" class="rj-button">{% trans "Agregar idioma requerido" %}</a>
+          </div>
+
+          <h5>Conocimientos IT requeridos</h5>
+          <div
+            ng-if="jobData.knowledge_requirements.length"
+            rj-table-collection
+            collection-schema="knowledgeRequirementsSchema"
+            collection-data="jobData.knowledge_requirements"
+          ></div>
+
+          <alert ng-if="!jobData.knowledge_requirements.length" type="'info round'">
+            {% trans "No hay requisitos de conocimientos de IT cargados" %}
+          </alert>
+
+          <div class="text-center">
+            <a ng-click="addKnowledgeRequirement()" class="rj-button">
+              {% trans "Agregar tecnología requerida" %}
+            </a>
+          </div>
+
+          <h5>Requisitos varios</h4>
+          <div
+            ng-if="jobData.requirements.length"
+            rj-table-collection
+            collection-schema="requirementsSchema"
+            collection-data="jobData.requirements"
+            ng-model="selected.requirements"
+          ></div>
+
+          <alert ng-if="!jobData.requirements.length" type="'info round'">
+            {% trans "No requisitos hay cargados" %}
+          </alert>
+
+        </div>
+
+        <div class="row">
+          <div class="large-4 columns left field-container">
+            <label for="requirement-description">{% trans "Agregar requisito" %}</label>
+            <input type="text" name="requirement-description" ng-model="req.description">
+          </div>
+          <div class="large-4 columns text-center left field-container field-checkbox-container">
+            <input type="checkbox" name="requirement-exclusive" ng-model="req.exclusive">
+            <label for="requirement-exclusive">{% trans "Es excluyente" %}</label>
+          </div>
+          <div class="large-4 columns text-center left field-container field-checkbox-container">
+            <a ng-click="addRequirement()" class="rj-button">{% trans "Agregar requisito" %}</a>
+          </div>
+        </div>
+
+        <!-- ROLES -->
+        <div class="row">
+          <h3>{% trans "Roles" %}</h3>
+          <select-roles ng-model="jobData.roles"></select-roles>
+        </div>
+
+        <!-- Questions -->
+        <div class="row">
+          <h3>{% trans "Preguntas" %}</h3>
+
+          <div
+            ng-if="jobData.questions.length"
+            rj-table-collection
+            collection-schema="questionsSchema"
+            collection-data="jobData.questions"
+            on-click="addQuestion($item)"
+          ></div>
+
+          <alert ng-if="!jobData.questions.length" type="'info round'">
+            {% trans "No hay preguntas" %}
+          </alert>
+
+          <div class="text-center">
+            <a ng-click="addQuestion()" class="rj-button">{% trans "Agregar pregunta" %}</a>
+          </div>
+
+        </div>
+
+        <div class="row">
+          {% standar_field form.publish_date column_size="6"  %}
+          {% checkbox_field form.publish_now column_size="6"  %}
+        </div>
+
+        <div class="row form-buttons text-center">
+          <a ng-click="save()" class="rj-button">{% trans "Publicar aviso" %}</a>
+          <a ng-show="isNew" ng-click="draft()" class="rj-button lined">{% trans "Guardar como borrador" %}</a>
+          <a ng-click="cancel()" class="rj-button alternative">{% trans "Cancelar" %}</a>
+        </div>
+
+      </div>
+
+      <!-- SLIDE -->
+      <div class="large-3 columns right">
+
+        <div class="copy-from">
+          <img src="{% static "img/copy.png" %}">
+          <span>{% trans "Copiar de" %}</span>
+        </div>
+
+        <ul class="rj-list">
+          <li class="header">{% trans "Mis últimos avisos" %}</li>
+          <li
+              ng-show="!lastJobs.length"
+              class="secondary-bg"
+          >{% trans "No hay avisos anteriores" %}</li>
+          <li
+            ng-repeat="job in lastJobs track by job.pk"
+          >
+            <a
+              ng-click="cloneFrom(job.pk, jobForm)"
+              ng-bind="job.title"
+            ></a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </form>
+</div>

@@ -1,0 +1,63 @@
+
+.row.profile {
+
+    .cv-info {
+        height: 260px;
+
+        .avatar {
+            float: left;
+            background: $gris2;
+            padding: 10px;
+            border-radius: 15px;
+
+            img {
+                width: 130px;
+            }
+
+        }
+
+        .data {
+
+            padding-left: 170px;
+
+            h1 {
+                margin: 0;
+                font-size: 1.7em;
+                font-family: DosisBold; 
+            }
+
+            h2 {
+                margin: 0;
+                font-size: 1.3em;
+                font-family: DosisBold;
+                color: $gris3; 
+            }
+
+        }
+
+        .meta {
+            clear: both;
+            font-family: DosisBold;
+            color: $gris3;
+            padding-top: 10px;
+
+            span {
+                color: black;
+            }
+        }
+
+    }
+
+}
+
+
+.cv-container {
+    padding: 30px 0;
+    background: $gris2;
+
+    .cv-content {
+        border: 1px solid $verde;
+        border-radius: 20px;
+        background: white;
+    }
+}

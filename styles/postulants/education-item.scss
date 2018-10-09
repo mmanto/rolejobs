@@ -1,0 +1,26 @@
+
+.postulant-education-item {
+    @extend .postulant-historical-item;
+
+    .left-side {
+        .finished {
+            font-family: DosisBold;
+            font-size: 20px;
+            color: $gris3;
+        } 
+    }
+
+    .right-side {
+        .certifications {
+            list-style: none;
+
+            span.bold {
+                font-family: DosisBold;
+            }
+
+            span.desc {
+                font-family: DosisLight;
+            }
+        }
+    }
+}

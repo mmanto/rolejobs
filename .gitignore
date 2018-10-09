@@ -1,0 +1,12 @@
+/env
+*.pyc
+*.pyo
+/static/CACHE
+/media
+/node_modules
+db.sqlite3
+rolejobs/local_settings.py
+postulant/avatars/
+.directory
+local_stuff/
+/nbproject/private/

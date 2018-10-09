@@ -1,0 +1,10 @@
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% load crispy_forms_tags %}
+<div class="large-{{ column_size }} columns left field-container placeholder-based-field">
+  {% render_field field class="radius shadow-input {{ field_extra_class }}" %}
+  {% if shadow %}
+    <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+  {% endif %}
+  {{ field.errors }}
+</div>

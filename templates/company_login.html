@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% load i18n %}
+
+{% block extra_head %}
+<style>
+    input[type="text"], input[type="email"], input[type="password"] {
+        border: 2px solid #b8dfdf;
+    }
+</style>
+{% endblock %} 
+
+{% block content %}
+<div>
+<div class="row">
+<div class="large-12  columns">
+    <form  action="{% url 'publish_as_a_company_login' %}" method="post">
+    {% csrf_token %}
+    <div class="row" style="margin-top:30px; " >
+        <div class="large-12 large-centered columns" style="">
+
+            <h5 style="font-size: 110%; font-family: DosisBold; padding-top: 30px; padding-bottom: 30px;">
+                <img style="width: 30px;margin-right:10px;" src="{% static "img/megafono.svg" %}"/>
+                {% blocktrans %}<span style="color:#f04d40;">PUBLICAR</span> <span style="color:#58c1c9;">COMO EMPRESA</span>{% endblocktrans %}
+            </h5>
+
+            <div style=""><img src="http://placehold.it/1400x300&text=[BANNER PUBLICIDAD]"/></div>
+
+            <div style="border-radius: 15px; background-color: #58c1c9; margin-top:20px; padding:1rem 3rem; margin-bottom:20px;">
+                
+                <div class="row">
+                    <span style="font-size: 110%;font-family: DosisSemiBold; color: white">{% trans "¿Estás registrado?" %}</span>
+                </div>
+                
+                <div class="row"><div class="large-12 columns">{{ form.non_field_errors }}</div></div> 
+
+                <div class="row" style="padding:20px 0px">
+                    
+                    <div class="large-4 columns">
+                         {% render_field form.login class+="radius shadow-input"  %} 
+                         <!-- <input autofocus="autofocus" class="radius shadow-input" id="id_login" name="login" placeholder="Correo electrónico" type="email"> -->
+                         <img class="shadow-img" src="{% static "img/shadow-input-login.svg" %}"/>
+                         {{ form.login.errors }}
+                    </div>
+                    <div class="large-2 columns" style="font-family: DosisSemiBold; color: white; " >
+                        {% render_field form.remember  %} {% trans "Seguir conectado" %}
+                    </div>
+                    <div class="large-4 columns">
+                        {% render_field form.password class="radius shadow-input" %} 
+                        <!-- <input class="radius shadow-input" id="id_password" name="password" placeholder="Contraseña" type="password"> -->
+                        <img class="shadow-img" src="{% static "img/shadow-input-login.svg" %}"/>
+                        {{ form.password.errors }}
+                        <div class="right" >
+                        </div>
+                    </div>
+                    <div class="large-2 columns" style="font-family: DosisSemiBold; color: white; " >
+                        <a style="font-family: DosisSemiBold; color: white; text-decoration: underline;" 
+                            href="{% url "account_reset_password" %}">
+                            {% trans "¿Has olvidado tu contraseña?" %}
+                        </a>
+                    </div>
+
+                </div>
+                
+                <div class="row" style="font-family: DosisBold; color: white; font-size: 110%;">
+                    <div class="">
+                        <div class="left">
+                            {% trans "O ingresa con" %}
+
+                            <a title="Facebook" class="" href="accounts.facebook">
+                                <img style="" src="{% static "img/f.svg" %}"/>
+                            </a>
+                            <a title="Google" class="" href="accounts.google">
+                                <img style="width:115px;" src="{% static "img/g+.svg" %}"/>
+                            </a>                    
+                            <a title="LinkedIn" class="" href="accounts.linkedin">
+                                <img style="" src="{% static "img/in.svg" %}"/>
+                            </a>
+
+                        </div>    
+                        <div class="left" style="padding-left:10px">
+                            {% trans "¿No estás registrado?" %} 
+                            <a style="font-family: DosisBold; color: white; text-decoration: underline;"
+                                href="{% url "account_signup" %}">
+                                {% trans "Click aquí" %}
+                            </a>
+                        </div>
+                        <div class="right">
+                            <input style="font-family: DosisSemiBold; color: white; font-size: 100%; "  
+                                class="button radius tiny alert"  type="submit" value="{% trans "INGRESAR" %}"/>
+                        </div>
+
+                    </div>
+                    {% include "socialaccount/snippets/login_extra.html" %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </form>
+</div>
+</div>
+</div>
+{% endblock %}

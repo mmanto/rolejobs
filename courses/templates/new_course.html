@@ -1,0 +1,72 @@
+{% load i18n %}
+{% load staticfiles %}
+{% load utils_forms %}
+<div class="large-12 columns container_form">
+  <form name="courseForm" class="course-form" ng-submit="save(courseForm)">
+    <div class="row">
+
+      <!-- FORM -->
+      <div class="large-9 columns left">
+
+        <div class="row">
+          {% standar_field form.title column_size="6" %}
+        </div>
+
+        <div class="row">
+          {% standar_field form.description column_size="12" %}
+        </div>
+          
+           <div class="row">
+          {% standar_field form.price column_size="6" %}
+        </div>
+
+        <div class="row">
+          {% standar_field form.currency_type column_size="12" %}
+        </div>
+
+        <div class="row">
+          {% standar_field form.course_type column_size="12" %}
+        </div>
+
+        <div class="row">
+          {% standar_field form.company_data_from_owner column_size="12" %}
+        </div>
+          
+        <div class="row">
+          {% standar_field form.notify_by_email column_size="12" %}
+        </div>
+
+<!--
+        course_type = forms.ChoiceField(
+        widget=forms.Select(),
+        label=_(u"Tipo de curso"),
+        required=True,
+        choices=COURSES_TYPE_CHOICES
+    )
+
+    description = forms.CharField(
+        widget=TextAngular,
+        required=True)
+
+    currency_type = forms.ChoiceField(
+        widget=forms.Select(),
+        label=_(u"Moneda"),
+        required=True,
+        choices=CURRENCY_TYPE_CHOICES
+    )
+-->
+
+
+        <div class="row form-buttons text-center">
+          <a ng-click="save()" class="rj-button">{% trans "Publicar curso" %}</a>
+
+          <a ng-click="cancel()" class="rj-button alternative">{% trans "Cancelar" %}</a>
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </form>
+</div>

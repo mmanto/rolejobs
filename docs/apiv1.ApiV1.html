@@ -1,0 +1,417 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JSDoc: ApiV1</title>
+    <link href="css/prettify-tomorrow.css" type="text/css" rel="stylesheet">
+    <link href="css/site.css" type="text/css" rel="stylesheet">
+  </head>
+  <body ng-app="">
+    <nav id="toc">
+      <input placeholder="Filter" id="filter-input" class="col12 block field" type="text">
+      <div class="nav-wrapper">
+      <h2><a href="index.html">Index</a></h2>
+      <ul class="module">
+        <!-- accounts -->
+        <h2 class="module">
+          <a chref="" ng-click="moduleaccounts = !moduleaccounts">
+            module: accounts
+          </a>
+          <i ng-cloak="" ng-show="moduleaccounts">+</i>
+        </h2>
+        <li id="accounts" ng-hide="moduleaccounts">
+          <ul class="group">
+            <h2>
+              <a href="" ng-click="accountsservice = !accountsservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="accountsservice">+</i>
+            </h2>
+            <ul ng-hide="accountsservice">
+              <li>
+                <a href="accounts.signup.html">signup</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- apiv_ -->
+        <h2 class="module">
+          <a chref="" ng-click="moduleapiv_ = !moduleapiv_">
+            module: apiv1
+          </a>
+          <i ng-cloak="" ng-show="moduleapiv_">+</i>
+        </h2>
+        <li id="apiv1" ng-hide="moduleapiv_">
+          <ul class="group">
+            <h2>
+              <a href="" ng-click="apiv_service = !apiv_service">
+                service
+              </a>
+              <i ng-cloak="" ng-show="apiv_service">+</i>
+            </h2>
+            <ul ng-hide="apiv_service">
+              <li>
+                <a href="apiv1.ApiV1.html">ApiV1</a>
+              </li>
+            </ul>
+          </ul><ul class="group">
+            <h2>
+              <a href="" ng-click="apiv_undefined = !apiv_undefined">
+                undefined
+              </a>
+              <i ng-cloak="" ng-show="apiv_undefined">+</i>
+            </h2>
+            <ul ng-hide="apiv_undefined">
+              <li>
+                <a href="apiv1.ApiV1.html">ApiV1</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul>
+      </div>
+    </nav>
+    <div id="content" class="page-wrap">
+      <h1 class="title">
+        ApiV1
+        <a class="name-link signature-attributes" href="source/apiv1.ApiV1.html#line35">source</a>
+      </h1>
+      <div id="main" class="big-container">
+        <!-- source code html -->
+        <!-- index.html -->
+        <!-- class files -->
+        <div>
+          <div><div class="container-overview">
+  <ul class="chips">
+  </ul>
+  <div class="clearfix"></div>
+  <div class="details"></div>
+</div>
+<div class="functions">
+  <h3 class="subsection-title">Methods</h3>
+  <dl>
+    <dt>
+      <a href="" class="name-link" id="get">
+        <h4 class="name">
+          get
+          <span class="signature">(path, [paran])</span>
+        </h4>
+      </a>
+    </dt>
+    <dd>
+      <div class="description">
+        <span>
+          <p>Get path</p>
+        </span>
+      </div>
+      <div>
+        <h4>Example</h4>
+        <pre class="prettyprint"><code><span class="str">ApiV1.get("users", { max: 20 })
+         .then((users) => {
+             // users.data &lt;- the data 
+         });</span></code></pre>
+      </div>
+      <div>
+        <h4>Parameters</h4>
+        <table class="params">
+          <thead>
+            <tr><th>Name</th><th>Type</th><th class="last">Description</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="name">path</td>
+              <td class="type"><span class="param-type">
+                String
+              </span></td>
+              <td class="description last">
+                <span>
+                  <p>The path</p>
+                </span>
+              </td>
+            </tr><tr>
+              <td class="name">[paran]</td>
+              <td class="type"><span class="param-type">
+                Object
+              </span></td>
+              <td class="description last">
+                <span>
+                  <p>Params to querystring</p>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </dd>
+  </dl><dl>
+    <dt>
+      <a href="" class="name-link" id="post">
+        <h4 class="name">
+          post
+          <span class="signature">(path, data, [paran])</span>
+        </h4>
+      </a>
+    </dt>
+    <dd>
+      <div class="description">
+        <span>
+          <p>Post path</p>
+        </span>
+      </div>
+      <div>
+        <h4>Example</h4>
+        <pre class="prettyprint"><code><span class="str">ApiV1.post("users", { name: "Jhon", lastName: "Travolta" })
+         .then((res) => {
+             // res.status === 201
+         });</span></code></pre>
+      </div>
+      <div>
+        <h4>Parameters</h4>
+        <table class="params">
+          <thead>
+            <tr><th>Name</th><th>Type</th><th class="last">Description</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="name">path</td>
+              <td class="type"><span class="param-type">
+                String
+              </span></td>
+              <td class="description last">
+                <span>
+                  <p>The path</p>
+                </span>
+              </td>
+            </tr><tr>
+              <td class="name">data</td>
+              <td class="type"><span class="param-type">
+                Object
+              </span></td>
+              <td class="description last">
+                <span>
+                  <p>Data to send</p>
+                </span>
+              </td>
+            </tr><tr>
+              <td class="name">[paran]</td>
+              <td class="type"><span class="param-type">
+                Object
+              </span></td>
+              <td class="description last">
+                <span>
+                  <p>Params to querystring</p>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </dd>
+  </dl><dl>
+    <dt>
+      <a href="" class="name-link" id="put">
+        <h4 class="name">
+          put
+          <span class="signature">(path, data, [paran])</span>
+        </h4>
+      </a>
+    </dt>
+    <dd>
+      <div class="description">
+        <span>
+          <p>Put path</p>
+        </span>
+      </div>
+      <div>
+        <h4>Example</h4>
+        <pre class="prettyprint"><code><span class="str">ApiV1.post("users/32", { password: "123" })
+         .then((res) => {
+             // res.status === 200
+         });</span></code></pre>
+      </div>
+      <div>
+        <h4>Parameters</h4>
+        <table class="params">
+          <thead>
+            <tr><th>Name</th><th>Type</th><th class="last">Description</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="name">path</td>
+              <td class="type"><span class="param-type">
+                String
+              </span></td>
+              <td class="description last">
+                <span>
+                  <p>The path</p>
+                </span>
+              </td>
+            </tr><tr>
+              <td class="name">data</td>
+              <td class="type"><span class="param-type">
+                Object
+              </span></td>
+              <td class="description last">
+                <span>
+                  <p>Data to send</p>
+                </span>
+              </td>
+            </tr><tr>
+              <td class="name">[paran]</td>
+              <td class="type"><span class="param-type">
+                Object
+              </span></td>
+              <td class="description last">
+                <span>
+                  <p>Params to querystring</p>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </dd>
+  </dl><dl>
+    <dt>
+      <a href="" class="name-link" id="request">
+        <h4 class="name">
+          request
+          <span class="signature">(method, path, [data], [params])</span>
+        </h4>
+      </a>
+    </dt>
+    <dd>
+      <div class="description">
+        <span>
+          <p>Do a request</p>
+        </span>
+      </div>
+      <div>
+        <h4>Parameters</h4>
+        <table class="params">
+          <thead>
+            <tr><th>Name</th><th>Type</th><th class="last">Description</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="name">method</td>
+              <td class="type"><span class="param-type">
+                String
+              </span></td>
+              <td class="description last">
+                <span>
+                  <p>This can be &quot;GET&quot;, &quot;POST&quot; or &quot;PUT&quot;</p>
+                </span>
+              </td>
+            </tr><tr>
+              <td class="name">path</td>
+              <td class="type"><span class="param-type">
+                String
+              </span></td>
+              <td class="description last">
+                <span>
+                  <p>The path</p>
+                </span>
+              </td>
+            </tr><tr>
+              <td class="name">[data]</td>
+              <td class="type"><span class="param-type">
+                Object
+              </span></td>
+              <td class="description last">
+                <span>
+                  <p>If is a POST o PUT, the data to send</p>
+                </span>
+              </td>
+            </tr><tr>
+              <td class="name">[params]</td>
+              <td class="type"><span class="param-type">
+                Object
+              </span></td>
+              <td class="description last">
+                <span>
+                  <p>Params to querystring</p>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </dd>
+  </dl><dl>
+    <dt>
+      <a href="" class="name-link" id="getInstance">
+        <h4 class="name">
+          getInstance
+        </h4>
+      </a>
+    </dt>
+    <dd>
+      <div class="description">
+        <span>
+          <p>Get instance</p>
+        </span>
+      </div>
+    </dd>
+  </dl><dl>
+    <dt>
+      <a href="" class="name-link" id="normalize">
+        <h4 class="name">
+          normalize
+          <span class="signature">(data)</span>
+        </h4>
+      </a>
+    </dt>
+    <dd>
+      <div class="description">
+        <span>
+          <p>Normalize data to underscore style</p>
+        </span>
+      </div>
+      <div>
+        <h4>Example</h4>
+        <pre class="prettyprint"><code><span class="str">Apiv1.normalize({lastName: 'Jhon'});
+     // {last_name: 'Jhon'}</span></code></pre>
+      </div>
+      <div>
+        <h4>Parameters</h4>
+        <table class="params">
+          <thead>
+            <tr><th>Name</th><th>Type</th><th class="last">Description</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="name">data</td>
+              <td class="type"><span class="param-type">
+                Object
+              </span></td>
+              <td class="description last">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </dd>
+  </dl>
+</div></div>
+        </div>
+      </div>
+      <footer style="clear:both">
+        Documentation generated by
+        <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a>
+        using
+        <a href="https://github.com/allenhwkim/angular-jsdoc">Angular-JSDoc template</a>
+      </footer>
+    </div>
+    <script src="js/prettify.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/site.js"></script>
+    <!--%= prettyJson %-->
+    <script>
+      prettyPrint();
+      var lineNo = window.location.hash.match(/#line([0-9]+)$/);
+      lineNo && document.querySelector("ol li:nth-child("+(lineNo[1])+")").scrollIntoView();
+    </script>
+  </body>
+</html>

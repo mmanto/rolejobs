@@ -1,0 +1,110 @@
+<div class="panel-screen jobs-screen">
+  <div class="panel-side">
+    <!-- SIDE FILTERS -->
+    <div class="filter-list">
+      <h1>{{ "Filtros" | translate }}</h1>
+      <rj-filter
+         ng-repeat="filter in filters"
+         title="filter.name"
+         type="{{ filter.type }}"
+         ng-model="filter.value"
+         choices="filter.choices"
+         multi-select="{{ !!filter.multi }}"
+         on-filter-change="updateFilters()"
+         item-pk="pk"
+      ></rj-filter>
+
+      <!-- results info and commands -->
+      <div class="filter-box">
+        <h1 class="alternative">Filtros selecionados</h1>
+        <ul class="selected-filters">
+          <li 
+            ng-repeat="filter in filters"
+            ng-if="!filter.multi && filter.value"
+          >
+            <a href="">
+              <span class="field">{{ filter.name }}:</span>
+              <span>{{ filter.value.name }}</span>
+              <i class="close" ng-click="removeFilter(filter)"></i>
+            </a>
+          </li>
+        </ul>
+        <div
+          ng-repeat="filter in filters"
+          ng-if="filter.multi && filter.value.length"
+        >
+          <h2 class="alternative">
+            {{ filter.name }}
+          </h2>
+          <ul class="selected-filters">
+            <li 
+              ng-repeat="value in filter.value"
+            >
+              <a href="">
+                <span>{{ value.name }}</span>
+                <i class="close" ng-click="removeFilter(filter, value)"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="results-text">
+        Se encontraron <span>{{ jobsInfo.results }}</span> ofertas de empleo
+      </p>  
+
+      <!-- <div class="rj-icon-button alternative lined">
+        <rj-icon icon="download"></rj-icon>
+        <div class="btn-container">
+          <a class="button" href="#">Guardar esta búsqueda</a>
+        </div>
+      </div>
+      -->
+
+      <a
+        class="rj-button black"
+        href="#"
+        ng-click="clearFilters()"
+      >
+        {{ "Quitar todos los filtros" | translate }}
+        <i class="fa fa-times"></i>
+      </a>
+      <!-- / results -->
+    </div>
+  </div><!-- /panel -->
+  <div class="content">
+    <div class="header-container">
+      <div class="search-bar">
+        <div class="search-box">
+          <input
+            type="text"
+            name="search-query"
+            ng-model="searchQuery"
+            ng-model-options="{ debounce: 300 }"
+          >
+        </div>
+        <div class="right-title">
+          {{ "Búsqueda avanzada" | translate }}
+        </div>
+      </div>
+    </div>
+    <div class="jobs-container">
+      <alert ng-show="!jobs.length" type="'info'">
+        {{ "No hay resultados" | translate }}
+      </alert>
+      <job-item
+        ng-repeat="job in jobs.items | orderBy: '-featured' track by job.pk"
+        job="job"
+      ></job-item>
+
+      <pagination
+        ng-if="jobs.length"
+        total-items="jobs.totalLength"
+        page="actualPage"
+        items-per-page="5"
+        on-select-page="changePage(page)"
+      ></pagination>
+
+    <div><!-- /jobs -->
+  </div><!-- /content -->
+</div>

@@ -1,0 +1,83 @@
+<div class="panel-screen employer-job-detail">
+  <div class="panel-header">
+
+    <div class="title-container">
+      <h1 class="title">{{ job.title }}</h1>
+      <h2 class="subtitle">
+        {{ job.position_text }} de  
+        {{ job.role_text }} 
+        {{ job.hierarchy_text }}
+      </h2>
+    </div>
+  </div><!-- /header -->
+
+  <div class="panel-side">
+    <ul class="rj-list">
+      <li class="header">
+        Información 
+      </li>
+      <li class="secondary text-bold">
+        {{ "Nº de referencia:" }}
+      </li>
+      <li nf-show="job.reference_number">
+        {{ job.reference_number }}
+      </li>
+      <li nf-show="!job.reference_number">
+        -----
+      </li>
+      <li class="secondary text-bold">
+        {{ "Tipo" | translate }}
+      </li>
+      <li>
+        {{ job.job_type_text }}
+      </li>
+      <li class="secondary text-bold">
+        {{ "Rama" | translate }}
+      </li>
+      <li>
+        {{ job.branch_activity_text }}
+      </li>
+
+      <li class="header">
+        Opciones
+      </li>
+      <li>
+        <a ng-click="edit()">{{ "Editar publicación" | translate }}</a>
+      </li>
+      <li>
+        <a ui-sref="jobs.detail({id: job.id})">{{ "Ver publicación" | translate }}</a>
+      </li>
+    </ul>
+  </div><!-- /panel -->
+
+  <div class="content">
+    <div class="job-container">
+      <h2>{{ "Postulantes" | translate }}</h2>
+
+      <alert
+        ng-show="!postulations || !postulations.items.length"
+        type="'info'"
+      >{{ "No hay postulaciones" | translate }}
+      </alert>
+
+      <job-postulant-item
+        ng-if="postulations && postulations.items.length"
+        ng-repeat="postulation in postulations.items track by postulation.id"
+        postulation="postulation"
+        view-postulation="view"
+      >
+      </job-postulant-item>
+
+      <div>
+        <pagination
+          ng-if="postulations.length"
+          total-items="postulations.totalLength"
+          page="actualPage"
+          items-per-page="5"
+          on-select-page="changePage(page)"
+        ></pagination>
+      </div>
+
+    <div><!-- /job -->
+  </div><!-- /content -->
+</div>

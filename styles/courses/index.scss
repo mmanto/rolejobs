@@ -1,0 +1,28 @@
+/**
+Jobs styles 
+**/ 
+
+@import "./job";
+@import "./detail";
+@import "./selectroles";
+@import "./question_item";
+
+/**
+New job form
+**/
+
+.copy-from {
+    margin: 10px;
+    text-align: center;
+    vertical-align: bottom;
+    font-family: DosisBold;
+    color: $verde;
+    font-size: 25px;
+
+    img {
+        vertical-align: bottom;
+    }
+
+}
+
+

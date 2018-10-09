@@ -1,0 +1,215 @@
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load utils_forms %}
+
+<div class="large-12 columns container_form">
+
+  <form ng-submit="save(postulateForm)" name="postulateForm" class="postulate-form">
+
+    <div class="row">
+      <h5>{% trans "Postular" %}</h5>
+    </div>
+
+    {% for field in questions_form %}
+    <div class="row">
+      {% standar_field field column_size="12" %}
+    </div>
+    {% endfor %}
+
+    <div class="row">
+      <ul class="djng-field-errors" ng-show="apiErrors.postulateForm.$nonfield">
+        <li ng-show="apiErrors.postulateForm.$nonfield" class="invalid" ng-bind="apiErrors.postulateForm.$nonfield.msg"></li>
+      </ul>
+    </div>
+
+    <div class="row form-buttons text-center">
+      <a ng-click="postulate(postulateForm)" class="rj-button">{% trans "Envíar solicitud" %}</a>
+    </div>
+
+  </form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

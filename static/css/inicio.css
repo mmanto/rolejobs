@@ -1,0 +1,18 @@
+#inicio-tabs {
+    background-color: #4ea6ad;
+    margin: 0 auto;
+}
+
+#inicio-tabs .tab-title a{
+    font-size: 90%;
+    margin: 0;
+    padding: 10px 6px;
+    color: white;
+    font-family: DosisExtraBold;
+    background-color: #4ea6ad;
+}
+
+#inicio-tabs .tab-title.active a {
+    background-color: #f04d40;
+}
+

@@ -1,0 +1,136 @@
+<div class="row info-bar">
+</div>
+<div class="panel-screen job-detail">
+  <div class="content">
+    <div class="header-container">
+      <ul class="breadcrumbs">
+        <li><a ui-sref="jobs.jobs">{{ "Empleos" | translate }}</a></li>
+        <li><a ui-sref="jobs.byArea({ area: jobData.area.slug })">{{ jobData.area.name }}</a></li>
+        <li>
+          <a ui-sref="jobs.byArea({
+          area: jobData.area.slug,
+          toSubarea: jobData.subarea.pk})"
+             >
+             {{ jobData.subarea.name }}
+          </a></li>
+      </ul>
+
+      <div class="title-container">
+        <alert
+           ng-show="jobData.postulation_status !== null"
+           type="postulationStatus[jobData.postulation_status].type"
+           ng-bind="postulationStatus[jobData.postulation_status].message"
+        ></alert>
+        <h1 class="title">{{ jobData.title }}</h1>
+        <h2 class="subtitle">
+          {{ jobData.position_text }} de  
+          {{ jobData.role_text }} 
+          {{ jobData.hierarchy_text }}
+        </h2>
+      </div>
+    </div>
+    <div class="meta-data-container">
+      <div class="owner-container">
+        <img ng-src="{{jobData.owner.avatars.brand}}">
+        <a href="">
+          {{ jobData.owner.name_company }}
+        </a>
+        <a
+          class="postulation-button rj-button"
+          ng-click="postulate()"
+        >
+          {{ "Postularme" | translate }}
+        </a>
+      </div>
+
+      <ul class="meta">
+        <li>
+          <span class="mdc-dh">
+            {{ "Tipo:" | translate }}
+          </span>
+          {{ jobData.job_type_text }}
+        </li>
+        <li>
+          <span class="mdc-dh">
+            {{ "Rama:" | translate }}
+          </span>
+          {{ jobData.branch_activity_text }}
+        </li>
+      </ul>
+    </div>
+    <div class="description" ng-bind-html="getDescription()"></div>
+    <div 
+      class="requirements-container"
+      ng-if="jobData.requirements.length ||
+             jobData.language_requirements.length ||
+             jobData.knowledge_requirements.length ||
+             jobData.education_requirement"
+    >
+      <h3>{{ "Requisitos" | translate }}</h3>
+      <div class="requirement-education-container" ng-if="jobData.education_requirement">
+        <h4>{{ "Educación"| translate }}</h4>
+        <span>{{ jobData.education_requirement.level_text }}</span>
+        <span ng-show="jobData.education_requirement.finished">{{ "completo" | translate }}</span>
+        <span ng-show="jobData.education_requirement.exclusive" class="exclusive">
+          {{ "(Excluyente)" }}
+        </span>
+      </div>
+      <div class="requirements-languages-container" ng-if="jobData.language_requirements.length">
+        <h4>{{ "Idiomas" | translate }}</h4>
+        <ul>
+          <li ng-repeat="req in jobData.language_requirements track by req.id">
+            <span>{{ req.name }}</span>
+            <span ng-if="req.exclusive" class="exclusive">{{ "(Excluyente)" }}</span>
+            <rating
+              class="rating"
+              value="req.level"
+              max="10"
+              readonly="true">
+            </rating>
+          </li>
+      </div>
+      <div class="requirements-knowledge-container" ng-if="jobData.knowledge_requirements.length">
+        <h4>{{ "Conocimientos en IT" | translate }}</h4>
+        <ul>
+          <li ng-repeat="req in jobData.knowledge_requirements track by req.id">
+            <span>{{ req.technology_text }} &gt;</span>
+            <span>{{ req.subtechnology_text }}</span>
+            <span>({{ req.hierarchy_text }})</span>
+            <span ng-if="req.exclusive" class="exclusive">{{ "(Excluyente)" }}</span>
+          </li>
+      </div>
+      <div class="requirements-others-container" ng-if="jobData.requirements.length">
+        <h4>{{ "Otros requisitos" }}</h4>
+        <ul>
+          <li
+            ng-repeat="req in jobData.requirements track by req.id"
+          >
+            {{ req.description }}
+            <span ng-if="req.exclusive" class="exclusive">{{ "(Excluyente)" }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+
+  <div class="panel-side">
+    <div class="company-info-container">
+      <a href="#">
+        {{ job.owner.name_company }}
+      </a>
+    </div>
+    <ul class="rj-list">
+      <li>
+        <h4 class="secondary header">Similares</h4>
+      </li>
+      <!-- 
+        <li ng-repeat="subarea in area.subareas track by subarea.pk">
+        {{subarea.name}}
+        <input type="checkbox" ng-model="filters.subareas[subarea.pk]">
+        </li>
+      -->
+    </ul>
+  </div><!-- /panel -->
+
+</div>

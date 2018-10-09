@@ -1,0 +1,195 @@
+<!-- search -->
+<div id="home-search">
+  <div id="home-search-background">
+    <div id="home-search-container">
+      <div class="row">
+        <div class="small-12 small-centered large-9 large-centered columns text-left"
+             style="padding-top:40px;padding-bottom:40px;">
+
+          <div class="row">
+            <div class="large-12 columns">
+              <span style="font-size: 130%;font-family: DosisRegular; color: #7c7d80;">
+                {{ "Hoy puede ser el día de encontrar tu rol" }}
+              </span>
+              <span style="font-size: 130%;font-family: DosisSemiBold; color: #7c7d80;">
+                {{ "¿Comenzamos?" | translate }}
+              </span>
+            </div>
+          </div>
+
+          <div class="row" style="height:100px;">
+
+            <div class="large-5 columns" style="display:table; height:100%;">
+              <div style=" display:table-cell; vertical-align:middle;">
+                <tags-input
+                  ng-model="tags"
+                  placeholder="{{ 'Rol' | translate }}"
+                  replace-spaces-with-dashes="false"
+                >
+                  <auto-complete source="loadTags($query)"></auto-complete>
+                </tags-input>
+                <img style="margin-top: -20px;" src="{{ 'img/home-shadow-input.svg' | static }}"> 
+              </div>
+            </div> 
+
+            <div class="large-5 columns" style="display:table; height:100%;">
+              <div style=" display:table-cell; vertical-align:middle;">
+                <select style="border-radius: 4px; color: white; background-color: #58c1c9; margin: 0;
+                /*margin-top: 25px; padding: 5px; padding-left: 10px*/;font-family: DosisSemiBold; 
+                font-size:130%; border: none; height: 45px;"> 
+                  <option>{{ '¿En dónde?' | translate }}</option>
+                </select>
+                <img style="margin-top: -10px;" src="{{ 'img/home-shadow-input.svg' | static }}">
+              </div>
+            </div> 
+
+            <div class="large-2 columns" style="display:table; height:100%;">
+              <div style=" display:table-cell; vertical-align:middle;">
+                <a href="#"  
+                   style="height: 45px; font-size:120%; font-family: DosisSemiBold; margin: 0;  
+                   display:table; padding: 0 !important;" 
+                   class="text-center button alert large expand radius"
+                   ng-click="search()"
+                >
+
+                  <div style="display:table-cell;vertical-align:middle">
+                    <img style="" class="" src="{{ 'img/buttom-galera.svg' | static }}"> 
+                    <span style="vertical-align:middle;" class="">{{ "ROLE IT!" | translate }}</span>
+                  </div>
+                </a>
+                <img style="margin-top: -15px;" src="{{ 'img/home-shadow-input.svg' | static }}">
+              </div>
+            </div> 
+
+          </div>
+
+          <!-- <div class="row">
+            <div class="large-12 columns">
+              <a style="font-family: DosisBold; text-decoration: none; color: #7c7d80;" 
+                 href="#">
+                {{ "Búsqueda avanzada" | translate }}</a>
+            </div>
+          </div>-->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /search -->
+<div class="row fullWidth"><img style="padding-bottom:50px;" src="/static/img/home-separator-top.svg"></div>
+
+<!-- Jobs -->
+<div class="jobs-section">
+  <div class="sidebar">
+    <div class="row">
+      <ul class="rj-list">
+        <li class="secondary-bg header">
+          Desactivar roles
+          <input type="checkbox" ng-model="search.roles">
+        </li>
+        <li>
+          <h4 class="secondary">Empleos por Areas</h4>
+        </li>
+        <li>
+          <a 
+            class="secondary"
+            href="/jobs/areas"
+            ui-sref="jobs.browse_areas"
+          >
+            Ver todos
+          </a>
+        </li>
+        <li
+          ng-repeat="area in areas | orderBy:area.name track by area.id"
+          class="big"
+        >
+          <a
+            ui-sref="jobs.byArea({area: area.slug})"
+            ng-bind="area.name"
+          ></a>
+        </li>
+      </ul>
+    </div>
+    <div class="row">
+       <ul class="rj-list">
+        <li>
+          <h4 class="secondary">Empleos por Roles</h4>
+        </li>
+        <li>
+          <a class="secondary" href="#">
+            Ver todos
+          </a>
+        </li>
+        <li
+          ng-repeat="role in roles | orderBy:role.name track by role.pk"
+          class="big"
+        >
+          <a
+          ui-sref="jobs.byRoles({filters: {roles: {[role.pk]: true}}})"
+            ng-bind="role.name"
+          ></a>
+        </li>
+
+      </ul>
+   
+    </div>
+  </div>
+  <div class="jobs-container">
+    <h4>{{ "EMPLEOS DESTACADOS" | translate }}</h4>
+    <tabset>
+      <tab>
+        <tab-heading>
+          <span>{{ 'Empleos en Argentina' | translate }}</span>
+          <img style="margin: 0 auto;" class="active-arrow" src="{{ 'img/tab-active-arrow.svg' | static }}"/>
+        </tab-heading>
+
+        <div class="galera-arrow">
+          <div class="galera-body">
+            <img style="width: 25px;" src="/static/img/busqueda-con-roles-galera.svg">
+            <span>Búsquedas con Roles!</span>
+            <img style="arrow" src="/static/img/busqueda-con-roles-flecha.svg">
+          </div>
+        </div>
+        <job-item
+          ng-repeat="job in jobs.items | orderBy: '-featured' as fjobs track by job.pk"
+          job="job"
+        ></job-item>
+
+      </tab>
+      <tab>
+        <tab-heading>
+          <span>{{ 'Empleos internacionales' | translate }}</span>
+          <img style="margin: 0 auto;" class="active-arrow" src="{{ 'img/tab-active-arrow.svg' | static }}"/>
+        </tab-heading>
+
+        <div class="galera-arrow">
+          <div class="galera-body">
+            <img style="width: 25px;" src="/static/img/busqueda-con-roles-galera.svg">
+            <span>Búsquedas con Roles!</span>
+            <img style="arrow" src="/static/img/busqueda-con-roles-flecha.svg">
+          </div>
+        </div>
+        <job-item
+          ng-repeat="job in jobs.items | orderBy: '-featured' track by job.pk"
+          ng-if="job.arg"
+          job="job"
+        ></job-item>
+      </tab>
+    </tabset>
+
+  </div>
+</div>
+<!-- /jobs -->
+
+<!-- Courses -->
+<div class="courses-section">
+  <div class="courses-container">
+    <h4>{{ "CURSOS" | translate }}</h4>
+        <course-item
+          ng-repeat="course in courses.items | orderBy: course.pk"
+          job="job"
+        ></course-item>
+  </div>
+</div>
+<!-- /courses -->

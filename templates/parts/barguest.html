@@ -1,0 +1,33 @@
+{% load i18n %}
+{% load staticfiles %}
+<ul class="right"  >
+  <li>
+    <a style="font-family: DosisSemiBold; font-weight: bold;" ui-sref="accounts.login">
+      {% trans "INICIAR SESIÓN" %}
+    </a>
+  </li>
+  <li class="divider" style="border: 0;"></li>
+  <li>
+    <a style="font-family: DosisSemiBold; font-weight: bold;" ui-sref="accounts.signup">
+      {% trans "REGISTRATE" %}
+    </a>
+  </li>
+
+  <li class="divider" style="border: 0;"></li>
+
+  <li class="has-dropdown" style="">
+    {% get_current_language as LANGUAGE_CODE %}
+    {% get_available_languages as LANGUAGES %}
+
+    <a href="#"><img src="{% static "img/" %}{{LANGUAGE_CODE}}.svg"></img></a>
+    <ul id="lang" class="dropdown">
+      {% for lang in LANGUAGES %}
+      <li><a data-lang="{{ lang.0 }}" href="#"><img src="{% static "img/" %}{{LANGUAGE_CODE}}.svg"></img></a></li>
+      {% endfor %}
+    </ul>
+
+  </li>
+  <li style="padding-right:100px;">
+  </li>
+
+</ul>

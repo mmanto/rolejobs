@@ -1,0 +1,26 @@
+<div class="row info-bar">
+</div>
+<div class="panel-screen job-detail">
+  <div class="content">
+    <div ng-include src="formUrl"></div>
+  </div><!-- /content -->
+
+  <div class="panel-side">
+    <div class="company-info-container">
+      <a href="#">
+        {{ job.owner.name_company }}
+      </a>
+    </div>
+    <ul class="rj-list">
+      <li>
+        <h4 class="secondary header">Similares</h4>
+      </li>
+      
+        <li ng-repeat="subarea in area.subareas track by subarea.pk">
+        {{subarea.name}}
+        <input type="checkbox" ng-model="filters.subareas[subarea.pk]">
+        </li>
+      
+    </ul>
+  </div><!-- /panel -->
+</div>

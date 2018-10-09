@@ -1,0 +1,36 @@
+<div class="panel-screen jobs-screen">
+  <div class="panel-side">
+    <ul class="rj-list">
+      <li>
+        <h4 class="secondary header">Subareas</h4>
+      </li>
+      <li ng-repeat="subarea in area.subareas track by subarea.pk">
+       {{subarea.name}}
+       <input type="checkbox" ng-model="filters.subareas[subarea.pk]">
+      </li>
+    </ul>
+  </div><!-- /panel -->
+  <div class="content">
+    <div class="header-container">
+      <h1>{{ "Empleos de " | translate }} {{ area.name }}</h1>
+    </div>
+    <div class="jobs-container">
+      <alert ng-show="!jobs.length" type="'info'">
+        {{ "No hay resultados" | translate }}
+      </alert>
+      <job-item
+        ng-repeat="job in jobs.items | orderBy: '-featured' track by job.pk"
+        job="job"
+      ></job-item>
+
+      <pagination
+        ng-if="jobs.length"
+        total-items="jobs.totalLength"
+        page="actualPage"
+        items-per-page="5"
+        on-select-page="changePage(page)"
+      ></pagination>
+
+    <div><!-- /jobs -->
+  </div><!-- /content -->
+</div>

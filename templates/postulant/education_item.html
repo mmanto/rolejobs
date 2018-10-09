@@ -1,0 +1,38 @@
+<div class="postulant-education-item">
+  <div class="left-side">
+    <span class="from">{{ education.start_date | date:"MM/yyyy"}}</span>
+    -
+    <span ng-if="education.is_current">{{ "Al corriente" | translate }}</span>
+    <span ng-if="!education.is_current">{{ education.end_date | date:"MM/yyyy" }}</span>
+    <br />
+    <span
+      class="finished"
+      ng-show="education.finished">
+    {{ "Finalizado" | translate }}</span>
+    <span
+      class="finished"
+      ng-show="!education.finished">
+    {{ "No terminado" | translate }}</span>
+
+  </div>
+  <div class="right-side">
+    <h4>{{ education.institution }}</h4>
+    <h5>{{ education.level_text }}</h5>
+    <ul
+       ng-if="education.certifications.length"
+       class="certifications"
+    >
+      <li
+        ng-repeat="cert in education.certifications track by cert.id"
+      >
+        <i class="fa fa-certificate" aria-hidden="true"></i>
+        <span class="bold">
+          {{ cert.type_text }}
+          {{ "en" | translate }}
+          {{ cert.name }}
+        </span>
+        <span class="desc">{{ cert.description }}</span>
+      </li>
+    </ul>
+  </div>
+</div>

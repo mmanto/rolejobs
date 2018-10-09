@@ -1,0 +1,70 @@
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load utils_forms %}
+
+<div class="large-12 columns container_form">
+
+  <form ng-submit="savePostulantInfo(postulantForm)" name="postulantForm" class="postulant-form">
+
+    <div class="row">
+      <h5>{% trans "Datos personales" %}</h5>
+    </div>
+    
+    <div class="row">
+      {% standar_field form.first_name %}
+      {% standar_field form.last_name %}
+      {% standar_field form.category %}
+    </div>
+
+    <div class="row">
+      {% standar_field form.marital_status %}
+      {% standar_field form.dni %}
+      {% standar_field form.gender shadow=False %}
+    </div>
+
+    <div class="row">
+      {% standar_field form.country_of_birth %}
+      {% standar_field form.date_of_birth %}
+      {% standar_field form.postal_code %}
+    </div>
+
+    <div class="row">
+      {% standar_field form.phone_number %}
+      {% standar_field form.mobile_number %}
+      <div class="large-4 columns">
+        <label for="geo-data">{% trans "Lugar de recidencia" %}</label>
+        <geo-field
+          ng-required="true"
+          name="geo-data"
+          placeholder="{% trans "Seleecione su lugar de recidencia" %}"
+          ng-model="postulantGeoData"></geo-field>
+        <ul class="djng-field-errors" ng-show="postulantForm['geo-data'].$dirty">
+         <li
+           ng-show="postulantForm['geo-data'].$error.required"
+           class="invalid">{% trans "Este campo es requerido." %}
+         </li> 
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      {% standar_field form.own_vehicle shadow=False %}
+      {% standar_field form.driver_license %}
+    </div>
+    
+    <div class="row">
+      {% render_field form.has_disability class="radius shadow-input" %}
+      <span>¿Posee algún tipo de disacapasidad?</span>
+      {{ form.has_disability.errors }}
+    </div>
+
+    <div class="row form-buttons text-center">
+      <a ng-click="savePostulantProfile(postulantForm)" class="rj-button">{% trans "Guardar" %}</a>
+      <a ng-click="reset(postulantForm)" class="rj-button alternative">{% trans "Cancelar" %}</a>
+    </div>
+
+  </form>
+
+</div>

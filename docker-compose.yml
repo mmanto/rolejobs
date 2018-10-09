@@ -1,0 +1,19 @@
+version: '2'
+services:
+  db:
+    image: postgres:9.5
+    environment:
+      POSTGRES_USER: "rolejobs"
+      POSTGRES_PASSWORD: "eysfDJBf85Anl2go51TxvEDR3dVY91"
+      POSTGRES_DB: "RoleJobs"
+    ports:
+      - "7432:5432"
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db

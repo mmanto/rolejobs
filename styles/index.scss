@@ -1,0 +1,106 @@
+
+/* Colors */
+$verde: #58c1c9 !default;
+$gris1: #cdcfd1 !default;
+$gris2: #edeeee !default;
+$gris3: #7c7d80 !default;
+
+$naranja1: #f47736 !default;
+$naranja2: #f04d40 !default;
+
+@mixin flexbox {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+@mixin flexitem ($fg: 1, $fs: null, $fb: null) {
+    $fg-boxflex: $fg;
+
+    @if type-of($fg) == 'list' {
+		$fg-boxflex: nth($fg, 1);
+	}
+
+    -webkit-box-flex: $fg-boxflex;
+	-webkit-flex: $fg $fs $fb;
+	-moz-box-flex: $fg-boxflex;
+	-moz-flex: $fg $fs $fb;
+	-ms-flex: $fg $fs $fb;
+    flex: $fg $fs $fb;
+
+}
+
+.flex-box {
+    @include flexbox();
+
+    .flex-item {
+        @include flexitem();
+    }
+}
+
+/* foundation-sites-5 */
+@import "../node_modules/foundation-sites-5/scss/normalize";
+@import "../node_modules/foundation-sites-5/scss/foundation";
+
+/* font awesome */
+$fa-font-path:   "../fonts";
+@import "../node_modules/font-awesome/scss/font-awesome";
+
+/* jquery-ui */ 
+@import "../node_modules/jquery-ui-browserify/themes/base/jquery.ui.all.css";
+
+/* ng-tags-input */
+@import "../node_modules/ng-tags-input/build/ng-tags-input.css";
+
+/* slick-carrousel */ 
+@import "../node_modules/slick-carousel/slick/slick.scss";
+
+/* TextAngular */ 
+@import "../node_modules/textangular/dist/textAngular.css";
+
+// parts 
+@import "./list";
+@import "./buttons";
+@import "./bar";
+@import "./modal";
+@import "./forms";
+@import "./mono-screen";
+@import "./panel-screen";
+@import "./profile";
+
+// app
+@import "app";
+
+// utils 
+@import "utils/index";
+
+// home 
+@import "home/index";
+
+// Accounts 
+@import "accounts/index";
+
+// Postulants 
+@import "postulants/index";
+
+// Employers
+@import "employer/index";
+
+// Jobs!
+@import "jobs/index";
+
+// Cropper
+@import "cropper/index";
+
+// Geo
+@import "geo/index";
+
+// Contact
+@import "contact/index";
+
+// @TODO MOVE!!!
+#menu-list li {
+    width: 100%;
+}

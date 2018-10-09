@@ -1,0 +1,68 @@
+<div class="large-12 columns" style="padding-left: 0;">
+
+  <div class="large-12 columns">
+    <a class="rj-button small" ui-sref="employer.main.jobedit({pk:'-1'})">
+      <img src="/static/img/megafono.png">
+      NUEVO AVISO</a>
+    <!-- <a class="rj-button small lined" ng-click="">ULTIMOS USADOS</a>
+    <a class="rj-button small lined" ng-click="">CREADOS POR MI</a> -->
+  </div>
+
+  <div class="large-2 columns">
+    <ul class="rj-list" style="margin: 0">
+      <li
+        class="secondary big"
+        ng-class="{'light-bg': filterStatus === null}"
+        >
+          <a href="#" ng-click="setFilterStatus(null)">{{ "Todos" | translate }}</a>
+      </li>
+      <li
+        ng-repeat="status in info.aviable_status track by status.value"
+        ng-class="{'light-bg': filterStatus === status.value}"
+      >
+        <a href="#" ng-click="setFilterStatus(status.value)">{{ status.name }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="large-10 columns lista-avisos">
+
+    <div class="header-panel">
+      <ul class="icons">
+        <li>
+          <span>{{ info.total_postulants }}</span>
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </div>
+
+    <div class="jobs-list">
+      <div 
+         ng-if="jobs.length"
+         rj-table-collection
+         collection-schema="jobsSchema"
+         collection-data="jobs.items"
+         on-click="gotoJob($item.pk)"
+         selectable="true"
+         ng-model="selecteds.items"
+      ></div>
+
+      <alert ng-if="!jobs.length" type="'info'">
+        {{ "No hay avisos" | translate }}
+      </alert>
+
+      <div>
+        <pagination
+          ng-if="jobs.length"
+          total-items="jobs.totalLength"
+          page="actualPage"
+          items-per-page="5"
+          on-select-page="changePage(page)"
+        ></pagination>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

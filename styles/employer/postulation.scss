@@ -1,0 +1,34 @@
+
+.employer-postulation-detail {
+    @extend .employer-job-detail;
+
+    .title-extra span.status {
+        font-family: DosisBold;
+        color: $naranja1;
+        font-size: 40px;
+
+        &.rejected {
+            color: red;
+        }
+    }
+
+    ul.user-info {
+        margin: 15px 0;
+        list-style: none;
+    }
+
+    span.field {
+        font-family: DosisBold;
+    }
+
+    .profile-avatar {
+        text-align: center;
+        margin: 15px;
+
+        img {
+            border-radius: 20px;
+            border: 4px solid $gris1;        
+        }
+    }
+
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="43.811249"
+   height="43.8125"
+   id="svg5419">
+  <defs
+     id="defs5421" />
+  <metadata
+     id="metadata5424">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-592.38009,-693.31308)"
+     id="layer1">
+    <g
+       transform="matrix(1.25,0,0,-1.25,636.19134,715.21933)"
+       id="g156">
+      <path
+         d="m 0,0 c 0,-9.679 -7.846,-17.525 -17.523,-17.525 -9.68,0 -17.526,7.846 -17.526,17.525 0,9.679 7.846,17.525 17.526,17.525 C -7.846,17.525 0,9.679 0,0"
+         id="path158"
+         style="fill:#cdcfd1;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    </g>
+    <path
+       d="m 610.12234,713.17428 8.425,0 0,-1.405 -8.425,0 0,1.405 z"
+       id="path180"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    <path
+       d="m 610.12234,715.98178 8.425,0 0,-1.405 -8.425,0 0,1.405 z"
+       id="path182"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    <path
+       d="m 610.12234,718.79053 8.425,0 0,-1.405 -8.425,0 0,1.405 z"
+       id="path184"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    <g
+       transform="matrix(1.25,0,0,-1.25,617.67574,703.40353)"
+       id="g186">
+      <path
+         d="m 0,0 -10.574,0 0,-17.972 3.988,0 0,2.246 -1.742,0 0,13.479 7.398,0 3.834,-3.834 0,-9.645 -1.742,0 0,-2.246 3.988,0 0,12.82 L 0,0 z"
+         id="path188"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    </g>
+    <g
+       transform="matrix(1.25,0,0,-1.25,614.28464,721.93193)"
+       id="g190">
+      <path
+         d="m 0,0 -2.451,-3.269 1.635,0 0,-4.273 1.634,0 0,4.273 1.635,0 L 0,0 z"
+         id="path192"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    </g>
+  </g>
+</svg>

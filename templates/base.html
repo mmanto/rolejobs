@@ -1,0 +1,121 @@
+{% load i18n %}
+{% load staticfiles %}
+{% get_available_languages as langs  %}
+{% get_current_language as lang %}
+
+<!doctype html>
+<html class="" lang="{{ lang }}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}{% trans "RoleJobs" %}{% endblock %}</title>
+  <link rel="stylesheet" type="text/css" href="{% static "css/app.css" %}?{% now "U" %}" />
+  <meta name="aviables_langs" content="{{ langs }}" />
+  {% block extra_head %}
+  {% endblock %}  
+</head>
+<body ng-app="RoleJobs">
+
+    {% block top %}
+        
+      <nav class="top-bar" data-topbar role="navigation" data-options="is_hover: false" ng-controller="TopBarCtl">
+
+        <section class="top-bar-section"> 
+          {% if request.user.is_authenticated %}
+            {% if request.user.is_employer %}
+              {% include "parts/baremployer.html" %}
+            {% elif request.user.is_postulant or request.user.is_superuser %}
+              {% include "parts/barpostulant.html" %}
+            {% endif %}
+          {% else %}
+            {% include "parts/barguest.html" %}
+          {% endif %}
+        </section>
+
+      </nav>
+
+
+      <form id="lang-form" action="/i18n/setlang/" method="post">
+      {% csrf_token %}
+      {% get_current_language as LANGUAGE_CODE %}
+      {% get_available_languages as LANGUAGES %} 
+        <input type="hidden" name="language">             
+      </form>  
+
+    {% endblock %}
+
+    {% block logo %}
+
+
+      <div class="row fullWidth">
+        
+        <div class="small-6 large-6 columns ">
+          <div style="display: table; height:150px; margin: 0 auto;">
+            <div style="display: table-cell; vertical-align: middle;">
+              <a href="/" ><img src="{% static "img/rolejobs.svg" %}"/></a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="small-6 large-6 columns" >
+          <div style="display: table; height:150px; margin: 0 auto;">
+            <ul class="inline-list" style="display: table-cell; vertical-align: middle;">
+              {% if not request.user.is_authenticated %}
+              <li>
+                <a class="right" ui-sref="accounts.signup" >
+                  <img src="{% static "img/upload.svg" %}"/>
+                  <span style="font-family: DosisSemiBold;color: #cdcfd1;">{% trans "SUBÍ TU CV" %}</span>
+                </a>
+              </li>
+              <li> 
+                <a class="left" ui-sref="employer.signup">
+                  <img src="{% static "img/megafono.svg" %}"/> 
+                  <span class="" style="font-family: DosisSemiBold; color: #58c1c9;">{% trans "PUBLICAR COMO EMPRESA" %}</span>
+                </a>
+              </li>
+              {% endif %}
+            </ul> 
+          </div>
+        </div>
+
+      </div>
+      
+    {% endblock %}  
+
+    {% block team_work %}
+    <div ng-hide="hideTeamWork" class="row fullWidth" style="
+      background-image: url('/static/img/team-work.jpg'); 
+      background-position: 0px -270px;
+      background-size: 100% 800px;
+      background-repeat: no-repeat;            
+      width: 100%;
+      height:50px; ">
+    </div>
+    {% endblock %}
+
+    {% block body %}
+<!--     <div>
+      <div class="row">
+          <div class="large-12  columns"> -->
+    <div class="main-container" ui-view>
+        {% block content %}
+        {% endblock %}
+    </div>
+<!--           </div>
+      </div>
+    </div> -->
+	    {% block footer %}
+		    {% include "parts/footer.html" %}
+    	{% endblock %}
+
+        
+    {% endblock %}
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=true_or_false&language=es&key=AIzaSyB8PJvS9X17a7gmMsYbq8dxFhO_3yh_RTc"></script>
+    <script src="{% static "js/front/index.js" %}?{% now "U" %}"></script>
+
+    {% block extra_js %}
+    {% endblock%}
+</body>
+</html>

@@ -1,0 +1,14 @@
+
+.page-contact {
+    
+    input[type="text"], input[type="email"], input[type="password"] {
+        border: 2px solid #b8dfdf;
+    }
+    
+    /* powered by google */
+    .pac-container:after {  
+        background-image: none !important;
+        height: 0px;
+    }    
+
+}

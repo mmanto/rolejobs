@@ -1,0 +1,21 @@
+<div class="panel-screen courses-screen">
+  <div class="panel-side">
+    <ul class="rj-list">
+      <li>
+        <h4 class="secondary header">Areas</h4>
+      </li>
+ 
+    </ul>
+  </div><!-- /panel -->
+  <div class="content">
+    <div class="courses-container">
+      <alert ng-show="!courses.length" type="'info'">
+        {{ "No hay resultados" | translate }}
+      </alert>
+      <course-item
+        ng-repeat="course in courses | orderBy: '-featured' track by course.pk"
+        course="course"
+      ></course-item>
+    <div><!-- /jobs -->
+  </div><!-- /content -->
+</div>

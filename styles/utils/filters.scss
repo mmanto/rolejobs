@@ -1,0 +1,162 @@
+
+.filter-list {
+    font-family: DosisRegular;
+
+    h1, h2, h3, h4, h5 {
+        font-family: DosisRegular;
+        margin: 10px 0;
+        padding: 5px 10px;
+        border: 0px;
+        border-radius: 6px;
+        font-size: 18px;
+        font-weight: bold;
+
+        &.clear {
+           background: transparent; 
+        }
+
+        &.alternative {
+            background: $verde;
+            color: white;
+        }
+
+    }
+
+    h1 {
+        font-family: DosisBold;
+        background: $naranja2;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        background: $gris1;
+        color: black;
+    }
+
+    .rj-button {
+        width: 100%;
+    }
+
+    .filter-box {
+        margin: 15px 0px;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0 10px;
+            display: block;
+        }
+
+        ul.filter-list {
+            max-height: 75px;
+            overflow-y: auto;
+
+            li {
+                font-weight: bold;
+
+                a {
+                    color: black;
+                }
+
+                span.cant {
+                    color: $gris1; 
+                    margin-left: 6px;
+
+                    &:before {
+                        content: "(";
+                    }
+
+                    &:after {
+                        content: ")";
+                    }
+                }
+
+            }
+
+        }
+
+
+        ul.selected-filters li {
+            font-weight: bold;
+            padding: 5px;
+            border-bottom: 1px solid $gris1;
+
+            a {
+                color: $verde;
+
+                span.field {
+                    font-family: DosisBold;
+                }
+            }
+
+            i.close {
+                @extend .fa;
+                font-size: 20px;
+                float: right;
+                margin-top: 2px;
+                color: $gris1;
+
+                &:before {
+                    content: $fa-var-window-close; 
+                }
+            }
+        }
+
+
+    }
+
+    .results-text {
+        padding: 10px;
+        display: block;
+        font-weight: bold;
+        text-align: center;
+        font-family: DosisLight;
+
+        span {
+            font-family: DosisBold;
+            color: $naranja2;
+        }
+
+    }
+
+}
+
+.search-box {
+    border: 1px solid $gris1;
+    border-radius: 6px;
+    background: white;
+    background-image: url("/static/img/icons/search.png");
+    background-position: 98%;
+    background-repeat: no-repeat;
+    padding-right: 32px;
+    height: 34px;
+
+    input {
+        height: 30px;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+        padding: 8px;
+    }
+
+}
+
+.search-bar {
+    @include flexbox();
+    background: $gris1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+
+    .search-box {
+        @include flexitem();
+    }
+
+    .right-title {
+        width: 150px;
+        font-family: DosisBold;
+        color: #fff;
+        text-align: center; 
+    }
+}

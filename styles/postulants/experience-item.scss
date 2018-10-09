@@ -1,0 +1,28 @@
+
+.postulant-experienceerience-item {
+    @extend .postulant-historical-item;
+
+    div.right-side {
+
+        .company {
+            @include flexbox();
+            color: $gris3;
+
+            div {
+                @include flexitem();
+            }
+
+            .contacts {
+                color: $verde;
+                text-align: center;
+
+                span {
+                    cursor: pointer
+                }
+            }
+
+        }
+
+    }
+
+}

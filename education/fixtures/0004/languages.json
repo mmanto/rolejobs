@@ -1,0 +1,30 @@
+[
+    {
+        "fields": {
+            "name": "Español"
+        }, 
+        "model": "education.Language", 
+        "pk": 1
+    },
+    {
+        "fields": {
+            "name": "Ingles"
+        }, 
+        "model": "education.Language", 
+        "pk": 2
+    },
+    {
+        "fields": {
+            "name": "Frances"
+        }, 
+        "model": "education.Language", 
+        "pk": 3
+    },
+    {
+        "fields": {
+            "name": "Aleman"
+        }, 
+        "model": "education.Language", 
+        "pk": 4
+    }
+]

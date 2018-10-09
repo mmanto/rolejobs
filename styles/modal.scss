@@ -1,0 +1,32 @@
+
+.rj-modal {
+    border: 1px solid #59c1c9;
+    -moz-box-shadow: inset 0 0 2px #59c1c9;
+    -webkit-box-shadow: inset 0 0 2px #59c1c9;
+    border-radius: 22px;
+    margin-bottom: 40px;
+    font-family: DosisRegular;
+
+    .row {
+        padding: 0;
+        margin: 0 !important;
+    }
+
+    h1 {
+      color: $naranja2;
+      font-family: DosisBold;
+      font-size: 36px;
+    }
+
+    h2 {
+      color: $naranja2;
+      font-size: 25px;
+      font-family: DosisBold;
+    }
+
+    h4, h5 {
+        color: $verde;
+        font-family: DosisBold;
+    }
+
+}

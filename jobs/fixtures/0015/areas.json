@@ -1,0 +1,1871 @@
+[
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Salud, Medicina y Farmacia",
+            "slug" : "salud-medicina-farmacia"
+        }, 
+        "model": "jobs.area", 
+        "pk": 1
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Gastronomía y Turismo",
+            "slug" : "gastronomia-turismo"
+        }, 
+        "model": "jobs.area", 
+        "pk": 2
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Oficios y Otros",
+            "slug" : "oficios-otros"
+        }, 
+        "model": "jobs.area", 
+        "pk": 3
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Administración, Contabilidad y Finanzas",
+            "slug" : "administracion-contabilidad-finanzas"
+        }, 
+        "model": "jobs.area", 
+        "pk": 4
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Comercial, Ventas y Negocios",
+            "slug" : "comercial-ventas-negocios"
+        }, 
+        "model": "jobs.area", 
+        "pk": 5
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Aduana y Comercio Exterior",
+            "slug" : "aduana-comercio-exterior"
+        }, 
+        "model": "jobs.area", 
+        "pk": 6
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Ingeniería Civil y Construcción",
+            "slug" : "ingenieria-civil-construccion"
+        }, 
+        "model": "jobs.area", 
+        "pk": 7
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Abastecimiento y Logística",
+            "slug" : "abastecimiento-logistica"
+        }, 
+        "model": "jobs.area", 
+        "pk": 8
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Tecnología, Sistemas y Telecomunicaciones",
+            "slug" : "tecnologia-sistemas-telecomunicaciones"
+        }, 
+        "model": "jobs.area", 
+        "pk": 9
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Diseño",
+            "slug" : "diseno"
+        }, 
+        "model": "jobs.area", 
+        "pk": 10
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Seguros",
+            "slug" : "seguros"
+        }, 
+        "model": "jobs.area", 
+        "pk": 11
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Minería, Petróleo y Gas",
+            "slug" : "mineria-petroleo-gas"
+        }, 
+        "model": "jobs.area", 
+        "pk": 12
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Ingenierías",
+            "slug" : "ingenierias"
+        }, 
+        "model": "jobs.area", 
+        "pk": 13
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Producción y Manufactura",
+            "slug" : "produccion-manufactura"
+        }, 
+        "model": "jobs.area", 
+        "pk": 14
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Gerencia y Dirección General",
+            "slug" : "gerencia-direccion-general"
+        }, 
+        "model": "jobs.area", 
+        "pk": 15
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Marketing y Publicidad",
+            "slug" : "marketing-publicidad"
+        }, 
+        "model": "jobs.area", 
+        "pk": 16
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Comunicación, Relaciones Institucionales y Públicas",
+            "slug" : "comunicacion-institucionales-rrpp"
+        }, 
+        "model": "jobs.area", 
+        "pk": 17
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Recursos Humanos y Capacitación",
+            "slug" : "recursos-humanos-capacitacion"
+        }, 
+        "model": "jobs.area", 
+        "pk": 18
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Atención al Cliente, Call Center y Telemarketing",
+            "slug" : "atencion-cliente-telemarketing"
+        }, 
+        "model": "jobs.area", 
+        "pk": 19
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Secretarias y Recepción",
+            "slug" : "secretarias-recepcion"
+        }, 
+        "model": "jobs.area", 
+        "pk": 20
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Educación, Docencia e Investigación",
+            "slug" : "educacion-docencia-investigacion"
+        }, 
+        "model": "jobs.area", 
+        "pk": 21
+    }, 
+    {
+        "fields": {
+            "description": "", 
+            "name" : "Legales",
+            "slug" : "legales"
+        }, 
+        "model": "jobs.area", 
+        "pk": 22
+    },
+
+    {
+        "fields": {
+            "area": 1, 
+            "description": "", 
+            "name" : "Farmacéutica",
+            "slug" : "farmaceutica"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 2
+    }, 
+    {
+        "fields": {
+            "area": 1, 
+            "description": "", 
+            "name" : "Bioquímica",
+            "slug" : "bioquimica"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 3
+    }, 
+    {
+        "fields": {
+            "area": 1, 
+            "description": "", 
+            "name" : "Química",
+            "slug" : "quimica"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 4
+    }, 
+    {
+        "fields": {
+            "area": 1, 
+            "description": "", 
+            "name" : "Laboratorio",
+            "slug" : "laboratorio"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 5
+    }, 
+    {
+        "fields": {
+            "area": 1, 
+            "description": "", 
+            "name" : "Salud",
+            "slug" : "salud"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 6
+    }, 
+    {
+        "fields": {
+            "area": 1, 
+            "description": "", 
+            "name" : "Medicina",
+            "slug" : "medicina"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 7
+    }, 
+    {
+        "fields": {
+            "area": 1, 
+            "description": "", 
+            "name" : "Veterinaria",
+            "slug" : "veterinaria"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 8
+    }, 
+    {
+        "fields": {
+            "area": 2, 
+            "description": "", 
+            "name" : "Hotelería",
+            "slug" : "hoteleria"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 10
+    }, 
+    {
+        "fields": {
+            "area": 2, 
+            "description": "", 
+            "name" : "Gastronomia",
+            "slug" : "gastronomia"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 11
+    }, 
+    {
+        "fields": {
+            "area": 2, 
+            "description": "", 
+            "name" : "Turismo",
+            "slug" : "turismo"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 12
+    }, 
+    {
+        "fields": {
+            "area": 2, 
+            "description": "", 
+            "name" : "Casinos",
+            "slug" : "casinos"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 13
+    }, 
+    {
+        "fields": {
+            "area": 2, 
+            "description": "", 
+            "name" : "Camareros",
+            "slug" : "camareros"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 14
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name" : "Transporte",
+            "slug" : "of-transporte"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 16
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name" : "Prácticas Profesionales",
+            "slug" : "practicas-profesionales"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 17
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name" : "Pasantía / Trainee",
+            "slug" : "pasantia-trainee"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 18
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name" : "Jóvenes Profesionales",
+            "slug" : "jovenes-profesionales"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 19
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name" : "Promotoras/es",
+            "slug" : "promotoras-es"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 20
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name" : "Servicios",
+            "slug" : "servicios"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 21
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name" : "Traduccion",
+            "slug" : "traduccion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 22
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name" : "Trabajo Social",
+            "slug" : "trabajo-social"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 23
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name" : "Oficios y Profesiones",
+            "slug" : "oficios-profesiones"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 24
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name" : "Otros",
+            "slug" : "otros"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 25
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name" : "Independientes",
+            "slug" : "independientes"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 26
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name" : "Planeamiento",
+            "slug" : "planeamiento"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 27
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name" : "Back Office",
+            "slug" : "back-office"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 28
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name" : "Arte y Cultura",
+            "slug" : "arte-cultura"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 29
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name" : "Caja",
+            "slug" : "caja"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 30
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name" : "Estética y Cuidado Personal",
+            "slug" : "estetica-cuidado-personal"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 31
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name" : "Seguridad",
+            "slug" : "seguridad"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 32
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name" : "Cadetería",
+            "slug" : "cadeteria"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 33
+    }, 
+    {
+        "fields": {
+            "area": 3, 
+            "description": "", 
+            "name" : "Mantenimiento y Limpieza",
+            "slug" : "mantenimiento-limpieza"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 34
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name" : "Planeamiento económico-financiero",
+            "slug" : "planeamiento-economico-financiero"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 36
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name" : "Administración",
+            "slug" : "administracion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 37
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name" : "Facturación",
+            "slug" : "facturacion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 38
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name" : "Auditoría",
+            "slug" : "auditoria"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 39
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name" : "Tesorería",
+            "slug" : "tesoreria"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 40
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name" : "Finanzas",
+            "slug" : "finanzas"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 41
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name" : "Evaluación Económica",
+            "slug" : "evaluacion-economica"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 42
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name" : "Control de Gestión",
+            "slug" : "control-de-gestion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 43
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name" : "Finanzas Internacionales",
+            "slug" : "finanzas-internacionales"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 44
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name" : "Impuestos",
+            "slug" : "impuestos"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 45
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name" : "Organización y Métodos",
+            "slug" : "organizacion-metodos"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 46
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name" : "Créditos y Cobranzas",
+            "slug" : "creditos-cobranzas"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 47
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name" : "Inversiones / Proyectos de Inversión",
+            "slug" : "inversiones-pro-ectos-de-inversion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 48
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name" : "Contabilidad",
+            "slug" : "contabilidad"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 49
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name" : "Consultoria",
+            "slug" : "consultoria"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 50
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name" : "Cuentas Corrientes",
+            "slug" : "cuentas-corrientes"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 51
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name" : "Análisis de Riesgos",
+            "slug" : "analisis-de-riesgos"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 52
+    }, 
+    {
+        "fields": {
+            "area": 4, 
+            "description": "", 
+            "name" : "Corporate Finance / Banca Inversión",
+            "slug" : "corporate-finance-banca-inversion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 53
+    }, 
+    {
+        "fields": {
+            "area": 5, 
+            "description": "", 
+            "name" : "Planeamiento comercial",
+            "slug" : "planeamiento-comercial"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 55
+    }, 
+    {
+        "fields": {
+            "area": 5, 
+            "description": "", 
+            "name" : "Desarrollo de Negocios",
+            "slug" : "desarrollo-de-negocios"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 56
+    }, 
+    {
+        "fields": {
+            "area": 5, 
+            "description": "", 
+            "name" : "Ventas",
+            "slug" : "ventas"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 57
+    }, 
+    {
+        "fields": {
+            "area": 5, 
+            "description": "", 
+            "name" : "Comercial",
+            "slug" : "comercial"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 58
+    }, 
+    {
+        "fields": {
+            "area": 5, 
+            "description": "", 
+            "name" : "Comercio Exterior",
+            "slug" : "comercio-exterior"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 59
+    }, 
+    {
+        "fields": {
+            "area": 5, 
+            "description": "", 
+            "name" : "Negocios Internacionales",
+            "slug" : "negocios-internacionales"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 60
+    }, 
+    {
+        "fields": {
+            "area": 6, 
+            "description": "", 
+            "name" : "Ventas Internacionales/Exportación",
+            "slug" : "ventas-internacionales-exportacion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 62
+    }, 
+    {
+        "fields": {
+            "area": 6, 
+            "description": "", 
+            "name" : "Apoderado Aduanal",
+            "slug" : "apoderado-aduanal"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 63
+    }, 
+    {
+        "fields": {
+            "area": 6, 
+            "description": "", 
+            "name" : "Consultorías Comercio Exterior",
+            "slug" : "consultorias-comercio-exterior"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 64
+    }, 
+    {
+        "fields": {
+            "area": 6, 
+            "description": "", 
+            "name" : "Compras Internacionales/Importación",
+            "slug" : "compras-internacionales-importacion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 65
+    }, 
+    {
+        "fields": {
+            "area": 7, 
+            "description": "", 
+            "name" : "Topografía",
+            "slug" : "topografia"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 67
+    }, 
+    {
+        "fields": {
+            "area": 7, 
+            "description": "", 
+            "name" : "Arquitectura",
+            "slug" : "arquitectura"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 68
+    }, 
+    {
+        "fields": {
+            "area": 7, 
+            "description": "", 
+            "name" : "Ingeniería Civil",
+            "slug" : "ingenieria-civil"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 69
+    }, 
+    {
+        "fields": {
+            "area": 7, 
+            "description": "", 
+            "name" : "Construcción",
+            "slug" : "construccion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 70
+    }, 
+    {
+        "fields": {
+            "area": 7, 
+            "description": "", 
+            "name" : "Urbanismo",
+            "slug" : "urbanismo"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 71
+    }, 
+    {
+        "fields": {
+            "area": 7, 
+            "description": "", 
+            "name" : "Instrumentación",
+            "slug" : "instrumentacion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 72
+    }, 
+    {
+        "fields": {
+            "area": 7, 
+            "description": "", 
+            "name" : "Operaciones",
+            "slug" : "operaciones"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 73
+    }, 
+    {
+        "fields": {
+            "area": 7, 
+            "description": "", 
+            "name" : "Dirección de Obra",
+            "slug" : "direccion-de-obra"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 74
+    }, 
+    {
+        "fields": {
+            "area": 7, 
+            "description": "", 
+            "name" : "Seguridad e Higiene",
+            "slug" : "seguridad-higiene"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 75
+    }, 
+    {
+        "fields": {
+            "area": 8, 
+            "description": "", 
+            "name" : "Compras",
+            "slug" : "compras"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 77
+    }, 
+    {
+        "fields": {
+            "area": 8, 
+            "description": "", 
+            "name" : "Asistente de Tráfico",
+            "slug" : "asistente-de-trafico"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 78
+    }, 
+    {
+        "fields": {
+            "area": 8, 
+            "description": "", 
+            "name" : "Transporte",
+            "slug" : "transporte"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 79
+    }, 
+    {
+        "fields": {
+            "area": 8, 
+            "description": "", 
+            "name" : "Distribución",
+            "slug" : "distribucion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 80
+    }, 
+    {
+        "fields": {
+            "area": 8, 
+            "description": "", 
+            "name" : "Abastecimiento",
+            "slug" : "abastecimiento"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 81
+    }, 
+    {
+        "fields": {
+            "area": 8, 
+            "description": "", 
+            "name" : "Almacén / Depósito / Expedición",
+            "slug" : "almacen-deposito-expedicion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 82
+    }, 
+    {
+        "fields": {
+            "area": 8, 
+            "description": "", 
+            "name" : "Logística",
+            "slug" : "logistica"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 83
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name" : "Liderazgo de Proyecto",
+            "slug" : "liderazgo-de-pro-ecto"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 85
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name" : "Infraestructura",
+            "slug" : "infraestructura"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 86
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name" : "Tecnologia / Sistemas",
+            "slug" : "tecnologia-sistemas"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 87
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name" : "Redes",
+            "slug" : "redes"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 88
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name" : "Data Entry",
+            "slug" : "data-entr-"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 89
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name" : "Administración de Base de Datos",
+            "slug" : "administracion-de-base-de-datos"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 90
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name" : "Soporte Técnico",
+            "slug" : "soporte-tecnico"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 91
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name" : "Internet",
+            "slug" : "internet"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 92
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name" : "Data Warehousing",
+            "slug" : "data-warehousing"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 93
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name" : "Seguridad Informática",
+            "slug" : "seguridad-informatica"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 94
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name" : "Análisis Funcional",
+            "slug" : "analisis-funcional"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 95
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name" : "Testing / QA / QC",
+            "slug" : "testing-qa-qc"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 96
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name" : "Telecomunicaciones",
+            "slug" : "telecomunicaciones"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 97
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name" : "Programación",
+            "slug" : "programacion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 98
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name" : "Tecnologías de la Información",
+            "slug" : "tecnologias-de-la-informacion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 99
+    }, 
+    {
+        "fields": {
+            "area": 9, 
+            "description": "", 
+            "name" : "Sistemas",
+            "slug" : "sistemas"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 100
+    }, 
+    {
+        "fields": {
+            "area": 10, 
+            "description": "", 
+            "name" : "Diseño de Interiores / Decoración",
+            "slug" : "diseno-de-interiores-decoracion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 102
+    }, 
+    {
+        "fields": {
+            "area": 10, 
+            "description": "", 
+            "name" : "Diseño Web",
+            "slug" : "diseno-web"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 103
+    }, 
+    {
+        "fields": {
+            "area": 10, 
+            "description": "", 
+            "name" : "Diseño Multimedia",
+            "slug" : "diseno-multimedia"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 104
+    }, 
+    {
+        "fields": {
+            "area": 10, 
+            "description": "", 
+            "name" : "Diseño Gráfico",
+            "slug" : "diseno-grafico"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 105
+    }, 
+    {
+        "fields": {
+            "area": 10, 
+            "description": "", 
+            "name" : "Diseño Textil e Indumentaria",
+            "slug" : "diseno-textil-indumentaria"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 106
+    }, 
+    {
+        "fields": {
+            "area": 10, 
+            "description": "", 
+            "name" : "Diseño",
+            "slug" : "diseno"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 107
+    }, 
+    {
+        "fields": {
+            "area": 10, 
+            "description": "", 
+            "name" : "Diseño Industrial",
+            "slug" : "diseno-industrial"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 108
+    }, 
+    {
+        "fields": {
+            "area": 11, 
+            "description": "", 
+            "name" : "Venta de Seguros",
+            "slug" : "venta-de-seguros"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 110
+    }, 
+    {
+        "fields": {
+            "area": 11, 
+            "description": "", 
+            "name" : "Auditoría de Seguros",
+            "slug" : "auditoria-de-seguros"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 111
+    }, 
+    {
+        "fields": {
+            "area": 11, 
+            "description": "", 
+            "name" : "Administración de Seguros",
+            "slug" : "administracion-de-seguros"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 112
+    }, 
+    {
+        "fields": {
+            "area": 11, 
+            "description": "", 
+            "name" : "Tecnico de Seguros",
+            "slug" : "tecnico-de-seguros"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 113
+    }, 
+    {
+        "fields": {
+            "area": 11, 
+            "description": "", 
+            "name" : "Seguros",
+            "slug" : "seguros"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 114
+    }, 
+    {
+        "fields": {
+            "area": 12, 
+            "description": "", 
+            "name" : "Ingeniería en Petróleo y Petroquímica",
+            "slug" : "ingenieria-en-petroleo-petroquimica"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 116
+    }, 
+    {
+        "fields": {
+            "area": 12, 
+            "description": "", 
+            "name" : "Ingeniería en Minas",
+            "slug" : "ingenieria-en-minas"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 117
+    }, 
+    {
+        "fields": {
+            "area": 12, 
+            "description": "", 
+            "name" : "Seguridad Industrial",
+            "slug" : "seguridad-industrial"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 118
+    }, 
+    {
+        "fields": {
+            "area": 12, 
+            "description": "", 
+            "name" : "Medio Ambiente",
+            "slug" : "medio-ambiente"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 119
+    }, 
+    {
+        "fields": {
+            "area": 12, 
+            "description": "", 
+            "name" : "Exploración Minera y Petroquimica",
+            "slug" : "exploracion-minera-petroquimica"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 120
+    }, 
+    {
+        "fields": {
+            "area": 12, 
+            "description": "", 
+            "name" : "Ingeniería Geológica",
+            "slug" : "ingenieria-geologica"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 121
+    }, 
+    {
+        "fields": {
+            "area": 12, 
+            "description": "", 
+            "name" : "Instrumentación Minera",
+            "slug" : "instrumentacion-minera"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 122
+    }, 
+    {
+        "fields": {
+            "area": 12, 
+            "description": "", 
+            "name" : "Mineria/Petroleo/Gas",
+            "slug" : "mineria-petroleo-gas"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 123
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name" : "Ingeniería en Alimentos",
+            "slug" : "ingenieria-en-alimentos"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 125
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name" : "Ingeniería Agrónoma",
+            "slug" : "ingenieria-agronoma"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 126
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name" : "Ingeniería de Procesos",
+            "slug" : "ingenieria-de-procesos"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 127
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name" : "Ingeniería Metalurgica",
+            "slug" : "ingenieria-metalurgica"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 128
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name" : "Ingeniería Textil",
+            "slug" : "ingenieria-textil"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 129
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name" : "Ingeniería de Producto",
+            "slug" : "ingenieria-de-producto"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 130
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name" : "Ingeniería Industrial",
+            "slug" : "ingenieria-industrial"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 131
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name" : "Ingeniería Electromecánica",
+            "slug" : "ingenieria-electromecanica"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 132
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name" : "Ingeniería Eléctrica y Electrónica",
+            "slug" : "ingenieria-electrica-electronica"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 133
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name" : "Ingeniería de Ventas",
+            "slug" : "ingenieria-de-ventas"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 134
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name" : "Ingeniería Química",
+            "slug" : "ingenieria-quimica"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 135
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name" : "Ingeniería Mecánica",
+            "slug" : "ingenieria-mecanica"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 136
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name" : "Ingeniería Automotriz",
+            "slug" : "ingenieria-automotriz"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 137
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name" : "Otras Ingenierias",
+            "slug" : "otras-ingenierias"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 138
+    }, 
+    {
+        "fields": {
+            "area": 13, 
+            "description": "", 
+            "name" : "Ingeniería Oficina Técnica / Proyecto",
+            "slug" : "ingenieria-oficina-tecnica-pro-ecto"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 139
+    }, 
+    {
+        "fields": {
+            "area": 14, 
+            "description": "", 
+            "name" : "Calidad",
+            "slug" : "calidad"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 141
+    }, 
+    {
+        "fields": {
+            "area": 14, 
+            "description": "", 
+            "name" : "Mantenimiento",
+            "slug" : "mantenimiento"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 142
+    }, 
+    {
+        "fields": {
+            "area": 14, 
+            "description": "", 
+            "name" : "Programación de producción",
+            "slug" : "programacion-de-produccion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 143
+    }, 
+    {
+        "fields": {
+            "area": 14, 
+            "description": "", 
+            "name" : "Producción",
+            "slug" : "produccion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 144
+    }, 
+    {
+        "fields": {
+            "area": 15, 
+            "description": "", 
+            "name" : "Dirección",
+            "slug" : "direccion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 146
+    }, 
+    {
+        "fields": {
+            "area": 15, 
+            "description": "", 
+            "name" : "Gerencia / Dirección General",
+            "slug" : "gerencia-direccion-general"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 147
+    }, 
+    {
+        "fields": {
+            "area": 16, 
+            "description": "", 
+            "name" : "Producto",
+            "slug" : "producto"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 149
+    }, 
+    {
+        "fields": {
+            "area": 16, 
+            "description": "", 
+            "name" : "E-commerce",
+            "slug" : "e-commerce"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 150
+    }, 
+    {
+        "fields": {
+            "area": 16, 
+            "description": "", 
+            "name" : "Media Planning",
+            "slug" : "media-planning"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 151
+    }, 
+    {
+        "fields": {
+            "area": 16, 
+            "description": "", 
+            "name" : "Business Intelligence",
+            "slug" : "business-intelligence"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 152
+    }, 
+    {
+        "fields": {
+            "area": 16, 
+            "description": "", 
+            "name" : "Multimedia",
+            "slug" : "multimedia"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 153
+    }, 
+    {
+        "fields": {
+            "area": 16, 
+            "description": "", 
+            "name" : "Community Management",
+            "slug" : "communit-management"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 154
+    }, 
+    {
+        "fields": {
+            "area": 16, 
+            "description": "", 
+            "name" : "Creatividad",
+            "slug" : "creatividad"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 155
+    }, 
+    {
+        "fields": {
+            "area": 16, 
+            "description": "", 
+            "name" : "Marketing",
+            "slug" : "marketing"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 156
+    }, 
+    {
+        "fields": {
+            "area": 16, 
+            "description": "", 
+            "name" : "Mercadotecnia Internacional",
+            "slug" : "mercadotecnia-internacional"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 157
+    }, 
+    {
+        "fields": {
+            "area": 17, 
+            "description": "", 
+            "name" : "Periodismo",
+            "slug" : "periodismo"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 159
+    }, 
+    {
+        "fields": {
+            "area": 17, 
+            "description": "", 
+            "name" : "Comunicaciones Internas",
+            "slug" : "comunicaciones-internas"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 160
+    }, 
+    {
+        "fields": {
+            "area": 17, 
+            "description": "", 
+            "name" : "Comunicacion",
+            "slug" : "comunicacion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 161
+    }, 
+    {
+        "fields": {
+            "area": 17, 
+            "description": "", 
+            "name" : "Relaciones Institucionales/Publicas",
+            "slug" : "relaciones-institucionales-publicas"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 162
+    }, 
+    {
+        "fields": {
+            "area": 17, 
+            "description": "", 
+            "name" : "Responsabilidad Social",
+            "slug" : "responsabilidad-social"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 163
+    }, 
+    {
+        "fields": {
+            "area": 17, 
+            "description": "", 
+            "name" : "Comunicaciones Externas",
+            "slug" : "comunicaciones-externas"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 164
+    }, 
+    {
+        "fields": {
+            "area": 18, 
+            "description": "", 
+            "name" : "Capacitación",
+            "slug" : "capacitacion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 166
+    }, 
+    {
+        "fields": {
+            "area": 18, 
+            "description": "", 
+            "name" : "Recursos Humanos",
+            "slug" : "recursos-humanos"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 167
+    }, 
+    {
+        "fields": {
+            "area": 18, 
+            "description": "", 
+            "name" : "Administración de Personal",
+            "slug" : "administracion-de-personal"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 168
+    }, 
+    {
+        "fields": {
+            "area": 18, 
+            "description": "", 
+            "name" : "Capacitación Comercio Exterior",
+            "slug" : "capacitacion-comercio-exterior"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 169
+    }, 
+    {
+        "fields": {
+            "area": 18, 
+            "description": "", 
+            "name" : "Compensación y Planilla",
+            "slug" : "compensacion-planilla"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 170
+    }, 
+    {
+        "fields": {
+            "area": 18, 
+            "description": "", 
+            "name" : "Selección",
+            "slug" : "seleccion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 171
+    }, 
+    {
+        "fields": {
+            "area": 19, 
+            "description": "", 
+            "name" : "Telemarketing",
+            "slug" : "telemarketing"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 173
+    }, 
+    {
+        "fields": {
+            "area": 19, 
+            "description": "", 
+            "name" : "Atención al Cliente",
+            "slug" : "atencion-cliente"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 174
+    }, 
+    {
+        "fields": {
+            "area": 20, 
+            "description": "", 
+            "name" : "Asistente",
+            "slug" : "asistente"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 176
+    }, 
+    {
+        "fields": {
+            "area": 20, 
+            "description": "", 
+            "name" : "Secretaria",
+            "slug" : "secretaria"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 177
+    }, 
+    {
+        "fields": {
+            "area": 20, 
+            "description": "", 
+            "name" : "Recepcionista",
+            "slug" : "recepcionista"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 178
+    }, 
+    {
+        "fields": {
+            "area": 20, 
+            "description": "", 
+            "name" : "Telefonista",
+            "slug" : "telefonista"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 179
+    }, 
+    {
+        "fields": {
+            "area": 21, 
+            "description": "", 
+            "name" : "Investigación y Desarrollo",
+            "slug" : "investigacion-desarrollo"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 181
+    }, 
+    {
+        "fields": {
+            "area": 21, 
+            "description": "", 
+            "name" : "Educación especial",
+            "slug" : "educacion-especial"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 182
+    }, 
+    {
+        "fields": {
+            "area": 21, 
+            "description": "", 
+            "name" : "Bienestar Estudiantil",
+            "slug" : "bienestar-estudiantil"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 183
+    }, 
+    {
+        "fields": {
+            "area": 21, 
+            "description": "", 
+            "name" : "Educación",
+            "slug" : "educacion"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 184
+    }, 
+    {
+        "fields": {
+            "area": 21, 
+            "description": "", 
+            "name" : "Idiomas",
+            "slug" : "idiomas"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 185
+    }, 
+    {
+        "fields": {
+            "area": 21, 
+            "description": "", 
+            "name" : "Educación/ Docentes",
+            "slug" : "educacion-docentes"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 186
+    }, 
+    {
+        "fields": {
+            "area": 22, 
+            "description": "", 
+            "name" : "Legal",
+            "slug" : "legal"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 188
+    }, 
+    {
+        "fields": {
+            "area": 22, 
+            "description": "", 
+            "name" : "Asesoria Legal Internacional",
+            "slug" : "asesoria-legal-internacional"
+        }, 
+        "model": "jobs.subarea", 
+        "pk": 189
+    }
+]

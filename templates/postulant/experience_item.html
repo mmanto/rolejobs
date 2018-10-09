@@ -1,0 +1,44 @@
+<div class="postulant-experienceerience-item">
+  <div class="left-side">
+    <span class="from">{{ experience.start_date | date:"MM/yyyy"}}</span>
+    -
+    <span ng-if="experience.is_current">{{ "Al corriente" | translate }}</span>
+    <span ng-if="!experience.is_current">{{ experience.end_date | date:"MM/yyyy" }}</span>
+  </div>
+  <div class="right-side">
+    <h4>
+      {{ experience.position_value }}
+      {{ experience.title_value }}
+      {{ experience.hierarchy_value }}
+    </h4>
+    <h5>
+      <span>{{ experience.area_value }}</span>
+      <span>{{ experience.subarea_value }}</span>
+    </h5>
+    <div class="description">{{ experience.description }}</div>
+    <ul class="info">
+      <li ng-if="experience.show_salary">
+        <span class="field">{{ "Salario" | translate }}</span>
+        <span>{{ experience.currency }} {{ experience.salary | number:0 }}</span>
+      </li>
+      <li ng-if="experience.staff_charge">
+        <span class="field">{{ "Gente a cargo" | translate }}:</span>
+        <span >{{ experience.staff_charge }}</span>
+      </li>
+      <li ng-if="experience.budget">
+        <span class="field">{{ "Manejo de presupuesto" | translate }}</span>
+      </li>
+    </ul>
+    <div class="company">
+      <div class="company-name">
+        {{ experience.company_name }} - {{ experience.branch_activity_value }}
+      </div>
+      <div class="contacts" nf-show="experience.references.length">
+        <span ng-click="viewReferences()">
+          {{ experience.references.length }}
+          {{ "datos de referencia" | translate }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

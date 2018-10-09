@@ -1,0 +1,25 @@
+<div class="filter-box">
+  <h2 ng-class="titleClass">{{ title }}</h2>
+  <div
+    ng-if="type === 'searchbox'"
+    class="search-box"
+  >
+    <input
+      type="text"
+      placeholder="{{ placeholder }}"
+      ng-model="searchQuery.value"
+      ng-model-options="{ debounce: 300 }"
+    >
+  </div>
+  <ul
+    ng-inf="type === 'list'"
+    class="filter-list"
+  >
+    <li ng-repeat="item in items track by item.$id">
+      <a href="#" ng-click="clicked(item)">
+        <span>{{ item.content.name }}</span>
+        <!-- <span class="cant">{{ item.content.cant }}</span> -->
+      </a>
+    </li>
+  </ul>
+</div>

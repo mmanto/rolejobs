@@ -1,0 +1,30 @@
+
+.mono-screen {
+    @extend .row;
+
+    color: $gris3;
+    font-family: DosisBold;
+
+    .content {
+        @extend .large-12;
+        @extend .columns;
+
+        h1 {
+            color: $verde;
+        }
+
+        h2 {
+            color: $naranja2;
+        }
+
+        h3 {
+            color: $naranja1;
+        }
+
+        p, li, span {
+            font-family: DosisRegular;
+        }
+
+    }
+
+}

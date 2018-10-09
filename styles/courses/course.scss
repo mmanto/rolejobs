@@ -1,0 +1,183 @@
+/**
+Course directive
+**/ 
+
+.course-item {
+    padding-top: 20px;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    padding: 5px;
+
+    .course-thumb {
+        width: 150px;
+
+        .content {
+            width: 130px;
+            position: relative;
+            height: 130px;
+            padding: 0px;
+
+            img.logo {
+            }
+
+            img.corner-shadow {
+                position:absolute;
+                top:-2px;
+                left:-2px;
+                width:85px;
+            }
+
+            img.corner {
+                position:absolute;
+                top:-4px;
+                left:-4px;
+                width:80px;
+            }
+
+            img.shadow {
+                position:absolute;
+                bottom:-30px;
+            }
+
+        }
+
+    }
+
+    .course-body {
+        flex: 1;
+        -moz-flex: 1;
+        -webkit-flex: 1;
+
+        .content {
+            height: 130px;
+            background-color: $gris2;
+            font-family: DosisSemiRegular;
+            width: 100%;
+            display: -moz-flex;
+            display: -webkit-flex;
+            display: flex;
+            padding: 0;
+
+            .info {
+                padding-top: 2%;
+                padding-left: 5%;
+                word-wrap: break-word;
+                flex: 2;
+                -moz-flex: 2;
+                -webkit-flex: 2;
+
+                p.title {
+                    margin-bottom: 0;
+                    font-size:130%;
+                    line-height: 90%;
+                    font-family: DosisSemiBold;
+                    
+                    a { 
+                        text-decoration: none;
+                        color: $naranja2;
+                    }
+                }
+
+                p.description {
+                    padding-top: 10px;
+                    font-size: 110%;
+                    color: #606163;
+
+                    span.field {
+                        font-family: DosisSemiBold;
+                    }
+
+                }
+
+            }
+
+            .data {
+                padding-top: 3%;
+                flex: 1;
+                -moz-flex: 1;
+                -webkit-flex: 1;
+
+
+                .row img {
+                    width: 80px;
+                }
+
+                .row p {
+                    @extend .text-center;
+                    font-family: DosisBold;
+                    color: $gris3;
+                    font-size:90%;                
+                }
+
+            }
+
+            .controlls {
+                height: 100%;
+                padding: 0;
+                width: 40px;
+
+                .container {
+                    height: 100%;
+                    text-align: center;
+                    width: 50px;
+                    background-color: $verde;
+                    margin-right: -1px;
+
+                    .cell {
+                        display: table-cell;
+                        vertical-align:middle; 
+                        padding-top: 44px;
+                    }
+
+                    img {
+                        width: 25px;
+                        padding-bottom: 10px;
+                    }
+
+                }
+
+                .corner {
+                    @extend .right;
+                    position:absolute;
+                    right:10px;
+                    width:80px;
+                }
+
+            }
+
+            .shadow {
+                position:absolute;
+                bottom:-30px;
+                left:0;
+                width:100%;
+            }
+
+        }
+    }
+
+    &.featured {
+        .course-thumb {
+            .content {
+                border: dashed 2px $naranja1;
+            }
+
+        }
+
+        .course-body {
+           .content {
+                border: dashed 2px $naranja1;
+                background-color: #fffde9;
+
+                .controlls .container {
+                    background-color: $naranja1;
+                }
+            }
+        }
+
+    }
+
+}
+
+

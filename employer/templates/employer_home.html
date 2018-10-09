@@ -1,0 +1,140 @@
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% load i18n %}
+
+<div style="height:5px; background-color: #aaacae;"></div>
+
+<div class="" style="background-color: #ececed;">
+  <div class="row" style="padding-top:2px;">
+    <div class="large-12 columns" style="padding-left: 0; ">
+
+      <ul id="inicio-tabs" class="tabs" data-tab role="tablist" style="">
+        <li class="tab-title active" >
+          <a href="#panel1">{% trans "INICIO" %}</a>
+        </li>
+        <li class="tab-title">
+          <a href="#panel2">{% trans "PANEL DE CONTROL" %}</a>
+        </li>
+        <li class="tab-title">
+          <a href="#panel3">{% trans "MIS AVISOS" %}</a>
+        </li>
+        <li class="tab-title">
+          <a href="#panel4">{% trans "MIS BUSQUEDAS" %}</a>
+        </li>
+        <li class="tab-title">
+          <a href="#panel5">{% trans "CVs EXPONTANÉOS" %}</a>
+        </li>
+        <li class="tab-title">
+          <a href="#panel6">{% trans "CURSOS" %}</a>
+        </li>
+        <li class="tab-title">
+          <a href="#panel7">{% trans "MENSAJES" %}</a>
+        </li>
+        <li class="tab-title">
+          <a href="#panel8">{% trans "TIENDA CLIENTES" %}</a>
+        </li>
+        <li class="tab-title">
+          <a href="#panel9">{% trans "FACTURACIÓN" %}</a>
+        </li>
+        <li class="tab-title">
+          <a href="#panel10">{% trans "FAQs / TUTORIAL" %}</a>
+        </li>                    
+      </ul>
+
+      <div class="tabs-content">
+        <div class="content active" id="panel1" style="border: 1px solid #4ea6ad; background-color: white;">
+
+          <div>
+            <div>
+              <span>{% trans "Evoluciona tu proceso de selección con nuestros packs exclusivos!" %}</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="content" id="panel2"><span> PANEL DE CONTROL</span></div>
+        <div class="content" id="panel3">
+          <div class="large-12 columns">
+            <button>{% trans "NUEVO AVISO" %}</button>
+            <button>{% trans "ULTIMOS USADOS" %}</button>
+            <button>{% trans "CREADOS POR MI" %}</button>
+          </div>
+          <div class="large-2 columns">
+            <ul>
+              <li>{% trans "Activos" %}</li>
+              <li>{% trans "Borradores" %}</li>
+              <li>{% trans "Offline" %}</li>
+              <li>{% trans "Vencidos" %}</li>
+              <li>{% trans "Eliminados" %}</li>
+              <li>{% trans "Pendientes" %}</li>
+              <li>{% trans "Rechazados" %}</li>
+            </ul>
+          </div>
+          <div class="large-10 columns lista-avisos">
+            <div class="large-12 columns titulos">
+              <ul>
+                <li>
+                  <div class="large-1 columns">{% trans "Título" %}</div>
+                  <div class="large-2 columns">{% trans "Fecha de publicación" %}</div>
+                  <div class="large-2 columns">{% trans "Área" %}</div>
+                  <div class="large-2 columns">{% trans "Vence en" %}</div>
+                  <div class="large-2 columns">{% trans "Postulantes" %}</div>
+                  <div class="large-1 columns">{% trans "Vistas" %}</div>
+                  <div class="large-1 columns">{% trans "Estado" %}</div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="large-12 columns postulaciones">
+              {% if object_list %}
+              <ul>
+                {% for object in object_list %}
+                <li>
+                  <div class="large-1 columns"><a href="">{{ object.title }}</a></div>
+                  <div class="large-2 columns">{{ object.created.day }}/{{ object.created.month }}/{{ object.created.year }} <p>{% trans "Última modificación:" %} {{ object.updated.day }}/{{ object.updated.month }}/{{ object.updated.year }}</p></div>
+                  <div class="large-2 columns">{{ object.area }}Area</div>
+                  {% comment %}<div class="large-2 columns">{{ object.created|days_left:object.duration_of_publishing }} {% trans "días" %}</div>{% endcomment %}
+                  <div class="large-2 columns">{% trans "Postulantes" %}</div>
+                  <div class="large-1 columns">{% trans "Vistas" %}</div>
+                  <div class="large-1 columns">{% trans "Estado" %}</div>
+                </li>
+                {% endfor %}
+              </ul>
+
+
+              {% else %}
+              <div class="col-md-12">
+                <p>{% trans 'La búsqueda no produjo resultados.' %}</p>
+              </div>
+              {% endif %}
+            </div>
+
+          </div>
+
+        </div>
+        <div class="content" id="panel4">
+          MIS BUSQUEDAS
+        </div>
+        <div class="content" id="panel5">
+          CVs EXPONTANÉOS
+        </div>
+        <div class="content" id="panel6">
+          CURSOS
+        </div>
+        <div class="content" id="panel7">
+          MENSAJES
+        </div>
+        <div class="content" id="panel8">
+          TIENDA CLIENTES
+        </div>
+        <div class="content" id="panel9">
+          FACTURACION
+        </div>
+        <div class="content" id="panel10">
+          FAQs / TUTORIAL
+        </div>
+
+      </div>  
+
+    </div>    
+  </div>    
+</div>    

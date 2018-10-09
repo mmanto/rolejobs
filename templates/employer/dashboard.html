@@ -1,0 +1,44 @@
+<!--<div class="profile-bar">
+  <div class="row" style="">
+    <div class="large-12 columns">
+      Empresa
+    </div>
+  </div>
+</div>-->
+
+<div class="profile-view">
+
+  <div style="height:5px; background-color: #aaacae; margin-top: 40px">
+  </div>
+
+  <div class="profile-container">
+
+    <div class="profile-tabs">
+      <tabset>
+        <state-tab
+          ui-sref="employer.main.home"
+          label="Home"
+        ></state-tab>
+        <state-tab
+          ui-sref="employer.main.panel"
+          label="Panel de control"
+        ></state-tab>
+        <state-tab
+          ui-sref="employer.main.jobs"
+          label="Mis avisos"
+        ></state-tab>
+        <state-tab
+          ui-sref="employer.main.courses"
+          label="Mis cursos"
+        ></state-tab>
+        <state-tab
+          ui-sref="employer.main.messages"
+          label="Mensajes"
+        ></state-tab>
+      </tabset>
+    </div>
+
+    <div class="profile-content" ui-view="employer-main-main"></div>
+
+  </div>
+</div>

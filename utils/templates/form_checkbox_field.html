@@ -1,0 +1,8 @@
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% load crispy_forms_tags %}
+<div class="large-{{ column_size }} columns left field-container field-checkbox-container">
+  {% render_field field class="radius shadow-input {{ field_extra_class }}" %}
+  {{ field.label_tag }}
+  {{ field.errors }}
+</div>

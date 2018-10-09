@@ -1,0 +1,34 @@
+
+.profile-view {
+    background-color: #ececed;
+
+    .profile-container {
+        @extend .row;
+        padding-top:2px;
+        background-color: white;
+        border: 1px solid $verde;
+        padding: 0px;
+
+        .profile-tabs {
+            background-color: $verde;
+
+            dl.tabs li.tab-title > a {
+                font-family: DosisBold;
+                background-color: initial;
+                padding: 10px;
+                color: #fff;
+                border-right: 1px solid white;
+            }
+            
+            dl.tabs li.tab-title.active > a {
+                background-color: $naranja2;
+            }
+
+        }
+
+        .profile-content {
+        }
+
+    }
+
+}

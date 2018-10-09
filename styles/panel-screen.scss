@@ -1,0 +1,46 @@
+
+.panel-screen {
+    @extend .row;
+
+    color: $gris3;
+    font-family: DosisRegular;
+
+    .panel-header {
+        display: block;
+        padding: 0 40px;
+    }
+
+    .panel-side {
+        @extend .large-3;
+        @extend .small-12;
+        @extend .columns;
+    }
+
+    .content {
+        @extend .large-9;
+        @extend .small-12;
+        @extend .columns;
+
+        h1 {
+            color: $verde;
+        }
+
+        h2 {
+            color: $naranja2;
+        }
+
+        h3 {
+            color: $naranja1;
+        }
+
+        p, li, span {
+            font-family: DosisRegular;
+        }
+
+        .row {
+            margin-right: 0px;
+        }
+
+    }
+
+}

@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% load i18n %}
+
+{% block extra_head %}
+<style>
+    input[type="text"], input[type="email"], input[type="password"] {
+        border: 2px solid #b8dfdf;
+    }
+</style>
+{% endblock %} 
+
+{% block extra_js %}
+{% comment %}
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=true_or_false&language=es&key=AIzaSyB8PJvS9X17a7gmMsYbq8dxFhO_3yh_RTc"></script>
+<script>
+    $(function(){
+        var mapCanvas = document.getElementById('map');
+        var mapOptions = {
+          center: new google.maps.LatLng(44.5403, -78.5463),
+          zoom: 8,
+          mapTypeControl: false,
+          streetViewControl: false,
+          zoomControl: false,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+
+
+        var country_input = document.getElementById('country');
+        countries = new google.maps.places.Autocomplete(
+            country_input,
+            {
+                types: ['(regions)']
+                // componentRestrictions: {country: "us"}
+            }
+        );
+
+        google.maps.event.addListener(countries, 'place_changed', function() {
+            var place = countries.getPlace();
+
+            var lat = place.geometry.location.A;
+            var lon = place.geometry.location.F;
+
+            $('#country').val(place.formatted_address)
+
+        });
+
+
+        var input = document.getElementById('address');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+        // map.addListener('bounds_changed', function() {
+        //     searchBox.setBounds(map.getBounds());
+        // });
+    })
+
+// filter country:
+// var autocomplete = new google.maps.places.Autocomplete(input, options);
+// var result = autocomplete.getPlace();
+// console.log(result); // take a look at this result object
+// console.log(result.address_components); // a result has multiple address components
+
+// for(var i = 0; i < result.address_components.length; i += 1) {
+//   var addressObj = result.address_components[i];
+//   for(var j = 0; j < addressObj.types.length; j += 1) {
+//     if (addressObj.types[j] === 'country') {
+//       console.log(addressObj.types[j]); // confirm that this is 'country'
+//       console.log(addressObj.long_name); // confirm that this is the country name
+//     }
+//   }
+// }
+
+
+</script>
+{% endcomment %}
+{% endblock %}
+
+{% block content %}
+
+    <form  class="" action="{% url 'employer_signup' %}" method="post">
+    {% csrf_token %}
+    
+    <div class="row text-color-blue text-bold" 
+         style="border-radius: 15px; border: 1px solid #58c1c9; margin-top:20px; padding:1rem 1rem; margin-bottom:20px;">
+        <div class="large-12 columns">
+            <span class="left" style="color: #f04d40;">{% trans "Datos del usuario" %}</span>
+            <span class="text-middle" style="color: #58c1c9;">{% trans "Datos de la empresa" %}</span>
+            <span class="right" style="color: #d2d4d5;">{% trans "Datos del contacto" %}</span>
+        </div>        
+    </div>
+
+{#    <div class="row"><div class="large-12 columns">{{ registration_form.non_field_errors }}</div></div> #}
+    <div class="row"><div class="large-12 columns">{{ form.non_field_errors }}</div></div>
+
+    <div class="row text-color-blue" 
+         style="border-radius: 15px; background-color: #58c1c9; margin-top:20px; padding:1rem 1rem; margin-bottom:20px;">
+        
+        <div class="large-12 columns">
+            <h5 style="color: white;">{% trans "Registrar empresa" %}</h5>
+        </div>    
+        
+        <div class="large-12 columns">
+            <ul class="inline-list">
+                <div class="row">
+                    <div class="large-4 columns">
+                    {% render_field form.email class+="radius shadow-input" %}
+                    <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+                    {{ form.email.errors }}
+                    </div>
+                    <div class="large-4 columns">
+                    {% render_field form.password1 class="radius shadow-input" %}
+                    <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+                    {{ form.password1.errors }}
+                    </div>
+                    <div class="large-4 columns">
+                    {% render_field form.repeatpass class="radius shadow-input" %}
+                    <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+                    {{ form.repeatpass.errors }}
+                    </div>
+                </div>
+
+                <div class="row" style="padding-top:30px;">
+                    <div class="large-4 columns"><hr style="border: solid 1px white"/></div>
+                    <div class="large-4 columns" style="text-align: center;">
+                    <input style="font-family: DosisSemiBold; color: white; font-size: 100%; "
+                        class="button radius tiny alert"  type="submit" value="{% trans "REGISTRARSE" %}"/>
+                    </div>
+                    <div class="large-4 columns"><hr style="border: solid 1px white"/></div>
+                </div>
+            </ul>
+        </div>        
+    </div>
+
+{#<div class="row">#}
+{#    <h5 class="text-color-blue">{% trans "Datos de la empresa" %}</h5>#}
+{#        <div class="large-4 columns">qqq#}
+{#        </div>#}
+{#        <div class="large-8 columns">www#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="row">#}
+{#        <div class="large-4 columns">#}
+{#            xxx#}
+{#        </div>#}
+{#        <div class="large-8 columns">#}
+{#            jjjj#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="row">#}
+{#        <div class="large-4 columns"> yyy#}
+{#        </div>#}
+{#        <div class="large-8 columns"> rrr#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#    <div class="row" style="border-radius: 5px; border: 1px solid #58c1c9;">#}
+{#        <input type="text" id="country"/>#}
+{#        <input type="text" id="province"/>#}
+{#        <input type="text" id="city"/>#}
+{#        <input type="text" id="address"/>#}
+{#        <div id="map" style="width:500px; height:300px;">map</div>#}
+{#    </div>#}
+{##}
+{#    <div class="row">#}
+{#    <h5 class="text-color-blue">{% trans "Tipo de empresa" %}</h5>#}
+{##}
+{##}
+{#    <h5 class="text-color-blue">{% trans "Datos de la persona de contacto" %}</h5>#}
+{##}
+{#    <h5 class="text-color-blue">{% trans "¿A través de qué medio nos conoció?" %}</h5>#}
+{##}
+{##}
+{#    <p class="text-color-blue">{% trans "Deseo suscribirme al newsletter de RoleJobs." %}</p>#}
+{#    <p class="" style="font-family: DINProLight; font-style: italic; color: #606163;">{% trans "Deseo recibir por correo electrónico las newsletters de RoleJobs sobre novedades, noticias y contenidos o artículos de interés relacionados con el empleo y/o el mundo de la empresa, propios de Trabajando o de terceros." %}#}
+{#    </p>#}
+{#    {% blocktrans %}<span class="text-color-blue">Acepto</span> <a class="text-color-red" href="#">términos y condiciones</a>{% endblocktrans %}#}
+{#    </div>#}
+{##}
+{#    <div class="row">#}
+{#        <input type="submit" class="button alert medium" value="{% trans "Registrarse" %}"/>#}
+{#    </div>#}
+{# #}
+{##}
+{#    </form>#}
+{% endblock %}

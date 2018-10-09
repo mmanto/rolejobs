@@ -1,0 +1,34 @@
+<div class="profile-bar">
+  <div class="row" style="">
+    <div class="large-12 columns">
+      <ul class="inline-list">
+        <li
+          ng-class="{active: tab === 'home'}"
+        >
+          <a ui-sref="postulant.home">{{ "NOVEDADES" | translate }}</a>
+        </li>
+        <li
+          ng-class="{active: tab === 'postulations'}"
+        >
+          <a ui-sref="postulant.postulations">{{ "MIS POSTULACIONES" | translate }}</a>
+        </li>
+        <li
+          ng-class="{active: tab === 'cv'}"
+        >
+          <a ui-sref="postulant.cv">{{ "MI CV" | translate }}</a>
+        </li>
+        <li
+          ng-class="{active: tab === 'courses'}"
+        >
+          <a ui-sref="postulant.courses">{{ "MIS CURSOS" | translate }}</a>
+        </li>
+        <li
+          ng-class="{active: tab === 'messages'}"
+        >
+          <a ui-sref="postulant.messages">{{ "MENSAJES" | translate }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div ui-view="postulant-main"></div>

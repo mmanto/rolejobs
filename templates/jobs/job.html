@@ -1,0 +1,62 @@
+<div class="job-item" ng-class="{ featured: job.featured }">
+
+  <div class="job-thumb">
+    <div class="content">
+      <img class="logo" ng-src="{{job.owner.avatars.default}}">
+      <img ng-if="job.featured" class="corner-shadow" src="/static/img/result-item-new-corner-shadow.svg">
+      <img ng-if="job.featured" class="corner" src="/static/img/result-item-new-corner-start.svg">
+      <img ng-if="job.featured" class="shadow" src="/static/img/result-item-new-img-shadow.svg">
+    </div>
+  </div>
+
+  <div class="job-body">
+
+    <div class="content">
+
+      <div class="info">
+        <p class="title">          
+         <a ui-sref="jobs.detail({id: {{job.pk}}})">
+            {{ job.title }} - {{ job.geo.city.name }}
+          </a>
+        </p>
+        <p class="description">
+          <span class="field">{{ "Area" | translate }}:</span>
+          <span>{{ job.area_text }}</span>
+          <br />
+          <span class="field">{{ "Jornada" | translate }}:</span>
+          <span>{{ job.job_type_text }}</span>
+        </p>
+      </div>
+
+      <div class="data">
+        <div class="row ">
+          <p class="text-center" style="">
+            {{ "Publicado" | translate }}
+            {{ job.published | relativeDate }}
+          </p>
+        </div>
+      </div>
+
+      <div class="controlls">
+        <img
+          ng-show="job.roles.length"
+          class="corner"
+          src="/static/img/result-item-galera.svg"
+        >
+        <div class="container">
+          <div class="cell">
+            <a href="#"><img src="/static/img/result-item-fav.svg"></a>
+            <a href="#"><img src="/static/img/result-item-share.svg"></a>
+          </div>
+        </div>
+      </div>
+
+      <img ng-if="job.featured" class="shadow" src="/static/img/result-item-new-text-shadow.svg">
+
+    <!-- /content -->
+    </div>
+
+  <!-- /body -->
+  </div>
+
+</div>

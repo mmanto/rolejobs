@@ -1,0 +1,265 @@
+
+//@import "settings.scss";
+
+/*
+@import "grid.scss";
+// home result item
+.custom-row-class {
+  @include grid-row(
+   $behavior: nest
+  )
+}
+*/
+/*.left-collapse {
+  .columns {
+    padding-left: 0;
+    padding-right: rem-calc(30)
+  }
+}
+*/
+
+
+
+// topbar
+
+$my-red: #f04d40;
+
+$topbar-dropdown-bg: $my-red;
+$topbar-height: rem-calc(45) !default;
+$topbar-bg-color: $my-red;
+$topbar-bg: $topbar-bg-color;
+$topbar-dropdown-link-bg-hover: $my-red;
+/*$topbar-dropdown-link-bg: white;*/
+
+$topbar-link-color-active-hover: $my-red;
+
+$topbar-link-bg: $my-red;
+$topbar-link-bg-color-hover: $my-red;
+$topbar-link-bg-hover: $my-red;
+$topbar-link-bg-hover: $my-red;
+$topbar-link-bg-active: $my-red;
+$topbar-link-bg-active-hover: scale-color($my-red, $lightness: -14%);
+
+$topbar-dropdown-label-bg: $my-red;
+$topbar-dropdown-label-color: $my-red;
+
+$topbar-menu-link-color: $my-red;
+$topbar-menu-link-color-toggled: $my-red;
+$topbar-menu-link-color: $my-red;
+$topbar-menu-link-color-toggled: $my-red;
+
+$topbar-menu-icon-color: $my-red;
+$topbar-menu-icon-color-toggled: $my-red;
+
+$topbar-divider-border-bottom: solid 1px scale-color(white, $lightness: 13%);
+$topbar-divider-border-top: solid 1px scale-color(white, $lightness: -50%);
+
+
+//@import "foundation.scss";
+
+/*
+.social-links {
+    @include block-grid(
+        $per-row: 5,
+        $spacing: rem-calc(-10),
+        $base-style: true
+    );
+}
+*/
+
+.fullWidth {
+   max-width: 100% !important;
+   padding: 0px !important;
+   /*margin-left: auto;
+   margin-right: auto;*/
+   /*max-width: initial;*/
+}
+
+// django -error 
+.errorlist{
+  color: red;
+}
+
+
+.top-bar {
+  /*  background: #f04d40;*/
+    overflow: visible;
+}
+
+/*
+.top-bar-section li:not(.has-form) a:not(.button) {
+    background: #f04d40;
+    line-height: 2.2rem;
+    padding: 0 0.9375rem;
+}
+*/
+
+/*.centerHeight {
+    display: table-cell;
+    vertical-align: middle;
+    height: 50px;
+    border: 1px solid red;
+}    */
+
+// fonts
+@font-face {
+  font-family: DosisBold;
+  src: url("fonts/Dosis-Bold.ttf" );
+}
+
+.dosis-bold {
+  font-family: DosisBold;
+}
+
+@font-face {
+  font-family: DosisExtraBold;
+  src: url("fonts/Dosis-ExtraBold.ttf");
+}
+
+.dosis-extra-bold {
+  font-family: DosisExtraBold;
+}
+
+@font-face {
+  font-family: DosisExtraLightBold;
+  src: url("fonts/Dosis-ExtraLightBold.ttf");
+}
+
+@font-face {
+  font-family: DosisMedium;
+  src: url("fonts/Dosis-Medium.ttf");
+}
+
+
+.dosis-extra-light-bold {
+  font-family: DosisExtraLightBold;
+}
+
+@font-face {
+  font-family: DosisLight;
+  src: url("fonts/Dosis-Light.ttf");
+}
+
+.dosis-light {
+  font-family: DosisLight;
+}
+
+@font-face {
+  font-family: DosisRegular;
+  src: url("fonts/Dosis-Regular.ttf");
+}
+
+.dosis-regular {
+  font-family: DosisRegular;
+}
+
+@font-face {
+  font-family: DosisSemiBold;
+  src: url("fonts/Dosis-SemiBold.ttf");
+}
+
+.dosis-semi-bold {
+  font-family: DosisSemiBold;
+}
+
+@font-face {
+  font-family: DINProLight;
+  src: url("fonts/DINPro-Light.otf");
+}
+
+@font-face {
+  font-family: YellowtailRegular;
+  src: url("fonts/Yellowtail-Regular.ttf");
+}
+
+
+.text-dosis-bold {
+  font-family: DosisBold;
+}
+
+.text-bold {
+  font-family: DosisBold;
+}
+
+.text-color-blue {
+  color: #58c1c9;
+}
+
+.text-color-red {
+  color: #f04d40;
+}
+
+/* button signup */
+.shadow-input { margin-bottom: 0px !important;}
+.shadow-img { display:block; padding-top:2px; padding-bottom:15px; width:100%;}
+
+
+/* allauth */
+
+/* result item */
+
+.result-item-featured {
+  background-color: #fffde9;
+}
+.result-item-even {
+  background-color: #edeeee;
+}
+.result-item-odd {
+  background-color: #eaf5f5;
+}
+
+/* home search */
+/*::-webkit-input-placeholder::after { font-family: fontAwesome; content:'\f002  '; color: #69f }*/
+/*::-moz-placeholder::after  { font-family: fontAwesome; content:'\f002  '; color: #69f }*/ /* firefox 19+ */
+/*:-ms-input-placeholder::after  { font-family: fontAwesome; content:'\f002  '; color: #69f }*/ /* ie */
+/*input:-moz-placeholder::after  { font-family: fontAwesome; content:'\f002  '; color: #69f }*/
+
+
+.event {
+  padding: 1rem 0rem 1rem 0;
+  display: table; 
+}
+.event-date {
+  width: 6rem;
+  margin: 0 auto 1rem;
+  padding-right: 1rem;
+  display: table-cell;
+  width: auto; 
+}
+.event-date .event-month {
+    margin: 0;
+    background: #eee;
+    padding: 0rem 2rem;
+    text-align: top; 
+}
+/*.event-date .event-day {
+    margin: 0;
+    border: 1px solid #eee;
+    padding: 0 2rem;
+    text-align: center;
+    font-size: 2rem; 
+}
+*/
+.event-desc {
+  
+  padding: 0 0 0 0rem;
+  /*text-align: left;*/
+  display: table-cell;
+  vertical-align: top; 
+}
+.event-desc .event-desc-header {
+  margin: 0 0 0.5rem 0;
+  padding: 0; 
+}
+.event-desc .event-desc-detail {
+  margin: 0 0 0.25rem;
+  padding: 0; 
+}
+.event-desc .event-desc-time {
+  font-weight: bold; 
+}
+.event-desc .rsvp.button {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin: 0; 
+}

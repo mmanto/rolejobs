@@ -1,0 +1,55 @@
+<div class="row info-bar">
+</div>
+<div class="panel-screen course-detail">
+  <div class="content">
+    <div class="header-container">
+      <ul class="breadcrumbs">
+        <li><a ui-sref="courses.courses">{{ "Cursos" | translate }}</a></li>
+      </ul>
+
+      <div class="title-container">
+        <alert
+           ng-show="courseData.postulation_status !== null"
+           type="postulationStatus[courseData.postulation_status].type"
+           ng-bind="postulationStatus[courseData.postulation_status].message"
+        ></alert>
+        <h1 class="title">{{ courseData.title }}</h1>
+      </div>
+    </div>
+    <div class="meta-data-container">
+      <div class="owner-container">
+        <img ng-src="{{courseData.owner.avatars.brand}}">
+        <a href="">
+          {{ courseData.owner.name_company }}
+        </a>
+        <a
+          class="postulation-button rj-button"
+          ng-click="postulate()"
+        >
+          {{ "Postularme" | translate }}
+        </a>
+      </div>
+
+      <ul class="meta">
+        <li>
+          <span class="mdc-dh">
+            {{ "Tipo:" | translate }}
+          </span>
+          {{ courseData.course_type_text }}
+        </li>
+
+      </ul>
+    </div>
+    <div class="description" ng-bind-html="getDescription()"></div>
+
+  </div><!-- /content -->
+
+  <div class="panel-side">
+    <div class="company-info-container">
+      <a href="#">
+        {{ course.owner.name_company }}
+      </a>
+    </div>
+  </div><!-- /panel -->
+
+</div>

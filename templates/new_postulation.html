@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% load wysiwyg %}
+
+
+{% block extra_head %}
+{% wysiwyg_setup %}
+<style>
+    input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
+        border: 2px solid #b8dfdf;
+    }
+    input[type="radio"] {
+        -webkit-appearance: checkbox; /* Chrome, Safari, Opera */
+        -moz-appearance: checkbox;    /* Firefox */
+        -ms-appearance: checkbox;     /* not currently supported */
+    }
+    .large-3 p {
+        color: #D2D4D5;
+    }
+    table.mceLayout {
+        width: 100% !important;
+    }
+    input[type='number'] {
+        -moz-appearance:textfield;
+    }
+</style>
+{% endblock %} 
+
+{% block extra_js %}
+
+{% endblock %}
+
+{% block content %}
+
+    <form  class="" action="{% url 'new_job' %}" method="post">
+    {% csrf_token %}
+
+    {% if form.errors %}
+        <div class="alert alert-error">
+            <strong>{{ form.errors }}</strong>
+        </div>
+        {% for field in form %}
+            {% for error in field.errors %}
+                <div class="alert alert-error">
+                    <strong>{{ error|escape }}</strong>
+                </div>
+            {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+            <div class="alert alert-error">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+
+
+    <div class="row"><div class="large-12 columns">{{ form.non_field_errors }}</div></div>
+
+    <div class="row text-color-blue" style="border-radius: 15px; background-color: white; margin-top:20px; padding:1rem 1rem; margin-bottom:20px;">
+        
+        <div class="large-9 columns">
+            <ul class="inline-list">
+                <div class="row">
+                    <div class="large-6 columns">
+                        <p>{% trans "Puesto/Título del aviso" %}</p>
+                        {% render_field form.title class+="radius shadow-input" %}
+                        <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+                        {{ form.title.errors }}
+                    </div>
+                    <div class="large-6 columns">
+                        <p>{% trans "Número de referencia" %}</p>
+                        {% render_field form.reference_number class="radius shadow-input" %}
+                        <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+                        {{ form.reference_number.errors }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <p>{% trans "Descripción del puesto" %}</p>
+                        {% render_field form.description class+="radius shadow-input" %}
+                        {% wysiwyg_editor "id_description" %}
+                        <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+                        {{ form.description.errors }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        {% render_field form.handicapped_postulant class+="radius shadow-input" %}
+                        <p>{% trans "Postulantes discapacitados" %}</p>
+                        {{ form.handicapped_postulant.errors }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <p>{% trans "Publicar aviso como" %}</p>
+                        {% render_field form.company_logo class+="radius shadow-input" %}
+                        {% if form.company_logo.value %}<img class="img-responsive" src="{{ MEDIA_URL }}{{ form.company_logo.value }}">{% endif %}
+                        {{ form.company_logo.errors }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        {% render_field form.show_address class+="radius shadow-input" %}
+                        <p>{% trans "Mostrar dirección en el aviso" %}</p>
+                        {{ form.show_address.errors }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <p>{% trans "¿Cómo quiere recibir los candidatos?" %}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        {% render_field form.get_cvs_ctrl_panel class+="radius shadow-input" %}
+                        <p>{% trans "Recibir los CV's en mi Panel de Control" %}</p>
+                        {{ form.get_cvs_ctrl_panel.errors }}
+                    </div>
+                    <div class="large-4 columns">
+                        {% render_field form.send_cvs_by_mail class+="radius shadow-input" %}
+                        <p>{% trans "Enviar una copia por mail a" %}</p>
+                        {{ form.send_cvs_by_mail.errors }}
+                    </div>
+                    <div class="large-4 columns">
+                        {% render_field form.email_send_cvs class+="radius shadow-input" %}
+                        <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+                        {{ form.email_send_cvs.errors }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-4 columns">
+                        <p>{% trans "Área de publicación" %}</p>
+                        {% render_field form.area class+="radius shadow-input" %}
+                        <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+                        {{ form.area.errors }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-4 columns">
+                        <p>{% trans "Tipo de trabajo" %}</p>
+                        {% render_field form.job_type class+="radius shadow-input" %}
+                        <img class="shadow-img" src="{% static "img/shadow-input.svg" %}"/>
+                        {{ form.job_type.errors }}
+                    </div>
+                </div>
+
+
+                <div class="row" style="padding-top:30px;">
+                    <div class="large-4 columns"><hr style="border: solid 1px white"/></div>
+                    <div class="large-4 columns" style="text-align: center;">
+                    <input style="font-family: DosisSemiBold; color: white; font-size: 100%; "
+                        class="button radius tiny alert"  type="submit" value="{% trans "PUBLICAR AVISO" %}"/>
+                    </div>
+                    <div class="large-4 columns"><hr style="border: solid 1px white"/></div>
+                </div>
+            </ul>
+        </div>        
+    </div>
+
+    </form>
+{% endblock %}

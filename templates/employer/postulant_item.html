@@ -1,0 +1,44 @@
+<div class="job-item" ng-class="{ featured: postulation.job.featured }">
+
+  <div class="job-thumb">
+    <div class="content">
+      <img class="logo" ng-src="{{ postulation.user.avatar }}">
+      <img ng-if="postulation.job.featured" class="corner-shadow" src="/static/img/result-item-new-corner-shadow.svg">
+      <img ng-if="postulation.job.featured" class="corner" src="/static/img/result-item-new-corner-start.svg">
+      <img ng-if="postulation.job.featured" class="shadow" src="/static/img/result-item-new-img-shadow.svg"> 
+    </div>
+  </div>
+
+  <div class="job-body">
+
+    <div class="content">
+
+      <div class="info">
+        <p class="title">
+          <a ng-click="viewPostulation(postulation.id)">
+            {{ postulation.user.first_name }}
+            {{ postulation.user.last_name }}
+          </a>
+        </p>
+        <p class="description">
+          <span>{{ postulation.message }}</span>
+        </p>
+      </div>
+
+      <div class="data">
+        <div class="row ">
+          <p class="text-center" style="">
+            {{ postulation.status_text }}
+          </p>
+        </div>
+      </div>                     
+
+      <img ng-if="postulation.job.featured" class="shadow" src="/static/img/result-item-new-text-shadow.svg">
+
+    <!-- /content -->
+    </div>
+
+  <!-- /body -->
+  </div>
+
+</div>

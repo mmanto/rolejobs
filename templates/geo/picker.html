@@ -1,0 +1,50 @@
+<div class="rj-modal">
+  <form name="geoPickerForm" ng-submit="ok(geoPickerForm)">
+    <div class="row">
+      <div class="large-4 columns">
+        <select
+          ng-model="values.country"
+          required="true",
+          ng-required="true",
+          ng-options="item as item.name for item in choices.countries track by item.id"
+        ></select>
+        <img class="shadow-img" src="{{ 'img/shadow-input.svg' | static }}"/>
+      </div>
+      <div class="large-4 columns">
+        <select
+          ng-model="values.region"
+          required="true",
+          ng-required="true",
+          ng-options="item as item.name for item in choices.regions track by item.id"
+        ></select>
+        <img class="shadow-img" src="{{ 'img/shadow-input.svg' | static }}"/>
+      </div>
+      <div class="large-4 columns">
+        <select
+          ng-model="values.city"
+          ng-options="item as item.name for item in choices.cities track by item.id"
+        ></select>
+        <img class="shadow-img" src="{{ 'img/shadow-input.svg' | static }}"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <input 
+           type="text" 
+           ng-model="values.address" 
+           class="radius shadow-input" 
+           placeholder="{{ 'Dirección' | translate }}"
+           on-place-changed="placeChanged()"
+           >
+        <img class="shadow-img" src="{{ 'img/shadow-input.svg' | static }}"/>
+      </div>
+    </div>
+    <div class="row">
+      <ng-map></ng-map>
+    </div>
+    <div class="row form-buttons text-center">
+      <a ng-click="ok(geoPickerForm)" class="rj-button">{{ "Guardar" | translate }}</a>
+      <a ng-click="cancel(geoPickerForm)" class="rj-button alternative">{{ "Cancelar" | translate }}</a>
+    </div>
+  </form>
+</div>

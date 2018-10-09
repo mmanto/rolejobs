@@ -1,0 +1,31 @@
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load utils_forms %}
+
+<div class="large-12 columns container_form">
+
+  <form ng-submit="save(referenceForm)" name="referenceForm" class="pe-form">
+
+    <div class="row">
+      {% standar_field form.type column_size="3" %}
+      {% standar_field form.name column_size="3" %}
+      {% standar_field form.email column_size="3" %}
+      {% standar_field form.phone column_size="3" %}
+    </div>
+
+    <div class="row">
+      <ul class="djng-field-errors" ng-show="apiErrors.referenceForm.$nonfield">
+        <li ng-show="apiErrors.referenceForm.$nonfield" class="invalid" ng-bind="apiErrors.referenceForm.$nonfield.msg"></li>
+      </ul>
+    </div>
+
+    <div class="row form-buttons text-center">
+      <a ng-click="save(referenceForm)" class="rj-button">{% trans "Guardar" %}</a>
+      <a ng-click="cancel(referenceForm)" class="rj-button alternative">{% trans "Cancelar" %}</a>
+    </div>
+
+  </form>
+
+</div>

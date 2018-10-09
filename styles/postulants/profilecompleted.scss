@@ -1,0 +1,51 @@
+
+.profile-completed-card {
+    @extend .rj-card;
+
+    .card-body .info-container {
+        @include flexbox();
+
+        h4.percent {
+            @extend .text-alternative;
+            text-align: center;
+            font-size: 24px;
+            margin: 12px 0;
+        } 
+
+        .text-large {
+            font-size: 16px;
+        }
+
+        .galera-container, .text-container {
+            @include flexitem();
+        }
+
+        .galera-container {
+
+            .overlay {
+                background: white;
+                background-image: url(/static/img/back-profile-completed.png);
+                background-size: 100%;
+                background-repeat: no-repeat;
+                /**
+                 * from 100px to 6px
+                 */
+                background-position-y: 100px;
+                width: 100%;
+                height: 100%;
+
+                .mask {
+                    width: 100%;
+                    height: 100%;
+                    background: transparent url(/static/img/galera-profile-completed.png);
+                    background-size: 120px;
+                    background-position: center;
+                }
+
+            }
+
+        }
+
+    }
+
+}

@@ -1,0 +1,490 @@
+[
+    {
+        "fields": {
+
+            "name": "AFJP"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 1
+    }, 
+    {
+        "fields": {
+
+            "name": "Agro-Industrial"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 2
+    }, 
+    {
+        "fields": {
+
+            "name": "Agropecuaria"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 3
+    }, 
+    {
+        "fields": {
+
+            "name": "Alimenticia"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 4
+    }, 
+    {
+        "fields": {
+
+            "name": "Arquitectura"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 5
+    }, 
+    {
+        "fields": {
+
+            "name": "Artesanal"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 6
+    }, 
+    {
+        "fields": {
+
+            "name": "Automotriz"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 7
+    }, 
+    {
+        "fields": {
+
+            "name": "Aérea"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 8
+    }, 
+    {
+        "fields": {
+
+            "name": "Banca / Financiera"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 9
+    }, 
+    {
+        "fields": {
+
+            "name": "Biotecnología"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 10
+    }, 
+    {
+        "fields": {
+
+            "name": "Comercio"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 11
+    }, 
+    {
+        "fields": {
+
+            "name": "Comercio Exterior"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 12
+    }, 
+    {
+        "fields": {
+
+            "name": "Construcción"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 13
+    }, 
+    {
+        "fields": {
+
+            "name": "Consultoría"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 14
+    }, 
+    {
+        "fields": {
+
+            "name": "Consumo masivo"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 15
+    }, 
+    {
+        "fields": {
+
+            "name": "Correo"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 16
+    }, 
+    {
+        "fields": {
+
+            "name": "Defensa"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 17
+    }, 
+    {
+        "fields": {
+
+            "name": "Diseño"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 18
+    }, 
+    {
+        "fields": {
+
+            "name": "Editorial"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 19
+    }, 
+    {
+        "fields": {
+
+            "name": "Educación"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 20
+    }, 
+    {
+        "fields": {
+
+            "name": "Energía"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 21
+    }, 
+    {
+        "fields": {
+
+            "name": "Entretenimiento"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 22
+    }, 
+    {
+        "fields": {
+
+            "name": "Farmacéutica"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 23
+    }, 
+    {
+        "fields": {
+
+            "name": "Financiera"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 24
+    }, 
+    {
+        "fields": {
+
+            "name": "Forestal"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 25
+    }, 
+    {
+        "fields": {
+
+            "name": "Ganadería"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 26
+    }, 
+    {
+        "fields": {
+
+            "name": "Gastronomía"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 27
+    }, 
+    {
+        "fields": {
+
+            "name": "Gobierno"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 28
+    }, 
+    {
+        "fields": {
+
+            "name": "Higiene y Perfumería"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 29
+    }, 
+    {
+        "fields": {
+
+            "name": "Holding"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 30
+    }, 
+    {
+        "fields": {
+
+            "name": "Hotelería"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 31
+    }, 
+    {
+        "fields": {
+
+            "name": "Imprenta"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 32
+    }, 
+    {
+        "fields": {
+
+            "name": "Información e Investigación"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 33
+    }, 
+    {
+        "fields": {
+
+            "name": "Informática / Tecnología"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 34
+    }, 
+    {
+        "fields": {
+
+            "name": "Inmobiliaria"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 35
+    }, 
+    {
+        "fields": {
+
+            "name": "Internet"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 36
+    }, 
+    {
+        "fields": {
+
+            "name": "Jurídica"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 37
+    }, 
+    {
+        "fields": {
+
+            "name": "Laboratorio"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 38
+    }, 
+    {
+        "fields": {
+
+            "name": "Manufactura"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 39
+    }, 
+    {
+        "fields": {
+
+            "name": "Medios"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 40
+    }, 
+    {
+        "fields": {
+
+            "name": "Minería / Petróleo / Gas"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 41
+    }, 
+    {
+        "fields": {
+
+            "name": "ONGs"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 42
+    }, 
+    {
+        "fields": {
+
+            "name": "Otra"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 43
+    }, 
+    {
+        "fields": {
+
+            "name": "Papelera"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 44
+    }, 
+    {
+        "fields": {
+
+            "name": "Pesca"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 45
+    }, 
+    {
+        "fields": {
+
+            "name": "Petroquímica"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 46
+    }, 
+    {
+        "fields": {
+
+            "name": "Plásticos"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 47
+    }, 
+    {
+        "fields": {
+
+            "name": "Publicidad / Marketing / RRPP"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 48
+    }, 
+    {
+        "fields": {
+
+            "name": "Química"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 49
+    }, 
+    {
+        "fields": {
+
+            "name": "Retail"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 50
+    }, 
+    {
+        "fields": {
+
+            "name": "Salud"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 51
+    }, 
+    {
+        "fields": {
+
+            "name": "Seguros"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 52
+    }, 
+    {
+        "fields": {
+
+            "name": "Servicios"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 53
+    }, 
+    {
+        "fields": {
+
+            "name": "Siderurgia"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 54
+    }, 
+    {
+        "fields": {
+
+            "name": "Supermercado / Hipermercado"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 55
+    }, 
+    {
+        "fields": {
+
+            "name": "Tabacalera"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 56
+    }, 
+    {
+        "fields": {
+
+            "name": "Telecomunicaciones"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 57
+    }, 
+    {
+        "fields": {
+
+            "name": "Textil"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 58
+    }, 
+    {
+        "fields": {
+
+            "name": "Transportadora"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 59
+    }, 
+    {
+        "fields": {
+
+            "name": "Transporte"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 60
+    }, 
+    {
+        "fields": {
+
+            "name": "Turismo"
+        }, 
+        "model": "jobs.branchactivity", 
+        "pk": 61
+    }
+]

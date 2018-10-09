@@ -1,0 +1,35 @@
+<table border="0" bgcolor="#1678bd" cellpadding="0" cellspacing="10" style="width:100%;max-width:650px;margin:0 auto;font-family:helvetica,arial;">
+  <tr>
+    <td>
+      <img src="{{ base_url }}/static/img/rolejobs.svg"/>
+    </td>	
+  </tr>
+  <tr bgcolor="#fff">
+    <td>
+      
+      <div style="box-shadow: 0 6px 10px #BCBCBC;width:96%;margin:2%">
+        <div style="border-bottom: 1px dotted #1B79D0;border-radius: 5px 5px 0px 0px;border-top: 3px solid #1B79D0;width:96%;padding:2%;font-size:18px">
+            Nuevo postulante para el curso {{course.name}}
+        </div>
+
+        <div style="border-radius: 0px 0px 5px 5px;
+        width:96%;
+        padding:2%;
+        font-size:14px;
+        color:#323232">
+            <table>
+              <tr>
+                <th>Nombre:</th>
+                <td>{{name}}</td>
+              </tr>
+            </table>
+            <p>
+                <a href="{{ base_url }}{{ url }}">{{ base_url }}{{ url }}</a>
+            </p>
+        </div>
+      </div>
+      
+    </td>
+  </tr>
+  
+</table>
