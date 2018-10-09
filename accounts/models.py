@@ -35,6 +35,7 @@ TYPE_ROLE = (
 )
 
 GENDER_CHOICES = (
+    (None, _('Género')),
     (1, _('Masculino')),
     (2, _('Femenino')),
     (99, _('Otro')),

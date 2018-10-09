@@ -4,6 +4,9 @@ from django.utils import six
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 
+from django.forms.fields import DateField 
+
+
 from djng.forms import (
     NgDeclarativeFieldsMetaclass,
     NgModelFormMixin,
@@ -165,6 +168,12 @@ class SignupForm(forms.Form):
             attrs={
                 'placeholder': _(u'Celular')}))
 
+    birth_date = forms.DateField(widget=forms.TextInput(attrs=
+                                {
+                                    'class':'datepicker'
+                                }))
+
+
     def clean_terms_conditions(self):
         if not self.cleaned_data['terms_conditions']:
             raise forms.ValidationError("Debe aceptar los terminos y " +
@@ -189,6 +198,7 @@ class SignupForm(forms.Form):
             else:
                 raise forms.ValidationError(
                     'La contraseña debe tener mas de 6 caracteres')
+
 
 
 class NgSignupForm(six.with_metaclass(
@@ -316,7 +326,7 @@ class NgSignupForm(six.with_metaclass(
                 'placeholder': _(u'Cargo')}))
 
     gender = forms.ChoiceField(required=True, widget=forms.Select(
-        attrs={'class': 'selector'}), choices=GENDER_CHOICES)
+        attrs={'class': 'selector', 'placeholder': _(u'Género')}), choices=GENDER_CHOICES)
 
     phone_number = forms.CharField(
         required=True,
