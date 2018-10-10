@@ -132,6 +132,9 @@
            <!--
             <input id="datepicker1" name="birth_date" value="{{form.birth_date | date:'DATE_FORMAT'}}" type="text" />
             -->
+            <div class="large-{{ column_size }} columns left field-container placeholder-based-field"></div>
+              <input placeholder="Fecha de nacimiento" name="birth_date" class="textbox-n" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" >
+          </div>
           </div>
 
           <div class="row">
