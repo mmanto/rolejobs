@@ -28,6 +28,13 @@ TYPE_COMPANY = (
     ("C", _("Servicios Temporales"))
 )
 
+SECTOR_EMPRESARIAL = (
+    (None, _("Sector empresarial")),
+    ("A", _("Informática")),
+    ("B", _("Metalurgia")),
+    ("C", _("Agro"))
+)
+
 CVREQUEST_NEW = 0x00
 CVREQUEST_ACCEPTED = 0x10
 CVREQUEST_REJECTED = 0x20

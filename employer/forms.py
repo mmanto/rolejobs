@@ -20,7 +20,8 @@ from accounts.models import GENDER_CHOICES, User
 from models import (
     Employer,
     TYPE_REFERENCE,
-    TYPE_COMPANY
+    TYPE_COMPANY,
+    SECTOR_EMPRESARIAL
 )
 
 
@@ -98,12 +99,17 @@ class SignupForm(forms.Form):
         required=True,
         max_length=100)
 
-    sector_empresarial = forms.CharField(
-        required=True,
-        max_length=100,
-        widget=forms.TextInput(
-            attrs={
-                'placeholder': _('Sector empresarial')}))
+    
+    #sector_empresarial = forms.CharField(
+    #    required=True,
+    #    max_length=100,
+    #    widget=forms.TextInput(
+    #        attrs={
+    #            'placeholder': _('Sector empresarial')}))
+
+    sector_empresarial = forms.ChoiceField(
+       choices=TYPE_COMPANY, widget=forms.RadioSelect()
+       )
 
     workforce = forms.IntegerField(
         required=True,
@@ -272,12 +278,16 @@ class NgSignupForm(six.with_metaclass(
             attrs={
                 'placeholder': _('Responsabilidad ante el IVA')}))
 
-    sector_empresarial = forms.CharField(
-        required=True,
-        max_length=100,
-        widget=forms.TextInput(
-            attrs={
-                'placeholder': _('Sector empresarial')}))
+    #sector_empresarial = forms.CharField(
+    #    required=True,
+    #    max_length=100,
+    #    widget=forms.TextInput(
+    #        attrs={
+    #            'placeholder': _('Sector empresarial')}))
+
+    sector_empresarial = forms.ChoiceField(required=True, widget=forms.Select(
+        attrs={'class': 'selector'}), choices=SECTOR_EMPRESARIAL)
+
 
     workforce = forms.IntegerField(
         required=True,
