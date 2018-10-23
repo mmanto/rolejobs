@@ -22,6 +22,9 @@ from jobs.views import OwnJobPostulationsViewSet
 from jobs.serializers import PostulantPostulationDetailSerializer
 from rolejobs_api.parsers import UriDataParser
 
+from django.core.mail import send_mail
+from django.conf import settings
+
 from postulant.models import (
     Postulant,
     Biographic,
@@ -69,6 +72,13 @@ class Signup(generics.GenericAPIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
+
+        subject = 'Thank you for registering to our site RoleJobs'
+        message = ' it  means a world to us '
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = [request.data['email'], ]
+        send_mail(subject, message, email_from, recipient_list)
+
         return Response({"success": _("Postulant signup success")})
 
 

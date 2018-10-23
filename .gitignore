@@ -5,7 +5,7 @@
 /media
 /node_modules
 db.sqlite3
-rolejobs/local_settings.py
+# rolejobs/local_settings.py
 postulant/avatars/
 .directory
 local_stuff/
