@@ -24,6 +24,7 @@ from rolejobs_api.parsers import UriDataParser
 
 from django.core.mail import send_mail
 from django.conf import settings
+from emailspool.models import Spool
 
 from postulant.models import (
     Postulant,
@@ -73,11 +74,10 @@ class Signup(generics.GenericAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
-        subject = 'Thank you for registering to our site RoleJobs'
-        message = ' it  means a world to us '
+        email = Spool.objects.filter(to=request.data['email'])[0]
         email_from = settings.EMAIL_HOST_USER
         recipient_list = [request.data['email'], ]
-        send_mail(subject, message, email_from, recipient_list)
+        send_mail(email.subject, email.content, email_from, recipient_list, html_message=email.content)
 
         return Response({"success": _("Postulant signup success")})
 
