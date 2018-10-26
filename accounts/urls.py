@@ -5,8 +5,11 @@ from . import views
 
 
 urlpatterns = [
+
+
     url(r"^$", views.LoginViewset.as_view({"get": "retrieve"})),
     url(r"^auth", include("rest_auth.urls")),
+    url(r"^verifyresetpasswordemail/$", views.verify_reset_pass_email),
     url(r"^confirm$", views.validate_account, name="account_confirm"),
     # forms
     url(

@@ -3,8 +3,13 @@
 from __future__ import unicode_literals
 import logging
 
-from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from django.views import generic
+from django.http import JsonResponse
+
+from django.core.mail import send_mail
+from django.conf import settings
+from emailspool.models import Spool
 
 from rest_framework import status, viewsets
 from rest_framework.decorators import api_view
@@ -61,6 +66,22 @@ class LoginViewset(viewsets.ReadOnlyModelViewSet):
 
     def get_object(self):
         return self.request.user
+
+
+@csrf_exempt
+@api_view(["POST"])
+def verify_reset_pass_email(request):
+    try:
+        email = Spool.objects.filter(to=request.data['email'], sent=False)[0]
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = [request.data['email'], ]
+        send_mail(email.subject, email.content, email_from, recipient_list, html_message=email.content)
+        email.sent = True
+        email.save()
+        return Response(status=status.HTTP_200_OK)
+    except:
+        return Response(status=status.HTTP_400_BAD_REQUEST)
+
 
 
 ##########

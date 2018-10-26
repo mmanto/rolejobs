@@ -96,6 +96,14 @@ function (Apiv1Service, AuthService, extendableBuiltin) {
             });
     };
 
+    const verifyResetPasswordEmail = function (email) {
+        return Apiv1Service.getInstance()
+            .post("accounts/verifyresetpasswordemail/", { email })
+            .then((response) => {
+                return response.data;
+            });
+    };
+
     const confirmResetPassword = function (uid, token, password) {
 
         return Apiv1Service.getInstance()
@@ -129,6 +137,7 @@ function (Apiv1Service, AuthService, extendableBuiltin) {
         getLoggedUser,
         NotAuthUser,
         resetPassword,
+        verifyResetPasswordEmail,
         confirmResetPassword,
         changePassword
     };

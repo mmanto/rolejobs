@@ -21,8 +21,11 @@ const factory = function ($scope, $state, alertModal, AccountService,
                 return AccountService.resetPassword($scope.formData.email);
             })
             .then(() => {
+                return AccountService.verifyResetPasswordEmail($scope.formData.email);
+            })
+            .then(() => {
                 $scope.formData.email = "";
-                return alertModal.open(
+                alertModal.open(
                     "Ya se ha enviado un correo a la dirección indicada " +
                     "siga los pasos del mismo para poder volver a ingresar " +
                     "a su cuenta"
@@ -33,7 +36,7 @@ const factory = function ($scope, $state, alertModal, AccountService,
             })
             .catch(() => {
                 return alertModal.open(
-                    "Por favor, ingrese una direccion de correo válida"); 
+                    "Por favor, ingrese una direccion de correo válida y registrada.");
             });
 
     };

@@ -63,7 +63,7 @@
     "jshint-stylish": "^2.2.1",
     "ng-tags-input": "^3.2.0",
     "ngmap": "^1.18.4",
-    "slick-carousel": "^1.6.0",
+    "slick-carousel": "^1.8.1",
     "textangular": "^1.5.16",
     "through2": "^2.0.3",
     "underscore": "git+https://github.com/jashkenas/underscore.git#3d118cf09fe4d3432aef9b5b6ab43e57ee9af34e",
