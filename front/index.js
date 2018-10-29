@@ -193,6 +193,10 @@ const app = angular.module("RoleJobs", [
                     url: "/terms_conditions",
                     templateUrl: "/templates/terms_conditions.html"
                 })
+                .state('about', {
+                    url: "/about",
+                    templateUrl: "/templates/about_us.html"
+                })
             
                 .state('privacy', {
                     url: "/privacy",

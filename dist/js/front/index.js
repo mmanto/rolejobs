@@ -4717,6 +4717,9 @@ var app = angular.module("RoleJobs", ["ui.router", "ngCookies", "mm.foundation",
     }).state('terms_conditions', {
         url: "/terms_conditions",
         templateUrl: "/templates/terms_conditions.html"
+    }).state('about', {
+        url: "/about",
+        templateUrl: "/templates/about_us.html"
     }).state('privacy', {
         url: "/privacy",
         templateUrl: "/templates/privacy.html"

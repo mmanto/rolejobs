@@ -25,6 +25,12 @@ urlpatterns = [
         TemplateView.as_view(template_name="home/terms_conditions.html"),
     ),
 
+    # About
+    url(
+        r"^templates/about_us.html",
+        TemplateView.as_view(template_name="home/about_us.html"),
+    ),
+
     # Privacy
     url(
         r"^templates/privacy.html",
