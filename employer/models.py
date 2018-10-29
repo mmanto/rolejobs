@@ -23,6 +23,7 @@ PHONE_REGEX = RegexValidator(
 )
 
 TYPE_COMPANY = (
+    (None, _("Seleccione un elemento")),
     ("A", _("Empleador Directo")),
     ("B", _("Agencia de Reclutamiento")),
     ("C", _("Servicios Temporales"))
