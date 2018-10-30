@@ -47,13 +47,13 @@
             <h5 class="text-color-blue">{% trans "Datos de la empresa" %}</h5>
           </div>
 
-          <div lass="row">
+          <div class="row">
             {% placeholder_based_field form.name_company %}
             {% placeholder_based_field form.razon_social %}
             {% placeholder_based_field form.responsability_iva %}
           </div>
 
-          <div lass="row">
+          <div class="row">
             <div class="large-4 columns" style="margin-top:10px; margin-bottom:10px;">
               <geo-field
                 required="true"
@@ -133,10 +133,20 @@
             {% placeholder_based_field form.phone_number %}
             {% placeholder_based_field form.mobile_number %}
            <!--
-            <input id="datepicker1" name="birth_date" value="{{form.birth_date | date:'DATE_FORMAT'}}" type="text" />
+            <input id="datepicker1" name="birth_date"  type="text" />
             -->
             <div class="large-{{ column_size }} columns left field-container placeholder-based-field"></div>
-              <input placeholder="Fecha de nacimiento" name="birth_date" class="textbox-n" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" >
+              <!--
+              <input
+                      placeholder="Fecha de nacimiento"
+                      name="birth_date" class="textbox-n"
+                      type="text"
+                      onfocus="(this.type='date')"
+                      onblur="(this.type='text')"
+                      id="date"
+              />
+              -->
+              {% placeholder_based_field form.birth_date %}
           </div>
           </div>
 
@@ -146,6 +156,8 @@
             </div>
             {% placeholder_based_field form.reference %}
           </div>
+
+
           <div class="row">
             <div class="large-1 columns" align="center" style="margin-top:10px; margin-bottom:10px;">
               {% render_field form.newsletter class="radius shadow-input"  %}
@@ -165,10 +177,10 @@
             </div>
           </div>
 
-          <div class="row text-middle"  style="margin-bottom:-30px;" align="center">
+         <div class="row text-middle"  style="margin-bottom:-30px;" align="center">
             <input style="font-family: DosisSemiBold; color: white; font-size: 100%; margin-bottom:-30px; border-radius: 5px;" class="button radius tiny alert small" type="submit" value="{% trans " REGISTRARSE" %}">
           </div>
-        </div>
+
       </form>
 
     </div>

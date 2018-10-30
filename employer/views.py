@@ -17,6 +17,11 @@ from jobs.views import OwnJobPostulationsViewSet
 from jobs.models import JobPostulation, JobPostulationNote
 from rolejobs_api.generics import StandarPagination
 
+from django.core.mail import send_mail
+from django.conf import settings
+from emailspool.models import Spool
+
+
 from serializers import (
     SignupSerializer,
     EmployerSerializer,
@@ -44,6 +49,13 @@ class Signup(generics.GenericAPIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
+
+        email = Spool.objects.filter(to=request.data['email'], sent=False)[0]
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = [request.data['email'], ]
+        send_mail(email.subject, email.content, email_from, recipient_list, html_message=email.content)
+        email.sent = True
+        email.save()
         return Response({"success": _("Employer signup success")})
 
 
