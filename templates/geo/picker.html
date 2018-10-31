@@ -2,24 +2,27 @@
   <form name="geoPickerForm" ng-submit="ok(geoPickerForm)">
     <div class="row">
       <div class="large-4 columns">
+          <label>{{ "Seleccione un país" | translate }}</label>
         <select
           ng-model="values.country"
-          required="true",
-          ng-required="true",
+          required="true"
+          ng-required="true"
           ng-options="item as item.name for item in choices.countries track by item.id"
         ></select>
         <img class="shadow-img" src="{{ 'img/shadow-input.svg' | static }}"/>
       </div>
       <div class="large-4 columns">
+          <label>{{ "Seleccione una región" | translate }}</label>
         <select
           ng-model="values.region"
-          required="true",
-          ng-required="true",
+          required="true"
+          ng-required="true"
           ng-options="item as item.name for item in choices.regions track by item.id"
         ></select>
         <img class="shadow-img" src="{{ 'img/shadow-input.svg' | static }}"/>
       </div>
       <div class="large-4 columns">
+          <label>{{ "Seleccione una ciudad" | translate }}</label>
         <select
           ng-model="values.city"
           ng-options="item as item.name for item in choices.cities track by item.id"
@@ -40,7 +43,7 @@
       </div>
     </div>
     <div class="row">
-      <ng-map></ng-map>
+      <ng-map  zoom="6" ></ng-map>
     </div>
     <div class="row form-buttons text-center">
       <a ng-click="ok(geoPickerForm)" class="rj-button">{{ "Guardar" | translate }}</a>
