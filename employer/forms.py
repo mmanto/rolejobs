@@ -352,16 +352,27 @@ class NgSignupForm(six.with_metaclass(
             attrs={
                 'placeholder': _(u'Celular')}))
 
-    birth_date = forms.DateField(widget=forms.TextInput(attrs={
-        'placeholder': "Fecha de nacimiento",
-        'name': "birth_date",
-        "class": "textbox-n",
-        "type": "text",
-        "onfocus": "(this.type='date')",
-        "onblur": "(this.type='text')",
-        "id": "date"
+    birth_date = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'datetimepicker': "",
+                'placeholder': "Fecha de nacimiento",
+                'name': "birth_date",
+                "type": "text",
+                "id": "date"
+            }
+        ))
 
-    }))
+    #     forms.DateField(widget=forms.TextInput(attrs={
+    #     'placeholder': "Fecha de nacimiento",
+    #     'name': "birth_date",
+    #     "class": "textbox-n",
+    #     "type": "text",
+    #     "onfocus": "(this.type='date')",
+    #     "onblur": "(this.type='text')",
+    #     "id": "date"
+    #
+    # }))
 
 #    def __init__(self, *args, **kwargs):
 #        super(NgSignupForm, self).__init__(*args, **kwargs)
