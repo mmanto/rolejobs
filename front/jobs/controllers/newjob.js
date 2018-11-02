@@ -104,7 +104,7 @@ const factory = function (
         },
         name: "Idioma requerido",
         level: {
-            title: "Nivél requerido",
+            title: "Nivel requerido",
             parser(data) {
                 return `${data}/10`;
             }
@@ -339,7 +339,7 @@ const factory = function (
             });
         }
 
-        if (err.status >= 500 && err.status <= 599) {
+        if (err && err.status >= 500 && err.status <= 599) {
             return AlertModal.open(
                 "Ha habido un problema al procesar su publicación, por " +
                 "favor, reintente."
@@ -409,7 +409,6 @@ const factory = function (
     };
 
     $scope.save = function () {
-        
         if ($scope.jobForm.$invalid) {
             return $scope.error();
         }

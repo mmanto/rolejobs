@@ -5139,7 +5139,7 @@ var factory = function factory($q, $scope, $state, $stateParams, $modal, Confirm
         },
         name: "Idioma requerido",
         level: {
-            title: "Nivél requerido",
+            title: "Nivel requerido",
             parser: function parser(data) {
                 return data + "/10";
             }
@@ -5367,7 +5367,7 @@ var factory = function factory($q, $scope, $state, $stateParams, $modal, Confirm
             });
         }
 
-        if (err.status >= 500 && err.status <= 599) {
+        if (err && err.status >= 500 && err.status <= 599) {
             return AlertModal.open("Ha habido un problema al procesar su publicación, por " + "favor, reintente.");
         }
 
@@ -5429,7 +5429,6 @@ var factory = function factory($q, $scope, $state, $stateParams, $modal, Confirm
     };
 
     $scope.save = function () {
-
         if ($scope.jobForm.$invalid) {
             return $scope.error();
         }
@@ -9401,7 +9400,9 @@ var datetimepickerFactory = function datetimepickerFactory() {
                 onSelect: function onSelect(dateText) {
                     var modelPath = $(this).attr('ng-model');
                     //putObject(modelPath, scope, dateText);
-                    scope.$apply();
+
+                    scope.mDateText = dateText + ' 00:00:00';
+                    scope.$apply(modelPath + " = mDateText");
                 }
             });
         }
