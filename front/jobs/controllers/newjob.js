@@ -410,6 +410,7 @@ const factory = function (
 
     $scope.save = function () {
         if ($scope.jobForm.$invalid) {
+
             return $scope.error();
         }
 

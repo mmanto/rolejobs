@@ -24,7 +24,7 @@ const datetimepickerFactory = function () {
                 var modelPath = $(this).attr('ng-model');
                 //putObject(modelPath, scope, dateText);
 
-                    scope.mDateText = dateText + ' 00:00:00';
+                scope.mDateText = dateText;
                 scope.$apply(modelPath + " = mDateText");
                 }
             });

@@ -180,7 +180,7 @@ class Job(models.Model):
         blank=True,
         verbose_name=_("Número de referencia"))
 
-    contract_date = models.DateTimeField(
+    contract_date = models.DateField(
         null=True,
         blank=True,
         verbose_name=_("Fecha de contratación")
@@ -330,7 +330,7 @@ class Job(models.Model):
         verbose_name=_(u"Cantidad de vacantes")
     )
 
-    publish_date = models.DateTimeField(
+    publish_date = models.DateField(
         null=True,
         blank=True,
         verbose_name=_(u"Fecha de publicación")

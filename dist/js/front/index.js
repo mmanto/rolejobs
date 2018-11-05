@@ -5430,6 +5430,7 @@ var factory = function factory($q, $scope, $state, $stateParams, $modal, Confirm
 
     $scope.save = function () {
         if ($scope.jobForm.$invalid) {
+
             return $scope.error();
         }
 
@@ -9401,7 +9402,7 @@ var datetimepickerFactory = function datetimepickerFactory() {
                     var modelPath = $(this).attr('ng-model');
                     //putObject(modelPath, scope, dateText);
 
-                    scope.mDateText = dateText + ' 00:00:00';
+                    scope.mDateText = dateText;
                     scope.$apply(modelPath + " = mDateText");
                 }
             });
