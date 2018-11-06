@@ -39,19 +39,21 @@ const factory = function (Apiv1Service, RecordSet) {
         }
 
         _extendItem(item) {
-            item.$delete = () => {
+
+            if (typeof item == 'object'){
+                item.$delete = () => {
                 return this._processItem('delete', item);
-            };
+                };
 
-            item.$detailed = () => {
-                return this._processItem('detailed', item);
-            };
+                item.$detailed = () => {
+                    return this._processItem('detailed', item);
+                };
 
-            item.$save = () => {
-                return this._processItem('save', item);
-            };
-
-            return item; 
+                item.$save = () => {
+                    return this._processItem('save', item);
+                };
+            }
+            return item;
         }
 
         _processItems(items) {

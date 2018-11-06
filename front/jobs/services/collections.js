@@ -15,13 +15,15 @@ const factory = function (CollectionService) {
         
         _extendItem(item) {
             item = super._extendItem(item);
-            item.$postulate = (data) => {
-                var path = `${item.id}/postulate`;
-                return this.collection.post(data, {}, path)
-                    .then((result) => {
-                        console.log("RESULT", result);
-                    });
-            };
+            if (typeof item == 'object'){
+                item.$postulate = (data) => {
+                    var path = `${item.id}/postulate`;
+                    return this.collection.post(data, {}, path)
+                        .then((result) => {
+                            console.log("RESULT", result);
+                        });
+                };
+            }
             return item;
         }
 
