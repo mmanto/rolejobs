@@ -50,6 +50,10 @@ post_only = {
 
 urlpatterns = [
     url(
+        r"^jobs/(?P<pk>[0-9]+)$",
+        RelatedJobsViewSet.as_view({'get': 'mretrieve'})
+    ),
+    url(
         r"^jobs/?$",
         PublicJobsViewSet.as_view(list_only),
         name="public_jobs"

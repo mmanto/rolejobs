@@ -409,6 +409,12 @@ class RelatedJobsViewSet(viewsets.ReadOnlyModelViewSet):
         serializer = JobsSimpleSerializer(queryset, many=True)
         return Response(serializer.data)
 
+    def mretrieve(self, request, pk=None):
+        queryset = Job.objects.all()
+        job = get_object_or_404(queryset, id=pk)
+        serializer = JobsSimpleSerializer(job)
+        return Response(serializer.data)
+
 # template
 
 
