@@ -5011,7 +5011,7 @@ var factory = function factory($scope, $state, $sce, AlertModal, jobData) {
         }
 
         $state.go("jobs.postulate", {
-            id: jobData.id
+            id: jobData.pk
         });
     };
 };

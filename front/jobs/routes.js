@@ -40,7 +40,7 @@ module.exports = ["$stateProvider", ($stateProvider) => {
             url: "/postulate/{id:int}",
             params: {
                 id: {
-                    squash: false 
+                    squash: false
                 }
             },
             resolve: {
