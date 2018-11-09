@@ -230,7 +230,7 @@ class JobPostulationViewSet(viewsets.ModelViewSet):
         job = self.get_job()
         try:
             vacancies = int(job.vacancies)
-        except ValueError:
+        except:  #ValueError:  # is an error
             vacancies = None
 
         if vacancies is None or vacancies > 0:

@@ -17,7 +17,7 @@ const factory = function (CollectionService) {
             item = super._extendItem(item);
             if (typeof item == 'object'){
                 item.$postulate = (data) => {
-                    var path = `${item.id}/postulate`;
+                    var path = `${item.pk}/postulate`;
                     return this.collection.post(data, {}, path)
                         .then((result) => {
                             console.log("RESULT", result);

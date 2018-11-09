@@ -6574,7 +6574,7 @@ var factory = function factory(CollectionService) {
                 item = _get(PublicJobRecordSet.prototype.__proto__ || Object.getPrototypeOf(PublicJobRecordSet.prototype), "_extendItem", this).call(this, item);
                 if ((typeof item === "undefined" ? "undefined" : _typeof(item)) == 'object') {
                     item.$postulate = function (data) {
-                        var path = item.id + "/postulate";
+                        var path = item.pk + "/postulate";
                         return _this2.collection.post(data, {}, path).then(function (result) {
                             console.log("RESULT", result);
                         });

@@ -642,9 +642,10 @@ class JobPostulationSerializer(serializers.ModelSerializer):
             instance.delete()
             raise e
 
-        if instance.job.send_postulation_gratitude_notification:
-            request = self.context.get('request', None)
-            request.user.send_postulation_gratitude_notification(instance)
+        # # Dont exist this field or method in job model
+        # if instance.job.send_postulation_gratitude_notification:
+        #     request = self.context.get('request', None)
+        #     request.user.send_postulation_gratitude_notification(instance)
 
         return instance
 
