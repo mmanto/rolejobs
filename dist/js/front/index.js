@@ -4982,7 +4982,7 @@ module.exports = ["$q", "$scope", "$state", "$stateParams", "JobsCollections", "
  * @name JobDetailCtl
  */
 
-var factory = function factory($scope, $state, $sce, AlertModal, jobData) {
+var factory = function factory($scope, $state, $sce, AlertModal, jobData, Apiv1Service) {
 
     var POSTULATION_STATUS = "postulation_status";
 
@@ -5025,13 +5025,19 @@ var factory = function factory($scope, $state, $sce, AlertModal, jobData) {
             return AlertModal.open("Ya tiene una postulación a este aviso.");
         }
 
+        // Apiv1Service.getInstance().get("account/postulationauthcheck")
+        //     .then((response)=>{
+
+
+        //     });
+
         $state.go("jobs.postulate", {
             id: jobData.pk
         });
     };
 };
 
-module.exports = ["$scope", "$state", "$sce", "AlertModal", "jobData", factory];
+module.exports = ["$scope", "$state", "$sce", "AlertModal", "jobData", "Apiv1Service", factory];
 
 },{}],64:[function(require,module,exports){
 "use strict";

@@ -7,7 +7,7 @@
  * @name JobDetailCtl
  */
 
-const factory = function ($scope, $state, $sce, AlertModal, jobData) {
+const factory = function ($scope, $state, $sce, AlertModal, jobData, Apiv1Service) {
 
     const POSTULATION_STATUS = "postulation_status";
 
@@ -50,10 +50,17 @@ const factory = function ($scope, $state, $sce, AlertModal, jobData) {
                 "Ya tiene una postulación a este aviso."
             );
         }
+        
+        // Apiv1Service.getInstance().get("account/postulationauthcheck")
+        //     .then((response)=>{
 
-        $state.go("jobs.postulate", {
-            id: jobData.pk
-        });
+                
+
+        //     });
+
+            $state.go("jobs.postulate", {
+                id: jobData.pk
+            });
 
     };
 
@@ -65,5 +72,6 @@ module.exports = [
     "$sce",
     "AlertModal",
     "jobData",
+    "Apiv1Service",
     factory
 ];

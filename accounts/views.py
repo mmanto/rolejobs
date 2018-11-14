@@ -36,7 +36,7 @@ def validate_account(request):
     hash = request.data.get("hash")
 
     try:
-        user = User.objects.get(id=id)
+        user = User.objects.get(pk=id)
     except:
         return Response(status=status.HTTP_404_NOT_FOUND)
     else:
