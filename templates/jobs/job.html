@@ -15,7 +15,10 @@
 
       <div class="info">
         <p class="title">          
-         <a ui-sref="jobs.detail({id: {{job.pk}}})">
+         <a ng-if="!job.postulated" ui-sref="jobs.detail({id: {{job.pk}}})">
+            {{ job.title }} - {{ job.geo.city.name }}
+          </a>
+          <a ng-if="job.postulated" href="#">
             {{ job.title }} - {{ job.geo.city.name }}
           </a>
         </p>
@@ -26,6 +29,11 @@
           <span class="field">{{ "Jornada" | translate }}:</span>
           <span>{{ job.job_type_text }}</span>
         </p>
+
+        <p ng-if="job.postulated" 
+            class="cell"
+            style="color: white; background-color: #58c1c9; margin-bottom: 5px; font-family: DosisSemiBold; font-size:130%; padding-left: 5px"> {{ "Postulado" | translate }} </p>
+
       </div>
 
       <div class="data">

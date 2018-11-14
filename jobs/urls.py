@@ -18,6 +18,7 @@ from views import (
     OwnJobsInfoView,
     AdvanceSearchFiltersChoices,
     RelatedJobsViewSet,
+    UserPostulationsJobs
 )
 
 list_only = {
@@ -49,6 +50,10 @@ post_only = {
 }
 
 urlpatterns = [
+    url(
+        r"^userpostulationjobs$",
+        UserPostulationsJobs.as_view()
+    ),
     url(
         r"^jobs/(?P<pk>[0-9]+)$",
         RelatedJobsViewSet.as_view({'get': 'mretrieve'})

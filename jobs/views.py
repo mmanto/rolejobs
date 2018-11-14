@@ -5,6 +5,11 @@ from __future__ import unicode_literals
 from django.shortcuts import get_object_or_404, render
 from django.views import generic
 
+from django.http import JsonResponse
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_protect
+from json import loads
+
 from rest_framework import viewsets, status
 from rest_framework.views import APIView
 from rest_framework.decorators import list_route, detail_route
@@ -461,3 +466,20 @@ class KnowledgeRequirementFormView(generic.FormView):
 class QuestionFormView(generic.FormView):
     template_name = "new_question.html"
     form_class = QuestionForm
+
+
+class UserPostulationsJobs(generic.View):
+    
+    @method_decorator(csrf_protect)
+    def post(self, request):
+        pks = loads(request.body)['pks']
+        postulationjobs = []
+        if request.user.is_authenticated:
+            for mpk in pks:
+                try:
+                    mjob = Job.objects.get(pk = mpk)
+                    JobPostulation.objects.get(user = request.user, job = mjob)
+                    postulationjobs.append(mpk)
+                except Exception:
+                    continue
+        return JsonResponse({'postulationjobs': postulationjobs})

@@ -10,8 +10,8 @@
  * @param {service} CoursessService
  */ 
 
-const factory = function ($q, $scope, $state, JobsCollections, CoursesCollections,AreasService,
-    RolesService) {
+const factory = function ($q, $scope, $state, $http, JobsCollections, CoursesCollections,AreasService,
+    RolesService, Apiv1Service) {
 
     const jobsCollection = JobsCollections.PublicJobs.getInstance();
     
@@ -65,9 +65,31 @@ const factory = function ($q, $scope, $state, JobsCollections, CoursesCollection
                 "page_size": 9 
             }
         })
-            .then((jobs) => {
-                $scope.jobs = jobs;
-            });
+        .then((jobs) => {
+            
+            
+            var mdata = [];
+            for(var i = 0; i< jobs._items.length; i++)
+            {
+                mdata.push(jobs._items[i].pk);
+            }
+            Apiv1Service.getInstance().post("jobs/userpostulationjobs", { pks: mdata })
+                .then((response)=>{
+                    var postulationjobs =  response.data.postulationjobs;
+
+                    for(var i = 0; i< jobs._items.length; i++)
+                    {
+                        var pk = jobs._items[i].pk;
+                        if (postulationjobs.indexOf(pk) != -1)
+                        {
+                            jobs._items[i].postulated = true;
+                        }
+                    }
+                    $scope.jobs = jobs;
+                });
+            
+            
+        });
     };
 
     $scope.updateCourses = function () {
@@ -109,9 +131,11 @@ module.exports = [
     "$q",
     "$scope",
     "$state",
+    "$http",
     "JobsCollections",
     "CoursesCollections",
     "AreasService",
     "RolesService",
+    "Apiv1Service",
     factory
 ];
