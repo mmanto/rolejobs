@@ -36,9 +36,9 @@ ADMINS = (
 
 EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
 MAILER_EMAIL_BACKEND = EMAIL_BACKEND
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'testerprograming@gmail.com' #'devapps@gentisoft.com'
-EMAIL_HOST_PASSWORD = 'testerprograming123456' #'Qo4NOvQILQhP2J5'
+EMAIL_HOST = 'mail.rolejobs.net'
+EMAIL_HOST_USER = 'noreply@rolejobs.net'
+EMAIL_HOST_PASSWORD = 'fW_@elegOHn7'
 EMAIL_PORT = 465
 EMAIL_USE_TLS = True
 EMAIL_FROM = 'RoleJobs <noreply@rolejobs.com>'

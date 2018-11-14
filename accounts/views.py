@@ -79,7 +79,8 @@ def verify_reset_pass_email(request):
         email.sent = True
         email.save()
         return Response(status=status.HTTP_200_OK)
-    except:
+    except Exception as e:
+        print(e)
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
