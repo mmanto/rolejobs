@@ -5025,14 +5025,17 @@ var factory = function factory($scope, $state, $sce, AlertModal, jobData, Apiv1S
             return AlertModal.open("Ya tiene una postulación a este aviso.");
         }
 
-        // Apiv1Service.getInstance().get("account/postulationauthcheck")
-        //     .then((response)=>{
-
-
-        //     });
-
-        $state.go("jobs.postulate", {
-            id: jobData.pk
+        Apiv1Service.getInstance().get("accounts/postulationauthcheck").then(function (response) {
+            if (response.data.success) {
+                $state.go("jobs.postulate", {
+                    id: jobData.pk
+                });
+            } else {
+                AlertModal.open("Primero debe registrarse antes de postularse.");
+                $state.go("accounts.signup", {
+                    id: jobData.pk
+                });
+            }
         });
     };
 };

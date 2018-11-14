@@ -51,16 +51,25 @@ const factory = function ($scope, $state, $sce, AlertModal, jobData, Apiv1Servic
             );
         }
         
-        // Apiv1Service.getInstance().get("account/postulationauthcheck")
-        //     .then((response)=>{
-
+        Apiv1Service.getInstance().get("accounts/postulationauthcheck")
+            .then((response)=>{
+                if (response.data.success){
+                    $state.go("jobs.postulate", {
+                        id: jobData.pk
+                    });
+                }
+                else
+                {
+                    AlertModal.open("Primero debe registrarse antes de postularse.");
+                    $state.go("accounts.signup", {
+                        id: jobData.pk
+                    });
+                }
                 
 
-        //     });
-
-            $state.go("jobs.postulate", {
-                id: jobData.pk
             });
+
+            
 
     };
 

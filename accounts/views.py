@@ -10,6 +10,7 @@ from django.http import JsonResponse
 from django.core.mail import send_mail
 from django.conf import settings
 from emailspool.models import Spool
+from django.http import JsonResponse
 
 from rest_framework import status, viewsets
 from rest_framework.decorators import api_view
@@ -32,13 +33,14 @@ def validate_account(request):
     @TODO get the role
     """
 
-    id = int(request.data.get("id"))
+    mid = int(request.data.get("id"))
     hash = request.data.get("hash")
 
     try:
-        user = User.objects.get(pk=id)
-    except:
-        return Response(status=status.HTTP_404_NOT_FOUND)
+        user = User.objects.get(id=mid)
+    except Exception as e:
+        raise e
+        # return Response(status=status.HTTP_404_NOT_FOUND)
     else:
 
         if user.status == user.S_NEW:
@@ -84,6 +86,12 @@ def verify_reset_pass_email(request):
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
+def postulation_auth_check(request):
+    try:
+        User.objects.get(id=request.user.id)
+        return JsonResponse({'success': True})
+    except:
+        return JsonResponse({'success': False})
 
 ##########
 # Forms

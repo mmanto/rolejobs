@@ -11,6 +11,7 @@ urlpatterns = [
     url(r"^auth", include("rest_auth.urls")),
     url(r"^verifyresetpasswordemail/$", views.verify_reset_pass_email),
     url(r"^confirm$", views.validate_account, name="account_confirm"),
+    url(r"^postulationauthcheck$", views.postulation_auth_check),
     # forms
     url(
         r"^templates/change_password.html$",
