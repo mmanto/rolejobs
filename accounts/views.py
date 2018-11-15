@@ -39,8 +39,7 @@ def validate_account(request):
     try:
         user = User.objects.get(id=mid)
     except Exception as e:
-        raise e
-        # return Response(status=status.HTTP_404_NOT_FOUND)
+        return Response(status=status.HTTP_404_NOT_FOUND)
     else:
 
         if user.status == user.S_NEW:

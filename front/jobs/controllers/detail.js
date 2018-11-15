@@ -61,9 +61,7 @@ const factory = function ($scope, $state, $sce, AlertModal, jobData, Apiv1Servic
                 else
                 {
                     AlertModal.open("Primero debe registrarse antes de postularse.");
-                    $state.go("accounts.signup", {
-                        id: jobData.pk
-                    });
+                    $state.go("accounts.signup");
                 }
                 
 
@@ -71,6 +69,11 @@ const factory = function ($scope, $state, $sce, AlertModal, jobData, Apiv1Servic
 
             
 
+    };
+
+    $scope.enterpricejobsdialog = function () {
+        
+        console.log("aqui estan linkeados todos los anuncios de la empresa");
     };
 
 };
