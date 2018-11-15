@@ -7,7 +7,7 @@
  * @name JobDetailCtl
  */
 
-const factory = function ($scope, $state, $sce, AlertModal, jobData, Apiv1Service) {
+const factory = function ($scope, $state, $sce, $mdDialog, AlertModal, jobData, Apiv1Service) {
 
     const POSTULATION_STATUS = "postulation_status";
 
@@ -71,9 +71,17 @@ const factory = function ($scope, $state, $sce, AlertModal, jobData, Apiv1Servic
 
     };
 
-    $scope.enterpricejobsdialog = function () {
+    $scope.enterpricejobsdialog = function (ev) {
         
-        console.log("aqui estan linkeados todos los anuncios de la empresa");
+
+        $mdDialog.show(
+            $mdDialog.alert()
+              .clickOutsideToClose(true)
+              .title('Avisos')
+              .textContent('Se muestran los avisos de la empresa.')
+              .ok('Aceptar')
+              .targetEvent(ev)
+          );
     };
 
 };
@@ -82,6 +90,7 @@ module.exports = [
     "$scope",
     "$state",
     "$sce",
+    "$mdDialog",
     "AlertModal",
     "jobData",
     "Apiv1Service",

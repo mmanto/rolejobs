@@ -48,6 +48,7 @@ const relativeDateSpanish = require("angular-relative-date/translations/es");
 const app = angular.module("RoleJobs", [
     "ui.router",
     "ngCookies",
+    "ngMaterial",
     "mm.foundation",
     "pascalprecht.translate",
     "relativeDate",

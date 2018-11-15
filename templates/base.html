@@ -10,6 +10,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{% block title %}{% trans "RoleJobs" %}{% endblock %}</title>
   <link rel="stylesheet" type="text/css" href="{% static "css/app.css" %}?{% now "U" %}" />
+
+  <link rel="stylesheet" href="{% static "angular-material/angular-material.css" %}">
+
   <meta name="aviables_langs" content="{{ langs }}" />
   {% block extra_head %}
   {% endblock %}  
@@ -111,6 +114,13 @@
 
         
     {% endblock %}
+
+    <script src="{% static "angular/angular.js" %}"></script> 
+    <script src="{% static "angular-aria/angular-aria.js" %}"></script> 
+    <script src="{% static "angular-animate/angular-animate.js" %}"></script> 
+    <script src="{% static "angular-messages/angular-messages.js" %}"></script> 
+    <script src="{% static "angular-material/angular-material.js" %}"></script> 
+
 
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=true_or_false&language=es&key=AIzaSyB8PJvS9X17a7gmMsYbq8dxFhO_3yh_RTc"></script>
     <script src="{% static "js/front/index.js" %}?{% now "U" %}"></script>
