@@ -15,6 +15,7 @@ from rest_framework.views import APIView
 from rest_framework.decorators import list_route, detail_route
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from rest_framework.renderers import JSONRenderer
 
 from rolejobs_api.generics import StandarPagination
 
@@ -483,3 +484,22 @@ class UserPostulationsJobs(generic.View):
                 except Exception:
                     continue
         return JsonResponse({'postulationjobs': postulationjobs})
+
+class EnterpriceJobs(generic.View):
+    
+    @method_decorator(csrf_protect)
+    def post(self, request):
+        mpk = loads(request.body)['pk']
+        mjob = Job.objects.get(pk = mpk)
+        similarJobs = Job.objects.filter(owner = mjob.owner).exclude(pk = mpk)
+        postulationjobs = []
+        if request.user.is_authenticated:
+            for sJob in similarJobs:
+                try:
+                    JobPostulation.objects.get(user = request.user, job = sJob)
+                except Exception:
+                    postulationjobs.append(sJob)
+        serializer = JobSerializer(postulationjobs, many=True)
+        return JsonResponse(serializer.data, safe=False)
+        
+

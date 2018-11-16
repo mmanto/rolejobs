@@ -69,6 +69,12 @@ const app = angular.module("RoleJobs", [
     cropperModule.name,
 ])
 
+    .config(($mdThemingProvider)=>{
+
+        $mdThemingProvider.theme('default')
+            .primaryPalette('red');
+    })
+
     .config(["$translateProvider", ($translateProvider) => {
         $translateProvider.translations("es", relativeDateSpanish);
         $translateProvider.preferredLanguage('es');

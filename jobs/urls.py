@@ -18,7 +18,8 @@ from views import (
     OwnJobsInfoView,
     AdvanceSearchFiltersChoices,
     RelatedJobsViewSet,
-    UserPostulationsJobs
+    UserPostulationsJobs,
+    EnterpriceJobs
 )
 
 list_only = {
@@ -50,6 +51,11 @@ post_only = {
 }
 
 urlpatterns = [
+
+    url(
+        r"^enterpricejobs$",
+        EnterpriceJobs.as_view()
+    ),
     url(
         r"^userpostulationjobs$",
         UserPostulationsJobs.as_view()

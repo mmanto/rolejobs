@@ -74,15 +74,62 @@ const factory = function ($scope, $state, $sce, $mdDialog, AlertModal, jobData, 
     $scope.enterpricejobsdialog = function (ev) {
         
 
-        $mdDialog.show(
-            $mdDialog.alert()
-              .clickOutsideToClose(true)
-              .title('Avisos')
-              .textContent('Se muestran los avisos de la empresa.')
-              .ok('Aceptar')
-              .targetEvent(ev)
-          );
+        $mdDialog.show({
+            controller: EnterpriceJobsDialogController,
+            template: `
+            
+            <md-dialog>
+  
+        <md-toolbar>
+        <div class="md-toolbar-tools" aria-label="Avisos relacionados">
+            <h2 style="color: white">Avisos relacionados</h2>
+            <span flex></span>
+            
+        </div>
+        </md-toolbar>
+
+    <md-dialog-content>
+
+
+        <md-list>
+            <md-list-item ng-repeat="job in enterpricejobs">
+                <a ng-click="cancel()" ui-sref="jobs.detail({id: {{job.pk}} })">
+                {{ job.title }} - {{ job.geo.city.name }}
+                </a> 
+            </md-list-item>
+            <p ng-if="enterpricejobs.length == 0" style="margin:5px" > No se encontraron avisos relacionados </p>
+        </md-list>
+        
+    </md-dialog-content>
+
+    
+  
+</md-dialog>`,
+
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose:true
+          })
+
     };
+
+
+    function EnterpriceJobsDialogController($scope, $mdDialog) {
+    
+
+        $scope.cancel = function() {
+          $mdDialog.cancel();
+        };
+
+        Apiv1Service.getInstance().post("jobs/enterpricejobs",{ pk: jobData.pk })
+            .then((response)=>{
+                
+                $scope.enterpricejobs = response.data;
+
+
+            });
+    
+      }
 
 };
 

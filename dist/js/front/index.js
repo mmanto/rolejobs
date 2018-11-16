@@ -4654,7 +4654,10 @@ var testTemplate = require("tests.html");
 
 var relativeDateSpanish = require("angular-relative-date/translations/es");
 
-var app = angular.module("RoleJobs", ["ui.router", "ngCookies", "ngMaterial", "mm.foundation", "pascalprecht.translate", "relativeDate", angularSanitaze, textAngular, homeModule.name, apiModule.name, accountsModule.name, postulantsModule.name, employerModule.name, jobsModule.name, coursesModule.name, educationModule.name, avatarsModule.name, filtersModule.name, utilsModule.name, geoModule.name, cropperModule.name]).config(["$translateProvider", function ($translateProvider) {
+var app = angular.module("RoleJobs", ["ui.router", "ngCookies", "ngMaterial", "mm.foundation", "pascalprecht.translate", "relativeDate", angularSanitaze, textAngular, homeModule.name, apiModule.name, accountsModule.name, postulantsModule.name, employerModule.name, jobsModule.name, coursesModule.name, educationModule.name, avatarsModule.name, filtersModule.name, utilsModule.name, geoModule.name, cropperModule.name]).config(function ($mdThemingProvider) {
+
+    $mdThemingProvider.theme('default').primaryPalette('red');
+}).config(["$translateProvider", function ($translateProvider) {
     $translateProvider.translations("es", relativeDateSpanish);
     $translateProvider.preferredLanguage('es');
 }]).filter("static", function () {
@@ -5039,8 +5042,27 @@ var factory = function factory($scope, $state, $sce, $mdDialog, AlertModal, jobD
 
     $scope.enterpricejobsdialog = function (ev) {
 
-        $mdDialog.show($mdDialog.alert().clickOutsideToClose(true).title('Avisos').textContent('Se muestran los avisos de la empresa.').ok('Aceptar').targetEvent(ev));
+        $mdDialog.show({
+            controller: EnterpriceJobsDialogController,
+            template: "\n            \n            <md-dialog>\n  \n        <md-toolbar>\n        <div class=\"md-toolbar-tools\" aria-label=\"Avisos relacionados\">\n            <h2 style=\"color: white\">Avisos relacionados</h2>\n            <span flex></span>\n            \n        </div>\n        </md-toolbar>\n\n    <md-dialog-content>\n\n\n        <md-list>\n            <md-list-item ng-repeat=\"job in enterpricejobs\">\n                <a ng-click=\"cancel()\" ui-sref=\"jobs.detail({id: {{job.pk}} })\">\n                {{ job.title }} - {{ job.geo.city.name }}\n                </a> \n            </md-list-item>\n            <p ng-if=\"enterpricejobs.length == 0\" style=\"margin:5px\" > No se encontraron avisos relacionados </p>\n        </md-list>\n        \n    </md-dialog-content>\n\n    \n  \n</md-dialog>",
+
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose: true
+        });
     };
+
+    function EnterpriceJobsDialogController($scope, $mdDialog) {
+
+        $scope.cancel = function () {
+            $mdDialog.cancel();
+        };
+
+        Apiv1Service.getInstance().post("jobs/enterpricejobs", { pk: jobData.pk }).then(function (response) {
+
+            $scope.enterpricejobs = response.data;
+        });
+    }
 };
 
 module.exports = ["$scope", "$state", "$sce", "$mdDialog", "AlertModal", "jobData", "Apiv1Service", factory];
