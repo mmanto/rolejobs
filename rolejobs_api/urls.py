@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.conf.urls import url, include
+from views import StatsView
 
 urlpatterns = [
     url(r"^docs/", include('rest_framework_swagger.urls')),
@@ -15,4 +16,5 @@ urlpatterns = [
     url(r"^messages/", include("usermessages.urls")),
     url(r"^courses/", include("courses.urls")),
     url(r"^geo/", include("geo.urls")),
+    url(r"^stats", StatsView.as_view())
 ]
