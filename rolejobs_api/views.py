@@ -9,9 +9,10 @@ class StatsView(generic.View):
     
     def get(self, response):
         jobs = len(Job.objects.all())
-        postulations = len(JobPostulation.objects.all())
-        enterprices = 0
+        users = 0
+        employers = 0
         for user in User.objects.all():
             if user.is_employer:
-                enterprices += 1
-        return JsonResponse({ "jobs": jobs, "postulations": postulations, "enterprices": enterprices })
+                employers += 1
+            users += 1
+        return JsonResponse({ "jobs": jobs, "users": users, "employers": employers })
