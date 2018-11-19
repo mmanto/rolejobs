@@ -1690,13 +1690,13 @@ var routes = require("./routes");
 var courseItemDirective = require("./directives/course");
 var coursesService = require("./services/courses");
 var coursesCollectionsService = require("./services/collections");
-var postulationsService = require("./services/postulations");
+var postulationsCoursesService = require("./services/postulations");
 var newCourseController = require("./controllers/newcourse");
 var coursesController = require("./controllers/courses");
 var detailController = require("./controllers/detail");
 var postulateController = require("./controllers/postulate");
 
-module.exports = angular.module("RoleJob.Courses", []).config(routes).directive("courseItem", courseItemDirective).factory("CoursesService", coursesService).factory("CoursesCollections", coursesCollectionsService).factory("PostulationsService", postulationsService).controller("NewCourseCtl", newCourseController).controller("CoursesCtl", coursesController).controller("CourseDetailCtl", detailController).controller("CoursePostulateCtl", postulateController);
+module.exports = angular.module("RoleJob.Courses", []).config(routes).directive("courseItem", courseItemDirective).factory("CoursesService", coursesService).factory("CoursesCollections", coursesCollectionsService).factory("PostulationsCoursesService", postulationsCoursesService).controller("NewCourseCtl", newCourseController).controller("CoursesCtl", coursesController).controller("CourseDetailCtl", detailController).controller("CoursePostulateCtl", postulateController);
 
 },{"./controllers/courses":19,"./controllers/detail":20,"./controllers/newcourse":21,"./controllers/postulate":22,"./directives/course":23,"./routes":25,"./services/collections":26,"./services/courses":27,"./services/postulations":28,"angular":129}],25:[function(require,module,exports){
 "use strict";
@@ -2030,7 +2030,7 @@ module.exports = ["$q", "Apiv1Service", coursesService];
 /**
  * @memberof Courses
  * @ngdoc service
- * @name PostulationsService
+ * @name PostulationsCoursesService
  */
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();

@@ -3,7 +3,7 @@
 /**
  * @memberof Courses
  * @ngdoc service
- * @name PostulationsService
+ * @name PostulationsCoursesService
  */
 
 const factory = function (CollectionService) {

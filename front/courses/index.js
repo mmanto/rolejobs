@@ -11,7 +11,7 @@ const routes = require("./routes");
 const courseItemDirective = require("./directives/course");
 const coursesService = require("./services/courses");
 const coursesCollectionsService = require("./services/collections");
-const postulationsService = require("./services/postulations");
+const postulationsCoursesService = require("./services/postulations");
 const newCourseController = require("./controllers/newcourse");
 const coursesController = require("./controllers/courses");
 const detailController = require("./controllers/detail");
@@ -24,7 +24,7 @@ module.exports = angular.module("RoleJob.Courses", [
     .directive("courseItem", courseItemDirective)
     .factory("CoursesService", coursesService)    
     .factory("CoursesCollections", coursesCollectionsService)
-    .factory("PostulationsService", postulationsService)
+    .factory("PostulationsCoursesService", postulationsCoursesService)
     .controller("NewCourseCtl", newCourseController)
     .controller("CoursesCtl", coursesController)
     .controller("CourseDetailCtl", detailController)
