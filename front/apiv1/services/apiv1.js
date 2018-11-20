@@ -49,6 +49,7 @@ function ($q, $http) {
                 return $q.reject(new Error("Invalid method"));
             }
 
+            
             console.log(`api -> [${method}] ${path}`);
 
             var req = _.extend({

@@ -15,7 +15,13 @@ urlpatterns = [
         })
     ),
     url(
-        r"^(?P<pk>[0-9]+)$",
+        r"^courses/?$",
+        CourseView.as_view({
+            'get': 'list',
+        })
+    ),
+    url(
+        r"^courses/(?P<pk>[0-9]+)$",
         CourseView.as_view({
             'get': 'retrieve',
         })

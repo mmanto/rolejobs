@@ -101,7 +101,7 @@ const factory = function ($q,
             });
         }
 
-        if (err.status >= 500 && err.status <= 599) {
+        if (err && err.status >= 500 && err.status <= 599) {
             return AlertModal.open(
                 "Ha habido un problema al procesar su publicación, por " +
                 "favor, reintente."

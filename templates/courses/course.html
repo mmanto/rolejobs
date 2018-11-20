@@ -15,25 +15,25 @@
 
       <div class="info">
         <p class="title">          
-         <a ui-sref="courses.detail({id: {{course.pk}}})">
+         <a ui-sref="courses.detail({id: {{course.id}}})">
             {{ course.title }}
           </a>
         </p>
         <p class="description">
           <span class="field">{{ "Descripcion" | translate }}:</span>
-          <span>{{ course.description_text }}</span>
+          <span>{{ course.description }}</span>
           <br />
         </p>
       </div>
 
-      <div class="data">
+      <!-- <div class="data">
         <div class="row ">
           <p class="text-center" style="">
             {{ "Publicado" | translate }}
             {{ course.published | relativeDate }}
           </p>
         </div>
-      </div>
+      </div> -->
 
       <div class="controlls">
 
