@@ -77,7 +77,19 @@
                   <span class="" style="font-family: DosisSemiBold; color: #58c1c9;">{% trans "PUBLICAR COMO EMPRESA" %}</span>
                 </a>
               </li>
+              {% else %}
+                    {% if request.user.is_employer %}
+                    <li>
+
+                        <a class="left" ui-sref="employer.main.jobedit({pk:'-1'})">
+                            <img src="{% static "img/megafono.svg" %}"/> 
+                            <span class="" style="font-family: DosisSemiBold; color: #58c1c9;">{% trans "NUEVO AVISO" %}</span>
+                          </a>                        
+                    </li>
+                  {% endif %}
+
               {% endif %}
+             
             </ul> 
           </div>
         </div>
