@@ -53,7 +53,8 @@
         >
         <div class="container">
           <div class="cell">
-            <a href="#"><img src="/static/img/result-item-fav.svg"></a>
+            
+            <a ng-if="job.usefavorite" ng-click="tooglefavorite(job.pk)" ><img src="{{ favoritesrc }}"></a>
             <a href="#"><img src="/static/img/result-item-share.svg"></a>
           </div>
         </div>

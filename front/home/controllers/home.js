@@ -76,9 +76,11 @@ const factory = function ($q, $scope, $state, $http, JobsCollections, CoursesCol
             Apiv1Service.getInstance().post("jobs/userpostulationjobs", { pks: mdata })
                 .then((response)=>{
                     var postulationjobs =  response.data.postulationjobs;
-
+                    var usefavorite = response.data.usefavorite;
                     for(var i = 0; i< jobs._items.length; i++)
                     {
+                        jobs._items[i].usefavorite = usefavorite;
+
                         var pk = jobs._items[i].pk;
                         if (postulationjobs.indexOf(pk) != -1)
                         {
@@ -117,6 +119,9 @@ const factory = function ($q, $scope, $state, $http, JobsCollections, CoursesCol
                 $scope.roles = roles.splice(0, 10);
             });
     };
+
+
+    
 
     $q.all([
         $scope.updateJobs(),

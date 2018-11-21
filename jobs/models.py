@@ -996,3 +996,9 @@ class JobPostulationNote(models.Model):
         null=False,
         blank=False,
         verbose_name=_("Nota"))
+
+class FavoriteJob(models.Model):
+
+    user = models.ForeignKey(User, null=False, blank=False)
+    job = models.ForeignKey(Job, null=False, blank=False)
+

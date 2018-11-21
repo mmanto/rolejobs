@@ -475,7 +475,12 @@ class UserPostulationsJobs(generic.View):
     def post(self, request):
         pks = loads(request.body)['pks']
         postulationjobs = []
+        use_favorite = False
         if request.user.is_authenticated:
+            try:
+                use_favorite = request.user.is_postulant
+            except:
+                pass
             for mpk in pks:
                 try:
                     mjob = Job.objects.get(pk = mpk)
@@ -483,7 +488,7 @@ class UserPostulationsJobs(generic.View):
                     postulationjobs.append(mpk)
                 except Exception:
                     continue
-        return JsonResponse({'postulationjobs': postulationjobs})
+        return JsonResponse({'postulationjobs': postulationjobs, 'usefavorite': use_favorite})
 
 class EnterpriceJobs(generic.View):
     
