@@ -19,7 +19,8 @@ from views import (
     AdvanceSearchFiltersChoices,
     RelatedJobsViewSet,
     UserPostulationsJobs,
-    EnterpriceJobs
+    EnterpriceJobs,
+    SetFavoriteJob
 )
 
 list_only = {
@@ -59,6 +60,10 @@ urlpatterns = [
     url(
         r"^userpostulationjobs$",
         UserPostulationsJobs.as_view()
+    ),
+    url(
+        r"^setfavoritejob$",
+        SetFavoriteJob.as_view()
     ),
     url(
         r"^jobs/(?P<pk>[0-9]+)$",

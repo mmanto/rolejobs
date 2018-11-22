@@ -19,22 +19,47 @@ const jobItem = function () {
             job:"="
         },
 
-        controller: ["$scope", function($scope){
-
-            $scope.favoritesrc = "/static/img/result-item-fav.svg";
-
-            $scope.tooglefavorite = function(jobpk){
-
-                if ($scope.favoritesrc == "/static/img/result-item-fav.svg")
+        controller: ["$scope", "Apiv1Service", function($scope, Apiv1Service){
+            
+            if ($scope.job.usefavorite)
+            {
+                
+                if ($scope.job.hasfavoritejob)
                 {
                     $scope.favoritesrc = "/static/img/result-item-red-fav.svg";
                 }
-                else{
-
+                else
+                {
                     $scope.favoritesrc = "/static/img/result-item-fav.svg";
                 }
 
-                console.log("toogle favorite for " + jobpk)
+            }
+            
+
+            $scope.tooglefavorite = function(){
+
+                Apiv1Service.getInstance().post("jobs/setfavoritejob",
+                        { 'pk': $scope.job.pk, 'favorite': !$scope.job.hasfavoritejob })
+                        .then((response)=>{
+
+                            if (response.data.success)
+                            {
+                                $scope.job.hasfavoritejob = !$scope.job.hasfavoritejob;
+                                if ($scope.job.hasfavoritejob)
+                                {
+                                    $scope.favoritesrc = "/static/img/result-item-red-fav.svg";
+                                }
+                                else
+                                {
+                                    $scope.favoritesrc = "/static/img/result-item-fav.svg";
+                                }
+
+
+                            }
+                            
+                        });
+
+
             };
 
         }]

@@ -77,6 +77,7 @@ const factory = function ($q, $scope, $state, $http, JobsCollections, CoursesCol
                 .then((response)=>{
                     var postulationjobs =  response.data.postulationjobs;
                     var usefavorite = response.data.usefavorite;
+                    var hasfavoritejob = response.data.hasfavoritejob;
                     for(var i = 0; i< jobs._items.length; i++)
                     {
                         jobs._items[i].usefavorite = usefavorite;
@@ -85,6 +86,14 @@ const factory = function ($q, $scope, $state, $http, JobsCollections, CoursesCol
                         if (postulationjobs.indexOf(pk) != -1)
                         {
                             jobs._items[i].postulated = true;
+                        }
+                        if (hasfavoritejob.indexOf(pk) != -1)
+                        {
+                            jobs._items[i].hasfavoritejob = true;
+                        }
+                        else
+                        {
+                            jobs._items[i].hasfavoritejob = false;
                         }
                     }
                     $scope.jobs = jobs;

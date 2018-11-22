@@ -4524,12 +4524,18 @@ var factory = function factory($q, $scope, $state, $http, JobsCollections, Cours
             Apiv1Service.getInstance().post("jobs/userpostulationjobs", { pks: mdata }).then(function (response) {
                 var postulationjobs = response.data.postulationjobs;
                 var usefavorite = response.data.usefavorite;
+                var hasfavoritejob = response.data.hasfavoritejob;
                 for (var i = 0; i < jobs._items.length; i++) {
                     jobs._items[i].usefavorite = usefavorite;
 
                     var pk = jobs._items[i].pk;
                     if (postulationjobs.indexOf(pk) != -1) {
                         jobs._items[i].postulated = true;
+                    }
+                    if (hasfavoritejob.indexOf(pk) != -1) {
+                        jobs._items[i].hasfavoritejob = true;
+                    } else {
+                        jobs._items[i].hasfavoritejob = false;
                     }
                 }
                 $scope.jobs = jobs;
@@ -5982,20 +5988,30 @@ var jobItem = function jobItem() {
             job: "="
         },
 
-        controller: ["$scope", function ($scope) {
+        controller: ["$scope", "Apiv1Service", function ($scope, Apiv1Service) {
 
-            $scope.favoritesrc = "/static/img/result-item-fav.svg";
+            if ($scope.job.usefavorite) {
 
-            $scope.tooglefavorite = function (jobpk) {
-
-                if ($scope.favoritesrc == "/static/img/result-item-fav.svg") {
+                if ($scope.job.hasfavoritejob) {
                     $scope.favoritesrc = "/static/img/result-item-red-fav.svg";
                 } else {
-
                     $scope.favoritesrc = "/static/img/result-item-fav.svg";
                 }
+            }
 
-                console.log("toogle favorite for " + jobpk);
+            $scope.tooglefavorite = function () {
+
+                Apiv1Service.getInstance().post("jobs/setfavoritejob", { 'pk': $scope.job.pk, 'favorite': !$scope.job.hasfavoritejob }).then(function (response) {
+
+                    if (response.data.success) {
+                        $scope.job.hasfavoritejob = !$scope.job.hasfavoritejob;
+                        if ($scope.job.hasfavoritejob) {
+                            $scope.favoritesrc = "/static/img/result-item-red-fav.svg";
+                        } else {
+                            $scope.favoritesrc = "/static/img/result-item-fav.svg";
+                        }
+                    }
+                });
             };
         }]
     };
@@ -104654,7 +104670,7 @@ module.exports = '<div class="row fullWidth page-contact"><div class="large-6 la
 },{}],168:[function(require,module,exports){
 module.exports = '<div id="home-search"><div id="home-search-background"><div id="home-search-container"><div class="row"><div class="small-12 small-centered large-9 large-centered columns text-left" style="padding-top:40px;padding-bottom:40px"><div class="row"><div class="large-12 columns"><span style="font-size: 130%;font-family: DosisRegular; color: #7c7d80">{{ "Hoy puede ser el día de encontrar tu rol" }}</span> <span style="font-size: 130%;font-family: DosisSemiBold; color: #7c7d80">{{ "¿Comenzamos?" | translate }}</span></div></div><div class="row" style="height:100px"><div class="large-5 columns" style="display:table; height:100%"><div style="display:table-cell; vertical-align:middle"><tags-input ng-model="tags" placeholder="{{ \'Rol\' | translate }}" replace-spaces-with-dashes="false"><auto-complete source="loadTags($query)"></auto-complete></tags-input><img style="margin-top: -20px" src="{{ \'img/home-shadow-input.svg\' | static }}"></div></div><div class="large-5 columns" style="display:table; height:100%"><div style="display:table-cell; vertical-align:middle"><select style="border-radius: 4px; color: white; background-color: #58c1c9; margin: 0;\n                /*margin-top: 25px; padding: 5px; padding-left: 10px*/;font-family: DosisSemiBold; \n                font-size:130%; border: none; height: 45px"><option>{{ \'¿En dónde?\' | translate }}</option></select><img style="margin-top: -10px" src="{{ \'img/home-shadow-input.svg\' | static }}"></div></div><div class="large-2 columns" style="display:table; height:100%"><div style="display:table-cell; vertical-align:middle"><a href="#" style="height: 45px; font-size:120%; font-family: DosisSemiBold; margin: 0;  \n                   display:table; padding: 0 !important" class="text-center button alert large expand radius" ng-click="search()"><div style="display:table-cell;vertical-align:middle"><img src="{{ \'img/buttom-galera.svg\' | static }}"> <span style="vertical-align:middle">{{ "ROLE IT!" | translate }}</span></div></a> <img style="margin-top: -15px" src="{{ \'img/home-shadow-input.svg\' | static }}"></div></div></div></div></div></div></div></div><div class="row fullWidth"><img style="padding-bottom:50px" src="/static/img/home-separator-top.svg"></div><div class="jobs-section"><div class="sidebar"><div class="row"><ul class="rj-list"><li class="secondary-bg header">Desactivar roles <input type="checkbox" ng-model="search.roles"></li><li><h4 class="secondary">Empleos por Areas</h4></li><li><a class="secondary" href="/jobs/areas" ui-sref="jobs.browse_areas">Ver todos</a></li><li ng-repeat="area in areas | orderBy:area.name track by area.id" class="big"><a ui-sref="jobs.byArea({area: area.slug})" ng-bind="area.name"></a></li></ul></div><div class="row"><ul class="rj-list"><li><h4 class="secondary">Empleos por Roles</h4></li><li><a class="secondary" href="#">Ver todos</a></li><li ng-repeat="role in roles | orderBy:role.name track by role.pk" class="big"><a ui-sref="jobs.byRoles({filters: {roles: {[role.pk]: true}}})" ng-bind="role.name"></a></li></ul></div></div><div class="jobs-container"><stats-data jobs-label="{{ \'Ofertas\' | translate }}" users-label="{{ \'Usuarios\' | translate }}" employers-label="{{ \'Empresas\' | translate }}"></stats-data><h4>{{ "EMPLEOS DESTACADOS" | translate }}</h4><tabset><tab><tab-heading><span>{{ \'Empleos en Argentina\' | translate }}</span> <img style="margin: 0 auto" class="active-arrow" src="{{ \'img/tab-active-arrow.svg\' | static }}"></tab-heading><div class="galera-arrow"><div class="galera-body"><img style="width: 25px" src="/static/img/busqueda-con-roles-galera.svg"> <span>Búsquedas con Roles!</span> <img style="arrow" src="/static/img/busqueda-con-roles-flecha.svg"></div></div><job-item ng-repeat="job in jobs.items | orderBy: \'-featured\' as fjobs track by job.pk" job="job"></job-item></tab><tab><tab-heading><span>{{ \'Empleos internacionales\' | translate }}</span> <img style="margin: 0 auto" class="active-arrow" src="{{ \'img/tab-active-arrow.svg\' | static }}"></tab-heading><div class="galera-arrow"><div class="galera-body"><img style="width: 25px" src="/static/img/busqueda-con-roles-galera.svg"> <span>Búsquedas con Roles!</span> <img style="arrow" src="/static/img/busqueda-con-roles-flecha.svg"></div></div><job-item ng-repeat="job in jobs.items | orderBy: \'-featured\' track by job.pk" ng-if="job.arg" job="job"></job-item></tab></tabset></div></div><div class="courses-section"><div class="courses-container"><h4>{{ "CURSOS" | translate }}</h4><course-item ng-repeat="course in courses.items | orderBy: course.pk" course="course"></course-item></div></div>';
 },{}],169:[function(require,module,exports){
-module.exports = '<div class="job-item" ng-class="{ featured: job.featured }"><div class="job-thumb"><div class="content"><img class="logo" ng-src="{{job.owner.avatars.default}}"> <img ng-if="job.featured" class="corner-shadow" src="/static/img/result-item-new-corner-shadow.svg"> <img ng-if="job.featured" class="corner" src="/static/img/result-item-new-corner-start.svg"> <img ng-if="job.featured" class="shadow" src="/static/img/result-item-new-img-shadow.svg"></div></div><div class="job-body"><div class="content" style="height: 100%"><div class="info"><p class="title"><a ng-if="!job.postulated" ui-sref="jobs.detail({id: {{job.pk}}})">{{ job.title }} - {{ job.geo.city.name }}</a> <a ng-if="job.postulated" href="#">{{ job.title }} - {{ job.geo.city.name }}</a></p><p class="description"><span class="field">{{ "Area" | translate }}:</span> <span>{{ job.area_text }}</span><br><span class="field">{{ "Jornada" | translate }}:</span> <span>{{ job.job_type_text }}</span></p><p ng-if="job.postulated" class="cell" style="color: white; background-color: #58c1c9; margin-bottom: 5px; font-family: DosisSemiBold; font-size:130%; padding-left: 5px">{{ "Postulado" | translate }}</p></div><div class="data"><div class="row"><p class="text-center">{{ "Publicado" | translate }} {{ job.published | relativeDate }}</p></div></div><div class="controlls"><img ng-show="job.roles.length" class="corner" src="/static/img/result-item-galera.svg"><div class="container"><div class="cell"><a ng-if="job.usefavorite" ng-click="tooglefavorite(job.pk)"><img src="{{ favoritesrc }}"></a> <a href="#"><img src="/static/img/result-item-share.svg"></a></div></div></div><img ng-if="job.featured" class="shadow" src="/static/img/result-item-new-text-shadow.svg"></div></div></div>';
+module.exports = '<div class="job-item" ng-class="{ featured: job.featured }"><div class="job-thumb"><div class="content"><img class="logo" ng-src="{{job.owner.avatars.default}}"> <img ng-if="job.featured" class="corner-shadow" src="/static/img/result-item-new-corner-shadow.svg"> <img ng-if="job.featured" class="corner" src="/static/img/result-item-new-corner-start.svg"> <img ng-if="job.featured" class="shadow" src="/static/img/result-item-new-img-shadow.svg"></div></div><div class="job-body"><div class="content" style="height: 100%"><div class="info"><p class="title"><a ng-if="!job.postulated" ui-sref="jobs.detail({id: {{job.pk}}})">{{ job.title }} - {{ job.geo.city.name }}</a> <a ng-if="job.postulated" href="#">{{ job.title }} - {{ job.geo.city.name }}</a></p><p class="description"><span class="field">{{ "Area" | translate }}:</span> <span>{{ job.area_text }}</span><br><span class="field">{{ "Jornada" | translate }}:</span> <span>{{ job.job_type_text }}</span></p><p ng-if="job.postulated" class="cell" style="color: white; background-color: #58c1c9; margin-bottom: 5px; font-family: DosisSemiBold; font-size:130%; padding-left: 5px">{{ "Postulado" | translate }}</p></div><div class="data"><div class="row"><p class="text-center">{{ "Publicado" | translate }} {{ job.published | relativeDate }}</p></div></div><div class="controlls"><img ng-show="job.roles.length" class="corner" src="/static/img/result-item-galera.svg"><div class="container"><div class="cell"><a ng-if="job.usefavorite" ng-click="tooglefavorite()"><img src="{{ favoritesrc }}"></a> <a href="#"><img src="/static/img/result-item-share.svg"></a></div></div></div><img ng-if="job.featured" class="shadow" src="/static/img/result-item-new-text-shadow.svg"></div></div></div>';
 },{}],170:[function(require,module,exports){
 arguments[4][153][0].apply(exports,arguments)
 },{"dup":153}],171:[function(require,module,exports){

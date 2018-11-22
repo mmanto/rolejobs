@@ -34,6 +34,7 @@ from permissions import IsOwnJob, IsOfOwnJob
 from models import (
     Job,
     JobPostulation,
+    FavoriteJob,
     Area,
     Technology,
     Hierarchy,
@@ -476,19 +477,26 @@ class UserPostulationsJobs(generic.View):
         pks = loads(request.body)['pks']
         postulationjobs = []
         use_favorite = False
+        has_favorite_job = []
         if request.user.is_authenticated:
             try:
                 use_favorite = request.user.is_postulant
             except:
                 pass
             for mpk in pks:
+                mjob = Job.objects.get(pk = mpk)
+                if use_favorite:
+                    try:
+                        FavoriteJob.objects.get(user = request.user, job = mjob)
+                        has_favorite_job.append(mpk)
+                    except:
+                        pass
                 try:
-                    mjob = Job.objects.get(pk = mpk)
                     JobPostulation.objects.get(user = request.user, job = mjob)
                     postulationjobs.append(mpk)
                 except Exception:
                     continue
-        return JsonResponse({'postulationjobs': postulationjobs, 'usefavorite': use_favorite})
+        return JsonResponse({'postulationjobs': postulationjobs, 'usefavorite': use_favorite, 'hasfavoritejob': has_favorite_job})
 
 class EnterpriceJobs(generic.View):
     
@@ -507,4 +515,36 @@ class EnterpriceJobs(generic.View):
         serializer = JobSerializer(postulationjobs, many=True)
         return JsonResponse(serializer.data, safe=False)
         
+class EnterpriceJobs(generic.View):
+    
+    @method_decorator(csrf_protect)
+    def post(self, request):
+        mpk = loads(request.body)['pk']
+        mjob = Job.objects.get(pk = mpk)
+        similarJobs = Job.objects.filter(owner = mjob.owner).exclude(pk = mpk)
+        postulationjobs = []
+        if request.user.is_authenticated:
+            for sJob in similarJobs:
+                try:
+                    JobPostulation.objects.get(user = request.user, job = sJob)
+                except Exception:
+                    postulationjobs.append(sJob)
+        serializer = JobSerializer(postulationjobs, many=True)
+        return JsonResponse(serializer.data, safe=False)
+        
+class SetFavoriteJob(generic.View):
+    
+    @method_decorator(csrf_protect)
+    def post(self, request):
+        mpk = loads(request.body)['pk']
+        mjob = Job.objects.get(pk=mpk)
+        favorite = loads(request.body)['favorite']
+        if not favorite:
+            favorite_job = FavoriteJob.objects.get(user=request.user, job=mjob)
+            favorite_job.delete()
+        else:
+            favorite_job = FavoriteJob(user=request.user, job=mjob)
+            favorite_job.save()
+        return JsonResponse({'success': True})
+
 
