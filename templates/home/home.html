@@ -38,6 +38,9 @@
                 /*margin-top: 25px; padding: 5px; padding-left: 10px*/;font-family: DosisSemiBold; 
                 font-size:130%; border: none; height: 45px;"> 
                   <option>{{ '¿En dónde?' | translate }}</option>
+
+                  <option ng-repeat="location in locations"> {{ location.name }} </option>
+
                 </select>
                 <img style="margin-top: -10px;" src="{{ 'img/home-shadow-input.svg' | static }}">
               </div>

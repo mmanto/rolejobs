@@ -86,9 +86,10 @@ class PublicJobsViewSet(viewsets.ReadOnlyModelViewSet):
     filter_class = AdvancePublicJobsFilters
 
     def get_queryset(self):
+        # ,
+        #     owner__user__status=User.S_ENABLED,
         queryset = Job.objects.filter(
-            status=JOB_STATUS_HAB,
-            owner__user__status=User.S_ENABLED,
+            status=JOB_STATUS_HAB
         ).order_by(
             '-featured', '-published'
         )

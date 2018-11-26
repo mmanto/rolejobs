@@ -96,8 +96,14 @@ class AdvancePublicJobsFilters(BasicPublicJobsFilters):
     def search_all(self, qs, name, value):
         """Search on title and description"""
 
-        return qs.filter(
-            Q(title__icontains=value) | Q(description__icontains=value))
+        mq = Q()
+        if len(value) > 0:
+            values = value[0].split(' ')
+            for i in range(len(values)):
+                if values[i] != '':
+                    mq |= Q(title__icontains=values[i]) | Q(description__icontains=values[i])
+        res = qs.filter(mq)
+        return res
 
     def is_new(self, qs, name, value):
         """Check if is new"""
