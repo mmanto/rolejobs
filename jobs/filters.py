@@ -93,6 +93,9 @@ class AdvancePublicJobsFilters(BasicPublicJobsFilters):
     filter_is_new = filters.BooleanFilter(
         method="is_new")
 
+    filter_country = filters.NumberFilter(
+        name="country")
+
     def search_all(self, qs, name, value):
         """Search on title and description"""
 
@@ -123,4 +126,5 @@ class AdvancePublicJobsFilters(BasicPublicJobsFilters):
             "filter_handicapped",
             "filter_job_type",
             "filter_is_new",
+            "filter_country",
         )

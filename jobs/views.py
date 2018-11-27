@@ -42,6 +42,7 @@ from models import (
     Role,
     TitleRole,
     BranchActivity,
+    Country,
     JOB_TYPE_CHOICES,
     JOB_STATUS_HAB,
     JOB_STATUS_CHOICES,
@@ -382,6 +383,10 @@ class AdvanceSearchFiltersChoices(APIView):
             ChoicesSerializer.parse_data(JOB_TYPE_CHOICES),
             many=True)
 
+        countries = SimpleItemSerializer(
+            Country.objects.all(),
+            many=True)
+
         return Response({
             "title_role": title_roles.data,
             "roles": roles.data,
@@ -389,6 +394,7 @@ class AdvanceSearchFiltersChoices(APIView):
             "hierarchy": hierarchies.data,
             "branch_activity": branch_activities.data,
             "job_type": job_types.data,
+            "country": countries.data
         })
 
 

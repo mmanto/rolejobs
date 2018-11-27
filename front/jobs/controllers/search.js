@@ -60,6 +60,14 @@ const factory = function ($q, $scope, $state, $params, JobsCollections,
             multi: false,
             value: null,
             choices: []
+        },
+        {
+            id: "country",
+            name: "País",
+            type: "list",
+            multi: false,
+            value: null,
+            choices: []
         }
     ];
 

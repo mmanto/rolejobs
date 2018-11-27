@@ -5822,6 +5822,13 @@ var factory = function factory($q, $scope, $state, $params, JobsCollections, Fil
         multi: false,
         value: null,
         choices: []
+    }, {
+        id: "country",
+        name: "País",
+        type: "list",
+        multi: false,
+        value: null,
+        choices: []
     }];
 
     var getFilter = function getFilter(id) {
