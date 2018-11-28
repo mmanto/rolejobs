@@ -94,7 +94,7 @@
         <li>
           <h4 class="secondary">Empleos por Areas</h4>
         </li>
-        <li>
+        <!-- <li>
           <a 
             class="secondary"
             href="/jobs/areas"
@@ -102,7 +102,7 @@
           >
             Ver todos
           </a>
-        </li>
+        </li> -->
         <li
           ng-repeat="area in areas | orderBy:area.name track by area.id"
           class="big"
@@ -119,11 +119,11 @@
         <li>
           <h4 class="secondary">Empleos por Roles</h4>
         </li>
-        <li>
+        <!-- <li>
           <a class="secondary" href="#">
             Ver todos
           </a>
-        </li>
+        </li> -->
         <li
           ng-repeat="role in roles | orderBy:role.name track by role.pk"
           class="big"
