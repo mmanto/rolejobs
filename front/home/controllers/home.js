@@ -11,7 +11,7 @@
  */ 
 
 const factory = function ($q, $scope, $state, $http, JobsCollections, CoursesCollections,AreasService,
-    RolesService, Apiv1Service, GeoService) {
+    RolesService, Apiv1Service, GeoService, EmployerService) {
 
     const jobsCollection = JobsCollections.PublicJobs.getInstance();
     
@@ -25,6 +25,8 @@ const factory = function ($q, $scope, $state, $http, JobsCollections, CoursesCol
     $scope.locations = [];
 
     $scope.courses = null; 
+
+    $scope.companies = null;
 
     $scope.tags = [
     ];
@@ -137,6 +139,13 @@ const factory = function ($q, $scope, $state, $http, JobsCollections, CoursesCol
                 $scope.locations = countries;
             });
     };
+
+    $scope.updateCompanies = function () {
+        return EmployerService.getCompanies()
+            .then((companies) => {
+                $scope.companies = companies;
+            });
+    };
     
 
     $q.all([
@@ -144,7 +153,8 @@ const factory = function ($q, $scope, $state, $http, JobsCollections, CoursesCol
         $scope.updateAreas(),
         $scope.updateRoles(),
         $scope.updateCourses(),
-        $scope.updateLocations()
+        $scope.updateLocations(),
+        $scope.updateCompanies()
     ]);
 
 };
@@ -160,5 +170,6 @@ module.exports = [
     "RolesService",
     "Apiv1Service",
     "GeoService",
+    "EmployerService",
     factory
 ];

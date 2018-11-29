@@ -187,8 +187,7 @@
     </tabset>
 
   </div>
-</div>
-<!-- /jobs -->
+
 
 <!-- Courses -->
 <div class="courses-section">
@@ -201,3 +200,67 @@
   </div>
 </div>
 <!-- /courses -->
+
+<md-grid-list
+        md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6"
+        md-row-height-gt-md="1:1" md-row-height="2:2"
+        md-gutter="12px" md-gutter-gt-sm="8px" >
+
+    <md-grid-tile>
+        <img style="width: 16px;"  src="/static/img/back.svg">
+    </md-grid-tile>
+
+    <md-grid-tile>
+
+      <div ng-show="companies[0]">
+
+        <img style="width: 48px;" src="/static/img/enterprise.svg">
+        <md-grid-tile-footer>
+          <a style="text-align:center" href="{{ companies[0].website }}" >{{ companies[0].name_company }}</a>
+        </md-grid-tile-footer>
+
+      </div>
+        
+    </md-grid-tile>
+
+    <md-grid-tile >
+        <div ng-show="companies[1]">
+            <img style="width: 48px;" src="/static/img/enterprise.svg">
+            <md-grid-tile-footer>
+                <a style="text-align:center" href="{{ companies[1].website }}" >{{ companies[1].name_company }}</a>
+            </md-grid-tile-footer>
+    
+          </div>
+    </md-grid-tile>
+
+    <md-grid-tile >
+        <div ng-show="companies[2]">
+            <img style="width: 48px;" src="/static/img/enterprise.svg">
+            <md-grid-tile-footer>
+                <a style="text-align:center" href="{{ companies[2].website }}" >{{ companies[2].name_company }}</a>
+            </md-grid-tile-footer>
+    
+          </div>
+    </md-grid-tile>
+
+    <md-grid-tile >
+        <div ng-show="companies[3]">
+            <img style="width: 48px;" src="/static/img/enterprise.svg">
+            <md-grid-tile-footer>
+                <a style="text-align:center" href="{{ companies[3].website }}" >{{ companies[3].name_company }}</a>
+            </md-grid-tile-footer>
+    
+          </div>
+    </md-grid-tile>
+
+    <md-grid-tile>
+        <img style="width: 16px;" src="/static/img/next.svg">
+    </md-grid-tile>
+    
+  </md-grid-list>
+
+
+</div>
+<!-- /jobs -->
+
+

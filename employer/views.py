@@ -5,6 +5,7 @@ import logging
 from django.views import generic
 from django.utils.translation import ugettext_lazy as _
 from django.shortcuts import get_object_or_404
+from django.http import JsonResponse
 
 from rest_framework import generics, viewsets, status
 from rest_framework.response import Response
@@ -205,6 +206,14 @@ class CVTagsViewSet(viewsets.ModelViewSet):
             return Response(status=status.HTTP_400_BAD_REQUEST)
         else:
             return Response(status=200)
+
+
+
+class Companies(generic.View):
+    
+    def get(self, request):
+        serializer = EmployerSerializer(Employer.objects.all(), many=True)
+        return JsonResponse(serializer.data, safe=False)
 
 
 ##########

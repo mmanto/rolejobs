@@ -30,6 +30,10 @@ update_delete = {
 
 urlpatterns = [
     url(
+        r"^companies$",
+        views.Companies.as_view()
+    ),
+    url(
         r"^signup$",
         views.Signup.as_view(),
         name="employer_signup"

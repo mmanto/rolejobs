@@ -79,11 +79,29 @@ const EmployerService = function ($q, Apiv1Service) {
         return post('signup', data);
     };
 
+
+    const getCompanies = function() {
+        const api = Apiv1Service.getInstance();
+
+        return api.get(`employer/companies`)
+            .then((result) => {
+                if (result.data) {
+                    return result.data;
+                } else {
+                    throw new Error("Inválida response data");
+                }
+            });
+   
+    };
+
     return {
         getMe,
         saveMe,
-        signup 
+        signup,
+        getCompanies
     };
+
+    
 
 };
 
