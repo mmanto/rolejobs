@@ -55,7 +55,18 @@
           <div class="cell">
             
             <a ng-if="job.usefavorite" ng-click="tooglefavorite()" ><img src="{{ favoritesrc }}"></a>
-            <a href="#"><img src="/static/img/result-item-share.svg"></a>
+            <a href="#" 
+              onclick="
+                window.open(
+                  'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://66.97.34.225'), 
+                  'facebook-share-dialog', 
+                  'width=626,height=436'); 
+                  return false;">
+              
+              <img src="/static/img/result-item-share.svg">
+            
+            
+            </a>
           </div>
         </div>
       </div>
