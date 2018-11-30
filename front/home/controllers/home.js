@@ -147,6 +147,23 @@ const factory = function ($q, $scope, $state, $http, JobsCollections, CoursesCol
             });
     };
     
+    $scope.carouselNext = function () {
+        if ($scope.companies.length > 0)
+        {
+            var old = $scope.companies.shift();
+            $scope.companies.push(old);
+            console.log("done Next");
+        }
+    };
+
+    $scope.carouselPrev = function () {
+        if ($scope.companies.length > 0)
+        {
+            var old = $scope.companies.pop();
+            $scope.companies.unshift(old);
+            console.log("done Prev");
+        }
+    };
 
     $q.all([
         $scope.updateJobs(),

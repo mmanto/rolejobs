@@ -206,7 +206,7 @@
         md-row-height-gt-md="1:1" md-row-height="2:2"
         md-gutter="12px" md-gutter-gt-sm="8px" >
 
-    <md-grid-tile>
+    <md-grid-tile ng-click="carouselNext()">
         <img style="width: 16px;"  src="/static/img/back.svg">
     </md-grid-tile>
 
@@ -215,8 +215,8 @@
       <div ng-show="companies[0]">
 
         <img style="width: 48px;" src="/static/img/enterprise.svg">
-        <md-grid-tile-footer>
-          <a style="text-align:center" href="{{ companies[0].website }}" >{{ companies[0].name_company }}</a>
+        <md-grid-tile-footer style="display: flex; justify-content: center; align-items: center;" >
+          <a href="{{ companies[0].website }}" >{{ companies[0].name_company }}</a>
         </md-grid-tile-footer>
 
       </div>
@@ -226,8 +226,8 @@
     <md-grid-tile >
         <div ng-show="companies[1]">
             <img style="width: 48px;" src="/static/img/enterprise.svg">
-            <md-grid-tile-footer>
-                <a style="text-align:center" href="{{ companies[1].website }}" >{{ companies[1].name_company }}</a>
+            <md-grid-tile-footer style="display: flex; justify-content: center; align-items: center;">
+                <a href="{{ companies[1].website }}" >{{ companies[1].name_company }}</a>
             </md-grid-tile-footer>
     
           </div>
@@ -236,8 +236,8 @@
     <md-grid-tile >
         <div ng-show="companies[2]">
             <img style="width: 48px;" src="/static/img/enterprise.svg">
-            <md-grid-tile-footer>
-                <a style="text-align:center" href="{{ companies[2].website }}" >{{ companies[2].name_company }}</a>
+            <md-grid-tile-footer style="display: flex; justify-content: center; align-items: center;">
+                <a  href="{{ companies[2].website }}" >{{ companies[2].name_company }}</a>
             </md-grid-tile-footer>
     
           </div>
@@ -246,14 +246,14 @@
     <md-grid-tile >
         <div ng-show="companies[3]">
             <img style="width: 48px;" src="/static/img/enterprise.svg">
-            <md-grid-tile-footer>
-                <a style="text-align:center" href="{{ companies[3].website }}" >{{ companies[3].name_company }}</a>
+            <md-grid-tile-footer style="display: flex; justify-content: center; align-items: center;">
+                <a href="{{ companies[3].website }}" >{{ companies[3].name_company }}</a>
             </md-grid-tile-footer>
     
           </div>
     </md-grid-tile>
 
-    <md-grid-tile>
+    <md-grid-tile ng-click="carouselPrev()">
         <img style="width: 16px;" src="/static/img/next.svg">
     </md-grid-tile>
     
