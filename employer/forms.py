@@ -24,6 +24,8 @@ from models import (
     SECTOR_EMPRESARIAL
 )
 
+from jobs.models import BranchActivity
+
 
 class SignupForm(forms.Form):
     """Employer signup form"""
@@ -286,7 +288,7 @@ class NgSignupForm(six.with_metaclass(
     #            'placeholder': _('Sector empresarial')}))
 
     sector_empresarial = forms.ChoiceField(required=True, widget=forms.Select(
-        attrs={'class': 'selector'}), choices=SECTOR_EMPRESARIAL)
+        attrs={'class': 'selector'}), choices=[(None, _(" --- Sector empresarial --- "))] + [ (x.id, _(x.name)) for x in BranchActivity.objects.all() ] )
 
 
     workforce = forms.IntegerField(
