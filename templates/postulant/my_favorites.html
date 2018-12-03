@@ -1,0 +1,35 @@
+<div class="row">
+
+  
+  <div class="large-12 columns">
+
+    <div class="header-panel">
+    </div>
+
+    <div class="messages-list">
+
+      <alert ng-if="!favorites || !favorites.length" type="'info'">
+        {{ "No hay favoritos" }}
+      </alert>
+      
+      <postulant-message-item
+        ng-repeat="message in messages.items track by message.id"
+        view-cb="view"
+        message="message"
+      ></postulant-message-item>
+
+      <div>
+        <pagination
+          ng-if="messages.length"
+          total-items="messages.totalLength"
+          page="actualPage"
+          items-per-page="5"
+          on-select-page="changePage(page)"
+        ></pagination>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

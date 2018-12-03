@@ -27,6 +27,11 @@
         >
           <a ui-sref="postulant.messages">{{ "MENSAJES" | translate }}</a>
         </li>
+        <li
+          ng-class="{active: tab === 'favorites'}"
+        >
+          <a ui-sref="postulant.favorites">{{ "FAVORITOS" | translate }}</a>
+        </li>
       </ul>
     </div>
   </div>

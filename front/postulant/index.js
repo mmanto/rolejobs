@@ -12,9 +12,11 @@ const homeController = require("./controllers/home");
 const postulantCvController = require("./controllers/cv");
 const postulationsController = require("./controllers/postulations");
 const messagesController = require("./controllers/messages");
+const favoritesController = require("./controllers/favorites");
 const postulantService = require("./services/postulant");
 const postulationsService = require("./services/postulantspostulations");
 const messagesService = require("./services/postulantsmessages");
+const favoritesService = require("./services/postulantsfavorites");
 const coursesService = require("./services/postulantscourses");
 const postulantNewPEModalService = require("./modals/newpe");
 const postulantNewEducationModalFactory = require("./modals/neweducation");
@@ -37,9 +39,11 @@ module.exports = angular.module("RoleJob.postulant", [
     .controller("PostulantCvCtl", postulantCvController)
     .controller("PostulatPostulationsCtl", postulationsController)
     .controller("PostulatMessagesCtl", messagesController)
+    .controller("PostulatFavoritesCtl", favoritesController)
     .factory("PostulantService", postulantService)
     .factory("PostulantPostulationsService", postulationsService)
     .factory("PostulantMessagesService", messagesService)
+    .factory("PostulantFavoritesService", favoritesService)
     .factory("PostulantCoursesService", coursesService)     
     .factory("PostulantNewPEModal", postulantNewPEModalService)
     .factory("PostulantNewEducationModal", postulantNewEducationModalFactory)

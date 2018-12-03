@@ -4,6 +4,7 @@ const postulantTemplate = require('postulant/postulant.html');
 const cvTemplate = require("postulant/cv.html");
 const myPostulationsTemplate = require("postulant/my_postulations.html");
 const myMessagesTemplate = require("postulant/my_messages.html");
+const myFavoritesTemplate = require("postulant/my_favorites.html");
 module.exports = ["$stateProvider", ($stateProvider) => {
 
     $stateProvider
@@ -94,6 +95,23 @@ module.exports = ["$stateProvider", ($stateProvider) => {
                 "postulant-main": {
                     template: myMessagesTemplate,
                     controller: "PostulatMessagesCtl"
+                }
+            }
+        })
+
+        .state('postulant.favorites', {
+            url:"/favorites/",
+            params: {
+                page: null,
+                status: null,
+            },
+            data: {
+                tab: "favorites"
+            },
+            views: {
+                "postulant-main": {
+                    template: myFavoritesTemplate,
+                    controller: "PostulatFavoritesCtl"
                 }
             }
         })
