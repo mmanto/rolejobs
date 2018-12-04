@@ -15,7 +15,7 @@ from education.models import (
     UserCertification
 )
 
-from jobs.models import Job, JobPostulation
+from jobs.models import Job, JobPostulation, FavoriteJob
 from employer.serializers import EmployerPublicInformation
 from employer.models import CVRequest
 
@@ -678,3 +678,15 @@ class PostulantAttachCVListSerializer(serializers.ModelSerializer):
     class Meta:
         model = PostulantAttachCV
         fields = ('user', 'name', 'attach')
+
+
+class FavoriteSerializer(serializers.ModelSerializer):
+    """Postulation for postulant"""
+
+    job = JobsSimpleSerializer(read_only=True)
+
+    class Meta:
+        model = FavoriteJob
+        fields = (
+            'id',
+            'job')

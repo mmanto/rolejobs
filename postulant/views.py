@@ -59,10 +59,13 @@ from postulant.serializers import (
     CompleteProfileSerializer,
     CVRequestPostulantSerializer,
     PostulantAttachCVListSerializer,
+    FavoriteSerializer
 )
 
 from postulant.permissions import IsCompletedProfile
 
+from jobs.models import FavoriteJob
+from rolejobs_api.generics import StandarPagination
 
 class Signup(generics.GenericAPIView):
     """Signup new postulant"""
@@ -359,3 +362,16 @@ class NewLanguageFormView(generic.FormView):
 class NewCertificationFormView(generic.FormView):
     template_name = 'postulant_education_new_cert.html'
     form_class = NewCertificationForm
+
+
+class FavoritesViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = FavoriteJob.objects.all()
+    pagination_class = StandarPagination
+    serializer_class = FavoriteSerializer
+
+
+    def list(self, request):
+        # Note the use of `get_queryset()` instead of `self.queryset`
+        queryset = self.get_queryset().filter(user = request.user)
+        serializer = FavoriteSerializer(queryset, many=True)
+        return Response(serializer.data)

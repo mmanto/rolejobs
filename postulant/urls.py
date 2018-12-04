@@ -22,6 +22,7 @@ from postulant.views import (
     CompletedProfileViewSet,
     CVRequestPostulantViewSet,
     PostulantAttachCVView,
+    FavoritesViewSet
 )
 
 list_only = {
@@ -126,6 +127,10 @@ urlpatterns = [
     url(
         r"^panel/postulations/?$",
         JobPostulationsViewSet.as_view(list_only)
+    ),
+    url(
+        r"^panel/favorites/?$",
+        FavoritesViewSet.as_view(list_only)
     ),
     url(
         r"^panel/postulations/(?P<pk>[0-9]+)/?$",
