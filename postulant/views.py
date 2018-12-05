@@ -374,4 +374,4 @@ class FavoritesViewSet(viewsets.ReadOnlyModelViewSet):
         # Note the use of `get_queryset()` instead of `self.queryset`
         queryset = self.get_queryset().filter(user = request.user)
         serializer = FavoriteSerializer(queryset, many=True)
-        return Response(serializer.data)
+        return Response({ 'results': serializer.data })

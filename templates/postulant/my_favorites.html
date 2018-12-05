@@ -12,16 +12,16 @@
         {{ "No hay favoritos" }}
       </alert>
       
-      <postulant-message-item
-        ng-repeat="message in messages.items track by message.id"
+      <postulant-favorite-item
+        ng-repeat="favorite in favorites.items track by favorite.id"
         view-cb="view"
-        message="message"
-      ></postulant-message-item>
+        favorite="favorite"
+      ></postulant-favorite-item>
 
       <div>
         <pagination
-          ng-if="messages.length"
-          total-items="messages.totalLength"
+          ng-if="favorites.length"
+          total-items="favorites.totalLength"
           page="actualPage"
           items-per-page="5"
           on-select-page="changePage(page)"

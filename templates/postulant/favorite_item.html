@@ -1,0 +1,15 @@
+
+
+
+<md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">{{ favorite.job.title }}</span>
+
+      <a ui-sref="jobs.detail({id: favorite.job.id})">{{ "Ver publicación" | translate }}</a>
+      <!-- <span class="md-subhead">Large</span> -->
+    </md-card-title-text>
+    
+  </md-card-title>
+  
+</md-card>

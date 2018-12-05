@@ -17,6 +17,7 @@ const factory = function (CollectionService) {
     return {
         getCollection,
     };
+    
 
 };
 

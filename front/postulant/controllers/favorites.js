@@ -22,7 +22,7 @@ const factory = function ($q, $scope, $state, $stateParams, PostulantFavoritesSe
 
     $scope.changePage = function (page) {
 
-        if (!$scope.messages || !$scope.messages.length) {
+        if (!$scope.favorites || !$scope.favorites.length) {
             return;
         }
 

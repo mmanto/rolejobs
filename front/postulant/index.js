@@ -29,6 +29,7 @@ const postulationItem = require("./directives/postulation");
 const experienceItem = require("./directives/experience");
 const educationItem = require("./directives/education");
 const completedProfileDirective = require("./directives/completedprofile");
+const favoriteItem = require("./directives/favorite");
 
 module.exports = angular.module("RoleJob.postulant", [
 
@@ -56,4 +57,5 @@ module.exports = angular.module("RoleJob.postulant", [
     .directive("experienceItem", experienceItem)
     .directive("educationItem", educationItem)
     .directive("postulantCompletedProfile", completedProfileDirective)
+    .directive("postulantFavoriteItem", favoriteItem)
 ;
