@@ -1,4 +1,47 @@
 [
+    
+    {
+        "fields": {
+            "name": "Gerencia"
+        }, 
+        "model": "jobs.hierarchy", 
+        "pk": 6
+    },
+    {
+        "fields": {
+            "name": "Alta Gerencia"
+        }, 
+        "model": "jobs.hierarchy", 
+        "pk": 7
+    },
+    {
+        "fields": {
+            "name": "Dirección"
+        }, 
+        "model": "jobs.hierarchy", 
+        "pk": 8
+    },
+    {
+        "fields": {
+            "name": "Jefe"
+        }, 
+        "model": "jobs.hierarchy", 
+        "pk": 9
+    },
+    {
+        "fields": {
+            "name": "Supervisor"
+        }, 
+        "model": "jobs.hierarchy", 
+        "pk": 10
+    },
+    {
+        "fields": {
+            "name": "Responsable"
+        }, 
+        "model": "jobs.hierarchy", 
+        "pk": 11
+    },
     {
         "fields": {
             "name": "Senior"
