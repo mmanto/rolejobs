@@ -208,6 +208,12 @@ class ProfessionalExperience(models.Model):
         blank=False,
         verbose_name=_("Empresa"))
 
+    company_address = models.CharField(
+        max_length=100,
+        null=False,
+        blank=False,
+        verbose_name=_("Dirección"))
+
     title = models.ForeignKey(
         TitleRole,
         null=False,
