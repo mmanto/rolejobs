@@ -212,7 +212,7 @@ class ProfessionalExperience(models.Model):
         max_length=100,
         null=False,
         blank=False,
-        verbose_name=_("Dirección"))
+        verbose_name=_("Dirección de la Empresa"))
 
     title = models.ForeignKey(
         TitleRole,
@@ -244,11 +244,11 @@ class ProfessionalExperience(models.Model):
         blank=False,
         verbose_name=_('Subárea'))
 
-#     role = models.ForeignKey(
-#         Role,
-#         null=False,
-#         blank=False,
-#         verbose_name=_('Roles'))
+    role = models.ForeignKey(
+        Role,
+        null=True,
+        blank=False,
+        verbose_name=_('Último rol'))
 
     branch_activity = models.ForeignKey(
         BranchActivity,
