@@ -38,6 +38,7 @@ from postulant.choices import (
     STAFF_CHARGE,
     CURRENCY_CHOICES,
     REFERENCE_TYPES,
+    WORK_TYPE
 )
 
 
@@ -201,6 +202,15 @@ class ProfessionalExperience(models.Model):
         null=False,
         blank=False,
         related_name='experience')
+
+    work_type = models.CharField(
+        max_length=30,
+        null=False,
+        blank=False,
+        choices=WORK_TYPE,
+        default="Efectivo",
+        verbose_name=_('Tipo de trabajo'))
+
 
     company_name = models.CharField(
         max_length=100,

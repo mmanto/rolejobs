@@ -25,14 +25,14 @@ YES_NO_CHOICES = (
     (False, _("No"))
 )
 
-TYPE_WORK = (
-    (0, _("Efectivo")),
-    (1, _("Freelance")),
-    (2, _("Indiferente")),
-    (3, _("Pasantia")),
-    (4, _("Plazo Fijo")),
-    (5, _("Por Temporadas")),
-    (6, _("Temporal"))
+WORK_TYPE = (
+    ("Efectivo", _("Efectivo")),
+    ("Freelance", _("Freelance")),
+    ("Indiferente", _("Indiferente")),
+    ("Pasantia", _("Pasantia")),
+    ("PlazoFijo", _("Plazo Fijo")),
+    ("PorTemporadas", _("Por Temporadas")),
+    ("Temporal", _("Temporal"))
 )
 
 STAFF_CHARGE = (
