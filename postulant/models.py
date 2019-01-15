@@ -216,8 +216,8 @@ class ProfessionalExperience(models.Model):
 
     title = models.ForeignKey(
         TitleRole,
-        null=False,
-        blank=False,
+        null=True,
+        blank=True,
         verbose_name=_('Titulo'))
 
     position = models.ForeignKey(
