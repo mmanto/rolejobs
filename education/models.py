@@ -8,6 +8,9 @@ from django.core.exceptions import ValidationError
 
 from utils.models import SimpleItemModel
 from accounts.models import User
+
+from cities_light.models import Country
+
 from postulant.choices import COMPLETION_EDUCATION, COMPLETION_LANGUAGES
 
 from education.choices import EDUCATION_GRADES,CERTIFICATIONS
@@ -59,6 +62,20 @@ class Institution(models.Model):
         return u"%s" % self.name
 
 
+class EducationArea(models.Model):
+    
+    name = models.CharField(
+        max_length=100,
+        verbose_name=_(u'Nombre')
+    )
+
+    def __unicode__(self):
+        return u"%s" % self.name
+
+    class Meta:
+        verbose_name = u'Área de estudio'
+        verbose_name_plural = u'Áreas de estudio'
+
 class UserEducation(models.Model):
     """Education model"""
 
@@ -79,6 +96,37 @@ class UserEducation(models.Model):
         null=False,
         blank=False,
         verbose_name=_(u"Institución"))
+
+
+    career = models.CharField(
+        max_length=100,
+        null=True,
+        blank=True,
+        verbose_name=_(u"Carrera")
+    )
+
+    country = models.ForeignKey(
+        Country,
+        null=False,
+        blank=False,
+        verbose_name=_(u"País"),
+        default=None)
+
+    education_area = models.ForeignKey(
+        EducationArea,
+        null=False,
+        blank=False,
+        verbose_name=_(u"Área de estudios"),
+        default=None)
+
+    comments = models.TextField(
+
+        null=True,
+        blank=True,
+        verbose_name=_(u'Comentarios')
+    )
+
+    
 
     start_date = models.DateField(
         null=False,

@@ -20,9 +20,22 @@
     </div>
 
     <div class="row">
+      {% standar_field form.career %}
+    </div>
+
+    <div class="row">
+      {% standar_field form.country %}
+      {% standar_field form.education_area %}
+    </div>
+
+    <div class="row">
       {% standar_field form.start_date %}
       {% standar_field form.end_date %}
       {% checkbox_field form.is_current %}
+    </div>
+
+    <div class="row">
+      {% standar_field form.comments column_size="12" %}
     </div>
 
     <div class="row">
