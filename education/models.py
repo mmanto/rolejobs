@@ -222,6 +222,10 @@ class Language(SimpleItemModel):
     """Languages"""
     pass
 
+class Computerknowledge(SimpleItemModel):
+    """Computerknowledges"""
+    pass
+
 
 class UserLanguages(models.Model):
     """Languages of users"""
@@ -256,6 +260,43 @@ class UserLanguages(models.Model):
     def save(self, *args, **kwargs):
         self.user.set_complete(COMPLETION_LANGUAGES)
         super(UserLanguages, self).save(*args, **kwargs)
+
+    def __unicode__(self):
+        return u"%s" % self.name
+
+class UserComputerknowledge(models.Model):
+    """Computerknowledges of users"""
+
+    user = models.ForeignKey(
+        User,
+        null=False,
+        blank=False,
+        related_name="computerknowledges")
+
+    computerknowledge = models.ForeignKey(
+        Computerknowledge,
+        null=False,
+        blank=False,
+        verbose_name=_(u"Conocimiento Informático"))
+
+    level = models.IntegerField(
+        null=False,
+        blank=False,
+        verbose_name=_(u"Nivél"))
+
+    @property
+    def name(self):
+        return u"%s" % self.computerknowledge.name
+
+    def clean(self):
+
+        if self.level < 0 or self.level > 10:
+            raise ValidationError(_(u"El nivél debe ser un número entre " +
+                                    u"1 y 10"))
+
+    def save(self, *args, **kwargs):
+        self.user.set_complete(COMPLETION_LANGUAGES)
+        super(UserComputerknowledge, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return u"%s" % self.name

@@ -186,7 +186,7 @@
 
         </div>
 
-        <!-- EDUCATION -->
+        <!-- LANGUAJES -->
 
         <div class="row">
 
@@ -225,6 +225,48 @@
           </div>
 
         </div>
+
+
+        <!-- INFORMATIZATION -->
+
+        <div class="row">
+
+          <div class="large-12 columns container-section">
+
+            <div class="row">
+              <h5>{{ "Conocimientos informáticos" | translate }}</h5>
+            </div>
+
+            <div class="row">
+
+              <div ng-if="!computerknowledges.length" class="text-center">
+              </div>
+
+              <alert ng-if="!computerknowledges.length" type="'info'">
+                {{  "No hay datos de referencia cargados" | translate }}
+              </alert>
+
+              <div 
+                ng-if="computerknowledges.length"
+                rj-table-collection
+                collection-schema="computerknowledgesTableSchema"
+                collection-data="computerknowledges"
+                selectable
+                ng-model="selecteds.computerknowledges"
+                on-click="addComputerknowledge($item)"
+              ></div>
+
+            </div>
+
+            <div class="row form-buttons text-center">
+              <a ng-show="selecteds.computerknowledges.length" ng-click="deleteComputerknowledges()" class="rj-button lined">{{ "Borrar seleccionados" | translate }}</a>
+              <a ng-click="addComputerknowledge()" class="rj-button">{{ "Agregar" | translate }}</a>
+            </div>
+
+          </div>
+
+        </div>
+
 
         <!-- Roles -->
 

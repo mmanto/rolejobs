@@ -22,6 +22,7 @@ const postulantNewPEModalService = require("./modals/newpe");
 const postulantNewEducationModalFactory = require("./modals/neweducation");
 const postulantNewReferenceModalFactory = require("./modals/newreference");
 const postulantNewLanguageModalFactory = require("./modals/newlanguage");
+const postulantNewComputerknowledgeModalFactory = require("./modals/newcomputerknowledge");
 const newCertificationModalFactory = require("./modals/newcert");
 const postulationModal = require("./modals/postulation");
 const messageModal = require("./modals/message");
@@ -50,6 +51,7 @@ module.exports = angular.module("RoleJob.postulant", [
     .factory("PostulantNewEducationModal", postulantNewEducationModalFactory)
     .factory("PostulantNewReferenceModal", postulantNewReferenceModalFactory)
     .factory("PostulantNewLanguageModal", postulantNewLanguageModalFactory)
+    .factory("PostulantNewComputerknowledgeModal", postulantNewComputerknowledgeModalFactory)
     .factory("PostulantNewCertificationModal", newCertificationModalFactory)
     .factory("PostulantPostulationModal", postulationModal)
     .factory("PostulantMessageModal", messageModal)

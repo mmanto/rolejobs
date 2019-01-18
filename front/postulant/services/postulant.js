@@ -197,6 +197,8 @@ function ($q, $rootScope, ApiService, AvatarsService) {
             });
         }
 
+        /* LANGUAJE SECTION */
+
         getLanguages() {
             return this._get(`profile/languages`);
         }
@@ -227,6 +229,42 @@ function ($q, $rootScope, ApiService, AvatarsService) {
 
         deleteLanguages(ids) {
             return this._delete(`profile/languages`, {
+                ids: ids.join(',')
+            });
+        }
+
+        /* COMPUTERKNOWLEDGE SECTION */
+
+        getComputerknowledges() {
+            return this._get(`profile/computerknowledges`);
+        }
+
+        getComputerknowledge(id) {
+            id = parseInt(id);
+            return this._get(`profile/computerknowledges/${id}`);
+        }
+
+        saveComputerknowledge(data) {
+            var computerknowledge = parseInt(data.computerknowledge);
+            var path = `profile/computerknowledges/${computerknowledge}`;
+
+            return this._get(path)
+                .then(() => {
+                    delete data.computerknowledge;
+                    return this._put(path, data);
+                })
+                .catch((res) => {
+                    if (res.status === 404) {
+                        return this._post(`profile/computerknowledges`, data);
+                    }
+
+                    throw res;
+                });
+                
+        }
+
+        deleteComputerknowledges(ids) {
+            return this._delete(`profile/computerknowledges`, {
                 ids: ids.join(',')
             });
         }

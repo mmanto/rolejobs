@@ -16,7 +16,7 @@ from rest_framework.decorators import detail_route
 from utils.views import DeleteBulkMixing
 from utils.serializers import SlugedItemSerializer, PkListSerializer
 from accounts.permissions import IsPostulant
-from education.models import UserEducation, UserLanguages
+from education.models import UserEducation, UserLanguages, UserComputerknowledge
 from jobs.models import Role, JobPostulation
 from jobs.views import OwnJobPostulationsViewSet
 from jobs.serializers import PostulantPostulationDetailSerializer
@@ -42,6 +42,7 @@ from postulant.forms import (
     NewEducationForm,
     ExperienceReferenceForm,
     NewLanguageForm,
+    NewComputerknowledgeForm,
     NewCertificationForm
 )
 
@@ -53,6 +54,8 @@ from postulant.serializers import (
     PostulantEducationSerializer,
     PostulantLanguagesSerializer,
     PostulantLanguagesDetailSerializer,
+    PostulantComputerknowledgesSerializer,
+    PostulantComputerknowledgesDetailSerializer,
     PostulationsListSerializer,
     # CompletedItemsSerializer,
     CompletedProfileSerializer,
@@ -176,6 +179,39 @@ class PostulantLanguagesViewSet(viewsets.ModelViewSet, DeleteBulkMixing):
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
+
+class PostulantComputerknowledgesViewSet(viewsets.ModelViewSet, DeleteBulkMixing):
+
+    table_pk = "computerknowledge"
+    lookup_field = "computerknowledge"
+    permission_classes = (IsAuthenticated,
+                          IsPostulant)
+
+    def get_serializer_class(self):
+        if self.request.method == "GET" or self.request.method == "POST":
+            return PostulantComputerknowledgesSerializer
+        else:
+            return PostulantComputerknowledgesDetailSerializer
+
+    def get_queryset(self):
+        return UserComputerknowledge.objects.filter(
+            user=self.request.user)
+
+    def get_object(self):
+        queryset = self.get_queryset()
+        pk = self.kwargs.get(self.lookup_field, None)
+
+        if pk is None:
+            return super(PostulantComputerknowledgesViewSet, self).get_object()
+
+        obj = get_object_or_404(queryset, computerknowledge=pk)
+
+        self.check_object_permissions(self.request, obj)
+
+        return obj
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
 
 class PostulantRolesViewSet(viewsets.ModelViewSet):
     """Postulant roles"""
@@ -357,6 +393,11 @@ class NewReferenceFormView(generic.FormView):
 class NewLanguageFormView(generic.FormView):
     template_name = 'postulant_new_language.html'
     form_class = NewLanguageForm
+
+
+class NewComputerknowledgeFormView(generic.FormView):
+    template_name = 'postulant_new_computerknowledge.html'
+    form_class = NewComputerknowledgeForm
 
 
 class NewCertificationFormView(generic.FormView):

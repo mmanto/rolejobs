@@ -16,7 +16,9 @@ from utils.adapter import NgErrorList
 from education.models import (
     UserEducation,
     Language,
+    Computerknowledge,
     UserLanguages,
+    UserComputerknowledge,
     UserCertification
 )
 
@@ -32,6 +34,19 @@ def get_lenguages():
     choices = []
     try:
         choices = [(l.id, l.name) for l in Language.objects.all()]
+    except OperationalError:
+        return []
+    except ProgrammingError:
+        return []
+    except Exception, e:
+        raise e
+    else:
+        return choices
+
+def get_computerknowledges():
+    choices = []
+    try:
+        choices = [(l.id, l.name) for l in Computerknowledge.objects.all()]
     except OperationalError:
         return []
     except ProgrammingError:
@@ -241,6 +256,42 @@ class NewLanguageForm(
 
     class Meta:
         model = UserLanguages
+        exclude = ('user',)
+
+
+class NewComputerknowledgeForm(
+    NgFormValidationMixin,
+    NgModelFormMixin,
+    NgModelForm
+):
+    """Form for add new computerknowledge"""
+
+    form_name = 'computerknowledgeForm'
+    scope_prefix = 'computerknowledgeData'
+
+    computerknowledge = forms.ChoiceField(
+        choices=get_computerknowledges(),
+        widget=forms.Select(
+            attrs={
+                'ng-readonly': "blockComputerknowledge"
+            }
+        ))
+
+    level = forms.IntegerField(
+        min_value=0,
+        max_value=10,
+        widget=FoundationRating(
+            attrs={
+                "max": 10
+            }
+        ))
+
+    def __init__(self, *args, **kwargs):
+        kwargs.update(error_class=NgErrorList)
+        super(NewComputerknowledgeForm, self).__init__(*args, **kwargs)
+
+    class Meta:
+        model = UserComputerknowledge
         exclude = ('user',)
 
 

@@ -10,6 +10,7 @@ from postulant.views import (
     PostulantBiographicViewSet,
     ProfessionalExperienceViewSet,
     PostulantLanguagesViewSet,
+    PostulantComputerknowledgesViewSet,
     PostulantCvFormView,
     NewProfieccionalExperienceFormView,
     NewEducationFormView,
@@ -18,6 +19,7 @@ from postulant.views import (
     JobPostulationsViewSet,
     NewReferenceFormView,
     NewLanguageFormView,
+    NewComputerknowledgeFormView,
     NewCertificationFormView,
     CompletedProfileViewSet,
     CVRequestPostulantViewSet,
@@ -106,6 +108,14 @@ urlpatterns = [
         PostulantLanguagesViewSet.as_view(update_delete)
     ),
     url(
+        r"^profile/computerknowledges$",
+        PostulantComputerknowledgesViewSet.as_view(get_post_bulkdelete)
+    ),
+    url(
+        r"^profile/computerknowledges/(?P<computerknowledge>[0-9]+)$",
+        PostulantComputerknowledgesViewSet.as_view(update_delete)
+    ),
+    url(
         r"^profile/roles/?$",
         PostulantRolesViewSet.as_view({
             'get': 'list',
@@ -162,6 +172,10 @@ urlpatterns = [
     url(
         r"^templates/add_language.html$",
         NewLanguageFormView.as_view()
+    ),
+    url(
+        r"^templates/add_computerknowledge.html$",
+        NewComputerknowledgeFormView.as_view()
     ),
     url(
         r"^templates/add_certification.html",
