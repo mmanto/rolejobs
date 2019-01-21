@@ -16,7 +16,7 @@ from rest_framework.decorators import detail_route
 from utils.views import DeleteBulkMixing
 from utils.serializers import SlugedItemSerializer, PkListSerializer
 from accounts.permissions import IsPostulant
-from education.models import UserEducation, UserLanguages, UserComputerknowledge
+from education.models import UserEducation, UserLanguages, UserComputerknowledge, UserAdditionalknowledge
 from jobs.models import Role, JobPostulation
 from jobs.views import OwnJobPostulationsViewSet
 from jobs.serializers import PostulantPostulationDetailSerializer
@@ -43,6 +43,7 @@ from postulant.forms import (
     ExperienceReferenceForm,
     NewLanguageForm,
     NewComputerknowledgeForm,
+    NewAdditionalknowledgeForm,
     NewCertificationForm
 )
 
@@ -56,6 +57,8 @@ from postulant.serializers import (
     PostulantLanguagesDetailSerializer,
     PostulantComputerknowledgesSerializer,
     PostulantComputerknowledgesDetailSerializer,
+    PostulantAdditionalknowledgesSerializer,
+    PostulantAdditionalknowledgesDetailSerializer,
     PostulationsListSerializer,
     # CompletedItemsSerializer,
     CompletedProfileSerializer,
@@ -205,6 +208,39 @@ class PostulantComputerknowledgesViewSet(viewsets.ModelViewSet, DeleteBulkMixing
             return super(PostulantComputerknowledgesViewSet, self).get_object()
 
         obj = get_object_or_404(queryset, computerknowledge=pk)
+
+        self.check_object_permissions(self.request, obj)
+
+        return obj
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+class PostulantAdditionalknowledgesViewSet(viewsets.ModelViewSet, DeleteBulkMixing):
+
+    table_pk = "additionalknowledge"
+    lookup_field = "additionalknowledge"
+    permission_classes = (IsAuthenticated,
+                          IsPostulant)
+
+    def get_serializer_class(self):
+        if self.request.method == "GET" or self.request.method == "POST":
+            return PostulantAdditionalknowledgesSerializer
+        else:
+            return PostulantAdditionalknowledgesDetailSerializer
+
+    def get_queryset(self):
+        return UserAdditionalknowledge.objects.filter(
+            user=self.request.user)
+
+    def get_object(self):
+        queryset = self.get_queryset()
+        pk = self.kwargs.get(self.lookup_field, None)
+
+        if pk is None:
+            return super(PostulantAdditionalknowledgesViewSet, self).get_object()
+
+        obj = get_object_or_404(queryset, additionalknowledge=pk)
 
         self.check_object_permissions(self.request, obj)
 
@@ -398,6 +434,10 @@ class NewLanguageFormView(generic.FormView):
 class NewComputerknowledgeFormView(generic.FormView):
     template_name = 'postulant_new_computerknowledge.html'
     form_class = NewComputerknowledgeForm
+
+class NewAdditionalknowledgeFormView(generic.FormView):
+    template_name = 'postulant_new_additionalknowledge.html'
+    form_class = NewAdditionalknowledgeForm
 
 
 class NewCertificationFormView(generic.FormView):

@@ -267,6 +267,45 @@
 
         </div>
 
+        <!-- ADDITIONAL -->
+
+        <div class="row">
+
+          <div class="large-12 columns container-section">
+
+            <div class="row">
+              <h5>{{ "Conocimientos adicionales" | translate }}</h5>
+            </div>
+
+            <div class="row">
+
+              <div ng-if="!additionalknowledges.length" class="text-center">
+              </div>
+
+              <alert ng-if="!additionalknowledges.length" type="'info'">
+                {{  "No hay datos de referencia cargados" | translate }}
+              </alert>
+
+              <div 
+                ng-if="additionalknowledges.length"
+                rj-table-collection
+                collection-schema="additionalknowledgesTableSchema"
+                collection-data="additionalknowledges"
+                selectable
+                ng-model="selecteds.additionalknowledges"
+                on-click="addAdditionalknowledge($item)"
+              ></div>
+
+            </div>
+
+            <div class="row form-buttons text-center">
+              <a ng-show="selecteds.additionalknowledges.length" ng-click="deleteAdditionalknowledges()" class="rj-button lined">{{ "Borrar seleccionados" | translate }}</a>
+              <a ng-click="addAdditionalknowledge()" class="rj-button">{{ "Agregar" | translate }}</a>
+            </div>
+
+          </div>
+
+        </div>
 
         <!-- Roles -->
 

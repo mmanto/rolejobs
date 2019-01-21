@@ -10,7 +10,8 @@ const angular = require("angular");
  */
 
 const postulantCvController = function ($q, $scope, ConfirmModal,
-      PostulantService, NewPEModal, NewEducationModal, NewLangModal, NewComputerknowledgeModal,
+      PostulantService, NewPEModal, NewEducationModal, NewLangModal,
+      NewComputerknowledgeModal, NewAdditionalknowledgeModal,
                                           CroppterModal, loggedUser) {
 
     const OWN_VEHICLE = "own_vehicle";
@@ -130,6 +131,18 @@ const postulantCvController = function ($q, $scope, ConfirmModal,
         }
     };
 
+    $scope.additionalknowledgesTableSchema = {
+        $orderBy: "additionalknowledge_text",
+        $trackBy: "additionalknowledge",
+
+        "additionalknowledge_text": {
+            title: "Conocimiento Adicional"
+        },
+        "description": {
+            title: "Descripción"
+        }
+    };
+
     $scope.experiences = [];
 
     $scope.educations = [];
@@ -138,11 +151,14 @@ const postulantCvController = function ($q, $scope, ConfirmModal,
 
     $scope.computerknowledges = [];
 
+    $scope.additionalknowledges = [];
+
     $scope.selecteds = {
         experiences: [],
         educations: [],
         languages: [],
-        computerknowledges: []
+        computerknowledges: [],
+        additionalknowledges: []
     };
 
     $scope.apiErrors = {
@@ -396,6 +412,35 @@ const postulantCvController = function ($q, $scope, ConfirmModal,
 
     };
 
+    $scope.addAdditionalknowledge = function(additionalknowledge = null) {
+        var modal = NewAdditionalknowledgeModal.open(additionalknowledge);
+        modal.result.then(() => {
+            $scope.updateAdditionalknowledges();
+            $scope.updateCompletedProfileInfo();
+        });
+    };
+
+    $scope.deleteAdditionalknowledges = function () {
+        ConfirmModal.open("Está realmente seguro?")
+            .then(() => {
+
+                if (!$scope.selecteds.additionalknowledges.length) {
+                    return;
+                }
+
+                var ids = $scope.selecteds.additionalknowledges.map(i => i.additionalknowledge);
+
+                postulantApi.deleteAdditionalknowledges(ids)
+                    .then(() => {
+                        $scope.updateAdditionalknowledges();
+                    })
+                    .catch((res) => {
+                        console.log("Error", res);
+                    });
+
+            });
+
+    };
 
     $scope.updateInfo = function () {
         $scope.info = {
@@ -417,6 +462,7 @@ const postulantCvController = function ($q, $scope, ConfirmModal,
                 $scope.educations = data.education;
                 $scope.languages = data.languages;
                 $scope.computerknowledge = data.computerknowledge;
+                $scope.additionalknowledge = data.additionalknowledge;
                 $scope.rolesData = data.roles.map(x => x.pk);
                 $scope.completedProfileInfo = data[COMPLETED_INFO];
 
@@ -425,6 +471,7 @@ const postulantCvController = function ($q, $scope, ConfirmModal,
                 delete data.education;
                 delete data.languages;
                 delete data.computerknowledge;
+                delete data.additionalknowledge;
                 delete data.roles;
                 delete data[COMPLETED_INFO];
 
@@ -459,6 +506,7 @@ const postulantCvController = function ($q, $scope, ConfirmModal,
                     $scope.updateEducations(),
                     $scope.updateLanguages(),
                     $scope.updateComputerknowledges(),
+                    $scope.updateAdditionalknowledges(),
                     $scope.updateRoles(),
                     $scope.updateCompletedProfileInfo()
                 ]);
@@ -519,6 +567,17 @@ const postulantCvController = function ($q, $scope, ConfirmModal,
     
     };
 
+    $scope.updateAdditionalknowledges = function () {
+
+        return postulantApi.getAdditionalknowledges()
+            .then((additionalknowledges) => {
+                $scope.selecteds.additionalknowledges = [];
+                $scope.additionalknowledges = additionalknowledges;
+                $scope.updateInfo();
+            });
+    
+    };
+
     $scope.updateRoles = function () {
         return postulantApi.getRoles()
             .then((roles) => {
@@ -553,6 +612,7 @@ module.exports = [
     "PostulantNewEducationModal",
     "PostulantNewLanguageModal",
     "PostulantNewComputerknowledgeModal",
+    "PostulantNewAdditionalknowledgeModal",
     "CroppterModal",
     "loggedUser",
     postulantCvController

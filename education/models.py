@@ -11,7 +11,7 @@ from accounts.models import User
 
 from cities_light.models import Country
 
-from postulant.choices import COMPLETION_EDUCATION, COMPLETION_LANGUAGES
+from postulant.choices import COMPLETION_EDUCATION, COMPLETION_LANGUAGES, COMPLETION_COMPUTERKNOWLEDGE, COMPLETION_ADDITIONALKNOWLEDGES
 
 from education.choices import EDUCATION_GRADES,CERTIFICATIONS
 
@@ -226,6 +226,10 @@ class Computerknowledge(SimpleItemModel):
     """Computerknowledges"""
     pass
 
+class Additionalknowledge(SimpleItemModel):
+    """Additionalknowledges"""
+    pass
+
 
 class UserLanguages(models.Model):
     """Languages of users"""
@@ -295,8 +299,39 @@ class UserComputerknowledge(models.Model):
                                     u"1 y 10"))
 
     def save(self, *args, **kwargs):
-        self.user.set_complete(COMPLETION_LANGUAGES)
+        self.user.set_complete(COMPLETION_COMPUTERKNOWLEDGE)
         super(UserComputerknowledge, self).save(*args, **kwargs)
+
+    def __unicode__(self):
+        return u"%s" % self.name
+
+
+class UserAdditionalknowledge(models.Model):
+    """Additionalknowledges of users"""
+
+    user = models.ForeignKey(
+        User,
+        null=False,
+        blank=False,
+        related_name="additionalknowledges")
+
+    additionalknowledge = models.ForeignKey(
+        Additionalknowledge,
+        null=False,
+        blank=False,
+        verbose_name=_(u"Conocimiento Adicional"))
+
+    description = models.TextField(
+        verbose_name=_(u"Descripción"))
+
+    @property
+    def name(self):
+        return u"%s" % self.additionalknowledge.name
+
+
+    def save(self, *args, **kwargs):
+        self.user.set_complete(COMPLETION_ADDITIONALKNOWLEDGES)
+        super(UserAdditionalknowledge, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return u"%s" % self.name

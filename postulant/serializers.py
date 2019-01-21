@@ -13,6 +13,7 @@ from education.models import (
     Institution,
     UserLanguages,
     UserComputerknowledge,
+    UserAdditionalknowledge,
     UserCertification
 )
 
@@ -494,6 +495,16 @@ class PostulantComputerknowledgesSerializer(serializers.ModelSerializer):
         model = UserComputerknowledge
         fields = ('computerknowledge', 'computerknowledge_text', 'level')
 
+class PostulantAdditionalknowledgesSerializer(serializers.ModelSerializer):
+    """Postulant additionalknowledge serializer"""
+
+    additionalknowledge_text = serializers.ReadOnlyField(
+        source="additionalknowledge.name")
+
+    class Meta:
+        model = UserAdditionalknowledge
+        fields = ('additionalknowledge', 'additionalknowledge_text', 'description')
+
 
 class PostulantLanguagesDetailSerializer(serializers.ModelSerializer):
 
@@ -516,6 +527,18 @@ class PostulantComputerknowledgesDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserComputerknowledge
         fields = ('computerknowledge_text', 'level', 'id')
+
+
+class PostulantAdditionalknowledgesDetailSerializer(serializers.ModelSerializer):
+
+    id = serializers.ReadOnlyField(),
+
+    additionalknowledge_text = serializers.ReadOnlyField(
+        source="additionalknowledge.name")
+
+    class Meta:
+        model = UserAdditionalknowledge
+        fields = ('additionalknowledge_text', 'description', 'id')
 
 
 # Rewriter here for a cross-dependencies issue

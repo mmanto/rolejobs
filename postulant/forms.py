@@ -17,8 +17,10 @@ from education.models import (
     UserEducation,
     Language,
     Computerknowledge,
+    Additionalknowledge,
     UserLanguages,
     UserComputerknowledge,
+    UserAdditionalknowledge,
     UserCertification
 )
 
@@ -47,6 +49,19 @@ def get_computerknowledges():
     choices = []
     try:
         choices = [(l.id, l.name) for l in Computerknowledge.objects.all()]
+    except OperationalError:
+        return []
+    except ProgrammingError:
+        return []
+    except Exception, e:
+        raise e
+    else:
+        return choices
+
+def get_additionalknowledges():
+    choices = []
+    try:
+        choices = [(l.id, l.name) for l in Additionalknowledge.objects.all()]
     except OperationalError:
         return []
     except ProgrammingError:
@@ -294,6 +309,34 @@ class NewComputerknowledgeForm(
         model = UserComputerknowledge
         exclude = ('user',)
 
+
+class NewAdditionalknowledgeForm(
+    NgFormValidationMixin,
+    NgModelFormMixin,
+    NgModelForm
+):
+    """Form for add new additionalknowledge"""
+
+    form_name = 'additionalknowledgeForm'
+    scope_prefix = 'additionalknowledgeData'
+
+    additionalknowledge = forms.ChoiceField(
+        choices=get_additionalknowledges(),
+        widget=forms.Select(
+            attrs={
+                'ng-readonly': "blockAdditionalknowledge"
+            }
+        ))
+
+    description = forms.Textarea()
+
+    def __init__(self, *args, **kwargs):
+        kwargs.update(error_class=NgErrorList)
+        super(NewAdditionalknowledgeForm, self).__init__(*args, **kwargs)
+
+    class Meta:
+        model = UserAdditionalknowledge
+        exclude = ('user',)
 
 class NewCertificationForm(
     NgFormValidationMixin,

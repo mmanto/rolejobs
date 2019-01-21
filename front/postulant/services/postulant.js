@@ -269,6 +269,42 @@ function ($q, $rootScope, ApiService, AvatarsService) {
             });
         }
 
+        /* ADDITIONALKNOWLEDGE SECTION */
+
+        getAdditionalknowledges() {
+            return this._get(`profile/additionalknowledges`);
+        }
+
+        getAdditionalknowledge(id) {
+            id = parseInt(id);
+            return this._get(`profile/additionalknowledges/${id}`);
+        }
+
+        saveAdditionalknowledge(data) {
+            var additionalknowledge = parseInt(data.additionalknowledge);
+            var path = `profile/additionalknowledges/${additionalknowledge}`;
+
+            return this._get(path)
+                .then(() => {
+                    delete data.additionalknowledge;
+                    return this._put(path, data);
+                })
+                .catch((res) => {
+                    if (res.status === 404) {
+                        return this._post(`profile/additionalknowledges`, data);
+                    }
+
+                    throw res;
+                });
+                
+        }
+
+        deleteAdditionalknowledges(ids) {
+            return this._delete(`profile/additionalknowledges`, {
+                ids: ids.join(',')
+            });
+        }
+
         changeAvatar(data) {
             return AvatarsService.uploadProfile(data);
         }
