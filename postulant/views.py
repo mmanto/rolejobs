@@ -82,8 +82,13 @@ class Signup(generics.GenericAPIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-
-        email = Spool.objects.filter(to=request.data['email'], sent=False)[-1]
+        #En caso que el usuario haya intentado registrarse y no confirmo, el correo 
+        # va a aparecer mas de una vez.
+        lst_email_count = Spool.objects.filter(to=request.data['email'], sent=False)
+        if (len(lst_email_count) > 1):
+            email = Spool.objects.filter(to=request.data['email'], sent=False)[-1]
+        else: email = Spool.objects.filter(to=request.data['email'], sent=False)[0]
+            
         email_from = settings.EMAIL_HOST_USER
         recipient_list = [request.data['email'], ]
         send_mail(email.subject, email.content, email_from, recipient_list, html_message=email.content)

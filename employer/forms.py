@@ -280,15 +280,15 @@ class NgSignupForm(six.with_metaclass(
             attrs={
                 'placeholder': _('Responsabilidad ante el IVA')}))
 
-    #sector_empresarial = forms.CharField(
-    #    required=True,
-    #    max_length=100,
-    #    widget=forms.TextInput(
-    #        attrs={
-    #            'placeholder': _('Sector empresarial')}))
+    sector_empresarial = forms.CharField(
+        required=True,
+        max_length=100,
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': _('Sector empresarial')}))
 
-    sector_empresarial = forms.ChoiceField(required=True, widget=forms.Select(
-        attrs={'class': 'selector'}), choices=[(None, _(" --- Sector empresarial --- "))] + [ (x.id, _(x.name)) for x in BranchActivity.objects.all() ] )
+    #sector_empresarial = forms.ChoiceField(required=True, widget=forms.Select(
+    #    attrs={'class': 'selector'}), choices=[(None, _(" --- Sector empresarial --- "))] + [ (x.id, _(x.name)) for x in #BranchActivity.objects.all() ] )
 
 
     workforce = forms.IntegerField(
