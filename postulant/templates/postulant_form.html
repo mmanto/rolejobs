@@ -60,6 +60,10 @@
       {{ form.has_disability.errors }}
     </div>
 
+    <div class="row">
+      {% standar_field form.video_cv column_size="8" %}
+    </div>
+
     <div class="row form-buttons text-center">
       <a ng-click="savePostulantProfile(postulantForm)" class="rj-button">{% trans "Guardar" %}</a>
       <a ng-click="reset(postulantForm)" class="rj-button alternative">{% trans "Cancelar" %}</a>

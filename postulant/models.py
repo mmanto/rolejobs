@@ -94,6 +94,11 @@ class Postulant(Profile):
         default=False,
         verbose_name=_('¿Posee algún tipo de discapacidad?'))
 
+    video_cv = models.FileField(
+        upload_to='videos/',
+        null=True,
+        verbose_name=_('Video CV'))
+
     @property
     def is_postulant(self):
         return True

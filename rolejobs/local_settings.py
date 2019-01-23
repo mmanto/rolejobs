@@ -10,7 +10,7 @@ DEBUG = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'RoleJobs',
+        'NAME': 'RoleJobs2',
         'USER': 'postgres',
         'PASSWORD': 'Riddle**2001',
         'HOST': 'localhost',

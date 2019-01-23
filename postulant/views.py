@@ -87,7 +87,8 @@ class Signup(generics.GenericAPIView):
         lst_email_count = Spool.objects.filter(to=request.data['email'], sent=False)
         if (len(lst_email_count) > 1):
             email = Spool.objects.filter(to=request.data['email'], sent=False)[-1]
-        else: email = Spool.objects.filter(to=request.data['email'], sent=False)[0]
+        else:
+            email = Spool.objects.filter(to=request.data['email'], sent=False)[0]
             
         email_from = settings.EMAIL_HOST_USER
         recipient_list = [request.data['email'], ]

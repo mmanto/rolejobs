@@ -73,6 +73,7 @@
   },
   "dependencies": {
     "angular-material": "^1.1.10",
-    "angular-messages": "^1.7.5"
+    "angular-messages": "^1.7.5",
+    "package.json": "^2.0.1"
   }
 }

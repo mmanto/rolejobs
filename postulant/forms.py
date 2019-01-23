@@ -127,7 +127,8 @@ class PostulantCvForm (
             'postal_code',
             'driver_license',
             'own_vehicle',
-            'has_disability'
+            'has_disability',
+            'video_cv'
         ]
 
 
