@@ -38,6 +38,7 @@ from postulant.choices import CV_COMPLETION
 
 from postulant.forms import (
     PostulantCvForm,
+    VideoCvForm,
     NewProfieccionalExperienceForm,
     NewEducationForm,
     ExperienceReferenceForm,
@@ -97,6 +98,14 @@ class Signup(generics.GenericAPIView):
         email.save()
         return Response({"success": _("Postulant signup success")})
 
+
+class VideoCvView(generic.View):
+    
+    def post(self, request):
+        postulant = Postulant.objects.get(user= request.user)
+        postulant.video_cv = request.FILES['video_cv']
+        postulant.save()
+        return HttpResponseRedirect('/postulant/cv')
 
 class PostulantViewSet(viewsets.ModelViewSet):
     serializer_class = CompleteProfileSerializer
@@ -415,6 +424,10 @@ class PostulantAttachCVView(viewsets.ModelViewSet):
 class PostulantCvFormView(generic.FormView):
     template_name = 'postulant_form.html'
     form_class = PostulantCvForm
+
+class VideoCvFormView(generic.FormView):
+    template_name = 'video_cv_form.html'
+    form_class = VideoCvForm
 
 
 class NewProfieccionalExperienceFormView(generic.FormView):

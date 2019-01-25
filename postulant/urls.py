@@ -6,6 +6,7 @@
 from django.conf.urls import url
 from postulant.views import (
     Signup,
+    VideoCvView,
     PostulantViewSet,
     PostulantBiographicViewSet,
     ProfessionalExperienceViewSet,
@@ -13,6 +14,7 @@ from postulant.views import (
     PostulantComputerknowledgesViewSet,
     PostulantAdditionalknowledgesViewSet,
     PostulantCvFormView,
+    VideoCvFormView,
     NewProfieccionalExperienceFormView,
     NewEducationFormView,
     PostulantEducationViewSet,
@@ -76,6 +78,11 @@ urlpatterns = [
         r"^signup$",
         Signup.as_view(),
         name="postulant_signup"
+    ),
+    url(
+        r"^videocv$",
+        VideoCvView.as_view(),
+        name="video_cv_url"
     ),
     url(
         r"^profile$",
@@ -166,6 +173,10 @@ urlpatterns = [
     url(
         r"^templates/cv_edit.html$",
         PostulantCvFormView.as_view()
+    ),
+    url(
+        r"^templates/video_cv.html$",
+        VideoCvFormView.as_view()
     ),
     url(
         r"^templates/add_pe.html$",

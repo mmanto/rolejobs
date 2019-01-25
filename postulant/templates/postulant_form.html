@@ -5,8 +5,8 @@
 {% load utils_forms %}
 
 <div class="large-12 columns container_form">
-
-  <form ng-submit="savePostulantInfo(postulantForm)" name="postulantForm" class="postulant-form">
+<!-- ng-submit="savePostulantInfo(postulantForm)" --> 
+  <form  name="postulantForm" class="postulant-form">
 
     <div class="row">
       <h5>{% trans "Datos personales" %}</h5>
@@ -39,7 +39,9 @@
           ng-required="true"
           name="geo-data"
           placeholder="{% trans "Seleccione su lugar de residencia" %}"
-          ng-model="postulantGeoData"></geo-field>
+          ng-model="postulantGeoData"
+          my-delegate="geoDirectiveDelegate"
+          ></geo-field>
         <ul class="djng-field-errors" ng-show="postulantForm['geo-data'].$dirty">
          <li
            ng-show="postulantForm['geo-data'].$error.required"
@@ -60,9 +62,7 @@
       {{ form.has_disability.errors }}
     </div>
 
-    <div class="row">
-      {% standar_field form.video_cv column_size="8" %}
-    </div>
+    
 
     <div class="row form-buttons text-center">
       <a ng-click="savePostulantProfile(postulantForm)" class="rj-button">{% trans "Guardar" %}</a>

@@ -37,7 +37,14 @@ const postulantCvController = function ($q, $scope, ConfirmModal,
         "last_update": loggedUser[LAST_UPDATE],
     };
 
-    $scope.postulantGeoData = null; 
+    $scope.postulantGeoData = null;
+
+    $scope.geoDirectiveDelegate = {
+
+        changeGeoData: function (geoData) {
+            $scope.postulantGeoData = geoData;
+        }
+    };
         
     $scope.postulantBioData = {};
 

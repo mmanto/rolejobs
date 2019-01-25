@@ -24,7 +24,10 @@ const factory = function (GeoService, GeoModal) {
                      </span>
                    </span>`,
         require: '?ngModel', 
-        scope: {},
+        scope: {
+
+            localDelegate: '=myDelegate'
+        },
         link: (scope, element, attrs, ngModel) => {
             scope.data = {};
             scope.geoname = "...";
@@ -86,6 +89,8 @@ const factory = function (GeoService, GeoModal) {
                     }
 
                 }
+
+                scope.localDelegate.changeGeoData(ngModel.$modelValue);
 
             };
 

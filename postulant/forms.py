@@ -127,10 +127,14 @@ class PostulantCvForm (
             'postal_code',
             'driver_license',
             'own_vehicle',
-            'has_disability',
-            'video_cv'
+            'has_disability'
         ]
 
+
+class VideoCvForm(forms.ModelForm):
+    class Meta:
+        model = Postulant
+        fields = ['video_cv']
 
 class NewProfieccionalExperienceForm(
     NgFormValidationMixin,
