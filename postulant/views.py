@@ -3,7 +3,7 @@ from hashlib import sha1
 import magic
 
 from django.views import generic
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.utils.translation import ugettext_lazy as _
 from django.shortcuts import get_object_or_404
 from django.core.files.base import ContentFile
@@ -32,9 +32,10 @@ from postulant.models import (
     ProfessionalExperience,
     PostulantRoles,
     PostulantAttachCV,
+    MARRIED_STATUS
 )
 
-from postulant.choices import CV_COMPLETION
+from postulant.choices import CV_COMPLETION, TYPE_LICENCE
 
 from postulant.forms import (
     PostulantCvForm,
@@ -73,6 +74,10 @@ from postulant.permissions import IsCompletedProfile
 
 from jobs.models import FavoriteJob
 from rolejobs_api.generics import StandarPagination
+
+from django.template import Context
+from django.template.loader import get_template
+from xhtml2pdf import pisa
 
 class Signup(generics.GenericAPIView):
     """Signup new postulant"""
@@ -136,6 +141,34 @@ class PostulantBiographicViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+
+class PostulantDownloadPdf(generic.View):
+
+    def get(self, request):
+        postulant = Postulant.objects.get(user=request.user)
+        template_path = 'downloadpdf.html'
+        context = { 
+            'first_name': postulant.user.first_name,
+            'last_name': postulant.user.last_name,
+            'marital_status': str( MARRIED_STATUS[postulant.marital_status - 1][1] ),
+            'dni': postulant.dni,
+            'date_of_birth': postulant.date_of_birth,
+            'country_of_birth': postulant.country_of_birth.name,
+            'postal_code': postulant.postal_code,
+            'driver_license': str( TYPE_LICENCE[postulant.driver_license][1] ) if  postulant.driver_license <= 3 else str( TYPE_LICENCE[0][1] ),
+            'own_vehicle': _(u'Sí') if postulant.own_vehicle else _(u'No'),
+            'has_disability': _(u'Sí') if postulant.has_disability else _(u'No'),
+        }
+        # Create a Django response object, and specify content_type as pdf
+        response = HttpResponse(content_type='application/pdf' )
+        response['Content-Disposition'] = 'attachment; filename="cv.pdf"'
+        # find the template and render it.
+        template = get_template(template_path)
+        html = template.render(Context(context))
+        # create a pdf
+        pisaStatus = pisa.CreatePDF(html, dest=response)
+        # if error then show some funy view
+        return response
 
 
 class ProfessionalExperienceViewSet(viewsets.ModelViewSet, DeleteBulkMixing):

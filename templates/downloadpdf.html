@@ -1,0 +1,21 @@
+{% load i18n %}
+
+<h2> {% trans 'Curriculum Vitae' %} </h2>
+
+<p> {% trans 'Nombre:' %} {{ firt_name }}  {{ last_name }} </p>
+
+<p> {% trans 'Estado Civil:' %} {% trans marital_status %} </p>
+
+<p> {% trans 'DNI:' %} {{ dni }} </p>
+
+<p> {% trans 'Fecha de Nacimiento:' %} {{ date_of_birth }} </p>
+
+<p> {% trans 'Nacionalidad:' %} {{ country_of_birth }} </p>
+
+<p> {% trans 'Código Postal:' %} {{ postal_code }} </p>
+
+<p> {% trans 'Licencia de Conducir:' %} {% trans driver_license %} </p>
+
+<p> {% trans '¿Posée vehículo propio?:' %} {% trans own_vehicle %} </p>
+
+<p> {% trans '¿Posee algún tipo de discapacidad?:' %} {% trans has_disability %} </p>

@@ -9,6 +9,7 @@ from postulant.views import (
     VideoCvView,
     PostulantViewSet,
     PostulantBiographicViewSet,
+    PostulantDownloadPdf,
     ProfessionalExperienceViewSet,
     PostulantLanguagesViewSet,
     PostulantComputerknowledgesViewSet,
@@ -91,6 +92,10 @@ urlpatterns = [
     url(
         r"^profile/biographic$",
         PostulantBiographicViewSet.as_view(get_update_post)
+    ), 
+    url(
+        r"^profile/downloadpdf$",
+        PostulantDownloadPdf.as_view()
     ),
     url(
         r"^profile/experience$",

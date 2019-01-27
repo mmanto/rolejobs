@@ -233,6 +233,10 @@ const postulantCvController = function ($q, $scope, ConfirmModal,
 
     };
 
+    $scope.downloadPdf = function () {
+        postulantApi.getDownloadPdf();
+    };
+
     $scope.savePostulantProfile = function (form) {
 
         $scope.dirtForm(form);

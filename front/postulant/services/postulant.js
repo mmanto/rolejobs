@@ -131,6 +131,13 @@ function ($q, $rootScope, ApiService, AvatarsService) {
         }
 
         /**
+         * Get DownloadPdf
+         */
+        getDownloadPdf() {
+            return this._get('profile/downloadpdf');
+        }
+
+        /**
          * Save biography
          * @param {object} data 
          * @return {Promise}
