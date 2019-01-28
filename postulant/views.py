@@ -146,6 +146,10 @@ class PostulantDownloadPdf(generic.View):
 
     def get(self, request):
         postulant = Postulant.objects.get(user=request.user)
+        try:
+            biograph = Biographic.objects.get(user=request.user).description
+        except:
+            biograph = ''
         template_path = 'downloadpdf.html'
         context = { 
             'first_name': postulant.user.first_name,
@@ -158,6 +162,8 @@ class PostulantDownloadPdf(generic.View):
             'driver_license': str( TYPE_LICENCE[postulant.driver_license][1] ) if  postulant.driver_license <= 3 else str( TYPE_LICENCE[0][1] ),
             'own_vehicle': _(u'Sí') if postulant.own_vehicle else _(u'No'),
             'has_disability': _(u'Sí') if postulant.has_disability else _(u'No'),
+            'biograph': biograph,
+            'experience': postulant.user.experience.all()
         }
         # Create a Django response object, and specify content_type as pdf
         response = HttpResponse(content_type='application/pdf' )

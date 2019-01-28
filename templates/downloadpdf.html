@@ -19,3 +19,35 @@
 <p> {% trans '¿Posée vehículo propio?:' %} {% trans own_vehicle %} </p>
 
 <p> {% trans '¿Posee algún tipo de discapacidad?:' %} {% trans has_disability %} </p>
+
+<p> {% trans 'Biografía:' %} {% trans biograph %} </p>
+
+<p> {% trans 'Experiencia Laboral:' %} 
+    
+        <table>
+                <tr>
+
+                    <th>{% trans 'Puesto:' %}</th> 
+                    <th>{% trans 'Empresa:' %}</th>
+                    <th>{% trans 'Fecha de Inicio:' %}</th> 
+                    <th>{% trans 'Fecha de Finalización:' %}</th>
+                </tr>
+
+                {% for exp in experience %}
+
+        <tr>
+            <td>{% trans exp.position.name %}</td> 
+            <td>  {% trans exp.company_name %} </td>
+            <td>{{  exp.start_date }}</td> 
+            <td>  {{  exp.end_date }} </td>
+
+        </tr>
+            
+            
+             
+        {% endfor %}
+
+            </table>
+
+   
+</p>
