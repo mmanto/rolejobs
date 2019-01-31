@@ -9797,7 +9797,9 @@ function ($q, $rootScope, ApiService, AvatarsService) {
         }, {
             key: "getDownloadPdf",
             value: function getDownloadPdf() {
-                return this._get('profile/downloadpdf');
+
+                window.open('/api/v1/postulant/profile/downloadpdf');
+                // return this._get('profile/downloadpdf');
             }
 
             /**

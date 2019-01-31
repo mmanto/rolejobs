@@ -134,7 +134,9 @@ function ($q, $rootScope, ApiService, AvatarsService) {
          * Get DownloadPdf
          */
         getDownloadPdf() {
-            return this._get('profile/downloadpdf');
+            
+            window.open('/api/v1/postulant/profile/downloadpdf')
+            // return this._get('profile/downloadpdf');
         }
 
         /**

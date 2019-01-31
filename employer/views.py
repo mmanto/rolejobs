@@ -51,7 +51,7 @@ class Signup(generics.GenericAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
-        email = Spool.objects.filter(to=request.data['email'], sent=False)[-1]
+        email = Spool.objects.filter(to=request.data['email'], sent=False).last()
         email_from = settings.EMAIL_HOST_USER
         recipient_list = [request.data['email'], ]
         send_mail(email.subject, email.content, email_from, recipient_list, html_message=email.content)

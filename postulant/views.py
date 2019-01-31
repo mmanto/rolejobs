@@ -78,6 +78,7 @@ from rolejobs_api.generics import StandarPagination
 from django.template import Context
 from django.template.loader import get_template
 from xhtml2pdf import pisa
+from io import BytesIO
 
 class Signup(generics.GenericAPIView):
     """Signup new postulant"""
@@ -166,15 +167,19 @@ class PostulantDownloadPdf(generic.View):
             'experience': postulant.user.experience.all()
         }
         # Create a Django response object, and specify content_type as pdf
-        response = HttpResponse(content_type='application/pdf' )
-        response['Content-Disposition'] = 'attachment; filename="cv.pdf"'
+        # response = HttpResponse(content_type='application/pdf' )
+        # response['Content-Disposition'] = 'attachment; filename="cv.pdf"'
         # find the template and render it.
         template = get_template(template_path)
         html = template.render(Context(context))
         # create a pdf
-        pisaStatus = pisa.CreatePDF(html, dest=response)
+        # pisaStatus = pisa.CreatePDF(html, dest=response)
+        response = BytesIO()
+        pdf = pisa.pisaDocument(BytesIO(html.encode("UTF-8")), response)
+
         # if error then show some funy view
-        return response
+        # return response
+        return HttpResponse(response.getvalue(), content_type='application/pdf')
 
 
 class ProfessionalExperienceViewSet(viewsets.ModelViewSet, DeleteBulkMixing):

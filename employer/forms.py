@@ -102,16 +102,16 @@ class SignupForm(forms.Form):
         max_length=100)
 
     
-    #sector_empresarial = forms.CharField(
-    #    required=True,
-    #    max_length=100,
-    #    widget=forms.TextInput(
-    #        attrs={
-    #            'placeholder': _('Sector empresarial')}))
+    sector_empresarial = forms.CharField(
+       required=True,
+       max_length=100,
+       widget=forms.TextInput(
+           attrs={
+               'placeholder': _('Sector empresarial')}))
 
-    sector_empresarial = forms.ChoiceField(
-       choices=TYPE_COMPANY, widget=forms.RadioSelect()
-       )
+    # sector_empresarial = forms.ChoiceField(
+    #    choices=TYPE_COMPANY, widget=forms.RadioSelect()
+    #    )
 
     workforce = forms.IntegerField(
         required=True,
