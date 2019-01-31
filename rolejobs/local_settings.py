@@ -36,14 +36,14 @@ ADMINS = (
 
 EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
 MAILER_EMAIL_BACKEND = EMAIL_BACKEND
-EMAIL_HOST = 'correo.matcom.uh.cu' #EMAIL_HOST = 'mail.rolejobs.net'
-EMAIL_HOST_USER = 'ismel@matcom.uh.cu' #EMAIL_HOST_USER = 'noreply@rolejobs.net'
-EMAIL_HOST_PASSWORD = 'lemsywaylocuramix' #EMAIL_HOST_PASSWORD = 'fW_@elegOHn7'
-EMAIL_PORT = 465 #EMAIL_PORT = 465
-#EMAIL_USE_TLS = True
-#EMAIL_FROM = 'RoleJobs <noreply@rolejobs.com>'
+EMAIL_HOST = 'mail.rolejobs.net'
+EMAIL_HOST_USER = 'noreply@rolejobs.net'
+EMAIL_HOST_PASSWORD = 'fW_@elegOHn7'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = True
+EMAIL_FROM = 'RoleJobs <noreply@rolejobs.com>'
 
-#CONTACT_EMAIL = "oscar@gentisoft.com"
+CONTACT_EMAIL = "oscar@gentisoft.com"
 
 FORGOT_EMAIL_EXPIRE_TIME = 7  # 7 dias
 
