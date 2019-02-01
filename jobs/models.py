@@ -197,6 +197,12 @@ class Job(models.Model):
         blank=False,
         verbose_name=_('Rol'))
 
+    similar = models.ForeignKey(
+        'Job',
+        null=True,
+        blank=True,
+        verbose_name=_('Aviso similar'))
+
     position = models.ForeignKey(
         Position,
         null=False,

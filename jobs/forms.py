@@ -125,6 +125,7 @@ class NewJobForm (
             'requirement_age_min',
             'requirement_age_max',
             'requirement_driver_license',
+            'similar'
         ]
 
 
