@@ -3397,6 +3397,7 @@ module.exports = ["$stateProvider", function ($stateProvider) {
         }
     }).state("employer.main.jobedit", {
         url: "/job/:pk/edit",
+        cache: false,
         params: {
             pk: {
                 value: '-1',

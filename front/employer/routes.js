@@ -94,6 +94,7 @@ module.exports = ["$stateProvider", ($stateProvider) => {
 
             .state("employer.main.jobedit", {
                 url: "/job/:pk/edit",
+                cache: false,
                 params: {
                     pk: {
                         value: '-1',
