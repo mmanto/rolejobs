@@ -263,3 +263,37 @@ $topbar-divider-border-top: solid 1px scale-color(white, $lightness: -50%);
   padding-bottom: 0.5rem;
   margin: 0; 
 }
+
+
+.global-stats {
+
+  display: flex;
+}
+
+.global-stats > div{
+
+  flex-grow: 5;
+  text-align: center;
+  background-color: #444444;
+  border-left: 1px solid black;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.global-stats > div > p{
+
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.global-stats > div > p.stats-data{
+
+  font-size: 30px;
+  
+}
+
+.global-stats > div > p.stats-footer{
+
+  font-size: 12px;
+}
