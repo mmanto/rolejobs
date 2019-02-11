@@ -314,6 +314,42 @@ function ($q, $rootScope, ApiService, AvatarsService) {
             });
         }
 
+        /* WORKPREFERENCES SECTION */
+
+        getWorkpreferences() {
+            return this._get(`profile/workpreferences`);
+        }
+
+        getWorkpreference(id) {
+            id = parseInt(id);
+            return this._get(`profile/workpreferences/${id}`);
+        }
+
+        saveWorkpreference(data) {
+            var workpreference = parseInt(data.workpreference);
+            var path = `profile/workpreferences/${workpreference}`;
+
+            return this._get(path)
+                .then(() => {
+                    delete data.workpreference;
+                    return this._put(path, data);
+                })
+                .catch((res) => {
+                    if (res.status === 404) {
+                        return this._post(`profile/workpreferences`, data);
+                    }
+
+                    throw res;
+                });
+                
+        }
+
+        deleteWorkpreferences(ids) {
+            return this._delete(`profile/workpreferences`, {
+                ids: ids.join(',')
+            });
+        }
+
         changeAvatar(data) {
             return AvatarsService.uploadProfile(data);
         }

@@ -14,6 +14,7 @@ from postulant.views import (
     PostulantLanguagesViewSet,
     PostulantComputerknowledgesViewSet,
     PostulantAdditionalknowledgesViewSet,
+    PostulantWorkpreferencesViewSet,
     PostulantCvFormView,
     VideoCvFormView,
     NewProfieccionalExperienceFormView,
@@ -25,6 +26,7 @@ from postulant.views import (
     NewLanguageFormView,
     NewComputerknowledgeFormView,
     NewAdditionalknowledgeFormView,
+    NewWorkpreferenceFormView,
     NewCertificationFormView,
     CompletedProfileViewSet,
     CVRequestPostulantViewSet,
@@ -138,6 +140,14 @@ urlpatterns = [
         PostulantAdditionalknowledgesViewSet.as_view(update_delete)
     ),
     url(
+        r"^profile/workpreferences$",
+        PostulantWorkpreferencesViewSet.as_view(get_post_bulkdelete)
+    ),
+    url(
+        r"^profile/workpreferences/(?P<workpreference>[0-9]+)$",
+        PostulantWorkpreferencesViewSet.as_view(update_delete)
+    ),
+    url(
         r"^profile/roles/?$",
         PostulantRolesViewSet.as_view({
             'get': 'list',
@@ -206,6 +216,10 @@ urlpatterns = [
     url(
         r"^templates/add_additionalknowledge.html$",
         NewAdditionalknowledgeFormView.as_view()
+    ),
+    url(
+        r"^templates/add_workpreference.html$",
+        NewWorkpreferenceFormView.as_view()
     ),
     url(
         r"^templates/add_certification.html",

@@ -18,9 +18,11 @@ from education.models import (
     Language,
     Computerknowledge,
     Additionalknowledge,
+    Workpreference,
     UserLanguages,
     UserComputerknowledge,
     UserAdditionalknowledge,
+    UserWorkpreference,
     UserCertification
 )
 
@@ -62,6 +64,19 @@ def get_additionalknowledges():
     choices = []
     try:
         choices = [(l.id, l.name) for l in Additionalknowledge.objects.all()]
+    except OperationalError:
+        return []
+    except ProgrammingError:
+        return []
+    except Exception, e:
+        raise e
+    else:
+        return choices
+
+def get_workpreferences():
+    choices = []
+    try:
+        choices = [(l.id, l.name) for l in Workpreference.objects.all()]
     except OperationalError:
         return []
     except ProgrammingError:
@@ -341,6 +356,32 @@ class NewAdditionalknowledgeForm(
 
     class Meta:
         model = UserAdditionalknowledge
+        exclude = ('user',)
+
+class NewWorkpreferenceForm(
+    NgFormValidationMixin,
+    NgModelFormMixin,
+    NgModelForm
+):
+    """Form for add new workpreference"""
+
+    form_name = 'workpreferenceForm'
+    scope_prefix = 'workpreferenceData'
+
+    workpreference = forms.ChoiceField(
+        choices=get_workpreferences(),
+        widget=forms.Select(
+            attrs={
+                'ng-readonly': "blockWorkpreference"
+            }
+        ))
+
+    def __init__(self, *args, **kwargs):
+        kwargs.update(error_class=NgErrorList)
+        super(NewWorkpreferenceForm, self).__init__(*args, **kwargs)
+
+    class Meta:
+        model = UserWorkpreference
         exclude = ('user',)
 
 class NewCertificationForm(

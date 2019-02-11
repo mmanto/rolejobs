@@ -12,6 +12,7 @@ const angular = require("angular");
 const postulantCvController = function ($q, $scope, ConfirmModal,
       PostulantService, NewPEModal, NewEducationModal, NewLangModal,
       NewComputerknowledgeModal, NewAdditionalknowledgeModal,
+      NewWorkpreferenceModal,
                                           CroppterModal, loggedUser) {
 
     const OWN_VEHICLE = "own_vehicle";
@@ -150,6 +151,15 @@ const postulantCvController = function ($q, $scope, ConfirmModal,
         }
     };
 
+    $scope.workpreferencesTableSchema = {
+        $orderBy: "workpreferences_text",
+        $trackBy: "workpreference",
+
+        "workpreferences_text": {
+            title: "Preferencia Laboral"
+        }
+    };
+
     $scope.experiences = [];
 
     $scope.educations = [];
@@ -160,12 +170,15 @@ const postulantCvController = function ($q, $scope, ConfirmModal,
 
     $scope.additionalknowledges = [];
 
+    $scope.workpreferences = [];
+
     $scope.selecteds = {
         experiences: [],
         educations: [],
         languages: [],
         computerknowledges: [],
-        additionalknowledges: []
+        additionalknowledges: [],
+        workpreferences: []
     };
 
     $scope.apiErrors = {
@@ -453,6 +466,36 @@ const postulantCvController = function ($q, $scope, ConfirmModal,
 
     };
 
+    $scope.addWorkpreference = function(workpreference = null) {
+        var modal = NewWorkpreferenceModal.open(workpreference);
+        modal.result.then(() => {
+            $scope.updateWorkpreferences();
+            $scope.updateCompletedProfileInfo();
+        });
+    };
+
+    $scope.deleteWorkpreferences = function () {
+        ConfirmModal.open("Está realmente seguro?")
+            .then(() => {
+
+                if (!$scope.selecteds.workpreferences.length) {
+                    return;
+                }
+
+                var ids = $scope.selecteds.workpreferences.map(i => i.workpreference);
+
+                postulantApi.deleteWorkpreferences(ids)
+                    .then(() => {
+                        $scope.updateWorkpreferences();
+                    })
+                    .catch((res) => {
+                        console.log("Error", res);
+                    });
+
+            });
+
+    };
+
     $scope.updateInfo = function () {
         $scope.info = {
             "complete_name": `${$scope.postulantData[FIRST_NAME]}` + 
@@ -474,6 +517,7 @@ const postulantCvController = function ($q, $scope, ConfirmModal,
                 $scope.languages = data.languages;
                 $scope.computerknowledge = data.computerknowledge;
                 $scope.additionalknowledge = data.additionalknowledge;
+                $scope.workpreference = data.workpreference;
                 $scope.rolesData = data.roles.map(x => x.pk);
                 $scope.completedProfileInfo = data[COMPLETED_INFO];
 
@@ -483,6 +527,7 @@ const postulantCvController = function ($q, $scope, ConfirmModal,
                 delete data.languages;
                 delete data.computerknowledge;
                 delete data.additionalknowledge;
+                delete data.workpreference;
                 delete data.roles;
                 delete data[COMPLETED_INFO];
 
@@ -518,6 +563,7 @@ const postulantCvController = function ($q, $scope, ConfirmModal,
                     $scope.updateLanguages(),
                     $scope.updateComputerknowledges(),
                     $scope.updateAdditionalknowledges(),
+                    $scope.updateWorkpreferences(),
                     $scope.updateRoles(),
                     $scope.updateCompletedProfileInfo()
                 ]);
@@ -589,6 +635,17 @@ const postulantCvController = function ($q, $scope, ConfirmModal,
     
     };
 
+    $scope.updateWorkpreferences = function () {
+
+        return postulantApi.getWorkpreferences()
+            .then((workpreferences) => {
+                $scope.selecteds.workpreferences = [];
+                $scope.workpreferences = workpreferences;
+                $scope.updateInfo();
+            });
+    
+    };
+
     $scope.updateRoles = function () {
         return postulantApi.getRoles()
             .then((roles) => {
@@ -624,6 +681,7 @@ module.exports = [
     "PostulantNewLanguageModal",
     "PostulantNewComputerknowledgeModal",
     "PostulantNewAdditionalknowledgeModal",
+    "PostulantNewWorkpreferenceModal",
     "CroppterModal",
     "loggedUser",
     postulantCvController

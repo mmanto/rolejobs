@@ -16,7 +16,7 @@ from rest_framework.decorators import detail_route
 from utils.views import DeleteBulkMixing
 from utils.serializers import SlugedItemSerializer, PkListSerializer
 from accounts.permissions import IsPostulant
-from education.models import UserEducation, UserLanguages, UserComputerknowledge, UserAdditionalknowledge
+from education.models import UserEducation, UserLanguages, UserComputerknowledge, UserAdditionalknowledge, UserWorkpreference
 from jobs.models import Role, JobPostulation
 from jobs.views import OwnJobPostulationsViewSet
 from jobs.serializers import PostulantPostulationDetailSerializer
@@ -46,6 +46,7 @@ from postulant.forms import (
     NewLanguageForm,
     NewComputerknowledgeForm,
     NewAdditionalknowledgeForm,
+    NewWorkpreferenceForm,
     NewCertificationForm
 )
 
@@ -61,6 +62,8 @@ from postulant.serializers import (
     PostulantComputerknowledgesDetailSerializer,
     PostulantAdditionalknowledgesSerializer,
     PostulantAdditionalknowledgesDetailSerializer,
+    PostulantWorkpreferencesSerializer,
+    PostulantWorkpreferencesDetailSerializer,
     PostulationsListSerializer,
     # CompletedItemsSerializer,
     CompletedProfileSerializer,
@@ -308,6 +311,39 @@ class PostulantAdditionalknowledgesViewSet(viewsets.ModelViewSet, DeleteBulkMixi
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
+class PostulantWorkpreferencesViewSet(viewsets.ModelViewSet, DeleteBulkMixing):
+
+    table_pk = "workpreference"
+    lookup_field = "workpreference"
+    permission_classes = (IsAuthenticated,
+                          IsPostulant)
+
+    def get_serializer_class(self):
+        if self.request.method == "GET" or self.request.method == "POST":
+            return PostulantWorkpreferencesSerializer
+        else:
+            return PostulantWorkpreferencesDetailSerializer
+
+    def get_queryset(self):
+        res = UserWorkpreference.objects.filter(
+            user=self.request.user)
+        print(res)
+        return res
+
+    def get_object(self):
+        queryset = self.get_queryset()
+        pk = self.kwargs.get(self.lookup_field, None)
+
+        if pk is None:
+            return super(PostulantWorkpreferencesViewSet, self).get_object()
+        obj = get_object_or_404(queryset, workpreference=pk)
+        self.check_object_permissions(self.request, obj)
+
+        return obj
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
 class PostulantRolesViewSet(viewsets.ModelViewSet):
     """Postulant roles"""
 
@@ -501,6 +537,10 @@ class NewComputerknowledgeFormView(generic.FormView):
 class NewAdditionalknowledgeFormView(generic.FormView):
     template_name = 'postulant_new_additionalknowledge.html'
     form_class = NewAdditionalknowledgeForm
+
+class NewWorkpreferenceFormView(generic.FormView):
+    template_name = 'postulant_new_workpreference.html'
+    form_class = NewWorkpreferenceForm
 
 
 class NewCertificationFormView(generic.FormView):

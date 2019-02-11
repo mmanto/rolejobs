@@ -14,6 +14,7 @@ from education.models import (
     UserLanguages,
     UserComputerknowledge,
     UserAdditionalknowledge,
+    UserWorkpreference,
     UserCertification
 )
 
@@ -505,6 +506,16 @@ class PostulantAdditionalknowledgesSerializer(serializers.ModelSerializer):
         model = UserAdditionalknowledge
         fields = ('additionalknowledge', 'additionalknowledge_text', 'description')
 
+class PostulantWorkpreferencesSerializer(serializers.ModelSerializer):
+    """Postulant workpreference serializer"""
+
+    workpreference_text = serializers.ReadOnlyField(
+        source="workpreference.name")
+
+    class Meta:
+        model = UserWorkpreference
+        fields = ('workpreference', 'workpreference_text')
+
 
 class PostulantLanguagesDetailSerializer(serializers.ModelSerializer):
 
@@ -539,6 +550,18 @@ class PostulantAdditionalknowledgesDetailSerializer(serializers.ModelSerializer)
     class Meta:
         model = UserAdditionalknowledge
         fields = ('additionalknowledge_text', 'description', 'id')
+
+
+class PostulantWorkpreferencesDetailSerializer(serializers.ModelSerializer):
+
+    id = serializers.ReadOnlyField(),
+
+    workpreference_text = serializers.ReadOnlyField(
+        source="workpreference.name")
+
+    class Meta:
+        model = UserWorkpreference
+        fields = ('workpreference_text', 'id')
 
 
 # Rewriter here for a cross-dependencies issue

@@ -11,7 +11,7 @@ from accounts.models import User
 
 from cities_light.models import Country
 
-from postulant.choices import COMPLETION_EDUCATION, COMPLETION_LANGUAGES, COMPLETION_COMPUTERKNOWLEDGE, COMPLETION_ADDITIONALKNOWLEDGES
+from postulant.choices import COMPLETION_EDUCATION, COMPLETION_LANGUAGES, COMPLETION_COMPUTERKNOWLEDGE, COMPLETION_ADDITIONALKNOWLEDGES, COMPLETION_WORKPREFERENCE
 
 from education.choices import EDUCATION_GRADES,CERTIFICATIONS
 
@@ -230,6 +230,10 @@ class Additionalknowledge(SimpleItemModel):
     """Additionalknowledges"""
     pass
 
+class Workpreference(SimpleItemModel):
+    """Workpreferences"""
+    pass
+
 
 class UserLanguages(models.Model):
     """Languages of users"""
@@ -332,6 +336,34 @@ class UserAdditionalknowledge(models.Model):
     def save(self, *args, **kwargs):
         self.user.set_complete(COMPLETION_ADDITIONALKNOWLEDGES)
         super(UserAdditionalknowledge, self).save(*args, **kwargs)
+
+    def __unicode__(self):
+        return u"%s" % self.name
+
+class UserWorkpreference(models.Model):
+    """Workpreferences of users"""
+
+    user = models.ForeignKey(
+        User,
+        null=False,
+        blank=False,
+        related_name="workpreferences")
+
+    workpreference = models.ForeignKey(
+        Workpreference,
+        null=False,
+        blank=False,
+        verbose_name=_(u"Preferencia laboral"))
+
+    
+    @property
+    def name(self):
+        return u"%s" % self.workpreference.name
+
+
+    def save(self, *args, **kwargs):
+        self.user.set_complete(COMPLETION_WORKPREFERENCE)
+        super(UserWorkpreference, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return u"%s" % self.name

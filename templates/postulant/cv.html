@@ -312,6 +312,47 @@
 
         </div>
 
+        <!-- WORK PREFERENCES -->
+
+        <div class="row">
+
+          <div class="large-12 columns container-section">
+
+            <div class="row">
+              <h5>{{ "Preferencias laborales" | translate }}</h5>
+            </div>
+
+            <div class="row">
+
+              <div ng-if="!workpreferences.length" class="text-center">
+              </div>
+
+              <alert ng-if="!workpreferences.length" type="'info'">
+                {{  "No hay datos de referencia cargados" | translate }}
+              </alert>
+
+              <div 
+                ng-if="workpreferences.length"
+                rj-table-collection
+                collection-schema="workpreferencesTableSchema"
+                collection-data="workpreferences"
+                selectable
+                ng-model="selecteds.workpreferences"
+                on-click="addWorkpreference($item)"
+              ></div>
+
+            </div>
+
+            <div class="row form-buttons text-center">
+              <a ng-show="selecteds.workpreferences.length" ng-click="deleteWorkpreferences()" class="rj-button lined">{{ "Borrar seleccionados" | translate }}</a>
+              <a ng-click="addWorkpreference()" class="rj-button">{{ "Agregar" | translate }}</a>
+            </div>
+
+          </div>
+
+        </div>
+
+
         <!-- Roles -->
 
         <div class="row">
