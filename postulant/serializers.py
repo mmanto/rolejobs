@@ -486,6 +486,7 @@ class PostulantLanguagesSerializer(serializers.ModelSerializer):
         model = UserLanguages
         fields = ('language', 'language_text', 'level')
 
+
 class PostulantComputerknowledgesSerializer(serializers.ModelSerializer):
     """Postulant computerknowledge serializer"""
 
@@ -675,6 +676,18 @@ class CompleteProfileSerializer(PostulantSerializer):
         read_only=True,
         many=True)
 
+    computerknowledges = PostulantComputerknowledgesSerializer(
+        read_only=True,
+        many=True)
+
+    additionalknowledges = PostulantAdditionalknowledgesSerializer(
+        read_only=True,
+        many=True)
+
+    workpreferences = PostulantWorkpreferencesSerializer(
+        read_only=True,
+        many=True)
+
     completed_info = CompletedProfileSerializer(
         read_only=True)
 
@@ -714,6 +727,9 @@ class CompleteProfileSerializer(PostulantSerializer):
             'experience',
             'education',
             'languages',
+            'computerknowledges',
+            'additionalknowledges',
+            'workpreferences',
             'roles',
             # generated
             'completed_info'

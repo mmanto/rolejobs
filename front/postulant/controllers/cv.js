@@ -152,10 +152,10 @@ const postulantCvController = function ($q, $scope, ConfirmModal,
     };
 
     $scope.workpreferencesTableSchema = {
-        $orderBy: "workpreferences_text",
+        $orderBy: "workpreference_text",
         $trackBy: "workpreference",
 
-        "workpreferences_text": {
+        "workpreference_text": {
             title: "Preferencia Laboral"
         }
     };
@@ -515,6 +515,10 @@ const postulantCvController = function ($q, $scope, ConfirmModal,
                 $scope.experiences = data.experience;
                 $scope.educations = data.education;
                 $scope.languages = data.languages;
+                $scope.computerknowledges = data.computerknowledges;
+                $scope.additionalknowledges = data.additionalknowledges;
+                $scope.workpreferences = data.workpreferences;
+
                 $scope.computerknowledge = data.computerknowledge;
                 $scope.additionalknowledge = data.additionalknowledge;
                 $scope.workpreference = data.workpreference;
@@ -525,6 +529,10 @@ const postulantCvController = function ($q, $scope, ConfirmModal,
                 delete data.experience;
                 delete data.education;
                 delete data.languages;
+                delete data.computerknowledges;
+                delete data.additionalknowledges;
+                delete data.workpreferences;
+
                 delete data.computerknowledge;
                 delete data.additionalknowledge;
                 delete data.workpreference;

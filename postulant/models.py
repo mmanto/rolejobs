@@ -132,6 +132,18 @@ class Postulant(Profile):
         return self.user.languages
 
     @property
+    def computerknowledges(self):
+        return self.user.computerknowledges
+    
+    @property
+    def additionalknowledges(self):
+        return self.user.additionalknowledges
+
+    @property
+    def workpreferences(self):
+        return self.user.workpreferences
+
+    @property
     def max_education(self):
         max_education = self.education.all().aggregate(models.Max("level"))
         return max_education["level__max"]
