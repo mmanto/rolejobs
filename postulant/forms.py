@@ -151,6 +151,12 @@ class VideoCvForm(forms.ModelForm):
         model = Postulant
         fields = ['video_cv']
 
+
+class DocCvForm(forms.ModelForm):
+    class Meta:
+        model = Postulant
+        fields = ['doc_cv']
+
 class NewProfieccionalExperienceForm(
     NgFormValidationMixin,
     NgModelFormMixin,

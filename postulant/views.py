@@ -40,6 +40,7 @@ from postulant.choices import CV_COMPLETION, TYPE_LICENCE
 from postulant.forms import (
     PostulantCvForm,
     VideoCvForm,
+    DocCvForm,
     NewProfieccionalExperienceForm,
     NewEducationForm,
     ExperienceReferenceForm,
@@ -113,6 +114,14 @@ class VideoCvView(generic.View):
     def post(self, request):
         postulant = Postulant.objects.get(user= request.user)
         postulant.video_cv = request.FILES['video_cv']
+        postulant.save()
+        return HttpResponseRedirect('/postulant/cv')
+
+class DocCvView(generic.View):
+    
+    def post(self, request):
+        postulant = Postulant.objects.get(user= request.user)
+        postulant.doc_cv = request.FILES['doc_cv']
         postulant.save()
         return HttpResponseRedirect('/postulant/cv')
 
@@ -509,6 +518,9 @@ class VideoCvFormView(generic.FormView):
     template_name = 'video_cv_form.html'
     form_class = VideoCvForm
 
+class DocCvFormView(generic.FormView):
+    template_name = 'doc_cv_form.html'
+    form_class = DocCvForm
 
 class NewProfieccionalExperienceFormView(generic.FormView):
     template_name = 'postulant_new_pe.html'

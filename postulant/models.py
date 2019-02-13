@@ -99,6 +99,11 @@ class Postulant(Profile):
         null=True,
         verbose_name=_('Video CV'))
 
+    doc_cv = models.FileField(
+        upload_to='docs/',
+        null=True,
+        verbose_name=_('Doc CV'))
+
     @property
     def is_postulant(self):
         return True

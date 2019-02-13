@@ -1,0 +1,21 @@
+{% load i18n %}
+
+
+<div class="large-12 columns container_form">
+    <form enctype="multipart/form-data" method="POST" action="{% url 'doc_cv_url'  %}">
+
+        {% csrf_token  %}
+
+        {{ form.as_p }}
+
+        <div class="row form-buttons text-center">
+            <input 
+                type="submit"
+                value="{% trans "Guardar" %}"
+             class="rj-button" 
+             />
+               
+        </div>
+
+    </form>
+</div>
