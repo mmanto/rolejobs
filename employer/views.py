@@ -37,6 +37,8 @@ from serializers import (
 from models import Employer, CVRequest, CVTags
 from forms import NgSignupForm, EmployerDataForm
 
+from postulant.models import Postulant
+
 
 logger = logging.getLogger(__name__)
 
@@ -214,6 +216,20 @@ class Companies(generic.View):
     def get(self, request):
         serializer = EmployerSerializer(Employer.objects.all(), many=True)
         return JsonResponse(serializer.data, safe=False)
+
+class Globalstats(generic.View):
+    
+    def get(self, request):
+        # serializer = EmployerSerializer(Employer.objects.all(), many=True)
+        # return JsonResponse(serializer.data, safe=False)
+        return JsonResponse( {
+
+            'curriculums': len(Postulant.objects.all()),
+                'administration': '-',
+                'sales': '-',
+                'engineering': '-',
+                'managers': '-'
+                })
 
 
 ##########

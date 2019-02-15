@@ -15,6 +15,7 @@ const employerJobsController = require("./controllers/jobs");
 const employerMessagesController = require("./controllers/messages");
 const employerCoursesController = require("./controllers/courses");
 const employerPanelController = require("./controllers/panel");
+const employerHomeController = require("./controllers/home");
 const jobDetailController = require("./controllers/job");
 const courseDetailController = require("./controllers/course");
 const jobPostulationController = require("./controllers/jobpostulation");
@@ -29,6 +30,7 @@ module.exports = angular.module("RoleJob.Employer", [
     .controller("EmployerMessagesCtl", employerMessagesController)
     .controller("EmployerCoursesCtl", employerCoursesController)
     .controller("EmployerPanelCtl", employerPanelController)
+    .controller("EmployerHomeCtl", employerHomeController)
     .controller("EmployerJobDetailCtl", jobDetailController)
     .controller("EmployerCourseDetailCtl", courseDetailController)
     .controller("EmployerJobPostulationCtl", jobPostulationController)

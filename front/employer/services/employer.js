@@ -94,11 +94,26 @@ const EmployerService = function ($q, Apiv1Service) {
    
     };
 
+    const getGlobalStats = function() {
+        const api = Apiv1Service.getInstance();
+
+        return api.get(`employer/globalstats`)
+            .then((result) => {
+                if (result.data) {
+                    return result.data;
+                } else {
+                    throw new Error("Inválida response data");
+                }
+            });
+   
+    };
+
     return {
         getMe,
         saveMe,
         signup,
-        getCompanies
+        getCompanies,
+        getGlobalStats
     };
 
     

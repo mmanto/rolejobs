@@ -34,6 +34,10 @@ urlpatterns = [
         views.Companies.as_view()
     ),
     url(
+        r"^globalstats$",
+        views.Globalstats.as_view()
+    ),
+    url(
         r"^signup$",
         views.Signup.as_view(),
         name="employer_signup"

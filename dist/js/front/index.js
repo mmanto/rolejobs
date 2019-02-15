@@ -259,7 +259,7 @@ var resetPasswordController = require("./controllers/resetpassword");
 
 module.exports = angular.module("RoleJobs.accounts", [postulantModule.name]).config(routes).factory("AccountService", accountService).factory("AuthService", authService).factory("ChangePasswordModal", changePasswordModal).controller("SignupCtl", signupController).controller("LoginCtl", loginController).controller("LogoutCtl", logoutController).controller("ConfirmCtl", confirmationController).controller("ForgotPasswordCtl", forgotController).controller("ResetPasswordCtl", resetPasswordController);
 
-},{"../postulant":95,"./controllers/confirm":1,"./controllers/forgot":2,"./controllers/login":3,"./controllers/logout":4,"./controllers/resetpassword":5,"./controllers/signup":6,"./modals/changepassword":8,"./routes":9,"./services/account":10,"./services/auth":11,"angular":135}],8:[function(require,module,exports){
+},{"../postulant":96,"./controllers/confirm":1,"./controllers/forgot":2,"./controllers/login":3,"./controllers/logout":4,"./controllers/resetpassword":5,"./controllers/signup":6,"./modals/changepassword":8,"./routes":9,"./services/account":10,"./services/auth":11,"angular":136}],8:[function(require,module,exports){
 "use strict";
 
 /**
@@ -442,7 +442,7 @@ module.exports = ["$stateProvider", function ($stateProvider) {
     });
 }];
 
-},{"account/confirmation.html":149,"account/confirmationfail.html":150,"account/confirmed.html":151,"account/forgot_password.html":152,"account/login.html":153,"account/logout.html":154,"account/reset_password.html":155,"account/signup.html":156,"account/verification_sent.html":157}],10:[function(require,module,exports){
+},{"account/confirmation.html":150,"account/confirmationfail.html":151,"account/confirmed.html":152,"account/forgot_password.html":153,"account/login.html":154,"account/logout.html":155,"account/reset_password.html":156,"account/signup.html":157,"account/verification_sent.html":158}],10:[function(require,module,exports){
 "use strict";
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -629,7 +629,7 @@ var collectionService = require("./services/collection");
 
 module.exports = angular.module("RoleJobs.apiv1", []).factory("Apiv1Service", apiv1Service).factory("RecordSet", recordSetService).factory("CollectionService", collectionService);
 
-},{"./services/apiv1":13,"./services/collection":14,"./services/recordset":15,"angular":135}],13:[function(require,module,exports){
+},{"./services/apiv1":13,"./services/collection":14,"./services/recordset":15,"angular":136}],13:[function(require,module,exports){
 "use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -845,7 +845,7 @@ function ($q, $http) {
     return ApiV1;
 }];
 
-},{"underscore":148}],14:[function(require,module,exports){
+},{"underscore":149}],14:[function(require,module,exports){
 "use strict";
 
 /**
@@ -1079,7 +1079,7 @@ var factory = function factory(Apiv1Service, RecordSet) {
 
 module.exports = ["Apiv1Service", "RecordSet", factory];
 
-},{"angular":135}],15:[function(require,module,exports){
+},{"angular":136}],15:[function(require,module,exports){
 "use strict";
 
 /**
@@ -1212,7 +1212,7 @@ var profileAvatarFactory = require("./directives/avatar");
 
 module.exports = angular.module("RoleJob.Avatars", []).factory("AvatarsService", avatarsService).directive("profileAvatar", profileAvatarFactory);
 
-},{"./directives/avatar":16,"./services/avatars":18,"angular":135}],18:[function(require,module,exports){
+},{"./directives/avatar":16,"./services/avatars":18,"angular":136}],18:[function(require,module,exports){
 "use strict";
 
 /**
@@ -1610,7 +1610,7 @@ var factory = function factory($q, $scope, $state, $stateParams, $modal, Confirm
 
 module.exports = ["$q", "$scope", "$state", "$stateParams", "$modal", "ConfirmModal", "AlertModal", "CoursesService", "me", factory];
 
-},{"angular":135,"courses/course_cancel.html":159}],22:[function(require,module,exports){
+},{"angular":136,"courses/course_cancel.html":160}],22:[function(require,module,exports){
 (function (__filename){
 "use strict";
 
@@ -1650,7 +1650,7 @@ module.exports = ["$scope", "FormHelper", "courseData", factory];
 
 }).call(this,"/front/courses/controllers/postulate.js")
 
-},{"angular":135}],23:[function(require,module,exports){
+},{"angular":136}],23:[function(require,module,exports){
 "use strict";
 
 var courseTemplate = require("courses/course.html");
@@ -1676,7 +1676,7 @@ var courseItem = function courseItem() {
 
 module.exports = courseItem;
 
-},{"courses/course.html":158}],24:[function(require,module,exports){
+},{"courses/course.html":159}],24:[function(require,module,exports){
 "use strict";
 
 /**
@@ -1698,7 +1698,7 @@ var postulateController = require("./controllers/postulate");
 
 module.exports = angular.module("RoleJob.Courses", []).config(routes).directive("courseItem", courseItemDirective).factory("CoursesService", coursesService).factory("CoursesCollections", coursesCollectionsService).factory("PostulationsCoursesService", postulationsCoursesService).controller("NewCourseCtl", newCourseController).controller("CoursesCtl", coursesController).controller("CourseDetailCtl", detailController).controller("CoursePostulateCtl", postulateController);
 
-},{"./controllers/courses":19,"./controllers/detail":20,"./controllers/newcourse":21,"./controllers/postulate":22,"./directives/course":23,"./routes":25,"./services/collections":26,"./services/courses":27,"./services/postulations":28,"angular":135}],25:[function(require,module,exports){
+},{"./controllers/courses":19,"./controllers/detail":20,"./controllers/newcourse":21,"./controllers/postulate":22,"./directives/course":23,"./routes":25,"./services/collections":26,"./services/courses":27,"./services/postulations":28,"angular":136}],25:[function(require,module,exports){
 "use strict";
 
 var courseDetailTemplate = require("courses/course_detail.html");
@@ -1742,7 +1742,7 @@ module.exports = ["$stateProvider", function ($stateProvider) {
     });
 }];
 
-},{"courses/course_detail.html":160,"courses/course_postulate_front.html":162}],26:[function(require,module,exports){
+},{"courses/course_detail.html":161,"courses/course_postulate_front.html":163}],26:[function(require,module,exports){
 "use strict";
 
 /**
@@ -2204,7 +2204,7 @@ var factory = function factory($timeout) {
 
 module.exports = ["$timeout", factory];
 
-},{"angular":135,"jquery":141}],30:[function(require,module,exports){
+},{"angular":136,"jquery":142}],30:[function(require,module,exports){
 "use strict";
 
 /**
@@ -2220,7 +2220,7 @@ var croppterModal = require("./modals/croppter");
 
 module.exports = angular.module("Cropper", []).directive("imageCropper", imageCropper).factory("CroppterModal", croppterModal);
 
-},{"./directives/imagecropper":29,"./modals/croppter":31,"angular":135,"cropit":136}],31:[function(require,module,exports){
+},{"./directives/imagecropper":29,"./modals/croppter":31,"angular":136,"cropit":137}],31:[function(require,module,exports){
 "use strict";
 
 /**
@@ -2285,7 +2285,7 @@ var factory = function factory($modal) {
 
 module.exports = ["$modal", factory];
 
-},{"cropper/modal.html":164}],32:[function(require,module,exports){
+},{"cropper/modal.html":165}],32:[function(require,module,exports){
 "use strict";
 
 /**
@@ -2298,7 +2298,7 @@ var educationServiceFactory = require("./services/education");
 
 module.exports = angular.module("RoleJob.Education", []).factory("EducationService", educationServiceFactory);
 
-},{"./services/education":33,"angular":135}],33:[function(require,module,exports){
+},{"./services/education":33,"angular":136}],33:[function(require,module,exports){
 "use strict";
 
 /**
@@ -2605,6 +2605,31 @@ module.exports = ["$scope", employerCtl];
 },{}],38:[function(require,module,exports){
 "use strict";
 
+var angular = require("angular");
+
+/**
+ * Employer panel controller
+ * @memberof Employer 
+ * @ngdoc controller
+ * @name EmployerHomeCtl
+ */
+
+var factory = function factory($q, $scope, EmployerService) {
+
+    $scope.updateGlobalStats = function () {
+        return EmployerService.getGlobalStats().then(function (globalstats) {
+            $scope.globalstats = globalstats;
+        });
+    };
+
+    $q.all([$scope.updateGlobalStats()]);
+};
+
+module.exports = ["$q", "$scope", "EmployerService", factory];
+
+},{"angular":136}],39:[function(require,module,exports){
+"use strict";
+
 /**
  * Job detail controller
  * @memberof Employer
@@ -2667,7 +2692,7 @@ var factory = function factory($q, $scope, $state, $params, JobsCollections, Pos
 
 module.exports = ["$q", "$scope", "$state", "$stateParams", "JobsCollections", "PostulationsService", factory];
 
-},{}],39:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 "use strict";
 
 /**
@@ -2790,7 +2815,7 @@ var factory = function factory($q, $scope, $params, alert, JobsCollections, Post
 
 module.exports = ["$q", "$scope", "$stateParams", "AlertModal", "JobsCollections", "PostulationsService", factory];
 
-},{}],40:[function(require,module,exports){
+},{}],41:[function(require,module,exports){
 "use strict";
 
 /**
@@ -2922,7 +2947,7 @@ var employerJobsController = function employerJobsController($scope, $state, $st
 
 module.exports = ["$scope", "$state", "$stateParams", "$filter", "ConfirmModal", "JobsService", "JobsCollections", employerJobsController];
 
-},{}],41:[function(require,module,exports){
+},{}],42:[function(require,module,exports){
 "use strict";
 
 /**
@@ -3060,7 +3085,7 @@ module.exports = ["$scope", "$state", "$stateParams", "$filter", "ConfirmModal",
 //    "MessagesCollections",
 employerMessagesController];
 
-},{}],42:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 "use strict";
 
 var angular = require("angular");
@@ -3162,7 +3187,7 @@ var factory = function factory($scope, $alert, EmployerService, CroppterModal, A
 
 module.exports = ["$scope", "AlertModal", "EmployerService", "CroppterModal", "AvatarsService", "FormHelper", factory];
 
-},{"angular":135}],43:[function(require,module,exports){
+},{"angular":136}],44:[function(require,module,exports){
 "use strict";
 
 var angular = require("angular");
@@ -3265,7 +3290,7 @@ var SignupController = function SignupController($rootScope, $scope, $state, $mo
 
 module.exports = ["$rootScope", "$scope", "$state", "$modal", "FormHelper", "EmployerService", SignupController];
 
-},{"angular":135}],44:[function(require,module,exports){
+},{"angular":136}],45:[function(require,module,exports){
 "use strict";
 
 /**
@@ -3291,7 +3316,7 @@ var factory = function factory() {
 
 module.exports = factory;
 
-},{"employer/postulant_item.html":170}],45:[function(require,module,exports){
+},{"employer/postulant_item.html":171}],46:[function(require,module,exports){
 "use strict";
 
 /**
@@ -3309,14 +3334,15 @@ var employerJobsController = require("./controllers/jobs");
 var employerMessagesController = require("./controllers/messages");
 var employerCoursesController = require("./controllers/courses");
 var employerPanelController = require("./controllers/panel");
+var employerHomeController = require("./controllers/home");
 var jobDetailController = require("./controllers/job");
 var courseDetailController = require("./controllers/course");
 var jobPostulationController = require("./controllers/jobpostulation");
 var postulantItem = require("./directives/postulant");
 
-module.exports = angular.module("RoleJob.Employer", []).factory("EmployerService", employerService).controller("EmployerCtl", employerCtl).controller("EmployerSignupCtl", signupController).controller("EmployerJobsCtl", employerJobsController).controller("EmployerMessagesCtl", employerMessagesController).controller("EmployerCoursesCtl", employerCoursesController).controller("EmployerPanelCtl", employerPanelController).controller("EmployerJobDetailCtl", jobDetailController).controller("EmployerCourseDetailCtl", courseDetailController).controller("EmployerJobPostulationCtl", jobPostulationController).directive("jobPostulantItem", postulantItem).config(routes);
+module.exports = angular.module("RoleJob.Employer", []).factory("EmployerService", employerService).controller("EmployerCtl", employerCtl).controller("EmployerSignupCtl", signupController).controller("EmployerJobsCtl", employerJobsController).controller("EmployerMessagesCtl", employerMessagesController).controller("EmployerCoursesCtl", employerCoursesController).controller("EmployerPanelCtl", employerPanelController).controller("EmployerHomeCtl", employerHomeController).controller("EmployerJobDetailCtl", jobDetailController).controller("EmployerCourseDetailCtl", courseDetailController).controller("EmployerJobPostulationCtl", jobPostulationController).directive("jobPostulantItem", postulantItem).config(routes);
 
-},{"./controllers/course":35,"./controllers/courses":36,"./controllers/employer":37,"./controllers/job":38,"./controllers/jobpostulation":39,"./controllers/jobs":40,"./controllers/messages":41,"./controllers/panel":42,"./controllers/signup":43,"./directives/postulant":44,"./routes":46,"./services/employer":47,"angular":135}],46:[function(require,module,exports){
+},{"./controllers/course":35,"./controllers/courses":36,"./controllers/employer":37,"./controllers/home":38,"./controllers/job":39,"./controllers/jobpostulation":40,"./controllers/jobs":41,"./controllers/messages":42,"./controllers/panel":43,"./controllers/signup":44,"./directives/postulant":45,"./routes":47,"./services/employer":48,"angular":136}],47:[function(require,module,exports){
 "use strict";
 
 var employerMainTemplate = require("employer/dashboard.html");
@@ -3360,7 +3386,8 @@ module.exports = ["$stateProvider", function ($stateProvider) {
         url: "/home",
         views: {
             "employer-main-main": {
-                template: employerHomeTemplate
+                template: employerHomeTemplate,
+                controller: 'EmployerHomeCtl'
             }
         }
     }).state("employer.main.panel", {
@@ -3508,7 +3535,7 @@ module.exports = ["$stateProvider", function ($stateProvider) {
     });
 }];
 
-},{"courses/course_detail_employer.html":161,"courses/course_postulation_employer.html":163,"employer/courses.html":165,"employer/dashboard.html":166,"employer/home.html":167,"employer/jobs.html":168,"employer/messages.html":169,"jobs/job_detail_employer.html":178,"jobs/job_postulation_employer.html":180}],47:[function(require,module,exports){
+},{"courses/course_detail_employer.html":162,"courses/course_postulation_employer.html":164,"employer/courses.html":166,"employer/dashboard.html":167,"employer/home.html":168,"employer/jobs.html":169,"employer/messages.html":170,"jobs/job_detail_employer.html":179,"jobs/job_postulation_employer.html":181}],48:[function(require,module,exports){
 "use strict";
 
 /**
@@ -3603,17 +3630,30 @@ var EmployerService = function EmployerService($q, Apiv1Service) {
         });
     };
 
+    var getGlobalStats = function getGlobalStats() {
+        var api = Apiv1Service.getInstance();
+
+        return api.get("employer/globalstats").then(function (result) {
+            if (result.data) {
+                return result.data;
+            } else {
+                throw new Error("Inválida response data");
+            }
+        });
+    };
+
     return {
         getMe: getMe,
         saveMe: saveMe,
         signup: signup,
-        getCompanies: getCompanies
+        getCompanies: getCompanies,
+        getGlobalStats: getGlobalStats
     };
 };
 
 module.exports = ["$q", "Apiv1Service", EmployerService];
 
-},{}],48:[function(require,module,exports){
+},{}],49:[function(require,module,exports){
 "use strict";
 
 /**
@@ -3840,7 +3880,7 @@ var factory = function factory() {
 
 module.exports = factory;
 
-},{"filters/filter.html":171}],49:[function(require,module,exports){
+},{"filters/filter.html":172}],50:[function(require,module,exports){
 "use strict";
 
 /**
@@ -3855,7 +3895,7 @@ var filterDirective = require("./directives/filter");
 
 module.exports = angular.module("RoleJob.Filters", []).factory("FilterChoicesService", choicesService).directive("rjFilter", filterDirective);
 
-},{"./directives/filter":48,"./services/choices":50,"angular":135}],50:[function(require,module,exports){
+},{"./directives/filter":49,"./services/choices":51,"angular":136}],51:[function(require,module,exports){
 "use strict";
 
 /**
@@ -3891,7 +3931,7 @@ var factory = function factory(Apiv1Service) {
 
 module.exports = ["Apiv1Service", factory];
 
-},{}],51:[function(require,module,exports){
+},{}],52:[function(require,module,exports){
 "use strict";
 
 var angular = require("angular");
@@ -4023,7 +4063,7 @@ var factory = function factory(GeoService, GeoModal) {
 
 module.exports = ["GeoService", "GeoPickerModal", factory];
 
-},{"angular":135}],52:[function(require,module,exports){
+},{"angular":136}],53:[function(require,module,exports){
 "use strict";
 
 /**
@@ -4044,7 +4084,7 @@ var geoField = require("./directives/geofield");
 
 module.exports = angular.module("RoleJob.Geo", ["ngMap", apiModule.name]).factory("GeoService", geoService).factory("GeoPickerModal", pickerModal).directive("geoField", geoField);
 
-},{"../apiv1":12,"./directives/geofield":51,"./modals/picker":53,"./services/geo":54,"angular":135,"ngmap":143}],53:[function(require,module,exports){
+},{"../apiv1":12,"./directives/geofield":52,"./modals/picker":54,"./services/geo":55,"angular":136,"ngmap":144}],54:[function(require,module,exports){
 "use strict";
 
 /**
@@ -4225,7 +4265,7 @@ var factory = function factory($q, $modal, GeoService) {
 
 module.exports = ["$q", "$modal", "GeoService", factory];
 
-},{"angular":135,"geo/picker.html":172}],54:[function(require,module,exports){
+},{"angular":136,"geo/picker.html":173}],55:[function(require,module,exports){
 "use strict";
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -4344,7 +4384,7 @@ var factory = function factory($q, Api) {
 
 module.exports = ["$q", "Apiv1Service", factory];
 
-},{"angular":135}],55:[function(require,module,exports){
+},{"angular":136}],56:[function(require,module,exports){
 "use strict";
 
 require("slick-carousel");
@@ -4384,7 +4424,7 @@ $('.responsive').slick({
     }]
 });
 
-},{"jquery":141,"slick-carousel":146}],56:[function(require,module,exports){
+},{"jquery":142,"slick-carousel":147}],57:[function(require,module,exports){
 "use strict";
 
 /**
@@ -4468,7 +4508,7 @@ var factory = function factory($scope, AlertModal, ApiService) {
 
 module.exports = ["$scope", "AlertModal", "Apiv1Service", factory];
 
-},{}],57:[function(require,module,exports){
+},{}],58:[function(require,module,exports){
 "use strict";
 
 /**
@@ -4622,7 +4662,7 @@ var factory = function factory($q, $scope, $state, $http, JobsCollections, Cours
 
 module.exports = ["$q", "$scope", "$state", "$http", "JobsCollections", "CoursesCollections", "AreasService", "RolesService", "Apiv1Service", "GeoService", "EmployerService", factory];
 
-},{}],58:[function(require,module,exports){
+},{}],59:[function(require,module,exports){
 "use strict";
 
 /**
@@ -4658,7 +4698,7 @@ var statsData = function statsData() {
 
 module.exports = statsData;
 
-},{}],59:[function(require,module,exports){
+},{}],60:[function(require,module,exports){
 "use strict";
 
 require('./tooltip');
@@ -4673,7 +4713,7 @@ var contactController = require("./controllers/contact");
 
 module.exports = angular.module('RoleJobs.home', ['ngTagsInput']).directive('statsData', statsDataDirective).controller("HomeCtl", homeController).controller("ContactCtl", contactController);
 
-},{"./company-carousel":55,"./controllers/contact":56,"./controllers/home":57,"./directives/stats":58,"./tooltip":60,"angular":135}],60:[function(require,module,exports){
+},{"./company-carousel":56,"./controllers/contact":57,"./controllers/home":58,"./directives/stats":59,"./tooltip":61,"angular":136}],61:[function(require,module,exports){
 "use strict";
 
 /*require("jquery-ui-tooltip");
@@ -4699,7 +4739,7 @@ $(() => {
 });
 */
 
-},{}],61:[function(require,module,exports){
+},{}],62:[function(require,module,exports){
 "use strict";
 
 // To fix jquery-ui-browserify
@@ -4943,7 +4983,7 @@ $(function () {
     });
 });
 
-},{"./accounts":7,"./apiv1":12,"./avatars":17,"./courses":24,"./cropper":30,"./education":32,"./employer":45,"./filters":49,"./geo":52,"./home":59,"./jobs":72,"./postulant":95,"./shims/foundation":112,"./utils":119,"angular":135,"angular-cookies":126,"angular-foundation":127,"angular-relative-date":128,"angular-relative-date/translations/es":129,"angular-sanitize":131,"angular-translate":132,"angular-ui-router":133,"home/contact.html":173,"home/home.html":174,"jquery":141,"jquery-ui-browserify":140,"ng-tags-input":142,"tests.html":198,"textangular":147}],62:[function(require,module,exports){
+},{"./accounts":7,"./apiv1":12,"./avatars":17,"./courses":24,"./cropper":30,"./education":32,"./employer":46,"./filters":50,"./geo":53,"./home":60,"./jobs":73,"./postulant":96,"./shims/foundation":113,"./utils":120,"angular":136,"angular-cookies":127,"angular-foundation":128,"angular-relative-date":129,"angular-relative-date/translations/es":130,"angular-sanitize":132,"angular-translate":133,"angular-ui-router":134,"home/contact.html":174,"home/home.html":175,"jquery":142,"jquery-ui-browserify":141,"ng-tags-input":143,"tests.html":199,"textangular":148}],63:[function(require,module,exports){
 "use strict";
 
 var angular = require("angular");
@@ -5007,7 +5047,7 @@ var factory = function factory($q, $scope, $state, $stateParams, JobsCollections
 
 module.exports = ["$q", "$scope", "$state", "$stateParams", "JobsCollections", "area", factory];
 
-},{"angular":135}],63:[function(require,module,exports){
+},{"angular":136}],64:[function(require,module,exports){
 "use strict";
 
 var angular = require("angular");
@@ -5072,7 +5112,7 @@ var factory = function factory($q, $scope, $state, $stateParams, JobsCollections
 
 module.exports = ["$q", "$scope", "$state", "$stateParams", "JobsCollections", "RolesService", factory];
 
-},{"angular":135}],64:[function(require,module,exports){
+},{"angular":136}],65:[function(require,module,exports){
 "use strict";
 
 /**
@@ -5164,7 +5204,7 @@ var factory = function factory($scope, $state, $sce, $mdDialog, AlertModal, jobD
 
 module.exports = ["$scope", "$state", "$sce", "$mdDialog", "AlertModal", "jobData", "Apiv1Service", factory];
 
-},{}],65:[function(require,module,exports){
+},{}],66:[function(require,module,exports){
 "use strict";
 
 var factory = function factory($q, $scope, AreasService, JobsService) {
@@ -5194,7 +5234,7 @@ var factory = function factory($q, $scope, AreasService, JobsService) {
 
 module.exports = ["$q", "$scope", "AreasService", "JobsService", factory];
 
-},{}],66:[function(require,module,exports){
+},{}],67:[function(require,module,exports){
 "use strict";
 
 /**
@@ -5758,7 +5798,7 @@ var factory = function factory($q, $scope, $state, $stateParams, $modal, Confirm
 
 module.exports = ["$q", "$scope", "$state", "$stateParams", "$modal", "ConfirmModal", "AlertModal", "JobsService", "AreasService", "PostulantNewLanguageModal", "ITTechModal", "QuestionModal", "EducationService", "me", factory];
 
-},{"angular":135,"jobs/job_cancel.html":176}],67:[function(require,module,exports){
+},{"angular":136,"jobs/job_cancel.html":177}],68:[function(require,module,exports){
 (function (__filename){
 "use strict";
 
@@ -5802,7 +5842,7 @@ module.exports = ["$scope", "FormHelper", "jobData", factory];
 
 }).call(this,"/front/jobs/controllers/postulate.js")
 
-},{"angular":135}],68:[function(require,module,exports){
+},{"angular":136}],69:[function(require,module,exports){
 "use strict";
 
 /**
@@ -6024,7 +6064,7 @@ var factory = function factory($q, $scope, $state, $params, JobsCollections, Fil
 
 module.exports = ["$q", "$scope", "$state", "$stateParams", "JobsCollections", "FilterChoicesService", factory];
 
-},{"angular":135}],69:[function(require,module,exports){
+},{"angular":136}],70:[function(require,module,exports){
 "use strict";
 
 var jobTemplate = require("jobs/job.html");
@@ -6077,7 +6117,7 @@ var jobItem = function jobItem() {
 
 module.exports = jobItem;
 
-},{"jobs/job.html":175}],70:[function(require,module,exports){
+},{"jobs/job.html":176}],71:[function(require,module,exports){
 "use strict";
 
 /**
@@ -6104,7 +6144,7 @@ var factory = function factory() {
 
 module.exports = factory;
 
-},{"jobs/question_item.html":184}],71:[function(require,module,exports){
+},{"jobs/question_item.html":185}],72:[function(require,module,exports){
 "use strict";
 
 /**
@@ -6189,7 +6229,7 @@ var factory = function factory() {
 
 module.exports = factory;
 
-},{"angular":135}],72:[function(require,module,exports){
+},{"angular":136}],73:[function(require,module,exports){
 "use strict";
 
 /**
@@ -6221,7 +6261,7 @@ var jobSearchsController = require("./controllers/search");
 
 module.exports = angular.module("RoleJob.Jobs", []).config(routes).directive("jobItem", jobItemDirective).directive("selectRoles", selectRoles).directive("questionItem", questionItem).factory("JobsService", jobsService).factory("JobsCollections", jobsCollectionsService).factory("AreasService", areasService).factory("TechsService", techsService).factory("RolesService", rolesService).factory("PostulationsService", postulationsService).factory("ITTechModal", techModal).factory("QuestionModal", questionModal).controller("NewJobCtl", newJobController).controller("JobsCtl", jobsController).controller("JobsByAreaCtl", byAreaController).controller("JobsByRolesCtl", byRolesController).controller("JobDetailCtl", detailController).controller("JobPostulateCtl", postulateController).controller("JobSearchCtl", jobSearchsController);
 
-},{"./controllers/byarea":62,"./controllers/byroles":63,"./controllers/detail":64,"./controllers/jobs":65,"./controllers/newjob":66,"./controllers/postulate":67,"./controllers/search":68,"./directives/job":69,"./directives/question":70,"./directives/selectroles":71,"./modals/ittech":73,"./modals/question":74,"./routes":75,"./services/areas":76,"./services/collections":77,"./services/jobs":78,"./services/postulations":79,"./services/roles":80,"./services/techs":81,"angular":135}],73:[function(require,module,exports){
+},{"./controllers/byarea":63,"./controllers/byroles":64,"./controllers/detail":65,"./controllers/jobs":66,"./controllers/newjob":67,"./controllers/postulate":68,"./controllers/search":69,"./directives/job":70,"./directives/question":71,"./directives/selectroles":72,"./modals/ittech":74,"./modals/question":75,"./routes":76,"./services/areas":77,"./services/collections":78,"./services/jobs":79,"./services/postulations":80,"./services/roles":81,"./services/techs":82,"angular":136}],74:[function(require,module,exports){
 "use strict";
 
 /**
@@ -6350,7 +6390,7 @@ var factory = function factory($modal) {
 
 module.exports = ["$modal", factory];
 
-},{"angular":135}],74:[function(require,module,exports){
+},{"angular":136}],75:[function(require,module,exports){
 "use strict";
 
 /**
@@ -6567,7 +6607,7 @@ var factory = function factory($modal) {
 
 module.exports = ["$modal", factory];
 
-},{"angular":135}],75:[function(require,module,exports){
+},{"angular":136}],76:[function(require,module,exports){
 "use strict";
 
 var jobsByAreaTemplate = require("jobs/jobs_by_area.html");
@@ -6647,7 +6687,7 @@ module.exports = ["$stateProvider", function ($stateProvider) {
     });
 }];
 
-},{"jobs/job_detail.html":177,"jobs/job_postulate_front.html":179,"jobs/jobs_by_area.html":181,"jobs/jobs_by_roles.html":182,"jobs/jobs_search.html":183}],76:[function(require,module,exports){
+},{"jobs/job_detail.html":178,"jobs/job_postulate_front.html":180,"jobs/jobs_by_area.html":182,"jobs/jobs_by_roles.html":183,"jobs/jobs_search.html":184}],77:[function(require,module,exports){
 "use strict";
 
 /**
@@ -6711,7 +6751,7 @@ var factory = function factory($q, Apiv1Service) {
 
 module.exports = ["$q", "Apiv1Service", factory];
 
-},{}],77:[function(require,module,exports){
+},{}],78:[function(require,module,exports){
 "use strict";
 
 /**
@@ -6877,7 +6917,7 @@ var factory = function factory(CollectionService) {
 
 module.exports = ["CollectionService", factory];
 
-},{}],78:[function(require,module,exports){
+},{}],79:[function(require,module,exports){
 "use strict";
 
 /**
@@ -7088,7 +7128,7 @@ var jobsService = function jobsService($q, Apiv1Service) {
 
 module.exports = ["$q", "Apiv1Service", jobsService];
 
-},{}],79:[function(require,module,exports){
+},{}],80:[function(require,module,exports){
 "use strict";
 
 /**
@@ -7165,7 +7205,7 @@ var factory = function factory(CollectionService) {
 
 module.exports = ["CollectionService", factory];
 
-},{}],80:[function(require,module,exports){
+},{}],81:[function(require,module,exports){
 "use strict";
 
 /**
@@ -7206,7 +7246,7 @@ var factory = function factory($q, Apiv1Service) {
 
 module.exports = ["$q", "Apiv1Service", factory];
 
-},{}],81:[function(require,module,exports){
+},{}],82:[function(require,module,exports){
 "use strict";
 
 /**
@@ -7259,7 +7299,7 @@ var factory = function factory($q, Apiv1Service) {
 
 module.exports = ["$q", "Apiv1Service", factory];
 
-},{}],82:[function(require,module,exports){
+},{}],83:[function(require,module,exports){
 "use strict";
 
 /**
@@ -7326,7 +7366,7 @@ var factory = function factory($q, $scope, $state, $stateParams, Courses, CModal
 
 module.exports = ["$q", "$scope", "$state", "$stateParams", "PostulantCoursesService", "PostulantCoursesModal", factory];
 
-},{}],83:[function(require,module,exports){
+},{}],84:[function(require,module,exports){
 "use strict";
 
 var angular = require("angular");
@@ -7958,7 +7998,7 @@ var postulantCvController = function postulantCvController($q, $scope, ConfirmMo
 
 module.exports = ["$q", "$scope", "ConfirmModal", "PostulantService", "PostulantNewPEModal", "PostulantNewEducationModal", "PostulantNewLanguageModal", "PostulantNewComputerknowledgeModal", "PostulantNewAdditionalknowledgeModal", "PostulantNewWorkpreferenceModal", "CroppterModal", "loggedUser", postulantCvController];
 
-},{"angular":135}],84:[function(require,module,exports){
+},{"angular":136}],85:[function(require,module,exports){
 "use strict";
 
 /**
@@ -8000,7 +8040,7 @@ var factory = function factory($q, $scope, $state, $stateParams, PostulantFavori
 
 module.exports = ["$q", "$scope", "$state", "$stateParams", "PostulantFavoritesService", factory];
 
-},{}],85:[function(require,module,exports){
+},{}],86:[function(require,module,exports){
 "use strict";
 
 /**
@@ -8022,7 +8062,7 @@ var HomeCtl = function HomeCtl($scope, PostulantService) {
 
 module.exports = ["$scope", "PostulantService", HomeCtl];
 
-},{}],86:[function(require,module,exports){
+},{}],87:[function(require,module,exports){
 "use strict";
 
 /**
@@ -8091,7 +8131,7 @@ var factory = function factory($q, $scope, $state, $stateParams, Messages, MModa
 
 module.exports = ["$q", "$scope", "$state", "$stateParams", "PostulantMessagesService", "PostulantMessageModal", factory];
 
-},{}],87:[function(require,module,exports){
+},{}],88:[function(require,module,exports){
 "use strict";
 
 /**
@@ -8114,7 +8154,7 @@ var postulantCtl = function postulantCtl($scope, $state) {
 
 module.exports = ["$scope", "$state", postulantCtl];
 
-},{}],88:[function(require,module,exports){
+},{}],89:[function(require,module,exports){
 "use strict";
 
 /**
@@ -8181,7 +8221,7 @@ var factory = function factory($q, $scope, $state, $stateParams, Postulations, P
 
 module.exports = ["$q", "$scope", "$state", "$stateParams", "PostulantPostulationsService", "PostulantPostulationModal", factory];
 
-},{}],89:[function(require,module,exports){
+},{}],90:[function(require,module,exports){
 "use strict";
 
 /**
@@ -8243,7 +8283,7 @@ var factory = function factory() {
 
 module.exports = factory;
 
-},{"postulant/completed-profile.html":185}],90:[function(require,module,exports){
+},{"postulant/completed-profile.html":186}],91:[function(require,module,exports){
 "use strict";
 
 /**
@@ -8268,7 +8308,7 @@ var factory = function factory() {
 
 module.exports = factory;
 
-},{"postulant/education_item.html":187}],91:[function(require,module,exports){
+},{"postulant/education_item.html":188}],92:[function(require,module,exports){
 "use strict";
 
 /**
@@ -8317,7 +8357,7 @@ var factory = function factory() {
 
 module.exports = factory;
 
-},{"postulant/experience_item.html":188}],92:[function(require,module,exports){
+},{"postulant/experience_item.html":189}],93:[function(require,module,exports){
 "use strict";
 
 /**
@@ -8343,7 +8383,7 @@ var factory = function factory() {
 
 module.exports = factory;
 
-},{"postulant/favorite_item.html":189}],93:[function(require,module,exports){
+},{"postulant/favorite_item.html":190}],94:[function(require,module,exports){
 "use strict";
 
 /**
@@ -8369,7 +8409,7 @@ var factory = function factory() {
 
 module.exports = factory;
 
-},{"postulant/message_item.html":190}],94:[function(require,module,exports){
+},{"postulant/message_item.html":191}],95:[function(require,module,exports){
 "use strict";
 
 /**
@@ -8395,7 +8435,7 @@ var factory = function factory() {
 
 module.exports = factory;
 
-},{"postulant/postulation_item.html":196}],95:[function(require,module,exports){
+},{"postulant/postulation_item.html":197}],96:[function(require,module,exports){
 "use strict";
 
 /**
@@ -8434,7 +8474,7 @@ var favoriteItem = require("./directives/favorite");
 
 module.exports = angular.module("RoleJob.postulant", []).config(routes).controller("PostulantCtl", postulantController).controller("PostulantHomeCtl", homeController).controller("PostulantCvCtl", postulantCvController).controller("PostulatPostulationsCtl", postulationsController).controller("PostulatMessagesCtl", messagesController).controller("PostulatFavoritesCtl", favoritesController).factory("PostulantService", postulantService).factory("PostulantPostulationsService", postulationsService).factory("PostulantMessagesService", messagesService).factory("PostulantFavoritesService", favoritesService).factory("PostulantCoursesService", coursesService).factory("PostulantNewPEModal", postulantNewPEModalService).factory("PostulantNewEducationModal", postulantNewEducationModalFactory).factory("PostulantNewReferenceModal", postulantNewReferenceModalFactory).factory("PostulantNewLanguageModal", postulantNewLanguageModalFactory).factory("PostulantNewComputerknowledgeModal", postulantNewComputerknowledgeModalFactory).factory("PostulantNewAdditionalknowledgeModal", postulantNewAdditionalknowledgeModalFactory).factory("PostulantNewWorkpreferenceModal", postulantNewWorkpreferenceModalFactory).factory("PostulantNewCertificationModal", newCertificationModalFactory).factory("PostulantPostulationModal", postulationModal).factory("PostulantMessageModal", messageModal).directive("postulantPostulationItem", postulationItem).directive("experienceItem", experienceItem).directive("educationItem", educationItem).directive("postulantCompletedProfile", completedProfileDirective).directive("postulantFavoriteItem", favoriteItem);
 
-},{"./controllers/cv":83,"./controllers/favorites":84,"./controllers/home":85,"./controllers/messages":86,"./controllers/postulant":87,"./controllers/postulations":88,"./directives/completedprofile":89,"./directives/education":90,"./directives/experience":91,"./directives/favorite":92,"./directives/postulation":94,"./modals/message":96,"./modals/newadditionalknowledge":97,"./modals/newcert":98,"./modals/newcomputerknowledge":99,"./modals/neweducation":100,"./modals/newlanguage":101,"./modals/newpe":102,"./modals/newreference":103,"./modals/newworkpreference":104,"./modals/postulation":105,"./routes":106,"./services/postulant":107,"./services/postulantscourses":108,"./services/postulantsfavorites":109,"./services/postulantsmessages":110,"./services/postulantspostulations":111,"angular":135}],96:[function(require,module,exports){
+},{"./controllers/cv":84,"./controllers/favorites":85,"./controllers/home":86,"./controllers/messages":87,"./controllers/postulant":88,"./controllers/postulations":89,"./directives/completedprofile":90,"./directives/education":91,"./directives/experience":92,"./directives/favorite":93,"./directives/postulation":95,"./modals/message":97,"./modals/newadditionalknowledge":98,"./modals/newcert":99,"./modals/newcomputerknowledge":100,"./modals/neweducation":101,"./modals/newlanguage":102,"./modals/newpe":103,"./modals/newreference":104,"./modals/newworkpreference":105,"./modals/postulation":106,"./routes":107,"./services/postulant":108,"./services/postulantscourses":109,"./services/postulantsfavorites":110,"./services/postulantsmessages":111,"./services/postulantspostulations":112,"angular":136}],97:[function(require,module,exports){
 "use strict";
 
 /**
@@ -8479,7 +8519,7 @@ var factory = function factory($modal) {
 
 module.exports = ["$modal", factory];
 
-},{"postulant/message_modal.html":191}],97:[function(require,module,exports){
+},{"postulant/message_modal.html":192}],98:[function(require,module,exports){
 "use strict";
 
 /**
@@ -8610,7 +8650,7 @@ var factory = function factory($modal) {
 
 module.exports = ["$modal", factory];
 
-},{"angular":135}],98:[function(require,module,exports){
+},{"angular":136}],99:[function(require,module,exports){
 "use strict";
 
 /**
@@ -8703,7 +8743,7 @@ var factory = function factory($modal) {
 
 module.exports = ["$modal", factory];
 
-},{"angular":135}],99:[function(require,module,exports){
+},{"angular":136}],100:[function(require,module,exports){
 "use strict";
 
 /**
@@ -8836,7 +8876,7 @@ var factory = function factory($modal) {
 
 module.exports = ["$modal", factory];
 
-},{"angular":135}],100:[function(require,module,exports){
+},{"angular":136}],101:[function(require,module,exports){
 "use strict";
 
 /**
@@ -9054,7 +9094,7 @@ var postulantNewEducationModalFactory = function postulantNewEducationModalFacto
 
 module.exports = ["$modal", "ConfirmModal", "PostulantService", "EducationService", "PostulantNewCertificationModal", postulantNewEducationModalFactory];
 
-},{"angular":135}],101:[function(require,module,exports){
+},{"angular":136}],102:[function(require,module,exports){
 "use strict";
 
 /**
@@ -9187,7 +9227,7 @@ var factory = function factory($modal) {
 
 module.exports = ["$modal", factory];
 
-},{"angular":135}],102:[function(require,module,exports){
+},{"angular":136}],103:[function(require,module,exports){
 "use strict";
 
 /**
@@ -9450,7 +9490,7 @@ var postulantNewPEModalService = function postulantNewPEModalService($modal, Con
 
 module.exports = ["$modal", "ConfirmModal", "PostulantNewReferenceModal", "PostulantService", "AreasService", postulantNewPEModalService];
 
-},{"angular":135}],103:[function(require,module,exports){
+},{"angular":136}],104:[function(require,module,exports){
 "use strict";
 
 /**
@@ -9543,7 +9583,7 @@ var factory = function factory($modal) {
 
 module.exports = ["$modal", factory];
 
-},{"angular":135}],104:[function(require,module,exports){
+},{"angular":136}],105:[function(require,module,exports){
 "use strict";
 
 /**
@@ -9674,7 +9714,7 @@ var factory = function factory($modal) {
 
 module.exports = ["$modal", factory];
 
-},{"angular":135}],105:[function(require,module,exports){
+},{"angular":136}],106:[function(require,module,exports){
 "use strict";
 
 /**
@@ -9719,7 +9759,7 @@ var factory = function factory($modal) {
 
 module.exports = ["$modal", factory];
 
-},{"postulant/postulation_modal.html":197}],106:[function(require,module,exports){
+},{"postulant/postulation_modal.html":198}],107:[function(require,module,exports){
 "use strict";
 
 var postulantTemplate = require('postulant/postulant.html');
@@ -9830,7 +9870,7 @@ module.exports = ["$stateProvider", function ($stateProvider) {
     });
 }];
 
-},{"postulant/cv.html":186,"postulant/my_favorites.html":192,"postulant/my_messages.html":193,"postulant/my_postulations.html":194,"postulant/postulant.html":195}],107:[function(require,module,exports){
+},{"postulant/cv.html":187,"postulant/my_favorites.html":193,"postulant/my_messages.html":194,"postulant/my_postulations.html":195,"postulant/postulant.html":196}],108:[function(require,module,exports){
 "use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -10281,7 +10321,7 @@ function ($q, $rootScope, ApiService, AvatarsService) {
     return Postulant;
 }];
 
-},{"angular":135}],108:[function(require,module,exports){
+},{"angular":136}],109:[function(require,module,exports){
 "use strict";
 
 /**
@@ -10305,7 +10345,7 @@ var factory = function factory(CollectionService) {
 
 module.exports = ["CollectionService", factory];
 
-},{}],109:[function(require,module,exports){
+},{}],110:[function(require,module,exports){
 "use strict";
 
 /**
@@ -10329,7 +10369,7 @@ var factory = function factory(CollectionService) {
 
 module.exports = ["CollectionService", factory];
 
-},{}],110:[function(require,module,exports){
+},{}],111:[function(require,module,exports){
 "use strict";
 
 /**
@@ -10353,7 +10393,7 @@ var factory = function factory(CollectionService) {
 
 module.exports = ["CollectionService", factory];
 
-},{}],111:[function(require,module,exports){
+},{}],112:[function(require,module,exports){
 "use strict";
 
 /**
@@ -10377,7 +10417,7 @@ var factory = function factory(CollectionService) {
 
 module.exports = ["CollectionService", factory];
 
-},{}],112:[function(require,module,exports){
+},{}],113:[function(require,module,exports){
 "use strict";
 
 var $ = require("jquery");
@@ -10390,7 +10430,7 @@ module.exports = {
     tabs: tabs
 };
 
-},{"foundation-sites-5/js/foundation/foundation":137,"foundation-sites-5/js/foundation/foundation.tab":138,"jquery":141}],113:[function(require,module,exports){
+},{"foundation-sites-5/js/foundation/foundation":138,"foundation-sites-5/js/foundation/foundation.tab":139,"jquery":142}],114:[function(require,module,exports){
 "use strict";
 
 /**
@@ -10427,7 +10467,7 @@ var datetimepickerFactory = function datetimepickerFactory() {
 
 module.exports = datetimepickerFactory;
 
-},{"jquery":141}],114:[function(require,module,exports){
+},{"jquery":142}],115:[function(require,module,exports){
 "use strict";
 
 /**
@@ -10457,7 +10497,7 @@ var factory = function factory() {
 
 module.exports = factory;
 
-},{}],115:[function(require,module,exports){
+},{}],116:[function(require,module,exports){
 "use strict";
 
 /**
@@ -10479,7 +10519,7 @@ var rjTableFactory = function rjTableFactory() {
 
 module.exports = rjTableFactory;
 
-},{}],116:[function(require,module,exports){
+},{}],117:[function(require,module,exports){
 "use strict";
 
 /**
@@ -10798,7 +10838,7 @@ var rjTableCollectionFactory = function rjTableCollectionFactory() {
 
 module.exports = rjTableCollectionFactory;
 
-},{"angular":135}],117:[function(require,module,exports){
+},{"angular":136}],118:[function(require,module,exports){
 "use strict";
 
 /**
@@ -10824,7 +10864,7 @@ var rjTableFieldFactory = function rjTableFieldFactory() {
 
 module.exports = rjTableFieldFactory;
 
-},{}],118:[function(require,module,exports){
+},{}],119:[function(require,module,exports){
 "use strict";
 
 /**
@@ -10877,7 +10917,7 @@ var stateTab = function stateTab() {
 
 module.exports = stateTab;
 
-},{}],119:[function(require,module,exports){
+},{}],120:[function(require,module,exports){
 "use strict";
 
 /**
@@ -10901,7 +10941,7 @@ var rjIconFactory = require("./directives/rjicon");
 
 module.exports = angular.module("RoleJob.Utils", []).factory("extendibleBuiltin", extendibleBuiltinFactory).factory("FormHelper", formHelperFactory).factory("AlertModal", alertModalFactory).factory("ConfirmModal", confirmModalFactory).factory("ApiErrorsAlertModal", apiErrorsAlertModalFactory).directive("stateTab", stateTabDirective).directive("datetimepicker", datetimepickerFactory).directive("rjTableField", rjTableFieldFactory).directive("rjTable", rjTableFactory).directive("rjTableCollection", rjTableCollectionFactory).directive("rjIcon", rjIconFactory);
 
-},{"./directives/datetimepicker":113,"./directives/rjicon":114,"./directives/rjtable":115,"./directives/rjtablecollection":116,"./directives/rjtablefield":117,"./directives/statetab":118,"./modals/alert":120,"./modals/apierrorsalert":121,"./modals/confirm":122,"./services/extendiblebuiltin":123,"./services/formhelper":124,"angular":135}],120:[function(require,module,exports){
+},{"./directives/datetimepicker":114,"./directives/rjicon":115,"./directives/rjtable":116,"./directives/rjtablecollection":117,"./directives/rjtablefield":118,"./directives/statetab":119,"./modals/alert":121,"./modals/apierrorsalert":122,"./modals/confirm":123,"./services/extendiblebuiltin":124,"./services/formhelper":125,"angular":136}],121:[function(require,module,exports){
 "use strict";
 
 /**
@@ -10961,7 +11001,7 @@ var factory = function factory($rootScope, $modal) {
 
 module.exports = ["$rootScope", "$modal", factory];
 
-},{"angular":135}],121:[function(require,module,exports){
+},{"angular":136}],122:[function(require,module,exports){
 "use strict";
 
 /**
@@ -11035,7 +11075,7 @@ var factory = function factory($rootScope, $modal) {
 
 module.exports = ["$rootScope", "$modal", factory];
 
-},{"angular":135}],122:[function(require,module,exports){
+},{"angular":136}],123:[function(require,module,exports){
 "use strict";
 
 /**
@@ -11095,7 +11135,7 @@ var confirmModalFactory = function confirmModalFactory($rootScope, $modal) {
 
 module.exports = ["$rootScope", "$modal", confirmModalFactory];
 
-},{"angular":135}],123:[function(require,module,exports){
+},{"angular":136}],124:[function(require,module,exports){
 "use strict";
 
 /**
@@ -11126,7 +11166,7 @@ var factory = function factory() {
 
 module.exports = factory;
 
-},{}],124:[function(require,module,exports){
+},{}],125:[function(require,module,exports){
 "use strict";
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -11244,7 +11284,7 @@ var factory = function factory($q) {
 
 module.exports = ["$q", factory];
 
-},{}],125:[function(require,module,exports){
+},{}],126:[function(require,module,exports){
 /**
  * @license AngularJS v1.7.4
  * (c) 2010-2018 Google, Inc. http://angularjs.org
@@ -11499,11 +11539,11 @@ angular.module('ngCookies').provider('$$cookieWriter', /** @this */ function $$C
 
 })(window, window.angular);
 
-},{}],126:[function(require,module,exports){
+},{}],127:[function(require,module,exports){
 require('./angular-cookies');
 module.exports = 'ngCookies';
 
-},{"./angular-cookies":125}],127:[function(require,module,exports){
+},{"./angular-cookies":126}],128:[function(require,module,exports){
 /*
  * angular-mm-foundation
  * http://pineconellc.github.io/angular-foundation/
@@ -15119,7 +15159,7 @@ angular.module("template/typeahead/typeahead-popup.html", []).run(["$templateCac
     "");
 }]);
 
-},{}],128:[function(require,module,exports){
+},{}],129:[function(require,module,exports){
 (function (global){
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.relativeDate = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
 'use strict';
@@ -15304,7 +15344,7 @@ exports.default = {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],129:[function(require,module,exports){
+},{}],130:[function(require,module,exports){
 module.exports={
   "just_now"            : "recién",
   "seconds_ago"         : "hace {{time}} segundos",
@@ -15337,7 +15377,7 @@ module.exports={
   "over_a_year_from_now": "dentro de mas de un año"
 }
 
-},{}],130:[function(require,module,exports){
+},{}],131:[function(require,module,exports){
 /**
  * @license AngularJS v1.7.4
  * (c) 2010-2018 Google, Inc. http://angularjs.org
@@ -16252,11 +16292,11 @@ angular.module('ngSanitize').filter('linky', ['$sanitize', function($sanitize) {
 
 })(window, window.angular);
 
-},{}],131:[function(require,module,exports){
+},{}],132:[function(require,module,exports){
 require('./angular-sanitize');
 module.exports = 'ngSanitize';
 
-},{"./angular-sanitize":130}],132:[function(require,module,exports){
+},{"./angular-sanitize":131}],133:[function(require,module,exports){
 /*!
  * angular-translate - v2.18.1 - 2018-05-19
  * 
@@ -20041,7 +20081,7 @@ return 'pascalprecht.translate';
 
 }));
 
-},{}],133:[function(require,module,exports){
+},{}],134:[function(require,module,exports){
 /**
  * State-based routing for AngularJS
  * @version v0.3.2
@@ -24651,7 +24691,7 @@ angular.module('ui.router.state')
   .filter('isState', $IsStateFilter)
   .filter('includedByState', $IncludedByStateFilter);
 })(window, window.angular);
-},{}],134:[function(require,module,exports){
+},{}],135:[function(require,module,exports){
 /**
  * @license AngularJS v1.7.4
  * (c) 2010-2018 Google, Inc. http://angularjs.org
@@ -60869,11 +60909,11 @@ $provide.value("$locale", {
 })(window);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],135:[function(require,module,exports){
+},{}],136:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":134}],136:[function(require,module,exports){
+},{"./angular":135}],137:[function(require,module,exports){
 /*! cropit - v0.5.0 <https://github.com/scottcheng/cropit> */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -62084,7 +62124,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ ])
 });
 ;
-},{"jquery":141}],137:[function(require,module,exports){
+},{"jquery":142}],138:[function(require,module,exports){
 /*
  * Foundation Responsive Library
  * http://foundation.zurb.com
@@ -62818,7 +62858,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 }(jQuery, window, window.document));
 
-},{}],138:[function(require,module,exports){
+},{}],139:[function(require,module,exports){
 ;(function ($, window, document, undefined) {
   'use strict';
 
@@ -63067,7 +63107,7 @@ return /******/ (function(modules) { // webpackBootstrap
   };
 }(jQuery, window, window.document));
 
-},{}],139:[function(require,module,exports){
+},{}],140:[function(require,module,exports){
 /*! jQuery UI - v1.11.0pre - 2013-09-27
 * http://jqueryui.com
 * Includes: jquery.ui.core.js, jquery.ui.widget.js, jquery.ui.mouse.js, jquery.ui.draggable.js, jquery.ui.droppable.js, jquery.ui.resizable.js, jquery.ui.selectable.js, jquery.ui.sortable.js, jquery.ui.effect.js, jquery.ui.accordion.js, jquery.ui.autocomplete.js, jquery.ui.button.js, jquery.ui.datepicker.js, jquery.ui.dialog.js, jquery.ui.effect-blind.js, jquery.ui.effect-bounce.js, jquery.ui.effect-clip.js, jquery.ui.effect-drop.js, jquery.ui.effect-explode.js, jquery.ui.effect-fade.js, jquery.ui.effect-fold.js, jquery.ui.effect-highlight.js, jquery.ui.effect-puff.js, jquery.ui.effect-pulsate.js, jquery.ui.effect-scale.js, jquery.ui.effect-shake.js, jquery.ui.effect-size.js, jquery.ui.effect-slide.js, jquery.ui.effect-transfer.js, jquery.ui.menu.js, jquery.ui.position.js, jquery.ui.progressbar.js, jquery.ui.slider.js, jquery.ui.spinner.js, jquery.ui.tabs.js, jquery.ui.tooltip.js
@@ -78173,10 +78213,10 @@ $.widget( "ui.tooltip", {
 
 }( jQuery ) );*/
 
-},{}],140:[function(require,module,exports){
+},{}],141:[function(require,module,exports){
 $ = jQuery = require('jquery');
 module.exports = require('./dist/jquery-ui.js');
-},{"./dist/jquery-ui.js":139,"jquery":141}],141:[function(require,module,exports){
+},{"./dist/jquery-ui.js":140,"jquery":142}],142:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.4
  * http://jquery.com/
@@ -87992,9 +88032,9 @@ if ( !noGlobal ) {
 return jQuery;
 }));
 
-},{}],142:[function(require,module,exports){
-/*! ngTagsInput v3.2.0 License: MIT */!function(){"use strict";var a={backspace:8,tab:9,enter:13,escape:27,space:32,up:38,down:40,left:37,right:39,"delete":46,comma:188},b=9007199254740991,c=["text","email","url"],d=angular.module("ngTagsInput",[]);d.directive("tagsInput",["$timeout","$document","$window","$q","tagsInputConfig","tiUtil",function(d,e,f,g,h,i){function j(a,b,c,d){var e,f,h,j,k={};return e=function(b){return i.safeToString(b[a.displayProperty])},f=function(b,c){b[a.displayProperty]=c},h=function(b){var d=e(b),f=d&&d.length>=a.minLength&&d.length<=a.maxLength&&a.allowedTagsPattern.test(d)&&!i.findInObjectArray(k.items,b,a.keyProperty||a.displayProperty);return g.when(f&&c({$tag:b})).then(i.promisifyValue)},j=function(a){return g.when(d({$tag:a})).then(i.promisifyValue)},k.items=[],k.addText=function(a){var b={};return f(b,a),k.add(b)},k.add=function(c){var d=e(c);return a.replaceSpacesWithDashes&&(d=i.replaceSpacesWithDashes(d)),f(c,d),h(c).then(function(){k.items.push(c),b.trigger("tag-added",{$tag:c})})["catch"](function(){d&&b.trigger("invalid-tag",{$tag:c})})},k.remove=function(a){var c=k.items[a];return j(c).then(function(){return k.items.splice(a,1),k.clearSelection(),b.trigger("tag-removed",{$tag:c}),c})},k.select=function(a){0>a?a=k.items.length-1:a>=k.items.length&&(a=0),k.index=a,k.selected=k.items[a]},k.selectPrior=function(){k.select(--k.index)},k.selectNext=function(){k.select(++k.index)},k.removeSelected=function(){return k.remove(k.index)},k.clearSelection=function(){k.selected=null,k.index=-1},k.getItems=function(){return a.useStrings?k.items.map(e):k.items},k.clearSelection(),k}function k(a){return-1!==c.indexOf(a)}return{restrict:"E",require:"ngModel",scope:{tags:"=ngModel",text:"=?",templateScope:"=?",tagClass:"&",onTagAdding:"&",onTagAdded:"&",onInvalidTag:"&",onTagRemoving:"&",onTagRemoved:"&",onTagClicked:"&"},replace:!1,transclude:!0,templateUrl:"ngTagsInput/tags-input.html",controller:["$scope","$attrs","$element",function(a,c,d){a.events=i.simplePubSub(),h.load("tagsInput",a,c,{template:[String,"ngTagsInput/tag-item.html"],type:[String,"text",k],placeholder:[String,"Add a tag"],tabindex:[Number,null],removeTagSymbol:[String,String.fromCharCode(215)],replaceSpacesWithDashes:[Boolean,!0],minLength:[Number,3],maxLength:[Number,b],addOnEnter:[Boolean,!0],addOnSpace:[Boolean,!1],addOnComma:[Boolean,!0],addOnBlur:[Boolean,!0],addOnPaste:[Boolean,!1],pasteSplitPattern:[RegExp,/,/],allowedTagsPattern:[RegExp,/.+/],enableEditingLastTag:[Boolean,!1],minTags:[Number,0],maxTags:[Number,b],displayProperty:[String,"text"],keyProperty:[String,""],allowLeftoverText:[Boolean,!1],addFromAutocompleteOnly:[Boolean,!1],spellcheck:[Boolean,!0],useStrings:[Boolean,!1]}),a.tagList=new j(a.options,a.events,i.handleUndefinedResult(a.onTagAdding,!0),i.handleUndefinedResult(a.onTagRemoving,!0)),this.registerAutocomplete=function(){d.find("input");return{addTag:function(b){return a.tagList.add(b)},getTags:function(){return a.tagList.items},getCurrentTagText:function(){return a.newTag.text()},getOptions:function(){return a.options},getTemplateScope:function(){return a.templateScope},on:function(b,c){return a.events.on(b,c,!0),this}}},this.registerTagItem=function(){return{getOptions:function(){return a.options},removeTag:function(b){a.disabled||a.tagList.remove(b)}}}}],link:function(b,c,g,h){var j,k,l=[a.enter,a.comma,a.space,a.backspace,a["delete"],a.left,a.right],m=b.tagList,n=b.events,o=b.options,p=c.find("input"),q=["minTags","maxTags","allowLeftoverText"];j=function(){h.$setValidity("maxTags",m.items.length<=o.maxTags),h.$setValidity("minTags",m.items.length>=o.minTags),h.$setValidity("leftoverText",b.hasFocus||o.allowLeftoverText?!0:!b.newTag.text())},k=function(){d(function(){p[0].focus()})},h.$isEmpty=function(a){return!a||!a.length},b.newTag={text:function(a){return angular.isDefined(a)?(b.text=a,void n.trigger("input-change",a)):b.text||""},invalid:null},b.track=function(a){return a[o.keyProperty||o.displayProperty]},b.getTagClass=function(a,c){var d=a===m.selected;return[b.tagClass({$tag:a,$index:c,$selected:d}),{selected:d}]},b.$watch("tags",function(a){if(a){if(m.items=i.makeObjectArray(a,o.displayProperty),o.useStrings)return;b.tags=m.items}else m.items=[]}),b.$watch("tags.length",function(){j(),h.$validate()}),g.$observe("disabled",function(a){b.disabled=a}),b.eventHandlers={input:{keydown:function(a){n.trigger("input-keydown",a)},focus:function(){b.hasFocus||(b.hasFocus=!0,n.trigger("input-focus"))},blur:function(){d(function(){var a=e.prop("activeElement"),d=a===p[0],f=c[0].contains(a);(d||!f)&&(b.hasFocus=!1,n.trigger("input-blur"))})},paste:function(a){a.getTextData=function(){var b=a.clipboardData||a.originalEvent&&a.originalEvent.clipboardData;return b?b.getData("text/plain"):f.clipboardData.getData("Text")},n.trigger("input-paste",a)}},host:{click:function(){b.disabled||k()}},tag:{click:function(a){n.trigger("tag-clicked",{$tag:a})}}},n.on("tag-added",b.onTagAdded).on("invalid-tag",b.onInvalidTag).on("tag-removed",b.onTagRemoved).on("tag-clicked",b.onTagClicked).on("tag-added",function(){b.newTag.text("")}).on("tag-added tag-removed",function(){b.tags=m.getItems(),h.$setDirty(),k()}).on("invalid-tag",function(){b.newTag.invalid=!0}).on("option-change",function(a){-1!==q.indexOf(a.name)&&j()}).on("input-change",function(){m.clearSelection(),b.newTag.invalid=null}).on("input-focus",function(){c.triggerHandler("focus"),h.$setValidity("leftoverText",!0)}).on("input-blur",function(){o.addOnBlur&&!o.addFromAutocompleteOnly&&m.addText(b.newTag.text()),c.triggerHandler("blur"),j()}).on("input-keydown",function(c){var d,e,f,g,h=c.keyCode,j={};i.isModifierOn(c)||-1===l.indexOf(h)||(j[a.enter]=o.addOnEnter,j[a.comma]=o.addOnComma,j[a.space]=o.addOnSpace,d=!o.addFromAutocompleteOnly&&j[h],e=(h===a.backspace||h===a["delete"])&&m.selected,g=h===a.backspace&&0===b.newTag.text().length&&o.enableEditingLastTag,f=(h===a.backspace||h===a.left||h===a.right)&&0===b.newTag.text().length&&!o.enableEditingLastTag,d?m.addText(b.newTag.text()):g?(m.selectPrior(),m.removeSelected().then(function(a){a&&b.newTag.text(a[o.displayProperty])})):e?m.removeSelected():f&&(h===a.left||h===a.backspace?m.selectPrior():h===a.right&&m.selectNext()),(d||f||e||g)&&c.preventDefault())}).on("input-paste",function(a){if(o.addOnPaste){var b=a.getTextData(),c=b.split(o.pasteSplitPattern);c.length>1&&(c.forEach(function(a){m.addText(a)}),a.preventDefault())}})}}}]),d.directive("tiTagItem",["tiUtil",function(a){return{restrict:"E",require:"^tagsInput",template:'<ng-include src="$$template"></ng-include>',scope:{$scope:"=scope",data:"="},link:function(b,c,d,e){var f=e.registerTagItem(),g=f.getOptions();b.$$template=g.template,b.$$removeTagSymbol=g.removeTagSymbol,b.$getDisplayText=function(){return a.safeToString(b.data[g.displayProperty])},b.$removeTag=function(){f.removeTag(b.$index)},b.$watch("$parent.$index",function(a){b.$index=a})}}}]),d.directive("autoComplete",["$document","$timeout","$sce","$q","tagsInputConfig","tiUtil",function(b,c,d,e,f,g){function h(a,b,c){var d,f,h,i={};return h=function(){return b.tagsInput.keyProperty||b.tagsInput.displayProperty},d=function(a,c){return a.filter(function(a){return!g.findInObjectArray(c,a,h(),function(a,c){return b.tagsInput.replaceSpacesWithDashes&&(a=g.replaceSpacesWithDashes(a),c=g.replaceSpacesWithDashes(c)),g.defaultComparer(a,c)})})},i.reset=function(){f=null,i.items=[],i.visible=!1,i.index=-1,i.selected=null,i.query=null},i.show=function(){b.selectFirstMatch?i.select(0):i.selected=null,i.visible=!0},i.load=g.debounce(function(c,j){i.query=c;var k=e.when(a({$query:c}));f=k,k.then(function(a){k===f&&(a=g.makeObjectArray(a.data||a,h()),a=d(a,j),i.items=a.slice(0,b.maxResultsToShow),i.items.length>0?i.show():i.reset())})},b.debounceDelay),i.selectNext=function(){i.select(++i.index)},i.selectPrior=function(){i.select(--i.index)},i.select=function(a){0>a?a=i.items.length-1:a>=i.items.length&&(a=0),i.index=a,i.selected=i.items[a],c.trigger("suggestion-selected",a)},i.reset(),i}function i(a,b){var c=a.find("li").eq(b),d=c.parent(),e=c.prop("offsetTop"),f=c.prop("offsetHeight"),g=d.prop("clientHeight"),h=d.prop("scrollTop");h>e?d.prop("scrollTop",e):e+f>g+h&&d.prop("scrollTop",e+f-g)}return{restrict:"E",require:"^tagsInput",scope:{source:"&",matchClass:"&"},templateUrl:"ngTagsInput/auto-complete.html",controller:["$scope","$element","$attrs",function(a,b,c){a.events=g.simplePubSub(),f.load("autoComplete",a,c,{template:[String,"ngTagsInput/auto-complete-match.html"],debounceDelay:[Number,100],minLength:[Number,3],highlightMatchedText:[Boolean,!0],maxResultsToShow:[Number,10],loadOnDownArrow:[Boolean,!1],loadOnEmpty:[Boolean,!1],loadOnFocus:[Boolean,!1],selectFirstMatch:[Boolean,!0],displayProperty:[String,""]}),a.suggestionList=new h(a.source,a.options,a.events),this.registerAutocompleteMatch=function(){return{getOptions:function(){return a.options},getQuery:function(){return a.suggestionList.query}}}}],link:function(b,c,d,e){var f,h=[a.enter,a.tab,a.escape,a.up,a.down],j=b.suggestionList,k=e.registerAutocomplete(),l=b.options,m=b.events;l.tagsInput=k.getOptions(),f=function(a){return a&&a.length>=l.minLength||!a&&l.loadOnEmpty},b.templateScope=k.getTemplateScope(),b.addSuggestionByIndex=function(a){j.select(a),b.addSuggestion()},b.addSuggestion=function(){var a=!1;return j.selected&&(k.addTag(angular.copy(j.selected)),j.reset(),a=!0),a},b.track=function(a){return a[l.tagsInput.keyProperty||l.tagsInput.displayProperty]},b.getSuggestionClass=function(a,c){var d=a===j.selected;return[b.matchClass({$match:a,$index:c,$selected:d}),{selected:d}]},k.on("tag-added tag-removed invalid-tag input-blur",function(){j.reset()}).on("input-change",function(a){f(a)?j.load(a,k.getTags()):j.reset()}).on("input-focus",function(){var a=k.getCurrentTagText();l.loadOnFocus&&f(a)&&j.load(a,k.getTags())}).on("input-keydown",function(c){var d=c.keyCode,e=!1;if(!g.isModifierOn(c)&&-1!==h.indexOf(d))return j.visible?d===a.down?(j.selectNext(),e=!0):d===a.up?(j.selectPrior(),e=!0):d===a.escape?(j.reset(),e=!0):(d===a.enter||d===a.tab)&&(e=b.addSuggestion()):d===a.down&&b.options.loadOnDownArrow&&(j.load(k.getCurrentTagText(),k.getTags()),e=!0),e?(c.preventDefault(),c.stopImmediatePropagation(),!1):void 0}),m.on("suggestion-selected",function(a){i(c,a)})}}}]),d.directive("tiAutocompleteMatch",["$sce","tiUtil",function(a,b){return{restrict:"E",require:"^autoComplete",template:'<ng-include src="$$template"></ng-include>',scope:{$scope:"=scope",data:"="},link:function(c,d,e,f){var g=f.registerAutocompleteMatch(),h=g.getOptions();c.$$template=h.template,c.$index=c.$parent.$index,c.$highlight=function(c){return h.highlightMatchedText&&(c=b.safeHighlight(c,g.getQuery())),a.trustAsHtml(c)},c.$getDisplayText=function(){return b.safeToString(c.data[h.displayProperty||h.tagsInput.displayProperty])}}}}]),d.directive("tiTranscludeAppend",function(){return function(a,b,c,d,e){e(function(a){b.append(a)})}}),d.directive("tiAutosize",["tagsInputConfig",function(a){return{restrict:"A",require:"ngModel",link:function(b,c,d,e){var f,g,h=a.getTextAutosizeThreshold();f=angular.element('<span class="input"></span>'),f.css("display","none").css("visibility","hidden").css("width","auto").css("white-space","pre"),c.parent().append(f),g=function(a){var b,e=a;return angular.isString(e)&&0===e.length&&(e=d.placeholder),e&&(f.text(e),f.css("display",""),b=f.prop("offsetWidth"),f.css("display","none")),c.css("width",b?b+h+"px":""),a},e.$parsers.unshift(g),e.$formatters.unshift(g),d.$observe("placeholder",function(a){e.$modelValue||g(a)})}}}]),d.directive("tiBindAttrs",function(){return function(a,b,c){a.$watch(c.tiBindAttrs,function(a){angular.forEach(a,function(a,b){c.$set(b,a)})},!0)}}),d.provider("tagsInputConfig",function(){var a={},b={},c=3;this.setDefaults=function(b,c){return a[b]=c,this},this.setActiveInterpolation=function(a,c){return b[a]=c,this},this.setTextAutosizeThreshold=function(a){return c=a,this},this.$get=["$interpolate",function(d){var e={};return e[String]=function(a){return a},e[Number]=function(a){return parseInt(a,10)},e[Boolean]=function(a){return"true"===a.toLowerCase()},e[RegExp]=function(a){return new RegExp(a)},{load:function(c,f,g,h){var i=function(){return!0};f.options={},angular.forEach(h,function(h,j){var k,l,m,n,o,p;k=h[0],l=h[1],m=h[2]||i,n=e[k],o=function(){var b=a[c]&&a[c][j];return angular.isDefined(b)?b:l},p=function(a){f.options[j]=a&&m(a)?n(a):o()},b[c]&&b[c][j]?g.$observe(j,function(a){p(a),f.events.trigger("option-change",{name:j,newValue:a})}):p(g[j]&&d(g[j])(f.$parent))})},getTextAutosizeThreshold:function(){return c}}}]}),d.factory("tiUtil",["$timeout","$q",function(a,b){var c={};return c.debounce=function(b,c){var d;return function(){var e=arguments;a.cancel(d),d=a(function(){b.apply(null,e)},c)}},c.makeObjectArray=function(a,b){if(!angular.isArray(a)||0===a.length||angular.isObject(a[0]))return a;var c=[];return a.forEach(function(a){var d={};d[b]=a,c.push(d)}),c},c.findInObjectArray=function(a,b,d,e){var f=null;return e=e||c.defaultComparer,a.some(function(a){return e(a[d],b[d])?(f=a,!0):void 0}),f},c.defaultComparer=function(a,b){return c.safeToString(a).toLowerCase()===c.safeToString(b).toLowerCase()},c.safeHighlight=function(a,b){function d(a){return a.replace(/([.?*+^$[\]\\(){}|-])/g,"\\$1")}if(a=c.encodeHTML(a),b=c.encodeHTML(b),!b)return a;var e=new RegExp("&[^;]+;|"+d(b),"gi");return a.replace(e,function(a){return a.toLowerCase()===b.toLowerCase()?"<em>"+a+"</em>":a})},c.safeToString=function(a){return angular.isUndefined(a)||null==a?"":a.toString().trim()},c.encodeHTML=function(a){return c.safeToString(a).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")},c.handleUndefinedResult=function(a,b){return function(){var c=a.apply(null,arguments);return angular.isUndefined(c)?b:c}},c.replaceSpacesWithDashes=function(a){return c.safeToString(a).replace(/\s/g,"-")},c.isModifierOn=function(a){return a.shiftKey||a.ctrlKey||a.altKey||a.metaKey},c.promisifyValue=function(a){return a=angular.isUndefined(a)?!0:a,b[a?"when":"reject"]()},c.simplePubSub=function(){var a={};return{on:function(b,c,d){return b.split(" ").forEach(function(b){a[b]||(a[b]=[]);var e=d?[].unshift:[].push;e.call(a[b],c)}),this},trigger:function(b,d){var e=a[b]||[];return e.every(function(a){return c.handleUndefinedResult(a,!0)(d)}),this}}},c}]),d.run(["$templateCache",function(a){a.put("ngTagsInput/tags-input.html",'<div class="host" tabindex="-1" ng-click="eventHandlers.host.click()" ti-transclude-append><div class="tags" ng-class="{focused: hasFocus}"><ul class="tag-list"><li class="tag-item" ng-repeat="tag in tagList.items track by track(tag)" ng-class="getTagClass(tag, $index)" ng-click="eventHandlers.tag.click(tag)"><ti-tag-item scope="templateScope" data="::tag"></ti-tag-item></li></ul><input class="input" autocomplete="off" ng-model="newTag.text" ng-model-options="{getterSetter: true}" ng-keydown="eventHandlers.input.keydown($event)" ng-focus="eventHandlers.input.focus($event)" ng-blur="eventHandlers.input.blur($event)" ng-paste="eventHandlers.input.paste($event)" ng-trim="false" ng-class="{\'invalid-tag\': newTag.invalid}" ng-disabled="disabled" ti-bind-attrs="{type: options.type, placeholder: options.placeholder, tabindex: options.tabindex, spellcheck: options.spellcheck}" ti-autosize></div></div>'),a.put("ngTagsInput/tag-item.html",'<span ng-bind="$getDisplayText()"></span> <a class="remove-button" ng-click="$removeTag()" ng-bind="::$$removeTagSymbol"></a>'),a.put("ngTagsInput/auto-complete.html",'<div class="autocomplete" ng-if="suggestionList.visible"><ul class="suggestion-list"><li class="suggestion-item" ng-repeat="item in suggestionList.items track by track(item)" ng-class="getSuggestionClass(item, $index)" ng-click="addSuggestionByIndex($index)" ng-mouseenter="suggestionList.select($index)"><ti-autocomplete-match scope="templateScope" data="::item"></ti-autocomplete-match></li></ul></div>'),a.put("ngTagsInput/auto-complete-match.html",'<span ng-bind-html="$highlight($getDisplayText())"></span>')}])}();
 },{}],143:[function(require,module,exports){
+/*! ngTagsInput v3.2.0 License: MIT */!function(){"use strict";var a={backspace:8,tab:9,enter:13,escape:27,space:32,up:38,down:40,left:37,right:39,"delete":46,comma:188},b=9007199254740991,c=["text","email","url"],d=angular.module("ngTagsInput",[]);d.directive("tagsInput",["$timeout","$document","$window","$q","tagsInputConfig","tiUtil",function(d,e,f,g,h,i){function j(a,b,c,d){var e,f,h,j,k={};return e=function(b){return i.safeToString(b[a.displayProperty])},f=function(b,c){b[a.displayProperty]=c},h=function(b){var d=e(b),f=d&&d.length>=a.minLength&&d.length<=a.maxLength&&a.allowedTagsPattern.test(d)&&!i.findInObjectArray(k.items,b,a.keyProperty||a.displayProperty);return g.when(f&&c({$tag:b})).then(i.promisifyValue)},j=function(a){return g.when(d({$tag:a})).then(i.promisifyValue)},k.items=[],k.addText=function(a){var b={};return f(b,a),k.add(b)},k.add=function(c){var d=e(c);return a.replaceSpacesWithDashes&&(d=i.replaceSpacesWithDashes(d)),f(c,d),h(c).then(function(){k.items.push(c),b.trigger("tag-added",{$tag:c})})["catch"](function(){d&&b.trigger("invalid-tag",{$tag:c})})},k.remove=function(a){var c=k.items[a];return j(c).then(function(){return k.items.splice(a,1),k.clearSelection(),b.trigger("tag-removed",{$tag:c}),c})},k.select=function(a){0>a?a=k.items.length-1:a>=k.items.length&&(a=0),k.index=a,k.selected=k.items[a]},k.selectPrior=function(){k.select(--k.index)},k.selectNext=function(){k.select(++k.index)},k.removeSelected=function(){return k.remove(k.index)},k.clearSelection=function(){k.selected=null,k.index=-1},k.getItems=function(){return a.useStrings?k.items.map(e):k.items},k.clearSelection(),k}function k(a){return-1!==c.indexOf(a)}return{restrict:"E",require:"ngModel",scope:{tags:"=ngModel",text:"=?",templateScope:"=?",tagClass:"&",onTagAdding:"&",onTagAdded:"&",onInvalidTag:"&",onTagRemoving:"&",onTagRemoved:"&",onTagClicked:"&"},replace:!1,transclude:!0,templateUrl:"ngTagsInput/tags-input.html",controller:["$scope","$attrs","$element",function(a,c,d){a.events=i.simplePubSub(),h.load("tagsInput",a,c,{template:[String,"ngTagsInput/tag-item.html"],type:[String,"text",k],placeholder:[String,"Add a tag"],tabindex:[Number,null],removeTagSymbol:[String,String.fromCharCode(215)],replaceSpacesWithDashes:[Boolean,!0],minLength:[Number,3],maxLength:[Number,b],addOnEnter:[Boolean,!0],addOnSpace:[Boolean,!1],addOnComma:[Boolean,!0],addOnBlur:[Boolean,!0],addOnPaste:[Boolean,!1],pasteSplitPattern:[RegExp,/,/],allowedTagsPattern:[RegExp,/.+/],enableEditingLastTag:[Boolean,!1],minTags:[Number,0],maxTags:[Number,b],displayProperty:[String,"text"],keyProperty:[String,""],allowLeftoverText:[Boolean,!1],addFromAutocompleteOnly:[Boolean,!1],spellcheck:[Boolean,!0],useStrings:[Boolean,!1]}),a.tagList=new j(a.options,a.events,i.handleUndefinedResult(a.onTagAdding,!0),i.handleUndefinedResult(a.onTagRemoving,!0)),this.registerAutocomplete=function(){d.find("input");return{addTag:function(b){return a.tagList.add(b)},getTags:function(){return a.tagList.items},getCurrentTagText:function(){return a.newTag.text()},getOptions:function(){return a.options},getTemplateScope:function(){return a.templateScope},on:function(b,c){return a.events.on(b,c,!0),this}}},this.registerTagItem=function(){return{getOptions:function(){return a.options},removeTag:function(b){a.disabled||a.tagList.remove(b)}}}}],link:function(b,c,g,h){var j,k,l=[a.enter,a.comma,a.space,a.backspace,a["delete"],a.left,a.right],m=b.tagList,n=b.events,o=b.options,p=c.find("input"),q=["minTags","maxTags","allowLeftoverText"];j=function(){h.$setValidity("maxTags",m.items.length<=o.maxTags),h.$setValidity("minTags",m.items.length>=o.minTags),h.$setValidity("leftoverText",b.hasFocus||o.allowLeftoverText?!0:!b.newTag.text())},k=function(){d(function(){p[0].focus()})},h.$isEmpty=function(a){return!a||!a.length},b.newTag={text:function(a){return angular.isDefined(a)?(b.text=a,void n.trigger("input-change",a)):b.text||""},invalid:null},b.track=function(a){return a[o.keyProperty||o.displayProperty]},b.getTagClass=function(a,c){var d=a===m.selected;return[b.tagClass({$tag:a,$index:c,$selected:d}),{selected:d}]},b.$watch("tags",function(a){if(a){if(m.items=i.makeObjectArray(a,o.displayProperty),o.useStrings)return;b.tags=m.items}else m.items=[]}),b.$watch("tags.length",function(){j(),h.$validate()}),g.$observe("disabled",function(a){b.disabled=a}),b.eventHandlers={input:{keydown:function(a){n.trigger("input-keydown",a)},focus:function(){b.hasFocus||(b.hasFocus=!0,n.trigger("input-focus"))},blur:function(){d(function(){var a=e.prop("activeElement"),d=a===p[0],f=c[0].contains(a);(d||!f)&&(b.hasFocus=!1,n.trigger("input-blur"))})},paste:function(a){a.getTextData=function(){var b=a.clipboardData||a.originalEvent&&a.originalEvent.clipboardData;return b?b.getData("text/plain"):f.clipboardData.getData("Text")},n.trigger("input-paste",a)}},host:{click:function(){b.disabled||k()}},tag:{click:function(a){n.trigger("tag-clicked",{$tag:a})}}},n.on("tag-added",b.onTagAdded).on("invalid-tag",b.onInvalidTag).on("tag-removed",b.onTagRemoved).on("tag-clicked",b.onTagClicked).on("tag-added",function(){b.newTag.text("")}).on("tag-added tag-removed",function(){b.tags=m.getItems(),h.$setDirty(),k()}).on("invalid-tag",function(){b.newTag.invalid=!0}).on("option-change",function(a){-1!==q.indexOf(a.name)&&j()}).on("input-change",function(){m.clearSelection(),b.newTag.invalid=null}).on("input-focus",function(){c.triggerHandler("focus"),h.$setValidity("leftoverText",!0)}).on("input-blur",function(){o.addOnBlur&&!o.addFromAutocompleteOnly&&m.addText(b.newTag.text()),c.triggerHandler("blur"),j()}).on("input-keydown",function(c){var d,e,f,g,h=c.keyCode,j={};i.isModifierOn(c)||-1===l.indexOf(h)||(j[a.enter]=o.addOnEnter,j[a.comma]=o.addOnComma,j[a.space]=o.addOnSpace,d=!o.addFromAutocompleteOnly&&j[h],e=(h===a.backspace||h===a["delete"])&&m.selected,g=h===a.backspace&&0===b.newTag.text().length&&o.enableEditingLastTag,f=(h===a.backspace||h===a.left||h===a.right)&&0===b.newTag.text().length&&!o.enableEditingLastTag,d?m.addText(b.newTag.text()):g?(m.selectPrior(),m.removeSelected().then(function(a){a&&b.newTag.text(a[o.displayProperty])})):e?m.removeSelected():f&&(h===a.left||h===a.backspace?m.selectPrior():h===a.right&&m.selectNext()),(d||f||e||g)&&c.preventDefault())}).on("input-paste",function(a){if(o.addOnPaste){var b=a.getTextData(),c=b.split(o.pasteSplitPattern);c.length>1&&(c.forEach(function(a){m.addText(a)}),a.preventDefault())}})}}}]),d.directive("tiTagItem",["tiUtil",function(a){return{restrict:"E",require:"^tagsInput",template:'<ng-include src="$$template"></ng-include>',scope:{$scope:"=scope",data:"="},link:function(b,c,d,e){var f=e.registerTagItem(),g=f.getOptions();b.$$template=g.template,b.$$removeTagSymbol=g.removeTagSymbol,b.$getDisplayText=function(){return a.safeToString(b.data[g.displayProperty])},b.$removeTag=function(){f.removeTag(b.$index)},b.$watch("$parent.$index",function(a){b.$index=a})}}}]),d.directive("autoComplete",["$document","$timeout","$sce","$q","tagsInputConfig","tiUtil",function(b,c,d,e,f,g){function h(a,b,c){var d,f,h,i={};return h=function(){return b.tagsInput.keyProperty||b.tagsInput.displayProperty},d=function(a,c){return a.filter(function(a){return!g.findInObjectArray(c,a,h(),function(a,c){return b.tagsInput.replaceSpacesWithDashes&&(a=g.replaceSpacesWithDashes(a),c=g.replaceSpacesWithDashes(c)),g.defaultComparer(a,c)})})},i.reset=function(){f=null,i.items=[],i.visible=!1,i.index=-1,i.selected=null,i.query=null},i.show=function(){b.selectFirstMatch?i.select(0):i.selected=null,i.visible=!0},i.load=g.debounce(function(c,j){i.query=c;var k=e.when(a({$query:c}));f=k,k.then(function(a){k===f&&(a=g.makeObjectArray(a.data||a,h()),a=d(a,j),i.items=a.slice(0,b.maxResultsToShow),i.items.length>0?i.show():i.reset())})},b.debounceDelay),i.selectNext=function(){i.select(++i.index)},i.selectPrior=function(){i.select(--i.index)},i.select=function(a){0>a?a=i.items.length-1:a>=i.items.length&&(a=0),i.index=a,i.selected=i.items[a],c.trigger("suggestion-selected",a)},i.reset(),i}function i(a,b){var c=a.find("li").eq(b),d=c.parent(),e=c.prop("offsetTop"),f=c.prop("offsetHeight"),g=d.prop("clientHeight"),h=d.prop("scrollTop");h>e?d.prop("scrollTop",e):e+f>g+h&&d.prop("scrollTop",e+f-g)}return{restrict:"E",require:"^tagsInput",scope:{source:"&",matchClass:"&"},templateUrl:"ngTagsInput/auto-complete.html",controller:["$scope","$element","$attrs",function(a,b,c){a.events=g.simplePubSub(),f.load("autoComplete",a,c,{template:[String,"ngTagsInput/auto-complete-match.html"],debounceDelay:[Number,100],minLength:[Number,3],highlightMatchedText:[Boolean,!0],maxResultsToShow:[Number,10],loadOnDownArrow:[Boolean,!1],loadOnEmpty:[Boolean,!1],loadOnFocus:[Boolean,!1],selectFirstMatch:[Boolean,!0],displayProperty:[String,""]}),a.suggestionList=new h(a.source,a.options,a.events),this.registerAutocompleteMatch=function(){return{getOptions:function(){return a.options},getQuery:function(){return a.suggestionList.query}}}}],link:function(b,c,d,e){var f,h=[a.enter,a.tab,a.escape,a.up,a.down],j=b.suggestionList,k=e.registerAutocomplete(),l=b.options,m=b.events;l.tagsInput=k.getOptions(),f=function(a){return a&&a.length>=l.minLength||!a&&l.loadOnEmpty},b.templateScope=k.getTemplateScope(),b.addSuggestionByIndex=function(a){j.select(a),b.addSuggestion()},b.addSuggestion=function(){var a=!1;return j.selected&&(k.addTag(angular.copy(j.selected)),j.reset(),a=!0),a},b.track=function(a){return a[l.tagsInput.keyProperty||l.tagsInput.displayProperty]},b.getSuggestionClass=function(a,c){var d=a===j.selected;return[b.matchClass({$match:a,$index:c,$selected:d}),{selected:d}]},k.on("tag-added tag-removed invalid-tag input-blur",function(){j.reset()}).on("input-change",function(a){f(a)?j.load(a,k.getTags()):j.reset()}).on("input-focus",function(){var a=k.getCurrentTagText();l.loadOnFocus&&f(a)&&j.load(a,k.getTags())}).on("input-keydown",function(c){var d=c.keyCode,e=!1;if(!g.isModifierOn(c)&&-1!==h.indexOf(d))return j.visible?d===a.down?(j.selectNext(),e=!0):d===a.up?(j.selectPrior(),e=!0):d===a.escape?(j.reset(),e=!0):(d===a.enter||d===a.tab)&&(e=b.addSuggestion()):d===a.down&&b.options.loadOnDownArrow&&(j.load(k.getCurrentTagText(),k.getTags()),e=!0),e?(c.preventDefault(),c.stopImmediatePropagation(),!1):void 0}),m.on("suggestion-selected",function(a){i(c,a)})}}}]),d.directive("tiAutocompleteMatch",["$sce","tiUtil",function(a,b){return{restrict:"E",require:"^autoComplete",template:'<ng-include src="$$template"></ng-include>',scope:{$scope:"=scope",data:"="},link:function(c,d,e,f){var g=f.registerAutocompleteMatch(),h=g.getOptions();c.$$template=h.template,c.$index=c.$parent.$index,c.$highlight=function(c){return h.highlightMatchedText&&(c=b.safeHighlight(c,g.getQuery())),a.trustAsHtml(c)},c.$getDisplayText=function(){return b.safeToString(c.data[h.displayProperty||h.tagsInput.displayProperty])}}}}]),d.directive("tiTranscludeAppend",function(){return function(a,b,c,d,e){e(function(a){b.append(a)})}}),d.directive("tiAutosize",["tagsInputConfig",function(a){return{restrict:"A",require:"ngModel",link:function(b,c,d,e){var f,g,h=a.getTextAutosizeThreshold();f=angular.element('<span class="input"></span>'),f.css("display","none").css("visibility","hidden").css("width","auto").css("white-space","pre"),c.parent().append(f),g=function(a){var b,e=a;return angular.isString(e)&&0===e.length&&(e=d.placeholder),e&&(f.text(e),f.css("display",""),b=f.prop("offsetWidth"),f.css("display","none")),c.css("width",b?b+h+"px":""),a},e.$parsers.unshift(g),e.$formatters.unshift(g),d.$observe("placeholder",function(a){e.$modelValue||g(a)})}}}]),d.directive("tiBindAttrs",function(){return function(a,b,c){a.$watch(c.tiBindAttrs,function(a){angular.forEach(a,function(a,b){c.$set(b,a)})},!0)}}),d.provider("tagsInputConfig",function(){var a={},b={},c=3;this.setDefaults=function(b,c){return a[b]=c,this},this.setActiveInterpolation=function(a,c){return b[a]=c,this},this.setTextAutosizeThreshold=function(a){return c=a,this},this.$get=["$interpolate",function(d){var e={};return e[String]=function(a){return a},e[Number]=function(a){return parseInt(a,10)},e[Boolean]=function(a){return"true"===a.toLowerCase()},e[RegExp]=function(a){return new RegExp(a)},{load:function(c,f,g,h){var i=function(){return!0};f.options={},angular.forEach(h,function(h,j){var k,l,m,n,o,p;k=h[0],l=h[1],m=h[2]||i,n=e[k],o=function(){var b=a[c]&&a[c][j];return angular.isDefined(b)?b:l},p=function(a){f.options[j]=a&&m(a)?n(a):o()},b[c]&&b[c][j]?g.$observe(j,function(a){p(a),f.events.trigger("option-change",{name:j,newValue:a})}):p(g[j]&&d(g[j])(f.$parent))})},getTextAutosizeThreshold:function(){return c}}}]}),d.factory("tiUtil",["$timeout","$q",function(a,b){var c={};return c.debounce=function(b,c){var d;return function(){var e=arguments;a.cancel(d),d=a(function(){b.apply(null,e)},c)}},c.makeObjectArray=function(a,b){if(!angular.isArray(a)||0===a.length||angular.isObject(a[0]))return a;var c=[];return a.forEach(function(a){var d={};d[b]=a,c.push(d)}),c},c.findInObjectArray=function(a,b,d,e){var f=null;return e=e||c.defaultComparer,a.some(function(a){return e(a[d],b[d])?(f=a,!0):void 0}),f},c.defaultComparer=function(a,b){return c.safeToString(a).toLowerCase()===c.safeToString(b).toLowerCase()},c.safeHighlight=function(a,b){function d(a){return a.replace(/([.?*+^$[\]\\(){}|-])/g,"\\$1")}if(a=c.encodeHTML(a),b=c.encodeHTML(b),!b)return a;var e=new RegExp("&[^;]+;|"+d(b),"gi");return a.replace(e,function(a){return a.toLowerCase()===b.toLowerCase()?"<em>"+a+"</em>":a})},c.safeToString=function(a){return angular.isUndefined(a)||null==a?"":a.toString().trim()},c.encodeHTML=function(a){return c.safeToString(a).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")},c.handleUndefinedResult=function(a,b){return function(){var c=a.apply(null,arguments);return angular.isUndefined(c)?b:c}},c.replaceSpacesWithDashes=function(a){return c.safeToString(a).replace(/\s/g,"-")},c.isModifierOn=function(a){return a.shiftKey||a.ctrlKey||a.altKey||a.metaKey},c.promisifyValue=function(a){return a=angular.isUndefined(a)?!0:a,b[a?"when":"reject"]()},c.simplePubSub=function(){var a={};return{on:function(b,c,d){return b.split(" ").forEach(function(b){a[b]||(a[b]=[]);var e=d?[].unshift:[].push;e.call(a[b],c)}),this},trigger:function(b,d){var e=a[b]||[];return e.every(function(a){return c.handleUndefinedResult(a,!0)(d)}),this}}},c}]),d.run(["$templateCache",function(a){a.put("ngTagsInput/tags-input.html",'<div class="host" tabindex="-1" ng-click="eventHandlers.host.click()" ti-transclude-append><div class="tags" ng-class="{focused: hasFocus}"><ul class="tag-list"><li class="tag-item" ng-repeat="tag in tagList.items track by track(tag)" ng-class="getTagClass(tag, $index)" ng-click="eventHandlers.tag.click(tag)"><ti-tag-item scope="templateScope" data="::tag"></ti-tag-item></li></ul><input class="input" autocomplete="off" ng-model="newTag.text" ng-model-options="{getterSetter: true}" ng-keydown="eventHandlers.input.keydown($event)" ng-focus="eventHandlers.input.focus($event)" ng-blur="eventHandlers.input.blur($event)" ng-paste="eventHandlers.input.paste($event)" ng-trim="false" ng-class="{\'invalid-tag\': newTag.invalid}" ng-disabled="disabled" ti-bind-attrs="{type: options.type, placeholder: options.placeholder, tabindex: options.tabindex, spellcheck: options.spellcheck}" ti-autosize></div></div>'),a.put("ngTagsInput/tag-item.html",'<span ng-bind="$getDisplayText()"></span> <a class="remove-button" ng-click="$removeTag()" ng-bind="::$$removeTagSymbol"></a>'),a.put("ngTagsInput/auto-complete.html",'<div class="autocomplete" ng-if="suggestionList.visible"><ul class="suggestion-list"><li class="suggestion-item" ng-repeat="item in suggestionList.items track by track(item)" ng-class="getSuggestionClass(item, $index)" ng-click="addSuggestionByIndex($index)" ng-mouseenter="suggestionList.select($index)"><ti-autocomplete-match scope="templateScope" data="::item"></ti-autocomplete-match></li></ul></div>'),a.put("ngTagsInput/auto-complete-match.html",'<span ng-bind-html="$highlight($getDisplayText())"></span>')}])}();
+},{}],144:[function(require,module,exports){
 (function(root, factory) {
 if (typeof exports === "object") {
 module.exports = factory(require('angular'));
@@ -91444,7 +91484,7 @@ angular.module('ngMap', []);
 
 return 'ngMap';
 }));
-},{"angular":135}],144:[function(require,module,exports){
+},{"angular":136}],145:[function(require,module,exports){
 /**
  * Rangy, a cross-browser JavaScript range and selection library
  * https://github.com/timdown/rangy
@@ -95290,7 +95330,7 @@ return 'ngMap';
 
     return api;
 }, this);
-},{}],145:[function(require,module,exports){
+},{}],146:[function(require,module,exports){
 /**
  * Selection save and restore module for Rangy.
  * Saves and restores user selections using marker invisible elements in the DOM.
@@ -95543,7 +95583,7 @@ return 'ngMap';
     
     return rangy;
 }, this);
-},{"rangy":144}],146:[function(require,module,exports){
+},{"rangy":145}],147:[function(require,module,exports){
 /*
      _ _      _       _
  ___| (_) ___| | __  (_)___
@@ -98556,7 +98596,7 @@ return 'ngMap';
 
 }));
 
-},{"jquery":141}],147:[function(require,module,exports){
+},{"jquery":142}],148:[function(require,module,exports){
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module unless amdModuleId is set
@@ -103872,7 +103912,7 @@ return textAngular.name;
 
 }));
 
-},{"rangy":144,"rangy/lib/rangy-selectionsaverestore":145}],148:[function(require,module,exports){
+},{"rangy":145,"rangy/lib/rangy-selectionsaverestore":146}],149:[function(require,module,exports){
 (function (global){
 //     Underscore.js 1.8.3
 //     http://underscorejs.org
@@ -105503,106 +105543,106 @@ return textAngular.name;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],149:[function(require,module,exports){
-module.exports = '<section class="confirm"><button data-role="button" class="cmd cmd-positive" ng-click="confirm()">{{ "Confirm account" | translate }}</button></section>';
 },{}],150:[function(require,module,exports){
-module.exports = '<div class="row fullWidth" style="signup-page background-color: #dddedf; margin-top:30px"><div class="large-6 large-centered columns" style="background-repeat: no-repeat; \n       background-size: 700px 500px; padding-left: 0px; padding-right: 0px;\n       background-image: url(\'{{ \'img/galera-gray.svg\' | static }}\')"><div style="font-size: 130%;font-family: DosisSemiBold; color: #7c7d80">La confirmación de la cuenta ha fallado</div></div></div>';
+module.exports = '<section class="confirm"><button data-role="button" class="cmd cmd-positive" ng-click="confirm()">{{ "Confirm account" | translate }}</button></section>';
 },{}],151:[function(require,module,exports){
-module.exports = '<div class="row fullWidth" style="signup-page background-color: #dddedf; margin-top:30px"><div class="large-6 large-centered columns" style="background-repeat: no-repeat; \n       background-size: 700px 500px; padding-left: 0px; padding-right: 0px;\n       background-image: url(\'{{ \'img/galera-gray.svg\' | static }}\')"><div style="font-size: 130%;font-family: DosisSemiBold; color: #7c7d80">La cuenta ha sido confirmada</div></div></div>';
+module.exports = '<div class="row fullWidth" style="signup-page background-color: #dddedf; margin-top:30px"><div class="large-6 large-centered columns" style="background-repeat: no-repeat; \n       background-size: 700px 500px; padding-left: 0px; padding-right: 0px;\n       background-image: url(\'{{ \'img/galera-gray.svg\' | static }}\')"><div style="font-size: 130%;font-family: DosisSemiBold; color: #7c7d80">La confirmación de la cuenta ha fallado</div></div></div>';
 },{}],152:[function(require,module,exports){
-module.exports = '<div class="row fullWidth" style="background-color: #58c1c9; margin-top:30px"><div class="large-6 large-centered columns" style="background-repeat: no-repeat; \n         background-size: 700px 500px;\n         background-image: url(\'{{ \'img/galera-azul.svg\' | static }}\')"><form id="forgotForm" name="forgotForm" ng-submit="send(forgotForm)"><div class="row" style="padding-top:60px !important; padding-bottom:30px !important"><div class="large-6 large-centered columns"><h3 style="font-size: 200%;font-family: DosisBold; color: white;text-align: center">{{ \'Reiniciar contraseña\' | translate }}</h3></div></div><div class="row"><div class="large-6 columns"><input class="radius shadow-input" ng-model="formData.email" placeholder="Correo electrónico"> <img class="shadow-img" src="{{ \'img/shadow-input-login.svg\' | static }}"></div><div class="large-6 columns"><input style="font-family: DosisSemiBold; color: white; font-size: 100%" class="button radius tiny alert" type="submit" value="{{ \'Reiniciar contraseña\' | translate }}"></div></div></form></div></div>';
+module.exports = '<div class="row fullWidth" style="signup-page background-color: #dddedf; margin-top:30px"><div class="large-6 large-centered columns" style="background-repeat: no-repeat; \n       background-size: 700px 500px; padding-left: 0px; padding-right: 0px;\n       background-image: url(\'{{ \'img/galera-gray.svg\' | static }}\')"><div style="font-size: 130%;font-family: DosisSemiBold; color: #7c7d80">La cuenta ha sido confirmada</div></div></div>';
 },{}],153:[function(require,module,exports){
-module.exports = '<div class="row fullWidth" style="background-color: #58c1c9; margin-top:30px"><div class="large-6 large-centered columns" style="background-repeat: no-repeat; \n         background-size: 700px 500px;\n         background-image: url(\'{{ \'img/galera-azul.svg\' | static }}\')"><form ng-submit="login()"><div class="row" style="padding-top:60px !important; padding-bottom:30px !important"><div class="large-6 large-centered columns"><h3 style="font-size: 200%;font-family: DosisBold; color: white;text-align: center">{{ \'Iniciar sesión\' | translate }}</h3></div></div><div class="row"><div class="large-12 columns">{{ form.non_field_errors }}</div></div><div class="row"><div class="large-6 columns"><input class="radius shadow-input" ng-model="formData.email" placeholder="Correo electrónico"> <img class="shadow-img" src="{{ \'img/shadow-input-login.svg\' | static }}"></div><div class="large-6 columns"><input type="password" class="radius shadow-input" ng-model="formData.password" placeholder="Contraseña"> <img class="shadow-img" src="{{ \'img/shadow-input-login.svg\' | static }}"><div class="right"><a style="font-family: DosisSemiBold; color: white; text-decoration: underline" ui-sref="accounts.forgot">{{ \'¿Has olvidado tu contraseña?\' | translate }}</a></div></div></div><div class="row"><div class="large-12 columns" style="font-family: DosisSemiBold; color: white"><input type="checkbox" ng-model="formData.remember"> {{ \'Seguir conectado\' | translate }}</div></div><div class="row"><div class="large-4 columns"><hr></div><div class="large-4 columns" style="text-align: center"><input style="font-family: DosisSemiBold; color: white; font-size: 100%" class="button radius tiny alert" type="submit" value="{{ \'INGRESAR\' | translate }}"></div><div class="large-4 columns"><hr></div></div></form><div class="row" style="padding-top:50px;padding-bottom:50px; font-family: DosisBold; color: white; font-size: 110%"><div class="large-12 columns"><div class="left">{{ \'O ingresa con\' | translate }} <a title="Facebook" href="accounts.facebook"><img src="{{ \'img/f.svg\' | static }}"></a> <a title="Google" href="accounts.google"><img style="width:115px" src="{{ \'img/g+.svg\' | static }}"></a> <a title="LinkedIn" href="accounts.linkedin"><img src="{{ \'img/in.svg\' | static }}"></a></div><div class="right">{{ \'¿No estás registrado?\' | translate }} <a style="font-family: DosisBold; color: white; text-decoration: underline" ui-sref="accounts.signup">{{ \'Click aquí\' | translate }}</a></div></div></div></div></div>';
+module.exports = '<div class="row fullWidth" style="background-color: #58c1c9; margin-top:30px"><div class="large-6 large-centered columns" style="background-repeat: no-repeat; \n         background-size: 700px 500px;\n         background-image: url(\'{{ \'img/galera-azul.svg\' | static }}\')"><form id="forgotForm" name="forgotForm" ng-submit="send(forgotForm)"><div class="row" style="padding-top:60px !important; padding-bottom:30px !important"><div class="large-6 large-centered columns"><h3 style="font-size: 200%;font-family: DosisBold; color: white;text-align: center">{{ \'Reiniciar contraseña\' | translate }}</h3></div></div><div class="row"><div class="large-6 columns"><input class="radius shadow-input" ng-model="formData.email" placeholder="Correo electrónico"> <img class="shadow-img" src="{{ \'img/shadow-input-login.svg\' | static }}"></div><div class="large-6 columns"><input style="font-family: DosisSemiBold; color: white; font-size: 100%" class="button radius tiny alert" type="submit" value="{{ \'Reiniciar contraseña\' | translate }}"></div></div></form></div></div>';
 },{}],154:[function(require,module,exports){
-module.exports = '<div><div class="row"><div class="large-12 columns"><h1 style="font-family: DosisSemiBold">{{ "Desloguearse" | translate }}</h1><p style="font-family: DosisSemiBold">{{ "Confirme para desloguearse" | translate }}</p><button class="button medium alert" ng-click="logout()">{{ \'Confirm\' | translate }}</button></div></div></div>';
+module.exports = '<div class="row fullWidth" style="background-color: #58c1c9; margin-top:30px"><div class="large-6 large-centered columns" style="background-repeat: no-repeat; \n         background-size: 700px 500px;\n         background-image: url(\'{{ \'img/galera-azul.svg\' | static }}\')"><form ng-submit="login()"><div class="row" style="padding-top:60px !important; padding-bottom:30px !important"><div class="large-6 large-centered columns"><h3 style="font-size: 200%;font-family: DosisBold; color: white;text-align: center">{{ \'Iniciar sesión\' | translate }}</h3></div></div><div class="row"><div class="large-12 columns">{{ form.non_field_errors }}</div></div><div class="row"><div class="large-6 columns"><input class="radius shadow-input" ng-model="formData.email" placeholder="Correo electrónico"> <img class="shadow-img" src="{{ \'img/shadow-input-login.svg\' | static }}"></div><div class="large-6 columns"><input type="password" class="radius shadow-input" ng-model="formData.password" placeholder="Contraseña"> <img class="shadow-img" src="{{ \'img/shadow-input-login.svg\' | static }}"><div class="right"><a style="font-family: DosisSemiBold; color: white; text-decoration: underline" ui-sref="accounts.forgot">{{ \'¿Has olvidado tu contraseña?\' | translate }}</a></div></div></div><div class="row"><div class="large-12 columns" style="font-family: DosisSemiBold; color: white"><input type="checkbox" ng-model="formData.remember"> {{ \'Seguir conectado\' | translate }}</div></div><div class="row"><div class="large-4 columns"><hr></div><div class="large-4 columns" style="text-align: center"><input style="font-family: DosisSemiBold; color: white; font-size: 100%" class="button radius tiny alert" type="submit" value="{{ \'INGRESAR\' | translate }}"></div><div class="large-4 columns"><hr></div></div></form><div class="row" style="padding-top:50px;padding-bottom:50px; font-family: DosisBold; color: white; font-size: 110%"><div class="large-12 columns"><div class="left">{{ \'O ingresa con\' | translate }} <a title="Facebook" href="accounts.facebook"><img src="{{ \'img/f.svg\' | static }}"></a> <a title="Google" href="accounts.google"><img style="width:115px" src="{{ \'img/g+.svg\' | static }}"></a> <a title="LinkedIn" href="accounts.linkedin"><img src="{{ \'img/in.svg\' | static }}"></a></div><div class="right">{{ \'¿No estás registrado?\' | translate }} <a style="font-family: DosisBold; color: white; text-decoration: underline" ui-sref="accounts.signup">{{ \'Click aquí\' | translate }}</a></div></div></div></div></div>';
 },{}],155:[function(require,module,exports){
-module.exports = '<div class="row fullWidth" style="background-color: #58c1c9; margin-top:30px"><div class="large-6 large-centered columns" style="background-repeat: no-repeat; \n         background-size: 700px 500px;\n         background-image: url(\'{{ \'img/galera-azul.svg\' | static }}\')"><form id="resetPasswordForm" name="resetPasswordForm" ng-submit="send(resetPasswordForm)"><div class="row" style="padding-top:60px !important; padding-bottom:30px !important"><div class="large-6 large-centered columns"><h3 style="font-size: 200%;font-family: DosisBold; color: white;text-align: center">{{ \'Reiniciar contraseña\' | translate }}</h3></div></div><div class="row"><div class="large-6 columns"><input type="password" class="radius shadow-input" ng-model="resetPasswordData.new_password1" name="new_password1" id="new_password1" placeholder="Nueva contraseña"> <img class="shadow-img" src="{{ \'img/shadow-input-login.svg\' | static }}"> <input type="password" class="radius shadow-input" ng-model="resetPasswordData.new_password2" name="new_password2" id="new_password2" placeholder="Repita"> <img class="shadow-img" src="{{ \'img/shadow-input-login.svg\' | static }}"></div><div class="large-6 columns"><input style="font-family: DosisSemiBold; color: white; font-size: 100%" class="button radius tiny alert" type="submit" value="{{ \'Reiniciar contraseña\' | translate }}"></div></div></form></div></div>';
+module.exports = '<div><div class="row"><div class="large-12 columns"><h1 style="font-family: DosisSemiBold">{{ "Desloguearse" | translate }}</h1><p style="font-family: DosisSemiBold">{{ "Confirme para desloguearse" | translate }}</p><button class="button medium alert" ng-click="logout()">{{ \'Confirm\' | translate }}</button></div></div></div>';
 },{}],156:[function(require,module,exports){
-module.exports = '<div class="row fullWidth" style="signup-page background-color: #dddedf; margin-top:30px"><div class="large-6 large-centered columns" style="background-repeat: no-repeat; \n       background-size: 700px 500px; padding-left: 0px; padding-right: 0px;\n       background-image: url(\'{{ \'img/galera-gray.svg\' | static }}\')"><form ng-submit="signup()"><div class="row" style="padding-top:60px !important; padding-bottom:30px !important"><div class="large-6 large-centered columns"><h3 style="font-size: 200%;font-family: DosisBold; color: white;text-align: center">{{ "Regístrate" | translate }}</h3></div></div><div class="row"><div class="large-12 columns">{{ form.non_field_errors }}</div></div><div class="row"><div class="large-6 columns"><input ng-model="formData.firstName" class="radius shadow-input" placeholder="{{ \'Nombre\' | translate }}"> <img class="shadow-img" src="{{ \'img/shadow-input.svg\' | static }}"> {{ errors.first_name }}</div><div class="large-6 columns"><input ng-model="formData.lastName" class="radius shadow-input" placeholder="{{ \'Apellido\' | translate}}"> <img class="shadow-img" src="{{ \'img/shadow-input.svg\' | static }}"> {{ errors.last_name }}</div></div><div class="row"><div class="large-6 columns"><input ng-model="formData.email" class="radius shadow-input" placeholder="{{ \'Corre electronico\' | translate }}"> <img class="shadow-img" src="{{ \'img/shadow-input.svg\' | static }}"> {{ errors.email }}</div><div class="large-6 columns"><input type="password" ng-model="formData.password" class="radius shadow-input" placeholder="{{ \'Contraseña\' | translate }}"> <img class="shadow-img" src="{{ \'img/shadow-input.svg\' | static }}"> {{ errors.password }}</div></div><div class="row" style="padding-top:30px"><div class="large-4 columns"><hr style="border: solid 1px white"></div><div class="large-4 columns" style="text-align: center"><input style="font-family: DosisSemiBold; color: white; font-size: 100%" class="button radius tiny alert" type="submit" value="{{ \'REGISTRARSE\' | translate }}"></div><div class="large-4 columns"><hr style="border: solid 1px white"></div></div></form><div class="row" style="padding-top:50px;padding-bottom:10px; font-family: DosisBold; color: gray; font-size: 110%"><div class="large-12 columns"><div class="left">{{ \'O registrate con\' | translate }} <a title="Facebook" ng-click="facebook()"><img src="{{ \'img/f.svg\' | static }}"></a> <a title="Google" ng-click="google()"><img style="width:115px" src="{{ \'img/g+.svg\' | static }}"></a> <a title="LinkedIn" ng-click="linkedin()"><img src="{{ \'img/in.svg\' | static }}"></a></div><div class="right">{{ "¿Ya estás registrado?" | translate }} <a style="font-family: DosisBold; color: #2f4f4f; text-decoration: underline" ui-sref="accounts.login">{{ "Click aquí" | translate }}</a></div></div></div></div></div>';
+module.exports = '<div class="row fullWidth" style="background-color: #58c1c9; margin-top:30px"><div class="large-6 large-centered columns" style="background-repeat: no-repeat; \n         background-size: 700px 500px;\n         background-image: url(\'{{ \'img/galera-azul.svg\' | static }}\')"><form id="resetPasswordForm" name="resetPasswordForm" ng-submit="send(resetPasswordForm)"><div class="row" style="padding-top:60px !important; padding-bottom:30px !important"><div class="large-6 large-centered columns"><h3 style="font-size: 200%;font-family: DosisBold; color: white;text-align: center">{{ \'Reiniciar contraseña\' | translate }}</h3></div></div><div class="row"><div class="large-6 columns"><input type="password" class="radius shadow-input" ng-model="resetPasswordData.new_password1" name="new_password1" id="new_password1" placeholder="Nueva contraseña"> <img class="shadow-img" src="{{ \'img/shadow-input-login.svg\' | static }}"> <input type="password" class="radius shadow-input" ng-model="resetPasswordData.new_password2" name="new_password2" id="new_password2" placeholder="Repita"> <img class="shadow-img" src="{{ \'img/shadow-input-login.svg\' | static }}"></div><div class="large-6 columns"><input style="font-family: DosisSemiBold; color: white; font-size: 100%" class="button radius tiny alert" type="submit" value="{{ \'Reiniciar contraseña\' | translate }}"></div></div></form></div></div>';
 },{}],157:[function(require,module,exports){
-module.exports = '<div class="mono-screen"><div class="content"><h1 style="font-family: DosisSemiBold">{{ "Verifica tu dirección de correo electrónico" | translate }}</h1><p style="font-family: DosisSemiBold">Le hemos enviado un correo electrónico a {{email}} para su verificación. Siga el enlase para completar el proceso de registro. Por favor, contáctenos si no recibe el correo en unos minutos.</p></div></div>';
+module.exports = '<div class="row fullWidth" style="signup-page background-color: #dddedf; margin-top:30px"><div class="large-6 large-centered columns" style="background-repeat: no-repeat; \n       background-size: 700px 500px; padding-left: 0px; padding-right: 0px;\n       background-image: url(\'{{ \'img/galera-gray.svg\' | static }}\')"><form ng-submit="signup()"><div class="row" style="padding-top:60px !important; padding-bottom:30px !important"><div class="large-6 large-centered columns"><h3 style="font-size: 200%;font-family: DosisBold; color: white;text-align: center">{{ "Regístrate" | translate }}</h3></div></div><div class="row"><div class="large-12 columns">{{ form.non_field_errors }}</div></div><div class="row"><div class="large-6 columns"><input ng-model="formData.firstName" class="radius shadow-input" placeholder="{{ \'Nombre\' | translate }}"> <img class="shadow-img" src="{{ \'img/shadow-input.svg\' | static }}"> {{ errors.first_name }}</div><div class="large-6 columns"><input ng-model="formData.lastName" class="radius shadow-input" placeholder="{{ \'Apellido\' | translate}}"> <img class="shadow-img" src="{{ \'img/shadow-input.svg\' | static }}"> {{ errors.last_name }}</div></div><div class="row"><div class="large-6 columns"><input ng-model="formData.email" class="radius shadow-input" placeholder="{{ \'Corre electronico\' | translate }}"> <img class="shadow-img" src="{{ \'img/shadow-input.svg\' | static }}"> {{ errors.email }}</div><div class="large-6 columns"><input type="password" ng-model="formData.password" class="radius shadow-input" placeholder="{{ \'Contraseña\' | translate }}"> <img class="shadow-img" src="{{ \'img/shadow-input.svg\' | static }}"> {{ errors.password }}</div></div><div class="row" style="padding-top:30px"><div class="large-4 columns"><hr style="border: solid 1px white"></div><div class="large-4 columns" style="text-align: center"><input style="font-family: DosisSemiBold; color: white; font-size: 100%" class="button radius tiny alert" type="submit" value="{{ \'REGISTRARSE\' | translate }}"></div><div class="large-4 columns"><hr style="border: solid 1px white"></div></div></form><div class="row" style="padding-top:50px;padding-bottom:10px; font-family: DosisBold; color: gray; font-size: 110%"><div class="large-12 columns"><div class="left">{{ \'O registrate con\' | translate }} <a title="Facebook" ng-click="facebook()"><img src="{{ \'img/f.svg\' | static }}"></a> <a title="Google" ng-click="google()"><img style="width:115px" src="{{ \'img/g+.svg\' | static }}"></a> <a title="LinkedIn" ng-click="linkedin()"><img src="{{ \'img/in.svg\' | static }}"></a></div><div class="right">{{ "¿Ya estás registrado?" | translate }} <a style="font-family: DosisBold; color: #2f4f4f; text-decoration: underline" ui-sref="accounts.login">{{ "Click aquí" | translate }}</a></div></div></div></div></div>';
 },{}],158:[function(require,module,exports){
-module.exports = '<div class="course-item" ng-class="{ featured: course.featured }"><div class="course-thumb"><div class="content"><img class="logo" ng-src="{{course.owner.avatars.default}}"> <img ng-if="course.featured" class="corner-shadow" src="/static/img/result-item-new-corner-shadow.svg"> <img ng-if="course.featured" class="corner" src="/static/img/result-item-new-corner-start.svg"> <img ng-if="course.featured" class="shadow" src="/static/img/result-item-new-img-shadow.svg"></div></div><div class="course-body"><div class="content"><div class="info"><p class="title"><a ui-sref="courses.detail({id: {{course.id}}})">{{ course.title }}</a></p><p class="description"><span class="field">{{ "Descripcion" | translate }}:</span> <span>{{ course.description }}</span><br></p></div><div class="controlls"><div class="container"><div class="cell"><a href="#"><img src="/static/img/result-item-fav.svg"></a> <a href="#"><img src="/static/img/result-item-share.svg"></a></div></div></div></div></div></div>';
+module.exports = '<div class="mono-screen"><div class="content"><h1 style="font-family: DosisSemiBold">{{ "Verifica tu dirección de correo electrónico" | translate }}</h1><p style="font-family: DosisSemiBold">Le hemos enviado un correo electrónico a {{email}} para su verificación. Siga el enlase para completar el proceso de registro. Por favor, contáctenos si no recibe el correo en unos minutos.</p></div></div>';
 },{}],159:[function(require,module,exports){
-module.exports = '<h3>{{ "Está cancelando" | translate }}</h3><p>{{ "Tiene un aviso en progreso, ¿qué deséa hacer?" }}</p><a class="rj-button" ng-click="draft()">{{ "Guardar en borradores" | translate }}</a> <a class="rj-button alternative" ng-click="cancel(true)">{{ "Eliminar" | translate }}</a>';
+module.exports = '<div class="course-item" ng-class="{ featured: course.featured }"><div class="course-thumb"><div class="content"><img class="logo" ng-src="{{course.owner.avatars.default}}"> <img ng-if="course.featured" class="corner-shadow" src="/static/img/result-item-new-corner-shadow.svg"> <img ng-if="course.featured" class="corner" src="/static/img/result-item-new-corner-start.svg"> <img ng-if="course.featured" class="shadow" src="/static/img/result-item-new-img-shadow.svg"></div></div><div class="course-body"><div class="content"><div class="info"><p class="title"><a ui-sref="courses.detail({id: {{course.id}}})">{{ course.title }}</a></p><p class="description"><span class="field">{{ "Descripcion" | translate }}:</span> <span>{{ course.description }}</span><br></p></div><div class="controlls"><div class="container"><div class="cell"><a href="#"><img src="/static/img/result-item-fav.svg"></a> <a href="#"><img src="/static/img/result-item-share.svg"></a></div></div></div></div></div></div>';
 },{}],160:[function(require,module,exports){
-module.exports = '<div class="row info-bar"></div><div class="panel-screen course-detail"><div class="content"><div class="header-container"><ul class="breadcrumbs"><li><a ui-sref="courses.courses">{{ "Cursos" | translate }}</a></li></ul><div class="title-container"><alert ng-show="courseData.postulation_status !== null" type="postulationStatus[courseData.postulation_status].type" ng-bind="postulationStatus[courseData.postulation_status].message"></alert><h1 class="title">{{ courseData.title }}</h1></div></div><div class="meta-data-container"><div class="owner-container"><img ng-src="{{courseData.owner.avatars.brand}}"> <a href="">{{ courseData.owner.name_company }}</a> <a class="postulation-button rj-button" ng-click="postulate()">{{ "Postularme" | translate }}</a></div><ul class="meta"><li><span class="mdc-dh">{{ "Tipo:" | translate }}</span> {{ courseData.course_type_text }}</li></ul></div><div class="description" ng-bind-html="getDescription()"></div></div><div class="panel-side"><div class="company-info-container"><a href="#">{{ course.owner.name_company }}</a></div></div></div>';
+module.exports = '<h3>{{ "Está cancelando" | translate }}</h3><p>{{ "Tiene un aviso en progreso, ¿qué deséa hacer?" }}</p><a class="rj-button" ng-click="draft()">{{ "Guardar en borradores" | translate }}</a> <a class="rj-button alternative" ng-click="cancel(true)">{{ "Eliminar" | translate }}</a>';
 },{}],161:[function(require,module,exports){
-module.exports = '<div class="panel-screen employer-course-detail"><div class="panel-header"><div class="title-container"><h1 class="title">{{ course.title }}</h1></div></div><div class="panel-side"><ul class="rj-list"><li class="header">Información</li><li><a ng-click="edit()">{{ "Editar publicación" | translate }}</a></li><li><a ui-sref="courses.detail({id: course.id})">{{ "Ver curso" | translate }}</a></li></ul></div><div class="content"><div class="courses-container"><h2>{{ "Postulantes" | translate }}</h2><alert ng-show="!postulations || !postulations.items.length" type="\'info\'">{{ "No hay postulaciones" | translate }}</alert><course-postulant-item ng-if="postulations && postulations.items.length" ng-repeat="postulation in postulations.items track by postulation.id" postulation="postulation" view-postulation="view"></course-postulant-item><div><pagination ng-if="postulations.length" total-items="postulations.totalLength" page="actualPage" items-per-page="5" on-select-page="changePage(page)"></pagination></div><div></div></div></div></div>';
+module.exports = '<div class="row info-bar"></div><div class="panel-screen course-detail"><div class="content"><div class="header-container"><ul class="breadcrumbs"><li><a ui-sref="courses.courses">{{ "Cursos" | translate }}</a></li></ul><div class="title-container"><alert ng-show="courseData.postulation_status !== null" type="postulationStatus[courseData.postulation_status].type" ng-bind="postulationStatus[courseData.postulation_status].message"></alert><h1 class="title">{{ courseData.title }}</h1></div></div><div class="meta-data-container"><div class="owner-container"><img ng-src="{{courseData.owner.avatars.brand}}"> <a href="">{{ courseData.owner.name_company }}</a> <a class="postulation-button rj-button" ng-click="postulate()">{{ "Postularme" | translate }}</a></div><ul class="meta"><li><span class="mdc-dh">{{ "Tipo:" | translate }}</span> {{ courseData.course_type_text }}</li></ul></div><div class="description" ng-bind-html="getDescription()"></div></div><div class="panel-side"><div class="company-info-container"><a href="#">{{ course.owner.name_company }}</a></div></div></div>';
 },{}],162:[function(require,module,exports){
-module.exports = '<div class="row info-bar"></div><div class="panel-screen course-detail"><div class="content"><div ng-include src="formUrl"></div></div><div class="panel-side"><div class="company-info-container"><a href="#">{{ course.owner.name_company }}</a></div></div></div>';
+module.exports = '<div class="panel-screen employer-course-detail"><div class="panel-header"><div class="title-container"><h1 class="title">{{ course.title }}</h1></div></div><div class="panel-side"><ul class="rj-list"><li class="header">Información</li><li><a ng-click="edit()">{{ "Editar publicación" | translate }}</a></li><li><a ui-sref="courses.detail({id: course.id})">{{ "Ver curso" | translate }}</a></li></ul></div><div class="content"><div class="courses-container"><h2>{{ "Postulantes" | translate }}</h2><alert ng-show="!postulations || !postulations.items.length" type="\'info\'">{{ "No hay postulaciones" | translate }}</alert><course-postulant-item ng-if="postulations && postulations.items.length" ng-repeat="postulation in postulations.items track by postulation.id" postulation="postulation" view-postulation="view"></course-postulant-item><div><pagination ng-if="postulations.length" total-items="postulations.totalLength" page="actualPage" items-per-page="5" on-select-page="changePage(page)"></pagination></div><div></div></div></div></div>';
 },{}],163:[function(require,module,exports){
-module.exports = '<div class="panel-screen employer-postulation-detail"><div class="panel-header"><div class="title-container"><h1 class="title">{{ course.title }}</h1></div><div class="title-extra"><span class="status" ng-class="{rejected: postulation.status == 32}">{{ postulation.status_text }}</span></div></div><div class="content"><div class="course-container"><div class="row"><div class="large-4 columns"><div class="profile-avatar"><img ng-src="{{ postulation.user.avatar }}"></div></div><div class="large-8 columns"><h2>{{ postulation.user.first_name }} {{ postulation.user.last_name }}</h2><ul class="user-info"><li><span class="field">{{ "Género" | translate }}:</span> <span>{{ postulation.user.gender_text }}</span></li><li><span class="field">{{ "Teléfono" }}:</span> <span>{{ postulation.user.phone_number }}</span></li><li><span class="field">{{ "Celular" }}:</span> <span>{{ postulation.user.mobile_number }}</span></li><li><span class="field">{{ "Fecha de nacimiento" }}:</span> <span>{{ postulation.user.date_of_birth | date:"dd-MM-yyyy" }}</span></li></ul></div></div><div></div></div></div></div>';
+module.exports = '<div class="row info-bar"></div><div class="panel-screen course-detail"><div class="content"><div ng-include src="formUrl"></div></div><div class="panel-side"><div class="company-info-container"><a href="#">{{ course.owner.name_company }}</a></div></div></div>';
 },{}],164:[function(require,module,exports){
-module.exports = '<div class="large-12 columns container_form"><form ng-submit="save(form)" name="form"><div image-cropper class="row" width="{{width}}" height="{{height}}" ng-model="image.src"><div class="large-6 columns preview-container"><div class="cropit-preview" ng-style="sizes"></div><a class="rj-button lined" data-role="rotateright"><i class="fa fa-undo" aria-hidden="true"></i></a> <input type="range" class="cropit-image-zoom-input"> <a class="rj-button lined" data-role="rotateleft"><i class="fa fa-repeat" aria-hidden="true"></i></a></div><div class="large-6 columns field-container"><label for="image-src">{{ "Selecciones una archivo" | translate }}</label><input name="image-src" type="file" class="cropit-image-input"></div></div><div class="row form-buttons text-center"><a ng-click="save(form)" class="rj-button">{{ "Guardar" | translate }}</a> <a ng-click="cancel(form)" class="rj-button alternative">{{ "Cancelar" | translate }}</a></div></form></div>';
+module.exports = '<div class="panel-screen employer-postulation-detail"><div class="panel-header"><div class="title-container"><h1 class="title">{{ course.title }}</h1></div><div class="title-extra"><span class="status" ng-class="{rejected: postulation.status == 32}">{{ postulation.status_text }}</span></div></div><div class="content"><div class="course-container"><div class="row"><div class="large-4 columns"><div class="profile-avatar"><img ng-src="{{ postulation.user.avatar }}"></div></div><div class="large-8 columns"><h2>{{ postulation.user.first_name }} {{ postulation.user.last_name }}</h2><ul class="user-info"><li><span class="field">{{ "Género" | translate }}:</span> <span>{{ postulation.user.gender_text }}</span></li><li><span class="field">{{ "Teléfono" }}:</span> <span>{{ postulation.user.phone_number }}</span></li><li><span class="field">{{ "Celular" }}:</span> <span>{{ postulation.user.mobile_number }}</span></li><li><span class="field">{{ "Fecha de nacimiento" }}:</span> <span>{{ postulation.user.date_of_birth | date:"dd-MM-yyyy" }}</span></li></ul></div></div><div></div></div></div></div>';
 },{}],165:[function(require,module,exports){
-module.exports = '<div class="large-12 columns" style="padding-left: 0"><div class="large-12 columns"><a class="rj-button small" ui-sref="employer.main.courseedit({pk:\'-1\'})"><img src="/static/img/megafono.png"> NUEVO CURSO</a></div><div class="large-10 columns lista-avisos"><div class="courses-list"><div ng-if="courses.length" rj-table-collection collection-schema="coursesSchema" collection-data="courses.items" on-click="gotoCourse($item.pk)" selectable="true" ng-model="selecteds.items"></div><alert ng-if="!courses.length" type="\'info\'">{{ "No hay cursos" | translate }}</alert></div></div></div>';
+module.exports = '<div class="large-12 columns container_form"><form ng-submit="save(form)" name="form"><div image-cropper class="row" width="{{width}}" height="{{height}}" ng-model="image.src"><div class="large-6 columns preview-container"><div class="cropit-preview" ng-style="sizes"></div><a class="rj-button lined" data-role="rotateright"><i class="fa fa-undo" aria-hidden="true"></i></a> <input type="range" class="cropit-image-zoom-input"> <a class="rj-button lined" data-role="rotateleft"><i class="fa fa-repeat" aria-hidden="true"></i></a></div><div class="large-6 columns field-container"><label for="image-src">{{ "Selecciones una archivo" | translate }}</label><input name="image-src" type="file" class="cropit-image-input"></div></div><div class="row form-buttons text-center"><a ng-click="save(form)" class="rj-button">{{ "Guardar" | translate }}</a> <a ng-click="cancel(form)" class="rj-button alternative">{{ "Cancelar" | translate }}</a></div></form></div>';
 },{}],166:[function(require,module,exports){
-module.exports = '<div class="profile-view"><div style="height:5px; background-color: #aaacae; margin-top: 40px"></div><div class="profile-container"><div class="profile-tabs"><tabset><state-tab ui-sref="employer.main.home" label="Home"></state-tab><state-tab ui-sref="employer.main.panel" label="Panel de control"></state-tab><state-tab ui-sref="employer.main.jobs" label="Mis avisos"></state-tab><state-tab ui-sref="employer.main.courses" label="Mis cursos"></state-tab><state-tab ui-sref="employer.main.messages" label="Mensajes"></state-tab></tabset></div><div class="profile-content" ui-view="employer-main-main"></div></div></div>';
+module.exports = '<div class="large-12 columns" style="padding-left: 0"><div class="large-12 columns"><a class="rj-button small" ui-sref="employer.main.courseedit({pk:\'-1\'})"><img src="/static/img/megafono.png"> NUEVO CURSO</a></div><div class="large-10 columns lista-avisos"><div class="courses-list"><div ng-if="courses.length" rj-table-collection collection-schema="coursesSchema" collection-data="courses.items" on-click="gotoCourse($item.pk)" selectable="true" ng-model="selecteds.items"></div><alert ng-if="!courses.length" type="\'info\'">{{ "No hay cursos" | translate }}</alert></div></div></div>';
 },{}],167:[function(require,module,exports){
-module.exports = '<div class="global-stats"><div><p class="stats-data">779.666</p><p></p><p class="stats-footer">Currículums</p></div><div><p class="stats-header">Administración</p><p class="stats-data">204.852</p><p class="stats-footer">Currículums</p></div><div><p class="stats-header">Ventas</p><p class="stats-data">79.475</p><p class="stats-footer">Currículums</p></div><div><p class="stats-header">Ingeniería</p><p class="stats-data">40.567</p><p class="stats-footer">Currículums</p></div><div><p class="stats-header">Directivos</p><p class="stats-data">14.333</p><p></p><p class="stats-footer">Currículums</p></div></div><div class="large-12 columns" style="padding-left: 0"><span>{{ "Evoluciona tu proceso de selección con nuestros packs exclusivos!" | translate }}</span></div>';
+module.exports = '<div class="profile-view"><div style="height:5px; background-color: #aaacae; margin-top: 40px"></div><div class="profile-container"><div class="profile-tabs"><tabset><state-tab ui-sref="employer.main.home" label="Home"></state-tab><state-tab ui-sref="employer.main.panel" label="Panel de control"></state-tab><state-tab ui-sref="employer.main.jobs" label="Mis avisos"></state-tab><state-tab ui-sref="employer.main.courses" label="Mis cursos"></state-tab><state-tab ui-sref="employer.main.messages" label="Mensajes"></state-tab></tabset></div><div class="profile-content" ui-view="employer-main-main"></div></div></div>';
 },{}],168:[function(require,module,exports){
-module.exports = '<div class="large-12 columns" style="padding-left: 0"><div class="large-12 columns"><a class="rj-button small" ui-sref="employer.main.jobedit({pk:\'-1\'})"><img src="/static/img/megafono.png"> NUEVO AVISO</a></div><div class="large-2 columns"><ul class="rj-list" style="margin: 0"><li class="secondary big" ng-class="{\'light-bg\': filterStatus === null}"><a href="#" ng-click="setFilterStatus(null)">{{ "Todos" | translate }}</a></li><li ng-repeat="status in info.aviable_status track by status.value" ng-class="{\'light-bg\': filterStatus === status.value}"><a href="#" ng-click="setFilterStatus(status.value)">{{ status.name }}</a></li></ul></div><div class="large-10 columns lista-avisos"><div class="header-panel"><ul class="icons"><li><span>{{ info.total_postulants }}</span> <i class="fa fa-user" aria-hidden="true"></i></li></ul></div><div class="jobs-list"><div ng-if="jobs.length" rj-table-collection collection-schema="jobsSchema" collection-data="jobs.items" on-click="gotoJob($item.pk)" selectable="true" ng-model="selecteds.items"></div><alert ng-if="!jobs.length" type="\'info\'">{{ "No hay avisos" | translate }}</alert><div><pagination ng-if="jobs.length" total-items="jobs.totalLength" page="actualPage" items-per-page="5" on-select-page="changePage(page)"></pagination></div></div></div></div>';
+module.exports = '<div class="global-stats"><div><p class="stats-data">{{ globalstats.curriculums }}</p><p></p><p class="stats-footer">Currículums</p></div><div><p class="stats-header">Administración</p><p class="stats-data">{{ globalstats.administration }}</p><p class="stats-footer">Currículums</p></div><div><p class="stats-header">Ventas</p><p class="stats-data">{{ globalstats.sales }}</p><p class="stats-footer">Currículums</p></div><div><p class="stats-header">Ingeniería</p><p class="stats-data">{{ globalstats.engineering }}</p><p class="stats-footer">Currículums</p></div><div><p class="stats-header">Directivos</p><p class="stats-data">{{ globalstats.managers }}</p><p></p><p class="stats-footer">Currículums</p></div></div><div class="large-12 columns" style="padding-left: 0"><span>{{ "Evoluciona tu proceso de selección con nuestros packs exclusivos!" | translate }}</span></div>';
 },{}],169:[function(require,module,exports){
-module.exports = '<div class="large-12 columns" style="padding-left: 0"><div class="large-12 columns">NUEVO MENSAJE</div><div class="large-2 columns"><ul class="rj-list" style="margin: 0"><li class="secondary big" ng-class="{\'light-bg\': filterStatus === null}"><a href="#" ng-click="setFilterStatus(null)">{{ "Todos" | translate }}</a></li><li ng-repeat="status in info.aviable_status track by status.value" ng-class="{\'light-bg\': filterStatus === status.value}"><a href="#" ng-click="setFilterStatus(status.value)">{{ status.name }}</a></li></ul></div><div class="large-10 columns lista-avisos"><div class="header-panel"><ul class="icons"><li><span>{{ info.total_postulants }}</span> <i class="fa fa-user" aria-hidden="true"></i></li></ul></div><div class="message-list"><div ng-if="message.length" rj-table-collection collection-schema="messageSchema" collection-data="message.items" on-click="gotoMessage($item.pk)" selectable="true" ng-model="selecteds.items"></div><alert ng-if="!message.length" type="\'info\'">{{ "No hay mensajes" | translate }}</alert><div><pagination ng-if="message.length" total-items="message.totalLength" page="actualPage" items-per-page="5" on-select-page="changePage(page)"></pagination></div></div></div></div>';
+module.exports = '<div class="large-12 columns" style="padding-left: 0"><div class="large-12 columns"><a class="rj-button small" ui-sref="employer.main.jobedit({pk:\'-1\'})"><img src="/static/img/megafono.png"> NUEVO AVISO</a></div><div class="large-2 columns"><ul class="rj-list" style="margin: 0"><li class="secondary big" ng-class="{\'light-bg\': filterStatus === null}"><a href="#" ng-click="setFilterStatus(null)">{{ "Todos" | translate }}</a></li><li ng-repeat="status in info.aviable_status track by status.value" ng-class="{\'light-bg\': filterStatus === status.value}"><a href="#" ng-click="setFilterStatus(status.value)">{{ status.name }}</a></li></ul></div><div class="large-10 columns lista-avisos"><div class="header-panel"><ul class="icons"><li><span>{{ info.total_postulants }}</span> <i class="fa fa-user" aria-hidden="true"></i></li></ul></div><div class="jobs-list"><div ng-if="jobs.length" rj-table-collection collection-schema="jobsSchema" collection-data="jobs.items" on-click="gotoJob($item.pk)" selectable="true" ng-model="selecteds.items"></div><alert ng-if="!jobs.length" type="\'info\'">{{ "No hay avisos" | translate }}</alert><div><pagination ng-if="jobs.length" total-items="jobs.totalLength" page="actualPage" items-per-page="5" on-select-page="changePage(page)"></pagination></div></div></div></div>';
 },{}],170:[function(require,module,exports){
-module.exports = '<div class="job-item" ng-class="{ featured: postulation.job.featured }"><div class="job-thumb"><div class="content"><img class="logo" ng-src="{{ postulation.user.avatar }}"> <img ng-if="postulation.job.featured" class="corner-shadow" src="/static/img/result-item-new-corner-shadow.svg"> <img ng-if="postulation.job.featured" class="corner" src="/static/img/result-item-new-corner-start.svg"> <img ng-if="postulation.job.featured" class="shadow" src="/static/img/result-item-new-img-shadow.svg"></div></div><div class="job-body"><div class="content"><div class="info"><p class="title"><a ng-click="viewPostulation(postulation.id)">{{ postulation.user.first_name }} {{ postulation.user.last_name }}</a></p><p class="description"><span>{{ postulation.message }}</span></p></div><div class="data"><div class="row"><p class="text-center">{{ postulation.status_text }}</p></div></div><img ng-if="postulation.job.featured" class="shadow" src="/static/img/result-item-new-text-shadow.svg"></div></div></div>';
+module.exports = '<div class="large-12 columns" style="padding-left: 0"><div class="large-12 columns">NUEVO MENSAJE</div><div class="large-2 columns"><ul class="rj-list" style="margin: 0"><li class="secondary big" ng-class="{\'light-bg\': filterStatus === null}"><a href="#" ng-click="setFilterStatus(null)">{{ "Todos" | translate }}</a></li><li ng-repeat="status in info.aviable_status track by status.value" ng-class="{\'light-bg\': filterStatus === status.value}"><a href="#" ng-click="setFilterStatus(status.value)">{{ status.name }}</a></li></ul></div><div class="large-10 columns lista-avisos"><div class="header-panel"><ul class="icons"><li><span>{{ info.total_postulants }}</span> <i class="fa fa-user" aria-hidden="true"></i></li></ul></div><div class="message-list"><div ng-if="message.length" rj-table-collection collection-schema="messageSchema" collection-data="message.items" on-click="gotoMessage($item.pk)" selectable="true" ng-model="selecteds.items"></div><alert ng-if="!message.length" type="\'info\'">{{ "No hay mensajes" | translate }}</alert><div><pagination ng-if="message.length" total-items="message.totalLength" page="actualPage" items-per-page="5" on-select-page="changePage(page)"></pagination></div></div></div></div>';
 },{}],171:[function(require,module,exports){
-module.exports = '<div class="filter-box"><h2 ng-class="titleClass">{{ title }}</h2><div ng-if="type === \'searchbox\'" class="search-box"><input placeholder="{{ placeholder }}" ng-model="searchQuery.value" ng-model-options="{ debounce: 300 }"></div><ul ng-inf="type === \'list\'" class="filter-list"><li ng-repeat="item in items track by item.$id"><a href="#" ng-click="clicked(item)"><span>{{ item.content.name }}</span></a></li></ul></div>';
+module.exports = '<div class="job-item" ng-class="{ featured: postulation.job.featured }"><div class="job-thumb"><div class="content"><img class="logo" ng-src="{{ postulation.user.avatar }}"> <img ng-if="postulation.job.featured" class="corner-shadow" src="/static/img/result-item-new-corner-shadow.svg"> <img ng-if="postulation.job.featured" class="corner" src="/static/img/result-item-new-corner-start.svg"> <img ng-if="postulation.job.featured" class="shadow" src="/static/img/result-item-new-img-shadow.svg"></div></div><div class="job-body"><div class="content"><div class="info"><p class="title"><a ng-click="viewPostulation(postulation.id)">{{ postulation.user.first_name }} {{ postulation.user.last_name }}</a></p><p class="description"><span>{{ postulation.message }}</span></p></div><div class="data"><div class="row"><p class="text-center">{{ postulation.status_text }}</p></div></div><img ng-if="postulation.job.featured" class="shadow" src="/static/img/result-item-new-text-shadow.svg"></div></div></div>';
 },{}],172:[function(require,module,exports){
-module.exports = '<div class="rj-modal"><form name="geoPickerForm" ng-submit="ok(geoPickerForm)"><div class="row"><div class="large-4 columns"><label>{{ "Seleccione un país" | translate }}</label><select ng-model="values.country" required="true" ng-required="true" ng-options="item as item.name for item in choices.countries track by item.id"></select><img class="shadow-img" src="{{ \'img/shadow-input.svg\' | static }}"></div><div class="large-4 columns"><label>{{ "Seleccione una región" | translate }}</label><select ng-model="values.region" required="true" ng-required="true" ng-options="item as item.name for item in choices.regions track by item.id"></select><img class="shadow-img" src="{{ \'img/shadow-input.svg\' | static }}"></div><div class="large-4 columns"><label>{{ "Seleccione una ciudad" | translate }}</label><select ng-model="values.city" ng-options="item as item.name for item in choices.cities track by item.id"></select><img class="shadow-img" src="{{ \'img/shadow-input.svg\' | static }}"></div></div><div class="row"><div class="large-12 columns"><input ng-model="values.address" class="radius shadow-input" placeholder="{{ \'Dirección\' | translate }}" on-place-changed="placeChanged()"> <img class="shadow-img" src="{{ \'img/shadow-input.svg\' | static }}"></div></div><div class="row"><ng-map zoom="6"></ng-map></div><div class="row form-buttons text-center"><a ng-click="ok(geoPickerForm)" class="rj-button">{{ "Guardar" | translate }}</a> <a ng-click="cancel(geoPickerForm)" class="rj-button alternative">{{ "Cancelar" | translate }}</a></div></form></div>';
+module.exports = '<div class="filter-box"><h2 ng-class="titleClass">{{ title }}</h2><div ng-if="type === \'searchbox\'" class="search-box"><input placeholder="{{ placeholder }}" ng-model="searchQuery.value" ng-model-options="{ debounce: 300 }"></div><ul ng-inf="type === \'list\'" class="filter-list"><li ng-repeat="item in items track by item.$id"><a href="#" ng-click="clicked(item)"><span>{{ item.content.name }}</span></a></li></ul></div>';
 },{}],173:[function(require,module,exports){
-module.exports = '<div class="row fullWidth page-contact"><div class="large-6 large-centered columns" ng-include src="\'/api/v1/contact/form.html\'"></div><div class="row" style="padding-top:50px;padding-bottom:10px; font-family: DosisBold; color: gray; font-size: 110%"></div></div>';
+module.exports = '<div class="rj-modal"><form name="geoPickerForm" ng-submit="ok(geoPickerForm)"><div class="row"><div class="large-4 columns"><label>{{ "Seleccione un país" | translate }}</label><select ng-model="values.country" required="true" ng-required="true" ng-options="item as item.name for item in choices.countries track by item.id"></select><img class="shadow-img" src="{{ \'img/shadow-input.svg\' | static }}"></div><div class="large-4 columns"><label>{{ "Seleccione una región" | translate }}</label><select ng-model="values.region" required="true" ng-required="true" ng-options="item as item.name for item in choices.regions track by item.id"></select><img class="shadow-img" src="{{ \'img/shadow-input.svg\' | static }}"></div><div class="large-4 columns"><label>{{ "Seleccione una ciudad" | translate }}</label><select ng-model="values.city" ng-options="item as item.name for item in choices.cities track by item.id"></select><img class="shadow-img" src="{{ \'img/shadow-input.svg\' | static }}"></div></div><div class="row"><div class="large-12 columns"><input ng-model="values.address" class="radius shadow-input" placeholder="{{ \'Dirección\' | translate }}" on-place-changed="placeChanged()"> <img class="shadow-img" src="{{ \'img/shadow-input.svg\' | static }}"></div></div><div class="row"><ng-map zoom="6"></ng-map></div><div class="row form-buttons text-center"><a ng-click="ok(geoPickerForm)" class="rj-button">{{ "Guardar" | translate }}</a> <a ng-click="cancel(geoPickerForm)" class="rj-button alternative">{{ "Cancelar" | translate }}</a></div></form></div>';
 },{}],174:[function(require,module,exports){
-module.exports = '<div id="home-search"><div id="home-search-background"><div id="home-search-container"><div class="row"><div class="small-12 small-centered large-9 large-centered columns text-left" style="padding-top:40px;padding-bottom:40px"><div class="row"><div class="large-12 columns"><span style="font-size: 130%;font-family: DosisRegular; color: #7c7d80">{{ "Hoy puede ser el día de encontrar tu rol" }}</span> <span style="font-size: 130%;font-family: DosisSemiBold; color: #7c7d80">{{ "¿Comenzamos?" | translate }}</span></div></div><div class="row" style="height:100px"><div class="large-6 columns" style="display:table; height:100%"><div style="display:table-cell; vertical-align:middle"><tags-input ng-model="tags" placeholder="{{ \'Rol\' | translate }}" replace-spaces-with-dashes="false"><auto-complete source="loadTags($query)"></auto-complete></tags-input><img style="margin-top: -20px" src="{{ \'img/home-shadow-input.svg\' | static }}"></div></div><div class="large-6 columns" style="display:table; height:100%"><div style="display:table-cell; vertical-align:middle"><a href="#" style="height: 45px; font-size:120%; font-family: DosisSemiBold; margin: 0;  \n                   display:table; padding: 0 !important" class="text-center button alert large expand radius" ng-click="search()"><div style="display:table-cell;vertical-align:middle"><img src="{{ \'img/buttom-galera.svg\' | static }}"> <span style="vertical-align:middle">{{ "ROLE IT!" | translate }}</span></div></a> <img style="margin-top: -15px" src="{{ \'img/home-shadow-input.svg\' | static }}"></div></div></div></div></div></div></div></div><div class="row fullWidth"><img style="padding-bottom:50px" src="/static/img/home-separator-top.svg"></div><div class="jobs-section"><div class="sidebar"><div class="row"><ul class="rj-list"><li class="secondary-bg header">Desactivar roles <input type="checkbox" ng-model="search.roles"></li><li><h4 class="secondary">Empleos por Areas</h4></li><li ng-repeat="area in areas | orderBy:area.name track by area.id" class="big"><a ui-sref="jobs.byArea({area: area.slug})" ng-bind="area.name"></a></li></ul></div><div class="row"><ul class="rj-list"><li><h4 class="secondary">Empleos por Roles</h4></li><li ng-repeat="role in roles | orderBy:role.name track by role.pk" class="big"><a ui-sref="jobs.byRoles({filters: {roles: {[role.pk]: true}}})" ng-bind="role.name"></a></li></ul></div></div><div class="jobs-container"><stats-data jobs-label="{{ \'Ofertas\' | translate }}" users-label="{{ \'Usuarios\' | translate }}" employers-label="{{ \'Empresas\' | translate }}"></stats-data><h4>{{ "EMPLEOS PUBLICADOS" | translate }}</h4><tabset><tab><tab-heading><span>{{ \'Empleos en Argentina\' | translate }}</span> <img style="margin: 0 auto" class="active-arrow" src="{{ \'img/tab-active-arrow.svg\' | static }}"></tab-heading><div class="galera-arrow"><div class="galera-body"><img style="width: 25px" src="/static/img/busqueda-con-roles-galera.svg"> <span>Búsquedas con Roles!</span> <img style="arrow" src="/static/img/busqueda-con-roles-flecha.svg"></div></div><job-item ng-repeat="job in jobs.items | orderBy: \'-featured\' as fjobs track by job.pk" job="job"></job-item></tab><tab><tab-heading><span>{{ \'Empleos internacionales\' | translate }}</span> <img style="margin: 0 auto" class="active-arrow" src="{{ \'img/tab-active-arrow.svg\' | static }}"></tab-heading><div class="galera-arrow"><div class="galera-body"><img style="width: 25px" src="/static/img/busqueda-con-roles-galera.svg"> <span>Búsquedas con Roles!</span> <img style="arrow" src="/static/img/busqueda-con-roles-flecha.svg"></div></div><job-item ng-repeat="job in jobs.items | orderBy: \'-featured\' track by job.pk" ng-if="job.arg" job="job"></job-item></tab></tabset></div><div class="courses-section"><div class="courses-container"><h4>{{ "CURSOS" | translate }}</h4><course-item ng-repeat="course in courses.items | orderBy: course.pk" course="course"></course-item></div></div><md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px" md-gutter-gt-sm="8px"><md-grid-tile ng-click="carouselNext()"><img style="width: 16px" src="/static/img/back.svg"></md-grid-tile><md-grid-tile><div ng-show="companies[0]"><img style="width: 48px" src="/static/img/enterprise.svg"><md-grid-tile-footer style="display: flex; justify-content: center; align-items: center"><a href="{{ companies[0].website }}">{{ companies[0].name_company }}</a></md-grid-tile-footer></div></md-grid-tile><md-grid-tile><div ng-show="companies[1]"><img style="width: 48px" src="/static/img/enterprise.svg"><md-grid-tile-footer style="display: flex; justify-content: center; align-items: center"><a href="{{ companies[1].website }}">{{ companies[1].name_company }}</a></md-grid-tile-footer></div></md-grid-tile><md-grid-tile><div ng-show="companies[2]"><img style="width: 48px" src="/static/img/enterprise.svg"><md-grid-tile-footer style="display: flex; justify-content: center; align-items: center"><a href="{{ companies[2].website }}">{{ companies[2].name_company }}</a></md-grid-tile-footer></div></md-grid-tile><md-grid-tile><div ng-show="companies[3]"><img style="width: 48px" src="/static/img/enterprise.svg"><md-grid-tile-footer style="display: flex; justify-content: center; align-items: center"><a href="{{ companies[3].website }}">{{ companies[3].name_company }}</a></md-grid-tile-footer></div></md-grid-tile><md-grid-tile ng-click="carouselPrev()"><img style="width: 16px" src="/static/img/next.svg"></md-grid-tile></md-grid-list></div>';
+module.exports = '<div class="row fullWidth page-contact"><div class="large-6 large-centered columns" ng-include src="\'/api/v1/contact/form.html\'"></div><div class="row" style="padding-top:50px;padding-bottom:10px; font-family: DosisBold; color: gray; font-size: 110%"></div></div>';
 },{}],175:[function(require,module,exports){
-module.exports = '<div class="job-item" ng-class="{ featured: job.featured }"><div class="job-thumb"><div class="content"><img class="logo" ng-src="{{job.owner.avatars.default}}"> <img ng-if="job.featured" class="corner-shadow" src="/static/img/result-item-new-corner-shadow.svg"> <img ng-if="job.featured" class="corner" src="/static/img/result-item-new-corner-start.svg"> <img ng-if="job.featured" class="shadow" src="/static/img/result-item-new-img-shadow.svg"></div></div><div class="job-body"><div class="content" style="height: 100%"><div class="info"><p class="title"><a ng-if="!job.postulated" ui-sref="jobs.detail({id: {{job.pk}}})">{{ job.title }} - {{ job.geo.city.name }}</a> <a ng-if="job.postulated" href="#">{{ job.title }} - {{ job.geo.city.name }}</a></p><p class="description"><span class="field">{{ "Area" | translate }}:</span> <span>{{ job.area_text }}</span><br><span class="field">{{ "Jornada" | translate }}:</span> <span>{{ job.job_type_text }}</span></p><p ng-if="job.postulated" class="cell" style="color: white; background-color: #58c1c9; margin-bottom: 5px; font-family: DosisSemiBold; font-size:130%; padding-left: 5px">{{ "Postulado" | translate }}</p></div><div class="data"><div class="row"><p class="text-center">{{ "Publicado" | translate }} {{ job.published | relativeDate }}</p></div></div><div class="controlls"><img ng-show="job.roles.length" class="corner" src="/static/img/result-item-galera.svg"><div class="container"><div class="cell"><a ng-if="job.usefavorite" ng-click="tooglefavorite()"><img src="{{ favoritesrc }}"></a> <a href="#" onclick="window.open(\n                  \'https://www.facebook.com/sharer/sharer.php?u=\'+encodeURIComponent(\'http://66.97.34.225:8000/\'), \n                  \'facebook-share-dialog\', \n                  \'width=626,height=436\'); \n                  return false"><img src="/static/img/result-item-share.svg"></a></div></div></div><img ng-if="job.featured" class="shadow" src="/static/img/result-item-new-text-shadow.svg"></div></div></div>';
+module.exports = '<div id="home-search"><div id="home-search-background"><div id="home-search-container"><div class="row"><div class="small-12 small-centered large-9 large-centered columns text-left" style="padding-top:40px;padding-bottom:40px"><div class="row"><div class="large-12 columns"><span style="font-size: 130%;font-family: DosisRegular; color: #7c7d80">{{ "Hoy puede ser el día de encontrar tu rol" }}</span> <span style="font-size: 130%;font-family: DosisSemiBold; color: #7c7d80">{{ "¿Comenzamos?" | translate }}</span></div></div><div class="row" style="height:100px"><div class="large-6 columns" style="display:table; height:100%"><div style="display:table-cell; vertical-align:middle"><tags-input ng-model="tags" placeholder="{{ \'Rol\' | translate }}" replace-spaces-with-dashes="false"><auto-complete source="loadTags($query)"></auto-complete></tags-input><img style="margin-top: -20px" src="{{ \'img/home-shadow-input.svg\' | static }}"></div></div><div class="large-6 columns" style="display:table; height:100%"><div style="display:table-cell; vertical-align:middle"><a href="#" style="height: 45px; font-size:120%; font-family: DosisSemiBold; margin: 0;  \n                   display:table; padding: 0 !important" class="text-center button alert large expand radius" ng-click="search()"><div style="display:table-cell;vertical-align:middle"><img src="{{ \'img/buttom-galera.svg\' | static }}"> <span style="vertical-align:middle">{{ "ROLE IT!" | translate }}</span></div></a> <img style="margin-top: -15px" src="{{ \'img/home-shadow-input.svg\' | static }}"></div></div></div></div></div></div></div></div><div class="row fullWidth"><img style="padding-bottom:50px" src="/static/img/home-separator-top.svg"></div><div class="jobs-section"><div class="sidebar"><div class="row"><ul class="rj-list"><li class="secondary-bg header">Desactivar roles <input type="checkbox" ng-model="search.roles"></li><li><h4 class="secondary">Empleos por Areas</h4></li><li ng-repeat="area in areas | orderBy:area.name track by area.id" class="big"><a ui-sref="jobs.byArea({area: area.slug})" ng-bind="area.name"></a></li></ul></div><div class="row"><ul class="rj-list"><li><h4 class="secondary">Empleos por Roles</h4></li><li ng-repeat="role in roles | orderBy:role.name track by role.pk" class="big"><a ui-sref="jobs.byRoles({filters: {roles: {[role.pk]: true}}})" ng-bind="role.name"></a></li></ul></div></div><div class="jobs-container"><stats-data jobs-label="{{ \'Ofertas\' | translate }}" users-label="{{ \'Usuarios\' | translate }}" employers-label="{{ \'Empresas\' | translate }}"></stats-data><h4>{{ "EMPLEOS PUBLICADOS" | translate }}</h4><tabset><tab><tab-heading><span>{{ \'Empleos en Argentina\' | translate }}</span> <img style="margin: 0 auto" class="active-arrow" src="{{ \'img/tab-active-arrow.svg\' | static }}"></tab-heading><div class="galera-arrow"><div class="galera-body"><img style="width: 25px" src="/static/img/busqueda-con-roles-galera.svg"> <span>Búsquedas con Roles!</span> <img style="arrow" src="/static/img/busqueda-con-roles-flecha.svg"></div></div><job-item ng-repeat="job in jobs.items | orderBy: \'-featured\' as fjobs track by job.pk" job="job"></job-item></tab><tab><tab-heading><span>{{ \'Empleos internacionales\' | translate }}</span> <img style="margin: 0 auto" class="active-arrow" src="{{ \'img/tab-active-arrow.svg\' | static }}"></tab-heading><div class="galera-arrow"><div class="galera-body"><img style="width: 25px" src="/static/img/busqueda-con-roles-galera.svg"> <span>Búsquedas con Roles!</span> <img style="arrow" src="/static/img/busqueda-con-roles-flecha.svg"></div></div><job-item ng-repeat="job in jobs.items | orderBy: \'-featured\' track by job.pk" ng-if="job.arg" job="job"></job-item></tab></tabset></div><div class="courses-section"><div class="courses-container"><h4>{{ "CURSOS" | translate }}</h4><course-item ng-repeat="course in courses.items | orderBy: course.pk" course="course"></course-item></div></div><md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px" md-gutter-gt-sm="8px"><md-grid-tile ng-click="carouselNext()"><img style="width: 16px" src="/static/img/back.svg"></md-grid-tile><md-grid-tile><div ng-show="companies[0]"><img style="width: 48px" src="/static/img/enterprise.svg"><md-grid-tile-footer style="display: flex; justify-content: center; align-items: center"><a href="{{ companies[0].website }}">{{ companies[0].name_company }}</a></md-grid-tile-footer></div></md-grid-tile><md-grid-tile><div ng-show="companies[1]"><img style="width: 48px" src="/static/img/enterprise.svg"><md-grid-tile-footer style="display: flex; justify-content: center; align-items: center"><a href="{{ companies[1].website }}">{{ companies[1].name_company }}</a></md-grid-tile-footer></div></md-grid-tile><md-grid-tile><div ng-show="companies[2]"><img style="width: 48px" src="/static/img/enterprise.svg"><md-grid-tile-footer style="display: flex; justify-content: center; align-items: center"><a href="{{ companies[2].website }}">{{ companies[2].name_company }}</a></md-grid-tile-footer></div></md-grid-tile><md-grid-tile><div ng-show="companies[3]"><img style="width: 48px" src="/static/img/enterprise.svg"><md-grid-tile-footer style="display: flex; justify-content: center; align-items: center"><a href="{{ companies[3].website }}">{{ companies[3].name_company }}</a></md-grid-tile-footer></div></md-grid-tile><md-grid-tile ng-click="carouselPrev()"><img style="width: 16px" src="/static/img/next.svg"></md-grid-tile></md-grid-list></div>';
 },{}],176:[function(require,module,exports){
-arguments[4][159][0].apply(exports,arguments)
-},{"dup":159}],177:[function(require,module,exports){
+module.exports = '<div class="job-item" ng-class="{ featured: job.featured }"><div class="job-thumb"><div class="content"><img class="logo" ng-src="{{job.owner.avatars.default}}"> <img ng-if="job.featured" class="corner-shadow" src="/static/img/result-item-new-corner-shadow.svg"> <img ng-if="job.featured" class="corner" src="/static/img/result-item-new-corner-start.svg"> <img ng-if="job.featured" class="shadow" src="/static/img/result-item-new-img-shadow.svg"></div></div><div class="job-body"><div class="content" style="height: 100%"><div class="info"><p class="title"><a ng-if="!job.postulated" ui-sref="jobs.detail({id: {{job.pk}}})">{{ job.title }} - {{ job.geo.city.name }}</a> <a ng-if="job.postulated" href="#">{{ job.title }} - {{ job.geo.city.name }}</a></p><p class="description"><span class="field">{{ "Area" | translate }}:</span> <span>{{ job.area_text }}</span><br><span class="field">{{ "Jornada" | translate }}:</span> <span>{{ job.job_type_text }}</span></p><p ng-if="job.postulated" class="cell" style="color: white; background-color: #58c1c9; margin-bottom: 5px; font-family: DosisSemiBold; font-size:130%; padding-left: 5px">{{ "Postulado" | translate }}</p></div><div class="data"><div class="row"><p class="text-center">{{ "Publicado" | translate }} {{ job.published | relativeDate }}</p></div></div><div class="controlls"><img ng-show="job.roles.length" class="corner" src="/static/img/result-item-galera.svg"><div class="container"><div class="cell"><a ng-if="job.usefavorite" ng-click="tooglefavorite()"><img src="{{ favoritesrc }}"></a> <a href="#" onclick="window.open(\n                  \'https://www.facebook.com/sharer/sharer.php?u=\'+encodeURIComponent(\'http://66.97.34.225:8000/\'), \n                  \'facebook-share-dialog\', \n                  \'width=626,height=436\'); \n                  return false"><img src="/static/img/result-item-share.svg"></a></div></div></div><img ng-if="job.featured" class="shadow" src="/static/img/result-item-new-text-shadow.svg"></div></div></div>';
+},{}],177:[function(require,module,exports){
+arguments[4][160][0].apply(exports,arguments)
+},{"dup":160}],178:[function(require,module,exports){
 module.exports = '<div class="row info-bar"></div><div class="panel-screen job-detail"><div class="content"><div class="header-container"><ul class="breadcrumbs"><li><a ui-sref="jobs.jobs">{{ "Empleos" | translate }}</a></li><li><a ui-sref="jobs.byArea({ area: jobData.area.slug })">{{ jobData.area.name }}</a></li><li><a ui-sref="jobs.byArea({\n          area: jobData.area.slug,\n          toSubarea: jobData.subarea.pk})">{{ jobData.subarea.name }}</a></li></ul><div class="title-container"><alert ng-show="jobData.postulation_status !== null" type="postulationStatus[jobData.postulation_status].type" ng-bind="postulationStatus[jobData.postulation_status].message"></alert><h1 class="title">{{ jobData.title }}</h1><h2 class="subtitle">{{ jobData.position_text }} de {{ jobData.role_text }} {{ jobData.hierarchy_text }}</h2></div></div><div class="meta-data-container"><div class="owner-container"><img ng-src="{{jobData.owner.avatars.brand}}"> <a ng-click="enterpricejobsdialog($event)">{{ jobData.owner.name_company }}</a> <a class="postulation-button rj-button" ng-click="postulate()">{{ "Postularme" | translate }}</a></div><ul class="meta"><li><span class="mdc-dh">{{ "Tipo:" | translate }}</span> {{ jobData.job_type_text }}</li><li><span class="mdc-dh">{{ "Rama:" | translate }}</span> {{ jobData.branch_activity_text }}</li></ul></div><div class="description" ng-bind-html="getDescription()"></div><div class="requirements-container" ng-if="jobData.requirements.length ||\n             jobData.language_requirements.length ||\n             jobData.knowledge_requirements.length ||\n             jobData.education_requirement"><h3>{{ "Requisitos" | translate }}</h3><div class="requirement-education-container" ng-if="jobData.education_requirement"><h4>{{ "Educación"| translate }}</h4><span>{{ jobData.education_requirement.level_text }}</span> <span ng-show="jobData.education_requirement.finished">{{ "completo" | translate }}</span> <span ng-show="jobData.education_requirement.exclusive" class="exclusive">{{ "(Excluyente)" }}</span></div><div class="requirements-languages-container" ng-if="jobData.language_requirements.length"><h4>{{ "Idiomas" | translate }}</h4><ul><li ng-repeat="req in jobData.language_requirements track by req.id"><span>{{ req.name }}</span> <span ng-if="req.exclusive" class="exclusive">{{ "(Excluyente)" }}</span><rating class="rating" value="req.level" max="10" readonly="true"></rating></li></ul></div><div class="requirements-knowledge-container" ng-if="jobData.knowledge_requirements.length"><h4>{{ "Conocimientos en IT" | translate }}</h4><ul><li ng-repeat="req in jobData.knowledge_requirements track by req.id"><span>{{ req.technology_text }} &gt;</span> <span>{{ req.subtechnology_text }}</span> <span>({{ req.hierarchy_text }})</span> <span ng-if="req.exclusive" class="exclusive">{{ "(Excluyente)" }}</span></li></ul></div><div class="requirements-others-container" ng-if="jobData.requirements.length"><h4>{{ "Otros requisitos" }}</h4><ul><li ng-repeat="req in jobData.requirements track by req.id">{{ req.description }} <span ng-if="req.exclusive" class="exclusive">{{ "(Excluyente)" }}</span></li></ul></div></div></div><div class="panel-side"><div class="company-info-container"><a href="#">{{ job.owner.name_company }}</a></div><ul class="rj-list"><li><h4 class="secondary header">Similares</h4></li></ul></div></div>';
-},{}],178:[function(require,module,exports){
-module.exports = '<div class="panel-screen employer-job-detail"><div class="panel-header"><div class="title-container"><h1 class="title">{{ job.title }}</h1><h2 class="subtitle">{{ job.position_text }} de {{ job.role_text }} {{ job.hierarchy_text }}</h2></div></div><div class="panel-side"><ul class="rj-list"><li class="header">Información</li><li class="secondary text-bold">{{ "Nº de referencia:" }}</li><li nf-show="job.reference_number">{{ job.reference_number }}</li><li nf-show="!job.reference_number">-----</li><li class="secondary text-bold">{{ "Tipo" | translate }}</li><li>{{ job.job_type_text }}</li><li class="secondary text-bold">{{ "Rama" | translate }}</li><li>{{ job.branch_activity_text }}</li><li class="header">Opciones</li><li><a ng-click="edit()">{{ "Editar publicación" | translate }}</a></li><li><a ui-sref="jobs.detail({id: job.id})">{{ "Ver publicación" | translate }}</a></li></ul></div><div class="content"><div class="job-container"><h2>{{ "Postulantes" | translate }}</h2><alert ng-show="!postulations || !postulations.items.length" type="\'info\'">{{ "No hay postulaciones" | translate }}</alert><job-postulant-item ng-if="postulations && postulations.items.length" ng-repeat="postulation in postulations.items track by postulation.id" postulation="postulation" view-postulation="view"></job-postulant-item><div><pagination ng-if="postulations.length" total-items="postulations.totalLength" page="actualPage" items-per-page="5" on-select-page="changePage(page)"></pagination></div><div></div></div></div></div>';
 },{}],179:[function(require,module,exports){
-module.exports = '<div class="row info-bar"></div><div class="panel-screen job-detail"><div class="content"><div ng-include src="formUrl"></div></div><div class="panel-side"><div class="company-info-container"><a href="#">{{ job.owner.name_company }}</a></div><ul class="rj-list"><li><h4 class="secondary header">Similares</h4></li><li ng-repeat="subarea in area.subareas track by subarea.pk">{{subarea.name}} <input type="checkbox" ng-model="filters.subareas[subarea.pk]"></li></ul></div></div>';
+module.exports = '<div class="panel-screen employer-job-detail"><div class="panel-header"><div class="title-container"><h1 class="title">{{ job.title }}</h1><h2 class="subtitle">{{ job.position_text }} de {{ job.role_text }} {{ job.hierarchy_text }}</h2></div></div><div class="panel-side"><ul class="rj-list"><li class="header">Información</li><li class="secondary text-bold">{{ "Nº de referencia:" }}</li><li nf-show="job.reference_number">{{ job.reference_number }}</li><li nf-show="!job.reference_number">-----</li><li class="secondary text-bold">{{ "Tipo" | translate }}</li><li>{{ job.job_type_text }}</li><li class="secondary text-bold">{{ "Rama" | translate }}</li><li>{{ job.branch_activity_text }}</li><li class="header">Opciones</li><li><a ng-click="edit()">{{ "Editar publicación" | translate }}</a></li><li><a ui-sref="jobs.detail({id: job.id})">{{ "Ver publicación" | translate }}</a></li></ul></div><div class="content"><div class="job-container"><h2>{{ "Postulantes" | translate }}</h2><alert ng-show="!postulations || !postulations.items.length" type="\'info\'">{{ "No hay postulaciones" | translate }}</alert><job-postulant-item ng-if="postulations && postulations.items.length" ng-repeat="postulation in postulations.items track by postulation.id" postulation="postulation" view-postulation="view"></job-postulant-item><div><pagination ng-if="postulations.length" total-items="postulations.totalLength" page="actualPage" items-per-page="5" on-select-page="changePage(page)"></pagination></div><div></div></div></div></div>';
 },{}],180:[function(require,module,exports){
-module.exports = '<div class="panel-screen employer-postulation-detail"><div class="panel-header"><div class="title-container"><h1 class="title">{{ job.title }}</h1><h2 class="subtitle">{{ job.position_text }} de {{ job.role_text }} {{ job.hierarchy_text }}</h2></div><div class="title-extra"><span class="status" ng-class="{rejected: postulation.status == 32}">{{ postulation.status_text }}</span></div></div><div class="panel-side"><ul class="rj-list"><li class="header">Información</li><li class="secondary text-bold">{{ "Nº de referencia:" }}</li><li nf-show="job.reference_number">{{ job.reference_number }}</li><li nf-show="!job.reference_number">-----</li><li class="secondary text-bold">{{ "Tipo" | translate }}</li><li>{{ job.job_type_text }}</li><li class="secondary text-bold">{{ "Rama" | translate }}</li><li>{{ job.branch_activity_text }}</li><li class="header">{{ "Acciones" | translate }}</li><li ng-show="postulation.status !== 16"><a class="rj-button" ng-click="setStatus(16)">{{ "Aprobar" | translate }}</a></li><li ng-show="postulation.status == 16"><a class="rj-button" ng-click="setStatus(32)">{{ "Rechazar" | translate }}</a></li></ul></div><div class="content"><div class="job-container"><div class="row"><div class="large-4 columns"><div class="profile-avatar"><img ng-src="{{ postulation.user.avatar }}"></div></div><div class="large-8 columns"><h2>{{ postulation.user.first_name }} {{ postulation.user.last_name }}</h2><ul class="user-info"><li><span class="field">{{ "Género" | translate }}:</span> <span>{{ postulation.user.gender_text }}</span></li><li><span class="field">{{ "Teléfono" }}:</span> <span>{{ postulation.user.phone_number }}</span></li><li><span class="field">{{ "Celular" }}:</span> <span>{{ postulation.user.mobile_number }}</span></li><li><span class="field">{{ "Fecha de nacimiento" }}:</span> <span>{{ postulation.user.date_of_birth | date:"dd-MM-yyyy" }}</span></li></ul></div></div><div class="row"><div class="large-4 columns"><span class="field">{{ "Salario pretendido" | translate }}:</span>: <span>$ {{ postulation.request_salary | number:0 }}</span></div><div class="large-8 columns"><span class="field">{{ "Razón de postulación" | translate }}:</span> <span>{{ postulation.message }}</span></div><div class="row"><div class="large-12 columns"><h2>{{ "Biografía" | translate }}</h2><div class="biography">{{ postulation.user.biographic }}</div></div></div><div class="row"><div class="large-12 columns"><h2>{{ "Educación" | translate }}</h2><alert ng-show="requirements.education" type="requirements.education.level">{{ requirements.education.msg }}</alert><education-item ng-repeat="education in postulation.user.education track by education.id" education="education"></education-item></div></div><div class="row"><div class="large-12 columns"><h2>{{ "Idiomas" | translate }}</h2><alert ng-repeat="lang in requirements.languages track by lang.language.id" type="lang.type"><strong>{{ lang.language.name }}</strong>: {{ lang.msg }}</alert><ul class="languages-list"><li ng-repeat="language in postulation.user.languages track by language.language_text"><span>{{ language.language_text }}</span><rating class="rating right" value="language.level" max="10" readonly="true"></rating></li></ul></div></div><div class="row"><div class="large-12 columns"><h2>{{ "Experiencia laboral" | translate }}</h2><experience-item ng-repeat="exp in postulation.user.experience track by exp.id" experience="exp"></experience-item></div></div><div class="row"><div class="large-12 columns"><h2>{{ "Preguntas" | translate }}</h2><question-item ng-if="job.pk && postulation.id" ng-repeat="question in job.questions track by question.id" question="question" answer="getAnswer(question.id)"></question-item></div></div><div></div></div></div></div></div>';
+module.exports = '<div class="row info-bar"></div><div class="panel-screen job-detail"><div class="content"><div ng-include src="formUrl"></div></div><div class="panel-side"><div class="company-info-container"><a href="#">{{ job.owner.name_company }}</a></div><ul class="rj-list"><li><h4 class="secondary header">Similares</h4></li><li ng-repeat="subarea in area.subareas track by subarea.pk">{{subarea.name}} <input type="checkbox" ng-model="filters.subareas[subarea.pk]"></li></ul></div></div>';
 },{}],181:[function(require,module,exports){
-module.exports = '<div class="panel-screen jobs-screen"><div class="panel-side"><ul class="rj-list"><li><h4 class="secondary header">Subareas</h4></li><li ng-repeat="subarea in area.subareas track by subarea.pk">{{subarea.name}} <input type="checkbox" ng-model="filters.subareas[subarea.pk]"></li></ul></div><div class="content"><div class="header-container"><h1>{{ "Empleos de " | translate }} {{ area.name }}</h1></div><div class="jobs-container"><alert ng-show="!jobs.length" type="\'info\'">{{ "No hay resultados" | translate }}</alert><job-item ng-repeat="job in jobs.items | orderBy: \'-featured\' track by job.pk" job="job"></job-item><pagination ng-if="jobs.length" total-items="jobs.totalLength" page="actualPage" items-per-page="5" on-select-page="changePage(page)"></pagination><div></div></div></div></div>';
+module.exports = '<div class="panel-screen employer-postulation-detail"><div class="panel-header"><div class="title-container"><h1 class="title">{{ job.title }}</h1><h2 class="subtitle">{{ job.position_text }} de {{ job.role_text }} {{ job.hierarchy_text }}</h2></div><div class="title-extra"><span class="status" ng-class="{rejected: postulation.status == 32}">{{ postulation.status_text }}</span></div></div><div class="panel-side"><ul class="rj-list"><li class="header">Información</li><li class="secondary text-bold">{{ "Nº de referencia:" }}</li><li nf-show="job.reference_number">{{ job.reference_number }}</li><li nf-show="!job.reference_number">-----</li><li class="secondary text-bold">{{ "Tipo" | translate }}</li><li>{{ job.job_type_text }}</li><li class="secondary text-bold">{{ "Rama" | translate }}</li><li>{{ job.branch_activity_text }}</li><li class="header">{{ "Acciones" | translate }}</li><li ng-show="postulation.status !== 16"><a class="rj-button" ng-click="setStatus(16)">{{ "Aprobar" | translate }}</a></li><li ng-show="postulation.status == 16"><a class="rj-button" ng-click="setStatus(32)">{{ "Rechazar" | translate }}</a></li></ul></div><div class="content"><div class="job-container"><div class="row"><div class="large-4 columns"><div class="profile-avatar"><img ng-src="{{ postulation.user.avatar }}"></div></div><div class="large-8 columns"><h2>{{ postulation.user.first_name }} {{ postulation.user.last_name }}</h2><ul class="user-info"><li><span class="field">{{ "Género" | translate }}:</span> <span>{{ postulation.user.gender_text }}</span></li><li><span class="field">{{ "Teléfono" }}:</span> <span>{{ postulation.user.phone_number }}</span></li><li><span class="field">{{ "Celular" }}:</span> <span>{{ postulation.user.mobile_number }}</span></li><li><span class="field">{{ "Fecha de nacimiento" }}:</span> <span>{{ postulation.user.date_of_birth | date:"dd-MM-yyyy" }}</span></li></ul></div></div><div class="row"><div class="large-4 columns"><span class="field">{{ "Salario pretendido" | translate }}:</span>: <span>$ {{ postulation.request_salary | number:0 }}</span></div><div class="large-8 columns"><span class="field">{{ "Razón de postulación" | translate }}:</span> <span>{{ postulation.message }}</span></div><div class="row"><div class="large-12 columns"><h2>{{ "Biografía" | translate }}</h2><div class="biography">{{ postulation.user.biographic }}</div></div></div><div class="row"><div class="large-12 columns"><h2>{{ "Educación" | translate }}</h2><alert ng-show="requirements.education" type="requirements.education.level">{{ requirements.education.msg }}</alert><education-item ng-repeat="education in postulation.user.education track by education.id" education="education"></education-item></div></div><div class="row"><div class="large-12 columns"><h2>{{ "Idiomas" | translate }}</h2><alert ng-repeat="lang in requirements.languages track by lang.language.id" type="lang.type"><strong>{{ lang.language.name }}</strong>: {{ lang.msg }}</alert><ul class="languages-list"><li ng-repeat="language in postulation.user.languages track by language.language_text"><span>{{ language.language_text }}</span><rating class="rating right" value="language.level" max="10" readonly="true"></rating></li></ul></div></div><div class="row"><div class="large-12 columns"><h2>{{ "Experiencia laboral" | translate }}</h2><experience-item ng-repeat="exp in postulation.user.experience track by exp.id" experience="exp"></experience-item></div></div><div class="row"><div class="large-12 columns"><h2>{{ "Preguntas" | translate }}</h2><question-item ng-if="job.pk && postulation.id" ng-repeat="question in job.questions track by question.id" question="question" answer="getAnswer(question.id)"></question-item></div></div><div></div></div></div></div></div>';
 },{}],182:[function(require,module,exports){
-module.exports = '<div class="panel-screen jobs-screen"><div class="panel-side"><ul class="rj-list"><li><h4 class="secondary header">Roles</h4></li><li ng-repeat="role in roles track by role.pk">{{role.name}} <input type="checkbox" ng-model="filters.roles[role.pk]"></li></ul></div><div class="content"><div class="header-container"><h1>{{ "Empleos por rol" | translate }}</h1></div><div class="jobs-container"><alert ng-show="!jobs.length" type="\'info\'">{{ "No hay resultados" | translate }}</alert><job-item ng-repeat="job in jobs.items | orderBy: \'-featured\' track by job.pk" job="job"></job-item><pagination ng-if="jobs.length" total-items="jobs.totalLength" page="actualPage" items-per-page="5" on-select-page="changePage(page)"></pagination><div></div></div></div></div>';
+module.exports = '<div class="panel-screen jobs-screen"><div class="panel-side"><ul class="rj-list"><li><h4 class="secondary header">Subareas</h4></li><li ng-repeat="subarea in area.subareas track by subarea.pk">{{subarea.name}} <input type="checkbox" ng-model="filters.subareas[subarea.pk]"></li></ul></div><div class="content"><div class="header-container"><h1>{{ "Empleos de " | translate }} {{ area.name }}</h1></div><div class="jobs-container"><alert ng-show="!jobs.length" type="\'info\'">{{ "No hay resultados" | translate }}</alert><job-item ng-repeat="job in jobs.items | orderBy: \'-featured\' track by job.pk" job="job"></job-item><pagination ng-if="jobs.length" total-items="jobs.totalLength" page="actualPage" items-per-page="5" on-select-page="changePage(page)"></pagination><div></div></div></div></div>';
 },{}],183:[function(require,module,exports){
-module.exports = '<div class="panel-screen jobs-screen"><div class="panel-side"><div class="filter-list"><h1>{{ "Filtros" | translate }}</h1><rj-filter ng-repeat="filter in filters" title="filter.name" type="{{ filter.type }}" ng-model="filter.value" choices="filter.choices" multi-select="{{ !!filter.multi }}" on-filter-change="updateFilters()" item-pk="pk"></rj-filter><div class="filter-box"><h1 class="alternative">Filtros selecionados</h1><ul class="selected-filters"><li ng-repeat="filter in filters" ng-if="!filter.multi && filter.value"><a href=""><span class="field">{{ filter.name }}:</span> <span>{{ filter.value.name }}</span> <i class="close" ng-click="removeFilter(filter)"></i></a></li></ul><div ng-repeat="filter in filters" ng-if="filter.multi && filter.value.length"><h2 class="alternative">{{ filter.name }}</h2><ul class="selected-filters"><li ng-repeat="value in filter.value"><a href=""><span>{{ value.name }}</span> <i class="close" ng-click="removeFilter(filter, value)"></i></a></li></ul></div></div><p class="results-text">Se encontraron <span>{{ jobsInfo.results }}</span> ofertas de empleo</p><a class="rj-button black" href="#" ng-click="clearFilters()">{{ "Quitar todos los filtros" | translate }} <i class="fa fa-times"></i></a></div></div><div class="content"><div class="header-container"><div class="search-bar"><div class="search-box"><input name="search-query" ng-model="searchQuery" ng-model-options="{ debounce: 300 }"></div><div class="right-title">{{ "Búsqueda avanzada" | translate }}</div></div></div><div class="jobs-container"><alert ng-show="!jobs.length" type="\'info\'">{{ "No hay resultados" | translate }}</alert><job-item ng-repeat="job in jobs.items | orderBy: \'-featured\' track by job.pk" job="job"></job-item><pagination ng-if="jobs.length" total-items="jobs.totalLength" page="actualPage" items-per-page="5" on-select-page="changePage(page)"></pagination><div></div></div></div></div>';
+module.exports = '<div class="panel-screen jobs-screen"><div class="panel-side"><ul class="rj-list"><li><h4 class="secondary header">Roles</h4></li><li ng-repeat="role in roles track by role.pk">{{role.name}} <input type="checkbox" ng-model="filters.roles[role.pk]"></li></ul></div><div class="content"><div class="header-container"><h1>{{ "Empleos por rol" | translate }}</h1></div><div class="jobs-container"><alert ng-show="!jobs.length" type="\'info\'">{{ "No hay resultados" | translate }}</alert><job-item ng-repeat="job in jobs.items | orderBy: \'-featured\' track by job.pk" job="job"></job-item><pagination ng-if="jobs.length" total-items="jobs.totalLength" page="actualPage" items-per-page="5" on-select-page="changePage(page)"></pagination><div></div></div></div></div>';
 },{}],184:[function(require,module,exports){
-module.exports = '<div class="job-question-item"><i class="fa fa-question-circle" aria-hidden="true"></i> <span class="question">{{ question.question }}</span><ul class="options" ng-if="question.options.length"><li ng-repeat="option in question.options track by option.id" ng-class="{ correct: option.is_correct }"><span class="fa-stack"><i class="fa fa-square-o fa-stack-1x" aria-hidden="true"></i> <i ng-show="option.is_correct && answer && answer.response === option.text" class="fa fa-check fa-stack-1x"></i> <i ng-show="!option.is_correct && answer && answer.response == option.text" class="fa fa-times fa-stack-1x"></i></span> <span>{{ option.text }}</span></li></ul><div class="response" ng-if="!answer"><span class="no-response">{{ "No respondió" | translate }}</span></div><div class="response" ng-if="answer && question.question_type !== 48"><span class="reponse-label">{{ "Respuesta" | translate }}:</span> <span ng-if="question.question_type === 0 || question.question_type === 16">{{ answer.response }}</span> <span ng-if="question.question_type === 32">{{ answer.response ? "Si" : "No" | translate }}</span></div></div>';
+module.exports = '<div class="panel-screen jobs-screen"><div class="panel-side"><div class="filter-list"><h1>{{ "Filtros" | translate }}</h1><rj-filter ng-repeat="filter in filters" title="filter.name" type="{{ filter.type }}" ng-model="filter.value" choices="filter.choices" multi-select="{{ !!filter.multi }}" on-filter-change="updateFilters()" item-pk="pk"></rj-filter><div class="filter-box"><h1 class="alternative">Filtros selecionados</h1><ul class="selected-filters"><li ng-repeat="filter in filters" ng-if="!filter.multi && filter.value"><a href=""><span class="field">{{ filter.name }}:</span> <span>{{ filter.value.name }}</span> <i class="close" ng-click="removeFilter(filter)"></i></a></li></ul><div ng-repeat="filter in filters" ng-if="filter.multi && filter.value.length"><h2 class="alternative">{{ filter.name }}</h2><ul class="selected-filters"><li ng-repeat="value in filter.value"><a href=""><span>{{ value.name }}</span> <i class="close" ng-click="removeFilter(filter, value)"></i></a></li></ul></div></div><p class="results-text">Se encontraron <span>{{ jobsInfo.results }}</span> ofertas de empleo</p><a class="rj-button black" href="#" ng-click="clearFilters()">{{ "Quitar todos los filtros" | translate }} <i class="fa fa-times"></i></a></div></div><div class="content"><div class="header-container"><div class="search-bar"><div class="search-box"><input name="search-query" ng-model="searchQuery" ng-model-options="{ debounce: 300 }"></div><div class="right-title">{{ "Búsqueda avanzada" | translate }}</div></div></div><div class="jobs-container"><alert ng-show="!jobs.length" type="\'info\'">{{ "No hay resultados" | translate }}</alert><job-item ng-repeat="job in jobs.items | orderBy: \'-featured\' track by job.pk" job="job"></job-item><pagination ng-if="jobs.length" total-items="jobs.totalLength" page="actualPage" items-per-page="5" on-select-page="changePage(page)"></pagination><div></div></div></div></div>';
 },{}],185:[function(require,module,exports){
-module.exports = '<div class="profile-completed-card"><div class="card-header bg-alternative">{{ "Mi C.V" | translate }}</div><div class="card-body bg-gris"><div class="info-container"><div class="galera-container"><div class="card-thumb-container"><div class="overlay" ng-style="{ \'background-position-y\': overlayPos }"><div class="mask"></div></div></div><h4 class="percent">{{ percent }}%</h4></div><div class="text-container"><h5><span class="text-gris">Tu</span> CV está incompleto</h5><p class="text-large">{{ "Aún no podrás aplicar a ninguna oferta ni ser encontrado por ninguna empresa." | translate }}</p></div></div><div class="card-block"><ul class="info"><li ng-repeat="item in restItems track by item.value"><span class="field"><span class="text-gris">{{ "Agregar" | translate }}</span> <span>{{ item.name }}</span></span> <span class="value">+{{ itemPercent }}%</span></li></ul></div></div></div>';
+module.exports = '<div class="job-question-item"><i class="fa fa-question-circle" aria-hidden="true"></i> <span class="question">{{ question.question }}</span><ul class="options" ng-if="question.options.length"><li ng-repeat="option in question.options track by option.id" ng-class="{ correct: option.is_correct }"><span class="fa-stack"><i class="fa fa-square-o fa-stack-1x" aria-hidden="true"></i> <i ng-show="option.is_correct && answer && answer.response === option.text" class="fa fa-check fa-stack-1x"></i> <i ng-show="!option.is_correct && answer && answer.response == option.text" class="fa fa-times fa-stack-1x"></i></span> <span>{{ option.text }}</span></li></ul><div class="response" ng-if="!answer"><span class="no-response">{{ "No respondió" | translate }}</span></div><div class="response" ng-if="answer && question.question_type !== 48"><span class="reponse-label">{{ "Respuesta" | translate }}:</span> <span ng-if="question.question_type === 0 || question.question_type === 16">{{ answer.response }}</span> <span ng-if="question.question_type === 32">{{ answer.response ? "Si" : "No" | translate }}</span></div></div>';
 },{}],186:[function(require,module,exports){
-module.exports = '<div class="row profile"><div class="large-5 columns cv-info"><div class="avatar"><profile-avatar ng-click="changeAvatar()"></profile-avatar></div><div class="data"><h1>{{ info.complete_name }}</h1><h2>{{ info.email }}</h2></div><div class="meta">{{ "Última actualización del CV" | translate }} <span>{{ info.last_update }}</span></div></div><div class="large-4 columns cv-percent"><postulant-completed-profile data="completedProfileData"></postulant-completed-profile></div><div class="large-3 columns cv-options"><div class="rj-card"><div class="card-header bg-active">Vista previa de mi CV <i class="fa fa-eye"></i></div><div class="card-header">Consejos para mi CV <i class="fa fa-eye"></i></div><div class="card-body"><ul class="actions"><li><a href="#"><rj-icon icon="print"></rj-icon><span>{{ "Imprimir" | translate }}</span></a></li><li><a href="#"><rj-icon icon="email"></rj-icon><span>{{ "Enviar por email" | translate }}</span></a></li><li><a href="#" ng-click="downloadPdf()"><rj-icon icon="pdf"></rj-icon><span>{{ "Descargar en PDF" | translate }}</span></a></li><li><a href="#"><rj-icon icon="word"></rj-icon><span>{{ "Descargar en Word" | translate }}</span></a></li></ul></div></div></div></div><div class="cv-container"><div class="cv-content row"><div class="large-12 columns container_form"><div class="row"><div ng-include src="\'/api/v1/postulant/templates/cv_edit.html\'"></div></div><div class="row"><div ng-include src="\'/api/v1/postulant/templates/video_cv.html\'"></div></div><div class="row"><div ng-include src="\'/api/v1/postulant/templates/doc_cv.html\'"></div></div><div class="row"><div class="large-12 columns container_form"><form ng-submit="saveBio(postulantBioForm)" name="postulantBioForm" class="postulant-bio-form"><div class="row"><h5>{{ "Biografía" | translate }}</h5><span class="help right">{{ "Máximo 600 caracteres" | translate }}</span></div><div class="row"><textarea class="radius shadow-input" name="description" ng-model="postulantBioData[\'description\']" ng-required="true" required="required" placeholder="{{ \'Escribe una breve presentación sobre tu experiencia laboral.\' | translate }}">\n                </textarea><ul class="djng-field-errors ng-hide" ng-show="postulantBioForm.description.$dirty"><li ng-show="postulantBioForm.description.$error.required" class="invalid ng-hide">Este campo es requerido.</li><li ng-show="apiErrors.postulantBioForm.description.msg" class="invalid ng-binding ng-hide" ng-bind="apiErrors.postulantBioForm.description.msg"></li></ul></div><div class="row form-buttons text-center"><a ng-click="saveBio(postulantBioForm)" class="rj-button">{{ "Guardar" | translate }}</a> <a ng-click="reset(postulantBioForm)" class="rj-button alternative">{{ "Cancelar" | translate }}</a></div></form></div></div><div class="row"><div class="large-12 columns container-section"><div class="row"><h5>{{ "Experiencia laboral" | translate }}</h5></div><div class="row experience-list"><alert ng-if="!experiences.length" type="\'info\'">{{ "No hay ningún registro de experiencia laboral" | translate }}</alert><div ng-if="experiences.length" rj-table-collection collection-schema="experiencesTableSchema" collection-data="experiences" order-reverse="true" selectable ng-model="selecteds.experiences" on-click="addPE($item.id)"></div></div><div class="row form-buttons text-center"><a ng-show="selecteds.experiences.length" ng-click="deletePE()" class="rj-button lined">{{ "Borrar selecionadas" | translate }}</a> <a ng-click="addPE()" class="rj-button">{{ "Agregar" | translate }}</a></div></div></div><div class="row"><div class="large-12 columns container-section"><div class="row"><h5>{{ "Educación" | translate }}</h5></div><div class="row education-list"><div ng-if="!educations.length" class="text-center"></div><alert ng-if="!educations.length" type="\'info\'">{{ "No hay datos de referencia cargados" | translate }}</alert><div ng-if="educations.length" rj-table-collection collection-schema="educationsTableSchema" collection-data="educations" selectable ng-model="selecteds.educations" on-click="addEducation($item.id)"></div></div><div class="row form-buttons text-center"><a ng-show="selecteds.educations.length" ng-click="deleteEducations()" class="rj-button lined">{{ "Borrar seleccionados" | translate }}</a> <a ng-click="addEducation()" class="rj-button">{{ "Agregar" | translate }}</a></div></div></div><div class="row"><div class="large-12 columns container-section"><div class="row"><h5>{{ "Idiomas" | translate }}</h5></div><div class="row language-list"><div ng-if="!languages.length" class="text-center"></div><alert ng-if="!languages.length" type="\'info\'">{{ "No hay datos de referencia cargados" | translate }}</alert><div ng-if="languages.length" rj-table-collection collection-schema="languagesTableSchema" collection-data="languages" selectable ng-model="selecteds.languages" on-click="addLanguage($item)"></div></div><div class="row form-buttons text-center"><a ng-show="selecteds.languages.length" ng-click="deleteLanguages()" class="rj-button lined">{{ "Borrar seleccionados" | translate }}</a> <a ng-click="addLanguage()" class="rj-button">{{ "Agregar" | translate }}</a></div></div></div><div class="row"><div class="large-12 columns container-section"><div class="row"><h5>{{ "Conocimientos informáticos" | translate }}</h5></div><div class="row"><div ng-if="!computerknowledges.length" class="text-center"></div><alert ng-if="!computerknowledges.length" type="\'info\'">{{ "No hay datos de referencia cargados" | translate }}</alert><div ng-if="computerknowledges.length" rj-table-collection collection-schema="computerknowledgesTableSchema" collection-data="computerknowledges" selectable ng-model="selecteds.computerknowledges" on-click="addComputerknowledge($item)"></div></div><div class="row form-buttons text-center"><a ng-show="selecteds.computerknowledges.length" ng-click="deleteComputerknowledges()" class="rj-button lined">{{ "Borrar seleccionados" | translate }}</a> <a ng-click="addComputerknowledge()" class="rj-button">{{ "Agregar" | translate }}</a></div></div></div><div class="row"><div class="large-12 columns container-section"><div class="row"><h5>{{ "Conocimientos adicionales" | translate }}</h5></div><div class="row"><div ng-if="!additionalknowledges.length" class="text-center"></div><alert ng-if="!additionalknowledges.length" type="\'info\'">{{ "No hay datos de referencia cargados" | translate }}</alert><div ng-if="additionalknowledges.length" rj-table-collection collection-schema="additionalknowledgesTableSchema" collection-data="additionalknowledges" selectable ng-model="selecteds.additionalknowledges" on-click="addAdditionalknowledge($item)"></div></div><div class="row form-buttons text-center"><a ng-show="selecteds.additionalknowledges.length" ng-click="deleteAdditionalknowledges()" class="rj-button lined">{{ "Borrar seleccionados" | translate }}</a> <a ng-click="addAdditionalknowledge()" class="rj-button">{{ "Agregar" | translate }}</a></div></div></div><div class="row"><div class="large-12 columns container-section"><div class="row"><h5>{{ "Preferencias laborales" | translate }}</h5></div><div class="row"><div ng-if="!workpreferences.length" class="text-center"></div><alert ng-if="!workpreferences.length" type="\'info\'">{{ "No hay datos de referencia cargados" | translate }}</alert><div ng-if="workpreferences.length" rj-table-collection collection-schema="workpreferencesTableSchema" collection-data="workpreferences" selectable ng-model="selecteds.workpreferences" on-click="addWorkpreference($item)"></div></div><div class="row form-buttons text-center"><a ng-show="selecteds.workpreferences.length" ng-click="deleteWorkpreferences()" class="rj-button lined">{{ "Borrar seleccionados" | translate }}</a> <a ng-click="addWorkpreference()" class="rj-button">{{ "Agregar" | translate }}</a></div></div></div><div class="row"><div class="large-12 columns container-section"><div class="row"><h5>{{ "Roles" | translate }}</h5></div><div class="row roles-list"><select-roles ng-model="rolesData"></select-roles></div></div></div></div></div></div>';
+module.exports = '<div class="profile-completed-card"><div class="card-header bg-alternative">{{ "Mi C.V" | translate }}</div><div class="card-body bg-gris"><div class="info-container"><div class="galera-container"><div class="card-thumb-container"><div class="overlay" ng-style="{ \'background-position-y\': overlayPos }"><div class="mask"></div></div></div><h4 class="percent">{{ percent }}%</h4></div><div class="text-container"><h5><span class="text-gris">Tu</span> CV está incompleto</h5><p class="text-large">{{ "Aún no podrás aplicar a ninguna oferta ni ser encontrado por ninguna empresa." | translate }}</p></div></div><div class="card-block"><ul class="info"><li ng-repeat="item in restItems track by item.value"><span class="field"><span class="text-gris">{{ "Agregar" | translate }}</span> <span>{{ item.name }}</span></span> <span class="value">+{{ itemPercent }}%</span></li></ul></div></div></div>';
 },{}],187:[function(require,module,exports){
-module.exports = '<div class="postulant-education-item"><div class="left-side"><span class="from">{{ education.start_date | date:"MM/yyyy"}}</span> - <span ng-if="education.is_current">{{ "Al corriente" | translate }}</span> <span ng-if="!education.is_current">{{ education.end_date | date:"MM/yyyy" }}</span><br><span class="finished" ng-show="education.finished">{{ "Finalizado" | translate }}</span> <span class="finished" ng-show="!education.finished">{{ "No terminado" | translate }}</span></div><div class="right-side"><h4>{{ education.institution }}</h4><h5>{{ education.level_text }}</h5><ul ng-if="education.certifications.length" class="certifications"><li ng-repeat="cert in education.certifications track by cert.id"><i class="fa fa-certificate" aria-hidden="true"></i> <span class="bold">{{ cert.type_text }} {{ "en" | translate }} {{ cert.name }}</span> <span class="desc">{{ cert.description }}</span></li></ul></div></div>';
+module.exports = '<div class="row profile"><div class="large-5 columns cv-info"><div class="avatar"><profile-avatar ng-click="changeAvatar()"></profile-avatar></div><div class="data"><h1>{{ info.complete_name }}</h1><h2>{{ info.email }}</h2></div><div class="meta">{{ "Última actualización del CV" | translate }} <span>{{ info.last_update }}</span></div></div><div class="large-4 columns cv-percent"><postulant-completed-profile data="completedProfileData"></postulant-completed-profile></div><div class="large-3 columns cv-options"><div class="rj-card"><div class="card-header bg-active">Vista previa de mi CV <i class="fa fa-eye"></i></div><div class="card-header">Consejos para mi CV <i class="fa fa-eye"></i></div><div class="card-body"><ul class="actions"><li><a href="#"><rj-icon icon="print"></rj-icon><span>{{ "Imprimir" | translate }}</span></a></li><li><a href="#"><rj-icon icon="email"></rj-icon><span>{{ "Enviar por email" | translate }}</span></a></li><li><a href="#" ng-click="downloadPdf()"><rj-icon icon="pdf"></rj-icon><span>{{ "Descargar en PDF" | translate }}</span></a></li><li><a href="#"><rj-icon icon="word"></rj-icon><span>{{ "Descargar en Word" | translate }}</span></a></li></ul></div></div></div></div><div class="cv-container"><div class="cv-content row"><div class="large-12 columns container_form"><div class="row"><div ng-include src="\'/api/v1/postulant/templates/cv_edit.html\'"></div></div><div class="row"><div ng-include src="\'/api/v1/postulant/templates/video_cv.html\'"></div></div><div class="row"><div ng-include src="\'/api/v1/postulant/templates/doc_cv.html\'"></div></div><div class="row"><div class="large-12 columns container_form"><form ng-submit="saveBio(postulantBioForm)" name="postulantBioForm" class="postulant-bio-form"><div class="row"><h5>{{ "Biografía" | translate }}</h5><span class="help right">{{ "Máximo 600 caracteres" | translate }}</span></div><div class="row"><textarea class="radius shadow-input" name="description" ng-model="postulantBioData[\'description\']" ng-required="true" required="required" placeholder="{{ \'Escribe una breve presentación sobre tu experiencia laboral.\' | translate }}">\n                </textarea><ul class="djng-field-errors ng-hide" ng-show="postulantBioForm.description.$dirty"><li ng-show="postulantBioForm.description.$error.required" class="invalid ng-hide">Este campo es requerido.</li><li ng-show="apiErrors.postulantBioForm.description.msg" class="invalid ng-binding ng-hide" ng-bind="apiErrors.postulantBioForm.description.msg"></li></ul></div><div class="row form-buttons text-center"><a ng-click="saveBio(postulantBioForm)" class="rj-button">{{ "Guardar" | translate }}</a> <a ng-click="reset(postulantBioForm)" class="rj-button alternative">{{ "Cancelar" | translate }}</a></div></form></div></div><div class="row"><div class="large-12 columns container-section"><div class="row"><h5>{{ "Experiencia laboral" | translate }}</h5></div><div class="row experience-list"><alert ng-if="!experiences.length" type="\'info\'">{{ "No hay ningún registro de experiencia laboral" | translate }}</alert><div ng-if="experiences.length" rj-table-collection collection-schema="experiencesTableSchema" collection-data="experiences" order-reverse="true" selectable ng-model="selecteds.experiences" on-click="addPE($item.id)"></div></div><div class="row form-buttons text-center"><a ng-show="selecteds.experiences.length" ng-click="deletePE()" class="rj-button lined">{{ "Borrar selecionadas" | translate }}</a> <a ng-click="addPE()" class="rj-button">{{ "Agregar" | translate }}</a></div></div></div><div class="row"><div class="large-12 columns container-section"><div class="row"><h5>{{ "Educación" | translate }}</h5></div><div class="row education-list"><div ng-if="!educations.length" class="text-center"></div><alert ng-if="!educations.length" type="\'info\'">{{ "No hay datos de referencia cargados" | translate }}</alert><div ng-if="educations.length" rj-table-collection collection-schema="educationsTableSchema" collection-data="educations" selectable ng-model="selecteds.educations" on-click="addEducation($item.id)"></div></div><div class="row form-buttons text-center"><a ng-show="selecteds.educations.length" ng-click="deleteEducations()" class="rj-button lined">{{ "Borrar seleccionados" | translate }}</a> <a ng-click="addEducation()" class="rj-button">{{ "Agregar" | translate }}</a></div></div></div><div class="row"><div class="large-12 columns container-section"><div class="row"><h5>{{ "Idiomas" | translate }}</h5></div><div class="row language-list"><div ng-if="!languages.length" class="text-center"></div><alert ng-if="!languages.length" type="\'info\'">{{ "No hay datos de referencia cargados" | translate }}</alert><div ng-if="languages.length" rj-table-collection collection-schema="languagesTableSchema" collection-data="languages" selectable ng-model="selecteds.languages" on-click="addLanguage($item)"></div></div><div class="row form-buttons text-center"><a ng-show="selecteds.languages.length" ng-click="deleteLanguages()" class="rj-button lined">{{ "Borrar seleccionados" | translate }}</a> <a ng-click="addLanguage()" class="rj-button">{{ "Agregar" | translate }}</a></div></div></div><div class="row"><div class="large-12 columns container-section"><div class="row"><h5>{{ "Conocimientos informáticos" | translate }}</h5></div><div class="row"><div ng-if="!computerknowledges.length" class="text-center"></div><alert ng-if="!computerknowledges.length" type="\'info\'">{{ "No hay datos de referencia cargados" | translate }}</alert><div ng-if="computerknowledges.length" rj-table-collection collection-schema="computerknowledgesTableSchema" collection-data="computerknowledges" selectable ng-model="selecteds.computerknowledges" on-click="addComputerknowledge($item)"></div></div><div class="row form-buttons text-center"><a ng-show="selecteds.computerknowledges.length" ng-click="deleteComputerknowledges()" class="rj-button lined">{{ "Borrar seleccionados" | translate }}</a> <a ng-click="addComputerknowledge()" class="rj-button">{{ "Agregar" | translate }}</a></div></div></div><div class="row"><div class="large-12 columns container-section"><div class="row"><h5>{{ "Conocimientos adicionales" | translate }}</h5></div><div class="row"><div ng-if="!additionalknowledges.length" class="text-center"></div><alert ng-if="!additionalknowledges.length" type="\'info\'">{{ "No hay datos de referencia cargados" | translate }}</alert><div ng-if="additionalknowledges.length" rj-table-collection collection-schema="additionalknowledgesTableSchema" collection-data="additionalknowledges" selectable ng-model="selecteds.additionalknowledges" on-click="addAdditionalknowledge($item)"></div></div><div class="row form-buttons text-center"><a ng-show="selecteds.additionalknowledges.length" ng-click="deleteAdditionalknowledges()" class="rj-button lined">{{ "Borrar seleccionados" | translate }}</a> <a ng-click="addAdditionalknowledge()" class="rj-button">{{ "Agregar" | translate }}</a></div></div></div><div class="row"><div class="large-12 columns container-section"><div class="row"><h5>{{ "Preferencias laborales" | translate }}</h5></div><div class="row"><div ng-if="!workpreferences.length" class="text-center"></div><alert ng-if="!workpreferences.length" type="\'info\'">{{ "No hay datos de referencia cargados" | translate }}</alert><div ng-if="workpreferences.length" rj-table-collection collection-schema="workpreferencesTableSchema" collection-data="workpreferences" selectable ng-model="selecteds.workpreferences" on-click="addWorkpreference($item)"></div></div><div class="row form-buttons text-center"><a ng-show="selecteds.workpreferences.length" ng-click="deleteWorkpreferences()" class="rj-button lined">{{ "Borrar seleccionados" | translate }}</a> <a ng-click="addWorkpreference()" class="rj-button">{{ "Agregar" | translate }}</a></div></div></div><div class="row"><div class="large-12 columns container-section"><div class="row"><h5>{{ "Roles" | translate }}</h5></div><div class="row roles-list"><select-roles ng-model="rolesData"></select-roles></div></div></div></div></div></div>';
 },{}],188:[function(require,module,exports){
-module.exports = '<div class="postulant-experienceerience-item"><div class="left-side"><span class="from">{{ experience.start_date | date:"MM/yyyy"}}</span> - <span ng-if="experience.is_current">{{ "Al corriente" | translate }}</span> <span ng-if="!experience.is_current">{{ experience.end_date | date:"MM/yyyy" }}</span></div><div class="right-side"><h4>{{ experience.position_value }} {{ experience.title_value }} {{ experience.hierarchy_value }}</h4><h5><span>{{ experience.area_value }}</span> <span>{{ experience.subarea_value }}</span></h5><div class="description">{{ experience.description }}</div><ul class="info"><li ng-if="experience.show_salary"><span class="field">{{ "Salario" | translate }}</span> <span>{{ experience.currency }} {{ experience.salary | number:0 }}</span></li><li ng-if="experience.staff_charge"><span class="field">{{ "Gente a cargo" | translate }}:</span> <span>{{ experience.staff_charge }}</span></li><li ng-if="experience.budget"><span class="field">{{ "Manejo de presupuesto" | translate }}</span></li></ul><div class="company"><div class="company-name">{{ experience.company_name }} - {{ experience.branch_activity_value }}</div><div class="contacts" nf-show="experience.references.length"><span ng-click="viewReferences()">{{ experience.references.length }} {{ "datos de referencia" | translate }}</span></div></div></div></div>';
+module.exports = '<div class="postulant-education-item"><div class="left-side"><span class="from">{{ education.start_date | date:"MM/yyyy"}}</span> - <span ng-if="education.is_current">{{ "Al corriente" | translate }}</span> <span ng-if="!education.is_current">{{ education.end_date | date:"MM/yyyy" }}</span><br><span class="finished" ng-show="education.finished">{{ "Finalizado" | translate }}</span> <span class="finished" ng-show="!education.finished">{{ "No terminado" | translate }}</span></div><div class="right-side"><h4>{{ education.institution }}</h4><h5>{{ education.level_text }}</h5><ul ng-if="education.certifications.length" class="certifications"><li ng-repeat="cert in education.certifications track by cert.id"><i class="fa fa-certificate" aria-hidden="true"></i> <span class="bold">{{ cert.type_text }} {{ "en" | translate }} {{ cert.name }}</span> <span class="desc">{{ cert.description }}</span></li></ul></div></div>';
 },{}],189:[function(require,module,exports){
-module.exports = '<md-card md-theme="{{ showDarkTheme ? \'dark-grey\' : \'default\' }}" md-theme-watch><md-card-title><md-card-title-text><span class="md-headline">{{ favorite.job.title }}</span> <a ui-sref="jobs.detail({id: favorite.job.id})">{{ "Ver publicación" | translate }}</a></md-card-title-text></md-card-title></md-card>';
+module.exports = '<div class="postulant-experienceerience-item"><div class="left-side"><span class="from">{{ experience.start_date | date:"MM/yyyy"}}</span> - <span ng-if="experience.is_current">{{ "Al corriente" | translate }}</span> <span ng-if="!experience.is_current">{{ experience.end_date | date:"MM/yyyy" }}</span></div><div class="right-side"><h4>{{ experience.position_value }} {{ experience.title_value }} {{ experience.hierarchy_value }}</h4><h5><span>{{ experience.area_value }}</span> <span>{{ experience.subarea_value }}</span></h5><div class="description">{{ experience.description }}</div><ul class="info"><li ng-if="experience.show_salary"><span class="field">{{ "Salario" | translate }}</span> <span>{{ experience.currency }} {{ experience.salary | number:0 }}</span></li><li ng-if="experience.staff_charge"><span class="field">{{ "Gente a cargo" | translate }}:</span> <span>{{ experience.staff_charge }}</span></li><li ng-if="experience.budget"><span class="field">{{ "Manejo de presupuesto" | translate }}</span></li></ul><div class="company"><div class="company-name">{{ experience.company_name }} - {{ experience.branch_activity_value }}</div><div class="contacts" nf-show="experience.references.length"><span ng-click="viewReferences()">{{ experience.references.length }} {{ "datos de referencia" | translate }}</span></div></div></div></div>';
 },{}],190:[function(require,module,exports){
-module.exports = '<div class="message-item" ng-class="{ featured: postulation.message.featured }"><div class="message-thumb"><div class="content"><img ng-if="postulation.message.featured" class="corner-shadow" src="/static/img/result-item-new-corner-shadow.svg"> <img ng-if="postulation.message.featured" class="corner" src="/static/img/result-item-new-corner-start.svg"> <img ng-if="postulation.message.featured" class="shadow" src="/static/img/result-item-new-img-shadow.svg"></div></div><div class="message-body"><div class="content"><div class="info"><p class="title"><a ng-click="viewCb(postulation.id)">{{ postulation.message.title }}</a></p><p class="description"><span>{{ postulation.message.owner.name_company }}</span><br><span>{{ postulation.message.area_text }}</span></p></div><div class="data"><div class="row"><p class="text-center">{{ postulation.status_text }}</p></div></div><img ng-if="postulation.message.featured" class="shadow" src="/static/img/result-item-new-text-shadow.svg"></div></div></div>';
+module.exports = '<md-card md-theme="{{ showDarkTheme ? \'dark-grey\' : \'default\' }}" md-theme-watch><md-card-title><md-card-title-text><span class="md-headline">{{ favorite.job.title }}</span> <a ui-sref="jobs.detail({id: favorite.job.id})">{{ "Ver publicación" | translate }}</a></md-card-title-text></md-card-title></md-card>';
 },{}],191:[function(require,module,exports){
-module.exports = '<a class="close-reveal-modal" ng-click="$dismiss()">&#215;</a><div class="large-12 columns container_form"><div class="owner-info"><h1>{{ postulation.message }}</h1></div><div class="buttons-container"><a class="rj-button" ng-click="$dismiss()">{{ "Aceptar" || translate }}</a></div></div>';
+module.exports = '<div class="message-item" ng-class="{ featured: postulation.message.featured }"><div class="message-thumb"><div class="content"><img ng-if="postulation.message.featured" class="corner-shadow" src="/static/img/result-item-new-corner-shadow.svg"> <img ng-if="postulation.message.featured" class="corner" src="/static/img/result-item-new-corner-start.svg"> <img ng-if="postulation.message.featured" class="shadow" src="/static/img/result-item-new-img-shadow.svg"></div></div><div class="message-body"><div class="content"><div class="info"><p class="title"><a ng-click="viewCb(postulation.id)">{{ postulation.message.title }}</a></p><p class="description"><span>{{ postulation.message.owner.name_company }}</span><br><span>{{ postulation.message.area_text }}</span></p></div><div class="data"><div class="row"><p class="text-center">{{ postulation.status_text }}</p></div></div><img ng-if="postulation.message.featured" class="shadow" src="/static/img/result-item-new-text-shadow.svg"></div></div></div>';
 },{}],192:[function(require,module,exports){
-module.exports = '<div class="row"><div class="large-12 columns"><div class="header-panel"></div><div class="messages-list"><alert ng-if="!favorites || !favorites.length" type="\'info\'">{{ "No hay favoritos" }}</alert><postulant-favorite-item ng-repeat="favorite in favorites.items track by favorite.id" view-cb="view" favorite="favorite"></postulant-favorite-item><div><pagination ng-if="favorites.length" total-items="favorites.totalLength" page="actualPage" items-per-page="5" on-select-page="changePage(page)"></pagination></div></div></div></div>';
+module.exports = '<a class="close-reveal-modal" ng-click="$dismiss()">&#215;</a><div class="large-12 columns container_form"><div class="owner-info"><h1>{{ postulation.message }}</h1></div><div class="buttons-container"><a class="rj-button" ng-click="$dismiss()">{{ "Aceptar" || translate }}</a></div></div>';
 },{}],193:[function(require,module,exports){
-module.exports = '<div class="row"><div class="large-2 columns"><ul class="rj-list" style="margin: 0"><li class="header">Estado</li><li class="secondary big" ng-class="{\'light-bg\': filterStatus === null}"><a href="#" ng-click="setFilterStatus(null)">{{ "Todos"}}</a></li><li ng-repeat="status in availableStatus track by status.value" ng-class="{\'light-bg\': filterStatus === status.value}"><a href="#" ng-click="setFilterStatus(status.value)">{{ status.name }}</a></li></ul></div><div class="large-10 columns"><div class="header-panel"></div><div class="messages-list"><alert ng-if="!messsages || !messages.length" type="\'info\'">{{ "No hay mensajes" }}</alert><postulant-message-item ng-repeat="message in messages.items track by message.id" view-cb="view" message="message"></postulant-message-item><div><pagination ng-if="messages.length" total-items="messages.totalLength" page="actualPage" items-per-page="5" on-select-page="changePage(page)"></pagination></div></div></div></div>';
+module.exports = '<div class="row"><div class="large-12 columns"><div class="header-panel"></div><div class="messages-list"><alert ng-if="!favorites || !favorites.length" type="\'info\'">{{ "No hay favoritos" }}</alert><postulant-favorite-item ng-repeat="favorite in favorites.items track by favorite.id" view-cb="view" favorite="favorite"></postulant-favorite-item><div><pagination ng-if="favorites.length" total-items="favorites.totalLength" page="actualPage" items-per-page="5" on-select-page="changePage(page)"></pagination></div></div></div></div>';
 },{}],194:[function(require,module,exports){
-module.exports = '<div class="row"><div class="large-2 columns"><ul class="rj-list" style="margin: 0"><li class="header">Estado</li><li class="secondary big" ng-class="{\'light-bg\': filterStatus === null}"><a href="#" ng-click="setFilterStatus(null)">{{ "Todos" | translate }}</a></li><li ng-repeat="status in availableStatus track by status.value" ng-class="{\'light-bg\': filterStatus === status.value}"><a href="#" ng-click="setFilterStatus(status.value)">{{ status.name }}</a></li></ul></div><div class="large-10 columns"><div class="header-panel"></div><div class="postulations-list"><alert ng-if="!postulations.length" type="\'info\'">{{ "No hay postulaciones" | translate }}</alert><postulant-postulation-item ng-repeat="postulation in postulations.items track by postulation.id" view-cb="view" postulation="postulation"></postulant-postulation-item><div><pagination ng-if="postulations.length" total-items="postulations.totalLength" page="actualPage" items-per-page="5" on-select-page="changePage(page)"></pagination></div></div></div></div>';
+module.exports = '<div class="row"><div class="large-2 columns"><ul class="rj-list" style="margin: 0"><li class="header">Estado</li><li class="secondary big" ng-class="{\'light-bg\': filterStatus === null}"><a href="#" ng-click="setFilterStatus(null)">{{ "Todos"}}</a></li><li ng-repeat="status in availableStatus track by status.value" ng-class="{\'light-bg\': filterStatus === status.value}"><a href="#" ng-click="setFilterStatus(status.value)">{{ status.name }}</a></li></ul></div><div class="large-10 columns"><div class="header-panel"></div><div class="messages-list"><alert ng-if="!messsages || !messages.length" type="\'info\'">{{ "No hay mensajes" }}</alert><postulant-message-item ng-repeat="message in messages.items track by message.id" view-cb="view" message="message"></postulant-message-item><div><pagination ng-if="messages.length" total-items="messages.totalLength" page="actualPage" items-per-page="5" on-select-page="changePage(page)"></pagination></div></div></div></div>';
 },{}],195:[function(require,module,exports){
-module.exports = '<div class="profile-bar"><div class="row"><div class="large-12 columns"><ul class="inline-list"><li ng-class="{active: tab === \'home\'}"><a ui-sref="postulant.home">{{ "NOVEDADES" | translate }}</a></li><li ng-class="{active: tab === \'postulations\'}"><a ui-sref="postulant.postulations">{{ "MIS POSTULACIONES" | translate }}</a></li><li ng-class="{active: tab === \'cv\'}"><a ui-sref="postulant.cv">{{ "MI CV" | translate }}</a></li><li ng-class="{active: tab === \'courses\'}"><a ui-sref="postulant.courses">{{ "MIS CURSOS" | translate }}</a></li><li ng-class="{active: tab === \'messages\'}"><a ui-sref="postulant.messages">{{ "MENSAJES" | translate }}</a></li><li ng-class="{active: tab === \'favorites\'}"><a ui-sref="postulant.favorites">{{ "FAVORITOS" | translate }}</a></li></ul></div></div></div><div ui-view="postulant-main"></div>';
+module.exports = '<div class="row"><div class="large-2 columns"><ul class="rj-list" style="margin: 0"><li class="header">Estado</li><li class="secondary big" ng-class="{\'light-bg\': filterStatus === null}"><a href="#" ng-click="setFilterStatus(null)">{{ "Todos" | translate }}</a></li><li ng-repeat="status in availableStatus track by status.value" ng-class="{\'light-bg\': filterStatus === status.value}"><a href="#" ng-click="setFilterStatus(status.value)">{{ status.name }}</a></li></ul></div><div class="large-10 columns"><div class="header-panel"></div><div class="postulations-list"><alert ng-if="!postulations.length" type="\'info\'">{{ "No hay postulaciones" | translate }}</alert><postulant-postulation-item ng-repeat="postulation in postulations.items track by postulation.id" view-cb="view" postulation="postulation"></postulant-postulation-item><div><pagination ng-if="postulations.length" total-items="postulations.totalLength" page="actualPage" items-per-page="5" on-select-page="changePage(page)"></pagination></div></div></div></div>';
 },{}],196:[function(require,module,exports){
-module.exports = '<div class="job-item" ng-class="{ featured: postulation.job.featured }"><div class="job-thumb"><div class="content"><img class="logo" ng-src="{{postulation.job.owner.avatars.default}}"> <img ng-if="postulation.job.featured" class="corner-shadow" src="/static/img/result-item-new-corner-shadow.svg"> <img ng-if="postulation.job.featured" class="corner" src="/static/img/result-item-new-corner-start.svg"> <img ng-if="postulation.job.featured" class="shadow" src="/static/img/result-item-new-img-shadow.svg"></div></div><div class="job-body"><div class="content"><div class="info"><p class="title"><a ng-click="viewCb(postulation.id)">{{ postulation.job.title }} - {{ postulation.job.city }}</a></p><p class="description"><span>{{ postulation.job.owner.name_company }}</span><br><span>{{ postulation.job.area_text }}</span> - <span>{{ postulation.job.job_type_text }}</span></p></div><div class="data"><div class="row"><p class="text-center">{{ postulation.status_text }}</p></div></div><img ng-if="postulation.job.featured" class="shadow" src="/static/img/result-item-new-text-shadow.svg"></div></div></div>';
+module.exports = '<div class="profile-bar"><div class="row"><div class="large-12 columns"><ul class="inline-list"><li ng-class="{active: tab === \'home\'}"><a ui-sref="postulant.home">{{ "NOVEDADES" | translate }}</a></li><li ng-class="{active: tab === \'postulations\'}"><a ui-sref="postulant.postulations">{{ "MIS POSTULACIONES" | translate }}</a></li><li ng-class="{active: tab === \'cv\'}"><a ui-sref="postulant.cv">{{ "MI CV" | translate }}</a></li><li ng-class="{active: tab === \'courses\'}"><a ui-sref="postulant.courses">{{ "MIS CURSOS" | translate }}</a></li><li ng-class="{active: tab === \'messages\'}"><a ui-sref="postulant.messages">{{ "MENSAJES" | translate }}</a></li><li ng-class="{active: tab === \'favorites\'}"><a ui-sref="postulant.favorites">{{ "FAVORITOS" | translate }}</a></li></ul></div></div></div><div ui-view="postulant-main"></div>';
 },{}],197:[function(require,module,exports){
-module.exports = '<a class="close-reveal-modal" ng-click="$dismiss()">&#215;</a><div class="large-12 columns container_form"><div class="owner-info"><img class="brand-image" ng-src="{{ postulation.job.owner.avatars.brand }}"><h1>{{ postulation.job.title }}</h1><h2>{{ postulation.job.owner.name_company }}</h2></div><div class="postulation-info"><h4>{{ "Salario pretendido" | translate }}</h4><div class="salary">$ {{ postulation.request_salary | number:2 }}</div><h4>{{ "Razón de postulación" | translate }}</h4><div>{{ postulation.message }}</div></div><div class="questions-list" ng-show="postulation.questionsanswers.length"><h4>{{ "Respuestas" | translate }}</h4><ul><li ng-repeat="question in postulation.questionsanswers track by question.id"><h5>{{ question.question }}</h5><p class="response"><span ng-if="question.type === 0 || question.type === 48">{{ question.response }}</span> <span ng-if="question.type === 16">{{ question.response | number }}</span> <span ng-if="question.type === 32">{{ question.response ? "Si" : "No" | translate }}</span></p></li></ul></div><div class="buttons-container"><a class="rj-button" ng-click="$dismiss()">{{ "Aceptar" || translate }}</a></div></div>';
+module.exports = '<div class="job-item" ng-class="{ featured: postulation.job.featured }"><div class="job-thumb"><div class="content"><img class="logo" ng-src="{{postulation.job.owner.avatars.default}}"> <img ng-if="postulation.job.featured" class="corner-shadow" src="/static/img/result-item-new-corner-shadow.svg"> <img ng-if="postulation.job.featured" class="corner" src="/static/img/result-item-new-corner-start.svg"> <img ng-if="postulation.job.featured" class="shadow" src="/static/img/result-item-new-img-shadow.svg"></div></div><div class="job-body"><div class="content"><div class="info"><p class="title"><a ng-click="viewCb(postulation.id)">{{ postulation.job.title }} - {{ postulation.job.city }}</a></p><p class="description"><span>{{ postulation.job.owner.name_company }}</span><br><span>{{ postulation.job.area_text }}</span> - <span>{{ postulation.job.job_type_text }}</span></p></div><div class="data"><div class="row"><p class="text-center">{{ postulation.status_text }}</p></div></div><img ng-if="postulation.job.featured" class="shadow" src="/static/img/result-item-new-text-shadow.svg"></div></div></div>';
 },{}],198:[function(require,module,exports){
+module.exports = '<a class="close-reveal-modal" ng-click="$dismiss()">&#215;</a><div class="large-12 columns container_form"><div class="owner-info"><img class="brand-image" ng-src="{{ postulation.job.owner.avatars.brand }}"><h1>{{ postulation.job.title }}</h1><h2>{{ postulation.job.owner.name_company }}</h2></div><div class="postulation-info"><h4>{{ "Salario pretendido" | translate }}</h4><div class="salary">$ {{ postulation.request_salary | number:2 }}</div><h4>{{ "Razón de postulación" | translate }}</h4><div>{{ postulation.message }}</div></div><div class="questions-list" ng-show="postulation.questionsanswers.length"><h4>{{ "Respuestas" | translate }}</h4><ul><li ng-repeat="question in postulation.questionsanswers track by question.id"><h5>{{ question.question }}</h5><p class="response"><span ng-if="question.type === 0 || question.type === 48">{{ question.response }}</span> <span ng-if="question.type === 16">{{ question.response | number }}</span> <span ng-if="question.type === 32">{{ question.response ? "Si" : "No" | translate }}</span></p></li></ul></div><div class="buttons-container"><a class="rj-button" ng-click="$dismiss()">{{ "Aceptar" || translate }}</a></div></div>';
+},{}],199:[function(require,module,exports){
 module.exports = '<h1>rj-list</h1><ul class="rj-list"><li><h4>Titulo 1</h4></li><li><h4 class="secondary">Titulo 2</h4></li><li><h4 class="secondary-bg">Titulo 3</h4></li><li><h4 class="light">Titulo 4</h4></li><li><h4 class="light-bg">Titulo 5</h4></li><li class="header">Titulo</li><li>Texto</li><li class="secondary">Texto</li><li class="light">Texto</li><li class="big">Texto</li><li class="secondary-bg">Texto</li><li class="light-bg">Texto</li><li><a href="#">Link</a></li><li><a href="#">Link</a></li><li class="header secondary">Titulo 2</li><li>Element <input type="checkbox"></li><li class="header">Title element <input type="checkbox"></li></ul><h1>rj-button</h1><a class="rj-button">Button</a> <a class="rj-button alternative">Alternative</a> <a class="rj-button black">Black</a> <a class="rj-button small">Button small</a> <a class="rj-button alternative small">Alternative small</a> <a class="rj-button black small">Black small</a> <a class="rj-button tiny">Button tiny</a> <a class="rj-button alternative tiny">Alternative tiny</a> <a class="rj-button black tiny">Black tiny</a> <a class="rj-button lined">Button lined</a> <a class="rj-button alternative lined">Alternative lined</a> <a class="rj-button black lined">Black lined</a><h1>Table</h1><div class="rj-card"><div class="card-header bg-alternative">Mi C.V</div><div class="card-body bg-gris"><h5>Esto es un h5</h5><p class="text-large">Y esto un parrafo</p><div class="card-block"><ul class="info"><li><span class="field">Agregar código postal</span> <span class="value">+9%</span></li><li><span class="field">Agregar código postal</span> <span class="value">+9%</span></li></ul></div></div></div><div class="rj-card"><div class="card-header bg-active">Vista previa de mi CV <i class="fa fa-eye"></i></div><div class="card-header">Consejos para mi CV <i class="fa fa-eye"></i></div><div class="card-body"></div></div><h3>Profile completed</h3><postulant-completed-profile completed="completed"></postulant-completed-profile><input type="number" ng-model="completed.percent"><h3>Filters</h3><div class="filter-list" style="width: 230px"><h1>Filtros</h1><div class="filter-box"><h2 class="clear">Palabra clave</h2><div class="search-box"><input placeholder="Ej: Cajero"></div></div><div class="filter-box"><h2>Por fecha de publicación</h2><ul class="filter-list"><li><a href="#"><span>List option 01</span><span class="cant">1</span></a></li><li><a href="#"><span>List option 02</span><span class="cant">2</span></a></li><li><a href="#"><span>List option 03</span><span class="cant">3</span></a></li><li><a href="#"><span>List option 04</span><span class="cant">4</span></a></li><li><a href="#"><span>List option 05</span><span class="cant">5</span></a></li><li><a href="#"><span>List option 06</span><span class="cant">6</span></a></li><li><a href="#"><span>List option 07</span><span class="cant">7</span></a></li><li><a href="#"><span>List option 08</span><span class="cant">8</span></a></li><li><a href="#"><span>List option 09</span><span class="cant">9</span></a></li><li><a href="#"><span>List option 10</span><span class="cant">10</span></a></li><li><a href="#"><span>List option 11</span><span class="cant">11</span></a></li><li><a href="#"><span>List option 12</span><span class="cant">12</span></a></li><li><a href="#"><span>List option 13</span><span class="cant">13</span></a></li><li><a href="#"><span>List option 14</span><span class="cant">14</span></a></li><li><a href="#"><span>List option 15</span><span class="cant">15</span></a></li></ul></div><div class="filter-box"><h1 class="alternative">Filtros selecionados</h1><ul class="selected-filters"><li><a href=""><span>Filtro 1</span><i class="close"></i></a></li><li><a href=""><span>Filtro 2</span><i class="close"></i></a></li><li><a href=""><span>Filtro 3</span><i class="close"></i></a></li><li><a href=""><span>Filtro 4</span><i class="close"></i></a></li><li><a href=""><span>Filtro 5</span><i class="close"></i></a></li></ul></div><p class="results-text">Se encontraron <span>543</span> ofertas de empleo</p><div class="rj-icon-button alternative lined"><rj-icon icon="download"></rj-icon><div class="btn-container"><a class="button" href="#">Guardar esta búsqueda</a></div></div><a class="rj-button black" href="#">Quitar todos los filtros <i class="fa fa-times"></i></a><rj-filter title="\'Search\'" title-class="clear" type="searchbox" ng-model="filters.text.value"></rj-filter><div>val: <input ng-model="filters.text.value"></div><rj-filter title="\'List\'" type="list" choices="filters.list.choices" ng-model="filters.list.selecteds"></rj-filter><div>val: {{ filters.list.selecteds }}</div><rj-filter title="\'List multi\'" type="list" multi-select="true" choices="filters.list.choices" ng-model="filters.list.selecteds"></rj-filter><div>val: {{ filters.list.selecteds }}</div><h1>GeoPicker</h1><a class="rj-button" ng-click="openGeoPicker()">Open</a> <a class="rj-button" ng-click="openGeoPicker({ country: 10, region: 117, city: 328, address: \'roca 123\'})">Open</a><h2>GeoFields</h2><div><geo-field></geo-field></div><div><geo-field ng-model="myGeo"></geo-field><div>{{myGeo}}</div></div></div>';
-},{}]},{},[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124])
+},{}]},{},[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125])
 
 //# sourceMappingURL=index.js.map

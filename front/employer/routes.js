@@ -49,7 +49,8 @@ module.exports = ["$stateProvider", ($stateProvider) => {
                 url: "/home",
                 views: {
                     "employer-main-main": {
-                        template: employerHomeTemplate
+                        template: employerHomeTemplate,
+                        controller: 'EmployerHomeCtl'
                     }
                 }
             })
